@@ -1,0 +1,89 @@
+<!--<div class="header">
+    <div class="header-banner">
+        <div class="cm-main">
+            <div class="left col-lg-9">
+                <a href="#">返回主页 </a>
+                <em class="pd-lf-10 pd-rg-10">|</em>
+                <a href="#">收藏本页</a>
+            </div>
+            <div class="right col-lg-3">
+                <a href="#">我的订单</a>
+                <em class="pd-lf-10 pd-rg-10">|</em>
+                <a href="#">客户服务<span class="caret"></span></a>
+                <em class="pd-lf-10 pd-rg-10">|</em>
+                <a href="#">李满枝</a>
+                <a href="#" class="pd-lf-8">退出</a>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!--头部搜索--->
+<div class="header-search-main">
+    <div class="cm-main">
+        <a href="#cart" class="header-car-btn" target="_blank">
+            <img style="padding-top:-3px;padding-right:5px;vertical-align:middle;" src="style/images/cart.svg" /> 我的购物车
+            <span id="basketNum"></span>
+        </a>
+        <a href="index.html#portal" class="left header-icon"></a>
+        <div class="header-center">
+            <ul class="header-search-ul ac-key-search">
+                <li>
+                    <a href="javascript:;" data-flag="goods" class="ac-key-a-active">商品</a>
+                </li>
+                <li>
+                    <a href="javascript:;" data-flag="supplie" class="ac-key-hover">供应商</a>
+                </li>
+                <!--<li>
+                                <a href="javascript:;" data-flag="brand" class="ac-key-hover">品牌</a>
+                            </li>-->
+                <!--<li>
+                                <a href="javascript:;" data-flag="format" class="ac-key-hover">规格</a>
+                            </li>-->
+                <!--<li>
+                                <a href="javascript:;" data-flag="num" class="ac-key-hover">货号</a>
+                            </li>-->
+                <!--<li>
+                    <a href="javascript:;" data-flag="category" class="ac-key-hover">类型</a>
+                </li>-->
+            </ul>
+            <div class="left header-search">
+                <a class="right header-search-btn ac-search" href="javascript:;">搜索</a>
+                <div class="header-search-left">
+                    <!--<span id="searchOptionKey" data-flag="goods">商品</span>&nbsp;
+                    <div class="header-search-icon">
+                        <span class="caret"></span>
+                        <ul class="header-search-ul ac-key-search">
+                            <li>
+                                <a href="javascript:;" data-flag="goods">商品</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-flag="supplie">供应商</a>
+                            </li>-->
+                    <!--<li>
+                                <a href="javascript:;" data-flag="brand">品牌</a>
+                            </li>-->
+                    <!--<li>
+                                <a href="javascript:;" data-flag="format">规格</a>
+                            </li>-->
+                    <!--<li>
+                                <a href="javascript:;" data-flag="num">货号</a>
+                            </li>-->
+                    <!-- <li>
+                                <a href="javascript:;" data-flag="category">类型</a>
+                            </li>
+                        </ul>
+                    </div>-->
+                </div>
+                <input type="text" class="header-search-box" placeholder="请输入商品名称、商品编码、货号、品牌名称进行搜索 " id="searchKey" />
+            </div>
+            <a href="#detailsearch" class="right header-search-text">高级搜索</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var purchaser_limit = userPermissions.indexOf('采购人中心');
+    if(purchaser_limit == -1) {
+        $(".header-car-btn").prop("href", "403.html");
+        //$("#hospital-center").hide();                        
+    }
+</script>

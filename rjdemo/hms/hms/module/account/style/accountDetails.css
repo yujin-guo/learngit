@@ -1,0 +1,39 @@
+.content-wrap{margin-left: 20px;margin-top: 40px;}
+.content-nav{padding-bottom: 10px;border-bottom: 1px solid #d7d7d7;}
+.symbol-icon01{border-left: 3px solid #13b5bd;}
+.symbol-title{margin-left: 10px;color: #666;font-size: 16px;}
+
+.account-details-back{margin-left:20px;color:#008cd0;}
+.account-details-flow{margin:20px 0;overflow:hidden}
+.account-details-flow-item,.account-details-flow-item01,.account-details-flow-last,.account-details-flow-last01{float:left;overflow:hidden;height:26px;line-height:26px;text-align:center;color:#fff}
+.account-details-flow-item{width:12%;}
+.account-details-flow-item01{width: 16%;}
+.account-details-flow-last{width:14%;}
+.account-details-flow-last01{width: 18%;}
+.account-details-arrow{float:right;width:13px;;height:26px;background:url(images/arrow.png) #fff no-repeat;}
+.account-details .color-one{background-color:#13b5bd}
+.account-details .color-two{background-color:#ccc}
+.account-details .bc-one{background-position:0 0;}
+.account-details .bc-two{background-position:-35px 0;}
+.account-details .bc-three{background-position:-70px 0;}
+.account-details-status-info{height:40px;background-color:#fcf8e2;line-height:20px;padding:10px;color:#666;font-size:12px;position:relative;}
+.account-details-info,.account-detail-invoice-wrap{border:solid #ccc 1px;line-height:30px;font-size:12px;padding:10px;color:#333;margin:20px 0}
+.account-details-info-item{width:70px;color:#666}
+.account-details table{border:solid 1px #ccc;width:100%;font-size:12px;border-collapse: collapse;}
+.account-details table thead{background-color:#f9fafc;color:#999}
+.account-details table td{border-bottom:solid 1px #ccc;height:40px;} 
+.account-details .account-details-statement-num{padding-left:10px}
+.account-details .account-details-total-price{border-bottom:none;text-align:right;padding-right:20px;font-size:12px;color:#666}
+.account-details .td-width-one{width:11%}
+.account-details .td-width-two{width:17%}
+.account-details .td-width-three{width:6%}
+.account-details-operation{width:150px;height:40px;line-height:40px;font-size:16px;color:#fff;text-align:center;background-color:#13b5bd;position:absolute;top:10px;right:1%;border-radius:5px}
+.account-details-check{color:#008cd0}
+.account-record-one,.account-record-two{width: 25%;}
+.account-record-one{padding-left: 10px;}
+.account-record-three{width: 48%;}
+.account-detail-width{width: 50%;}
+.account-detail-invoice-img{background-color:#f2f2f2 ;width: 100px;height: 100px;margin: 10px;text-align: center;line-height: 100px;}
+.account-detail-invoice-img img{vertical-align: middle;}
+.account-detail-title{font-size: 18px;color: #333;}
+.account-detail-invoice-wrap{overflow: hidden;position: relative;z-index: 1;margin-right: 1%;width: 46%;}

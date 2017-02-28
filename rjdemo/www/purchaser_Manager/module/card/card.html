@@ -1,0 +1,31 @@
+<div class="card-wrap-div01">
+    <div class="card-wrap-inner">
+        <h2 class="card-h2">经费卡信息</h2>
+        <div class="card-table-wrap">
+            <table class="card-table">
+                <thead>
+                    <tr>
+                        <th class="card-th-01">采购部门</th>
+                        <th class="card-th-02">经费卡号</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(flag==true){_.each(departmentModels,function(D){%>
+                    <tr>
+                        <td><%= D.departmentName %></td>
+                        <td>
+                            <%if(D.fundCardInfoModels.length){ _.each(D.fundCardInfoModels,function(F){ %>
+                               <p> <%= F.cardNo %>;</p>
+                            <%});} %>
+                        </td>
+                    </tr>
+                    <%});}else{%>
+                        <tr>
+                        <td class="empty-td" colspan="2">暂时没有经费卡！</td>
+                    </tr>
+                    <%} %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

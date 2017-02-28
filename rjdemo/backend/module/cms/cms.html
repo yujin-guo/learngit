@@ -1,0 +1,117 @@
+<%= nav %>
+<div class="left content">
+    <div class="content-wrap">
+        <div id="purchase-div">
+            <div class="content-nav">
+                <div class="symbol-icon01">
+                    <span class="symbol-title">内容管理</span>
+                </div>
+            </div>
+            <div class="matures">
+                <a href="#newcms?key=add" class="cms-there-link">新建</a>
+               <!--  <a href="javascript:void(0)" class="cms-there-link01 select-fabiao">发布</a>
+                <a href="javascript:void(0)" class="cms-there-link select-xiaxian">下线</a> -->
+            </div>
+            <div class="infomation">
+                <div class="matures">
+                    <div class="left">
+                        <span class="apply-time-title">栏目：</span>
+                        <select class="cms-select" id="cms-select">
+                            
+                        </select>
+                    </div>
+                    <div class="search-div right">
+                        <span class="apply-time-span">
+                            <span class="apply-time-title">内容发布时间：</span>
+                            <input class="apply-time-input" type="text" id="startTime" placeholder="<%=common.getOneMonthDate()%>" />- 
+                            <input class="apply-time-input" type="text" id="endTime" placeholder="<%=common.getDate()%>" />
+                        </span>
+                        <input class="search-input" id="search-value" type="text" placeholder="标题" />
+                        <a class="search-btn" id="search-btn" href="javascript:void(0)"></a>
+                    </div>
+                </div>
+                <table class="list-table">
+                    <thead>
+                        <tr>
+                            <th class="cms-all all-select">
+                                <input type="checkbox" />全选</th>
+                            <th class="apply-id">栏目</th>
+                            <th class="date">标题</th>
+                            <th class="group">创建时间</th>
+                            <th class="human">发布时间</th>
+                            <th class="money">创建人</th>
+                            <th class="status-td">
+                                <select class="purchase-select" id="purchase-select">
+                                    <option value="-1">全部</option>
+                                    <option value="0">未发布</option>
+                                    <option value="1">已发布</option>
+                                </select>
+                            </th>
+                            <th class="control">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="list">
+                        <% if(flag==true){_.each(entities,function(i){%>       
+                        <tr>
+                            <td class="cms-all sub-select">
+                                <input type="checkbox" />
+                            </td>
+                            <td class="apply-id">
+                                <%=i.columnName%>
+                            </td>
+                            <td class="date">
+                                 <%=i.title%>
+                            </td>
+                            <td class="group">
+                                <%var c=new Date(i.creationTime);%><%=common.getLocalTime(c)%>
+                            </td>
+                            <td class="human">
+                                <%if(i.publishTime!=null){%>      
+                                    <%var d=new Date(i.publishTime);%><%=common.getLocalTime(d)%>
+                                <%}%>    
+                            </td>
+                            <td class="money"><%=i.authorName%>
+                            </td>
+                            <td class="status-td">
+                                <%if(i.status=="1"){%>
+                                    已发布
+                                <%}else{%>
+                                    未发布
+                                <%}%>                                    
+                            </td>
+                            <td class="control">
+                                <%if(i.status=="1"){%>     
+                                    <a class="detail-link" id="del" href="javascript:void(0)" data-id="<%=i.id%>">下线
+                                    </a>                          
+                                <%}else{%>
+                                    <a class="detail-link" id="edit" href="#newcms?key=<%=i.id%>">编辑</a>
+                                    <a class="detail-link" id="fabu" href="javascript:void(0)" data-id="<%=i.id%>">发布</a>    
+                                <%}%>                                        
+                            </td>
+                        </tr>
+                        <%})}else{%>
+                        <tr>
+                            <td class="account-no-result" colspan="8" style="text-align:center;">
+                                暂无结果。   
+                            </td> 
+                        </tr>
+                        <%}%>     
+                    </tbody>
+                </table>
+                <div class="matures">
+                    <div class="page">
+                        <div class="right">
+                            <a class="endpoint" href="javascript:void(0)">尾页</a>
+                        </div>
+                        <div class="right" id="pagination">
+
+                        </div>
+                        <div class="right">
+                            <a class="endpoint" href="javascript:void(0)">首页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<html>
+<head>
+ <meta charset="UTF-8">
+        <meta http-equiv="Access-Control-Allow-Origin" content="*">
+<script type="text/javascript" src="jquery.js"></script>
+<style type="text/css">
+textarea{
+	height:200px;
+        width:400px;
+}
+</style>
+
+<script type="text/javascript">
+function sendMessage(){
+
+	var mobiles = $("#mobiles").val();
+	var content = $("#content").val();
+	var mobiles_array = mobiles.split("\n");
+
+	var data ={};
+	data.mobiles= mobiles_array;
+	data.content = content;
+	//alert(data);
+
+	var data_json =JSON.stringify(data);
+	$.ajax({
+		url:'http://192.168.2.66:8095/store/api/system/SendMessage',
+		//url:'http://www.rjmart.cn/store/api/system/PinRequest',
+		type:"post",
+		data:data_json,
+		contentType: "application/json; charset=utf-8",
+		dataType:"json",
+		success:function(date){
+			if(date.code=="0000"){
+				alert("success");
+			}else{
+				alert("error");
+			}
+		}
+	});	
+}
+</script>
+<title>短信群发</title>
+</head>
+<body>
+	<div>
+		<div>
+			手机号码：<textarea id="mobiles" type="text" ></textarea>
+		</div>
+		<div>
+			短信内容：<textarea id="content" type="text"></textarea>
+		</div>
+		<div>
+			发送按钮：<input id="btn" type="button" value="短信发送"  onclick="sendMessage()"></input>
+		</div>
+	</div>
+</body>
+</html>

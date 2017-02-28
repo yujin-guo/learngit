@@ -1,0 +1,26 @@
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">经费卡管理</span>
+            </div>
+        </div>
+        <form id="card-form">
+            <div class="common-wrap-div">
+                <div class="person-info-wrap">
+                    <span class="add-info-title change-vertical">*经费卡号：</span>
+                    <input type="text" placeholder="请输入经费卡号" name="cardno" id="cardno" value="<% if(flag=='editCard'){%><%= cardNo %><%}%>" />
+                </div>
+                <div class="person-info-wrap">
+                    <span class="add-info-title change-vertical">*经费卡名称：</span>
+                    <input type="text" placeholder="请输入经费卡名称,限8个字" name="cardname" id="cardname" value="<% if(flag=='editCard'){%><%= name %><%}%>"/>
+                </div>
+                <div class="person-info-wrap add-margin-top">
+                    <span class="add-info-title"></span>
+                    <input type="submit" class="save-value" value="保 存" />
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

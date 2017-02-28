@@ -1,0 +1,20 @@
+.person-limit-width{min-width: 878px;}
+.person-info{padding-bottom: 25px;border-bottom: 1px #ccc solid;}
+.person-info-wrap{font-size: 0;margin: 15px auto;}
+.person-info-title{font-size: 12px;color: #999;width: 70px;text-align: right;margin-right: 15px;}
+.person-info-info{color: #333;font-size: 12px;}
+.person-config{height: 65px;border-bottom: 1px #ccc dashed;font-size: 0px;}
+.person-config-title,.person-config-info,.person-config-config{height: 65px;line-height: 65px;}
+.person-config-title{width: 60px;text-align: right;margin-right: 30px;color: #333;font-size: 12px;}
+.person-config-info{width: 75%;font-size: 12px;color: #333;}
+.icon{color: #00a75c;font-size: 12px;background-image: url(../../../style/images/icons.png);background-repeat: no-repeat;background-position: -39px -183px;padding-left: 35px;}
+em,.edit-config{color: #0066ff;font-size: 12px;}
+em{margin: 0 10px;}
+.communication{font-size: 12px;color: #ff0000;}
+.person-info-wrap > input[type='text'],.person-info-wrap > input[type='password'],.person-info-code{width: 388px;height: 28px;border: 1px #ccc solid;font-size: 12px;padding-left: 5px;padding-right: 5px;vertical-align: middle;}
+.person-info-wrap > input[type='text']:focus,.person-info-wrap > input[type='password']:focus{border-color: #008cd0;}
+.person-info-code .code{width: 200px;border: none;height: 26px;line-height: 26px;}
+.person-info-code .code-link{color: #333;height: 25px;line-height: 25px;}
+.vertical{vertical-align: 10px;}
+label.error{background-image: url("../../../style/images/error-icon.png");background-repeat: no-repeat;background-position:left center;font-size: 12px;padding-left: 25px;height: 30px;vertical-align: middle;color: #ff0000;display: inline-block;line-height: 30px;margin-left: 5px;}
+.person-info-code:focus{border-color: #008cd0;}

@@ -1,0 +1,257 @@
+/*待结算*/
+.clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden}
+.settle{border:solid 1px #ccc;padding:20px 25px}
+.settle-header-submit{display:inline-block;width:90px;height:24px;line-height:24px;text-align:center;background-color:#32ab94;color:#fff;margin:10px 0;}
+.settle-header .settle-searchbox{line-height:35px;color:#666}
+.settle-header .settle-department-wrapper{position:relative}
+.settle-top-department-choices{display:none;position:absolute;top:34px;left:0px;line-height:25px;border:solid #aaa 1px;z-index:205;background-color:#fff;width:210px;text-align:left}
+.settle-top-department-choices li:hover{background-color:#f2f2f2;padding-left:5px}
+.settle-header .settle-search-department{width:200px;height:33px;line-height:33px;padding:0 5px;border:solid 1px #ccc;float:left;margin-right:20px;background:url(images/down.png) no-repeat 190px center}
+
+.settle-title{height:36px;background-color:#f2f2f2;color:#666;line-height:36px;text-align:center;margin-top:25px}
+.settle-title li{float:left;}
+.settle-checkbox{cursor:pointer;display:inline-block;height:14px;width:14px;border-radius:3px;border:solid #696969 1px;background-color:#fff;margin-right:10px;vertical-align:middle;*margin-top:10px}
+.settle-checkbox:hover{border-color:#06aeff;}
+.settle-checkbox:active{background-color:#333;border-color:#333}
+.settle-checkbox-selected{background:url(images/tick.png) no-repeat 2px 2px;}
+.settle-title-a{width:80px}
+.settle-title-b{width:140px}
+.settle-title-c{width:110px}
+.settle-title-d{width:130px}
+.settle-title-e{width:201px;}
+.settle-title-f{width:220px}
+.settle-title-revise{position:relative}
+.settle-item-title{width:70px;font-size:14px;color:#333;}
+.settle-status-choices{display:none;position:absolute;top:31px;left:51px;line-height:25px;border:solid #aaa 1px;z-index:100;background-color:#fff;width:200px;text-align:left}
+.settle-status-choices li:hover{background-color:#f2f2f2;padding-left:5px}
+
+.settle-department-choices{display:none;position:absolute;top:31px;left:70px;line-height:25px;border:solid #aaa 1px;z-index:100;background-color:#fff;width:200px;text-align:left}
+.settle-department-choices li:hover{background-color:#f2f2f2;padding-left:5px}
+.settle-more{padding:20px 0 0}
+.settle-more .settle-more-item{text-align:right;position:relative;margin-right:45px;margin-bottom:15px;}
+.settle-more .settle-more-margin{margin-right:0}
+.settle-more .settle-more-status{background:url("images/down.png") no-repeat 178px center;}
+.settle-more input{width:202px;height:30px;line-height:28px;border: solid 1px #aaa;}
+.settle .settle-more-btn{text-align:center;float:right;}
+.settle-more .settle-time-wrapper{width:290px;vertical-align: middle;}
+.settle-more .settle-more-time{word-spacing: 19px;width:67px;line-height:30px}
+.settle-more .settle-more-datetime{border:solid 1px #aaa;width:202px;height:32px;}
+.settle-more .settle-more-start-time{border:none;height:30px;width:95px;vertical-align:middle;line-height:30px;text-align:center;margin:0;}
+.settle-more .settle-more-end-time{border:none;height:30px;width:95px;vertical-align:middle;line-height:30px;text-align:center;margin:0;}
+.settle-more .settle-more-btn-search{width:92px;height:30px;line-height:30px;text-align:center;background-color:#32ab94;color:#fff;cursor:pointer;}
+.settle-more .settle-more-btn-reset{width:90px;height:28px;line-height:28px;text-align:center;background-color:#fff;color:#32ab94;border:solid 1px #32ab94;cursor:pointer;}
+.settle-more .settle-more-start-date,.settle-more .settle-more-end-date{margin:0;width:88px;padding-left:5px}
+.settle-content{border:solid #b7eccd 1px;border-bottom:none}
+.settle-content .settle-content-title{font-weight:normal;background-color:#f0fbf8;height:38px;line-height:38px;border-bottom:solid #b7ecdd 1px}
+.settle-content .settle-checkbox{margin:10px 20px 0 10px;}
+.settle-content .settle-money{padding-right:15px}
+.settle-content .settle-money-num{color:#298d79;font-size:22px;}
+.settle .settle-content td{text-align:center;padding:10px 0;border-bottom:solid #b7eccd 1px}
+.settle .settle-content .no-padding{padding:0}
+.settle-supplier{padding-right:10px}
+.settle-department-name{color:#00625a;font-style:normal}
+.settle-no-padding{text-align:center;line-height:100px;display:block;border:none;width:920px}
+.settle-revise{color:#298d79;position:absolute;right:10px;top:11px}
+/*分页样式设置*/
+/*.settle-footer{text-align:center}
+.settle-footer .settle-page-num{padding:0 5px}
+.settle-footer #pagination2{display:inline;line-height:25px}*/
+#pagination{text-align:center;}
+#pagination2{text-align:center;}
+#pagination2 span{display:inline-block;padding:0 8px;height:25px;line-height:25px;color:#666;border:solid #e4e4e4 1px;margin-right:4px}
+#pagination2 a{padding:0 8px;height:25px;line-height:25px;color:#666;border:solid #e4e4e4 1px;margin-right:4px}
+#pagination2 .current{background-color:#32ab94;color:#fff}
+/*提交结算页面*/
+.settle-submit{border:solid 1px #ccc;padding:20px 25px}
+.settle-submit table{text-align:center}
+.settle-submit table td{border-right:solid #b7eccd 1px;height:60px;border-bottom:solid #b7eccd 1px}
+.settle-submit .settle-title-b{width:113px}
+.settle-submit .settle-title-c{width:180px}
+.settle-submit .settle-title-d{width:102px}
+.settle-submit .settle-title-e{width:110px;}
+.settle-submit .settle-title-f{width:110px}
+.settle-content .settle-content-check{color:#32ab94;display:inline-block;margin-right:15px}
+.settle-content .settle-content-print{color:#32ab94;cursor:pointer}
+
+/*全部结算单页面*/
+.settle-all{border:solid 1px #ccc;padding:20px 25px}
+.settle-all table{text-align:center}
+.settle-all table td{height:90px;border-bottom:solid #e4e4e4 1px;}
+.settle-all .settle-header-btn{height:40px;line-height:40px;text-align:left;border-bottom:dotted 1px #ccc}
+.settle-all .settle-header-btn .settle-checkbox{margin-left:12px}
+.settle-all .settle-more-btn{height:32px;display:inline-block;vertical-align: middle;}
+.settle-all .settle-more .settle-more-search-input{float:left;width:219px;height:28px;line-height:28px;border:solid 1px #ccc;margin:0}
+.settle-all .settle-more .settle-more-btn-search{float:left}
+.settle-all .settle-item-title{width:50px;text-align: left;}
+.settle-all .settle-more input{/*margin-right:30px*/}
+.settle-all .settle-title-b{width:150px}
+.settle-all .settle-title-c{width:150px}
+.settle-all .settle-title-d{width:98px}
+.settle-all .settle-title-e{width:117px;border-right:none}
+.settle-all .settle-title-f{width:112px}
+.settle-all .settle-content{border:none}
+.settle-all .settle-content .settle-content-check{color:#32ab94;display:inline-block;line-height: 20px;margin:0;}
+.settle-all .settle-content .settle-content-print{color:#32ab94;line-height: 20px;margin:0;}
+
+.settle-more .settle-time-line{padding:0 5px}
+.settle-all .settle-header-submit{display:inline-block;margin:0 10px 0 20px;width:108px;height:24px;line-height:24px;text-align:center;background-color:#32ab94;color:#fff}
+.settle-all .settle-checkbox{margin:0;margin-right:10px;vertical-align: middle;}
+.settle-all .settle-balance-number{width:100px;}
+.settle-all .settle-content-submit-syx{color:#32ab94}
+/*孙逸仙结算单详情页*/
+.s-details-header{height:36px;}
+.s-details-header li{float:left;text-align:center;color:#fff;line-height:36px;height:36px}
+.s-details-flow-one .s-details-flow-icon{width:15px;height:36px;background:url(images/green.png) no-repeat  }
+.s-details-flow-one .s-details-flow-text{width:147px;background-color:#32ab94}
+.s-details-flow-two .s-details-flow-icon{width:15px;height:36px;background:url(images/grey-green.png) no-repeat }
+.s-details-flow-two .s-details-flow-text{width:147px;background-color:#32ab94}
+.s-details-flow-three .s-details-flow-icon{width:15px;height:36px;background:url(images/grey.png) no-repeat }
+.s-details-flow-three .s-details-flow-text{width:147px;background-color:#ccc;}
+.s-details-flow-finished .s-details-flow-text{width:162px;}
+.s-details-balance-title{height:36px;line-height:36px;background-color:#f2f2f2;margin:20px 0}
+.s-details-balance-item{height:50px;line-height:50px;background:url(images/close.png) no-repeat 15px center #fafafa;border:solid 1px #e4e4e4;margin:-1px 0 }
+.s-details-balance-item-spread{background-image:url(images/open.png);}
+.s-details-balance-title li{float:left}
+.s-details-balance-item li{float:left;font-weight:bold;cursor:pointer}
+.s-details-balance-number{width:150px;padding-left:50px;}
+.s-details-balance-committer{width:100px}
+.s-details-balance-dept{width:150px}
+.s-details-balance-date{width:150px}
+.s-details-balance-money{width:180px}
+.s-details-balance-status{width:130px}
+.s-details-content{border:solid #e4e4e4 1px;margin:20px 0;padding:25px;}
+.s-details-content .s-details-info{padding-bottom:30px;border-bottom:solid 1px #e4e4e4;margin-bottom:20px}
+.s-details-content .s-details-info li{float:left;width:304px;text-align:left;line-height:22px;color:#666;font-size:14px;}
+.s-details-content .s-details-info .s-details-info-width2{width:334px;}
+.s-details-content .s-details-info .s-details-info-width3{width:280px;}
+.s-details-content .s-details-info li span{color:#333;font-size: 14px;display: inline-block;width:75%;vertical-align: top;}
+.s-details-content .s-details-preview{display:inline-block;width:148px;height:33px;line-height:33px;background-color:#f2f2f2;border:solid 1px #e4e4e4;text-align:center;margin-right:15px;color:#32ab94;}
+.s-details-content .s-details-print{display:inline-block;width:150px;height:35px;line-height:35px;background-color:#32ab94;text-align:center;color:#fff;margin-left:20px}
+.s-details-content .s-details-receive{display:inline-block;width:150px;height:35px;line-height:35px;background-color:#32ab94;text-align:center;color:#fff;margin-left:20px}
+.s-details-content th{font-weight:normal;height:36px;text-align:center;border:solid 1px #e4e4e4;color:#298b78}
+.s-details-content td{position:relative;height:40px;text-align:center;border:solid 1px #e4e4e4;color:#333;}
+.s-details-content .settle-content{border-collapse: collapse;}
+.s-details-content .settle-title-a{width:160px}
+.s-details-content .settle-title-b{width:130px}
+.s-details-content .settle-content-item .settle-title-e{width:233px;border-right:none;}
+.s-details-content .s-details-money{text-align:right;margin-top:30px;}
+.s-details-content .s-details-money-num{font-size:18px;color:#298d79;padding-right:5px;}
+/*浙肿结算详情流程*/
+.s-details-flow-one .s-zzdetails-flow-text{width:180px;background-color:#32ab94}
+.s-details-flow-two .s-zzdetails-flow-text{width:180px;background-color:#32ab94}
+.s-details-flow-three .s-zzdetails-flow-text{width:180px;background-color:#ccc;}
+.s-details-flow-finished .s-zzdetails-flow-text{width:193px;}
+/*浙肿结算详情发票信息*/
+.s-details-zz-invoice{margin:30px 0;padding-top:30px;border-top:solid 1px #e4e4e4;}
+.s-details-invoice-item{border:solid #e4e4e4 1px;margin-bottom:20px;}
+.s-details-invoice-item .s-details-invoice-title{height:50px;line-height:50px;background-color:#fafafa;border-bottom:solid 1px #e4e4e4;padding:0 25px;}
+.s-details-invoice-item .s-details-invoice-bold{font-weight:bold;}
+.s-details-invoice-item .s-details-invoice-width1{float:left;width:75px;text-align: left;}
+.s-details-invoice-item .s-details-invoice-width2{float:left;width:650px;text-align: left;color:#333;}
+.s-details-invoice-item .s-details-invoice-money{float:right;font-size:16px;color:#f00;}
+.s-details-invoice-item .s-details-invoice-content{padding:25px;overflow:hidden;}
+.s-details-invoice-item .s-details-invoice-content-text{float:left;line-height:25px;width:100%}
+.s-details-invoice-item .s-details-invoice-content-text li{float:left;overflow:hidden;}
+.s-details-invoice-item .s-details-invoice-pic{float:right;width:100px;height:100px}
+/*浙肿发票图片文件上传*/
+.s-details-upload-file .s-details-upload-wrapper{overflow:hidden;margin-top:5px;}
+.s-details-upload-file .s-details-upload-wrapper li{float:left;position:relative;margin-right:10px;}
+.s-details-upload-file .s-details-invoice-upload{width:80px;height:80px;border:solid 1px #ccc;color:#333;text-align:center;cursor:pointer;}
+.s-details-upload-file .s-details-upload-icon{font-weight:bold;font-size:37px;line-height:50px;text-align:center;color:#999;}
+.s-details-upload-file .s-details-file-format{line-height:18px;color:#999;}
+.s-details-upload-file .s-details-invoice-image{width:82px;height:82px;}
+.s-details-upload-file .s-details-invoice-pdf{width:82px;height:25px;background:url(images/pdf.png) no-repeat;background-size: 100% 100%;color:#fff;text-align: center;padding-top:57px;cursor:pointer;}
+.s-details-upload-file .s-details-delete-img{position:absolute;width:20px;height:20px;right:0;top:0;fot-size:20px;text-align:center;cursor:pointer;color:#fff;}
+.s-details-upload-file .s-details-delete-img:hover{color:#008cd0;}
+/*其他医院结算详情*/
+.s-other-details .s-details-header li{float:left;width:121px;text-align:center;color:#fff;line-height:36px;height:36px}
+.s-other-details .s-details-flow-one .s-details-flow-text{width:106px;background-color:#32ab94}
+.s-other-details .s-details-flow-two .s-details-flow-text{width:106px;background-color:#32ab94}
+.s-other-details .s-details-flow-three .s-details-flow-text{width:106px;background-color:#ccc}
+.s-other-details .s-details-flow-finished .s-details-flow-text{width:126px;}
+.s-other-details .table th{border:none;background: #f0fbf8}
+.s-other-details .settle-content{margin-top:10px;}
+/*修改经费卡*/
+.purchase-card-wrap{top: 0px;left: 0px;bottom:0;right:0;z-index: 1;background-color: #000;opacity: 0.2;filter: alpha(opacity=0.2);position: absolute;}
+.presettle-add-card .card-wrap{position: absolute;min-height: 255px;width: 550px;border-radius:5px ;margin-left:-275px;left: 50%;top: 100px;box-shadow: 0 0 3px 5px rgba(0,0,0,.2);background-color: #fafafa;z-index: 100;border-radius: 10px;}
+.presettle-add-card .card-edit-title{background-color: #fff;text-align: center;border-bottom: 1px solid #e4e4e4;height: 45px;border-radius: 10px 10px 0 0;}
+.presettle-add-card .card-head{height: 45px;line-height: 45px;font-size: 16px;color: #333;margin-left:40px ;width: 470px;text-align: center;}
+.presettle-add-card .card-head-icon{background-image: url(../../../style/images/close.png);background-position:center;background-repeat: no-repeat;height: 45px;cursor: pointer;width: 40px;}
+.presettle-add-card .card-edit-inner{margin: auto;position: relative;}
+.presettle-add-card .card-has{min-height: 30px;margin: 11px 22px 0 22px;line-height: 23px;}
+.presettle-add-card .card-span{font-size:16px ;height: 35px;line-height: 35px;}
+.presettle-add-card .selected-card{min-height: 35px;line-height: 35px;padding: 22px 0 22px 22px;}
+.presettle-add-card .selected-card li{text-align:center;margin-right:10px;height:110px;float:left}
+.presettle-add-card .fundcard-checkbox{display:inline-block;width:18px;height:18px;background-color:#ccc;cursor:pointer;height:20px}
+.presettle-add-card .fundcard-checkbox-selected{background:url(images/check.png) no-repeat}
+.presettle-add-card .card-cell{border-radius: 5px;min-width: 110px;background-color: #f2f2f2;border:solid 1px #ccc;height:60px;cursor:pointer}
+.presettle-add-card .card-cell-add{border-radius: 5px;min-width: 110px;background-color: #f2f2f2;border:solid 1px #ccc;height:60px;cursor:pointer}
+.presettle-add-card .card-cell-choose{border:solid 1px #32ab94;background-color:#f0fbf8}
+.presettle-add-card .card-cell-choose .card-num{color:#32ab94}
+.presettle-add-card .card-cell-choose .class-card-icon{color:#666}
+.presettle-add-card .class-card-add{font-size:36px;width: 100%;text-align: center;color:#999;height:30px}
+.presettle-add-card .class-card-icon{width: 100%;text-align: center;height: 30px;line-height: 26px;font-size: 12px;color:#999}
+.presettle-add-card .card-num{color: #999;height: 30;line-height: 30px;width:100%;text-align: center;font-size:14px}
+.presettle-add-card .has-choose-card{margin-right: 22px;}
+.presettle-add-card .card-list-ul{display: none;list-style: none;border: 1px solid #e4e4e4;border-top:none ;width: 310px;background-color: #fff;}
+.presettle-add-card .li-choose{cursor: pointer;height: 35px;line-height: 35px;padding-left: 10px;padding-right: 10px;}
+.presettle-add-card .li-choose:hover{background-color: #32ab94;color: #fff;}
+.presettle-add-card .card-choose-icon{background-image: url(../../../style/images/icons.png);background-position: -342px -20px;background-repeat: no-repeat;width: 16px;height: 35px;padding-right: 10px;cursor: pointer;}
+.presettle-add-card .card-chose-div{text-align:center;height: 80px;line-height: 80px;}
+.presettle-add-card .card-sure-link,.presettle-add-card .card-sure-cancel{width: 118px;height: 33px;text-align: center;line-height: 33px;border-radius: 3px;font-size:14px}
+.presettle-add-card .card-sure-link{background-color: #32ab94;border: 1px solid #32ab94;color: #fff;margin-right:30px}
+.presettle-add-card .card-sure-cancel{background-color: #32ab94;border: 1px solid #32ab94;color: #fff;}
+.presettle-add-card .single-staus,.single-dep{background-image: url(../../../style/images/duble-solid.png);background-repeat: no-repeat;cursor: pointer;position: relative;}
+.presettle-add-card .single-staus{background-position: 95px -122px;}
+.presettle-add-card .single-dep{background-position: 65px -122px;}
+.presettle-add-card .show{display: block;}
+.presettle-add-card .color{border-color: #32ab94;}
+/*添加经费卡*/
+.fundcard-add{width:460px;height:330px;background-color:#fff;padding:30px 70px 40px;position:absolute;border:solid 1px #f2f2f2;box-shadow:0 0 10px ;top:100px;left:50%;margin-left:-280px;z-index:200}
+.fundcard-add .fundcard-title{color:#6db72b;font-size:18px;text-align:center;margin-bottom:30px;font-weight:normal;margin-top:0}
+.fundcard-add .fundcard-add-item{margin-bottom:20px;position:relative}
+.fundcard-add .fundcard-add-item-title{width:70px;display:inline-block;text-align:right;font-size:14px}
+.fundcard-add .fundcard-add-info{width:310px;height:30px;border:solid 1px #ccc;margin-left:10px;padding-left:10px}
+.fundcard-add .fundcard-add-btn{text-align:center;margin-top:50px;font-size:16px}
+.fundcard-add .fundcard-add-btn-confirm{
+	border:none;
+	display:inline-block;
+	background-color:#64a727;
+	width:120px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	color:#fff;
+	margin-right:40px;
+	box-shadow:0 0 5px 0px #6DB629;
+	border-radius:3px;
+	background:linear-gradient(#6CB325 ,#508420);
+	background:-webkit-linear-gradient(top ,#6CB325 ,#508420);
+	background:-o-linear-gradient(top ,#6CB325 ,#508420);
+	background:-moz-linear-gradient(top ,#6CB325 ,#508420);
+	filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#6CB325',endColorStr='#508420',gradientType='0');
+	cursor:pointer
+}
+.fundcard-add .fundcard-add-btn-cancel{
+	display:inline-block;
+	background-color:#fff;
+	width:118px;
+	height:28px;
+	line-height:28px;
+	text-align:center;
+	color:#64a727;
+	border:solid 1px #64a727;
+	border-radius:3px;
+	box-shadow:0 0 1px;
+	background:linear-gradient(#FEFFFC ,#F7FFEF);
+	background:-webkit-linear-gradient(top ,#FEFFFC ,#F7FFEF);
+	background:-o-linear-gradient(top ,#FEFFFC ,#F7FFEF);
+	background:-moz-linear-gradient(top ,#FEFFFC ,#F7FFEF);
+	filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FEFFFC',endColorStr='#F7FFEF',gradientType='0');
+
+}
+.fundcard-alike{position:absolute;top:30px;left:95px;width:310px;border:solid 1px #ccc;padding-left:10px;line-height:26px;color:#999;background-color:#fff}
+.fundcard-alike-number{color:#333;display:inline-block;margin-right:15px}
+.fundcard-error-wrap{display:block;height:40px;line-height:40px;text-indent:95px;color:#f55}
+.fundcard-error-wrap em[class="error"]{background:url(images/error-icon.png) no-repeat 0 center;display:inline-block;line-height:40px;text-indent:30px}
+

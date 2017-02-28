@@ -1,0 +1,82 @@
+<div class="bid-wrap" >
+    <div class="bid-header-wrap">
+        <span class="bid-icon01"></span>
+        <span class="bid-header-title">新建竞价申请</span>
+        <div class="borderbottom"></div>
+    </div>
+    <div class="bid-flow">
+        <div class="bid-flow-img"></div>
+        <div class="bid-flow-text">
+            <span class="bid-flow-text-item bid-flow-item-finished">填写基本信息</span>
+            <span class="bid-flow-text-item">填写商品信息</span>
+            <span class="bid-flow-text-item">完成</span>
+        </div>
+    </div>
+    <div class="clear bid-content">
+        <div class="bid marginbottom">
+            <span class="bid-title">*截标时间：</span>
+            <span class="bid-info">
+                <input class="common" name="endtime" id="bidendtime" type="text" placeholder="请输入截标时间" />
+                <span class="error-wrap"></span>
+            </span>
+            <span class="bid-column-txt">
+                截标时间必须距离当前时间大于1天。
+            </span>
+        </div>
+        <div class="bid marginbottom">
+            <span class="bid-title">*所属部门：</span>
+            <span class="bid-info status-relative">
+                <!-- <input class="common" name="p_dept" id="p_dept" type="text" placeholder="请选择采购部门" />
+                <span class="error-wrap"></span> -->
+                <input type="text" id="p_dept" name="p_dept" class="common search-cell" readonly value="<%=departmentModels[0].departmentName%>" />
+                <input type="hidden" id="order-recon" value="<%=departmentModels[0].departmentId%>" />
+                <span class="status-change-icon"></span> 
+                <dl class="status-absolute">
+                    <%_.each(departmentModels,function(i){ %>
+                        <dt data-value="<%=i.departmentId%>"><%=i.departmentName%></dt>    
+                    <%});%>
+                </dl>
+            </span>
+            <span class="bid-column-txt">
+                 选择属于哪个课题组,不支持多个课题组。
+            </span>
+        </div>
+        <div class="bid marginbottom">
+            <span class="bid-title bid-title-card">经费卡号：</span>
+            <span class="bid-info">
+                <!--<input class="common" id="cardnum" type="text" name="cardnum" placeholder="请输入本次采购的经费卡号" />
+                <span class="error-wrap"></span>-->
+                <%_.each(departmentModels,function(i){%>
+                <ul class="cart-apply-card">
+                    <%_.each(i.fundCardInfoModels,function(j,index){%>
+                    <li>
+                        <div class="cart-apply-card-name">
+                            <p><%=j.cardName%></p>
+                            <p><%=j.cardNo%></p>
+                            <input type="hidden" value="<%=j.id%>">
+                        </div>
+                        <span class="cart-apply-checkbox"></span>   
+                    </li>
+                    <%})%>
+                </ul>
+                <%})%>
+            </span>
+            <!-- <span class="bid-column-txt">
+                 如果本次采购需要经费卡,请在此处填写经费卡号。
+            </span>-->
+        </div>
+        <div class="bid marginbottom" style="height:150px;">
+            <span class="bid-title">备注信息：</span>
+            <span class="bid-info">
+                <textarea class="common" id="bid-beizhu" name="beizhu" maxlength="2000" placeholder="仅内部可见，不对外公开"></textarea>
+                <span class="error-wrap"></span>
+            </span>
+        </div>
+        <div class="bid marginbottom">
+            <span class="bid-title"></span>
+            <span class="bid-info bid-next-step">
+                下一步
+            </span>
+        </div>
+    </div>
+</div>

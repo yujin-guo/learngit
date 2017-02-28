@@ -1,0 +1,25 @@
+<%if(flag==true){%>
+<%_.each(comentModelList,function(i,index){%>
+<tr>
+    <td class="width-one"><%=i.forderno%></td>
+    <td class="width-two"><%var d=new Date(i.fassessDate);%><%=common.getLocalTime(d)%></td>
+    <td class="width-three"><%=i.suppName%></td>
+    <td class="width-four"><%=i.product%></td>
+    <td class="width-five"><%=i.fassessman%></td>
+    <%if(i.level==1){%>
+        <td class="width-six">差评</td>
+    <%}%>
+    <%if(i.level==2){%>
+        <td class="width-six">中评</td>
+    <%}%>
+    <%if(i.level==3){%>
+        <td class="width-six">好评</td>
+    <%}%>
+    <td class="width-seven commentRate"><%=i.coment%></td>
+</tr>
+<%})%>
+<%}else{%>
+<tr>
+    <td colspan="7" style="text-align:center;">暂无数据</td>
+</tr>  
+<%}%>

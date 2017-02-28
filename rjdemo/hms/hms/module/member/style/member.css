@@ -1,0 +1,31 @@
+.get-template{font-size: 12px;}
+.batch-file{position: absolute;z-index: 999;top: 0;left: 0;right: 0;bottom: 0;opacity: 0;filter: alpha(opacity=0);cursor: pointer;width: 100px;}
+.member-list-table{border-collapse: collapse;width: 100%;}
+.member-list-table tr{border: 1px solid #d7d7d7;}
+.member-list-table th{background-color: #f9fafc;color: #999;}
+.member-list-table td{color: #333;}
+.member-list-table .dis{color: #999;}
+.member-list-table td,.member-list-table th{font-size:12px;text-align: left;vertical-align: middle;padding-left: 10px;padding-top:10px ;padding-bottom: 10px;}
+.member-td-id{width: 7%;}
+.member-td-name{width: 13%;}
+.member-td-mobile{width: 11%;}
+.member-td-email{width: 25%;}
+.member-td-status{width: 15%;}
+.member-td-control{width: 12%;}
+.member-td-department{width: 17%;}
+.control-link{color: #008cd0;margin-right: 15px;}
+.status-select{height: 28px;border: 1px #ccc solid;width: 88px;text-align: left;line-height: 28px;vertical-align: top;margin-right: 12px;font-size: 12px;}
+.checkbox-span{font-size: 12px;color: #333;}
+.pass-hide{display: none;}
+.link-pass{font-size: 12px;}
+.back-link{width: 150px;text-align: center;height: 40px;line-height: 40px;background-color: #ccc;color: #fff;margin-left: 25px;font-size: 12px;vertical-align: top;}
+label.error{font-size: 12px;color: #ff5555;margin-left: 5px;padding-left: 25px;background-image:url(../../../style/images/error-icon.png) ;background-repeat: no-repeat;background-position:left center;height: 28px;line-height: 28px;display: inline-block;}
+.batch-h2{font-weight: normal;font-size: 16px;}
+.batch-desc{font-size: 12px;}
+/*输入框*/
+.member-info-wrap{font-size: 0;margin: 15px auto;}
+.member-info-wrap > input[type='text'],.member-info-wrap > input[type='password']{width: 388px;height: 34px;line-height:34px;border: 1px #999 solid;font-size: 12px;padding-left: 5px;padding-right: 5px;vertical-align: middle;color: #666;}
+.member-info-wrap > input[type='text']:focus,.member-info-wrap > input[type='password']:focus{border-color: #008cd0;}
+.member-info-wrap > input[type='text']:hover,.member-info-wrap > input[type='password']:hover{border-color: #333;}
+.member-info-title{font-size: 12px;color: #333;width: 70px;text-align: right;margin-right: 15px;vertical-align: middle;}
+.job-number-desc{font-size: 12px;margin-left: 10px;vertical-align: middle;}

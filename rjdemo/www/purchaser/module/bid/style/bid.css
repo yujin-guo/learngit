@@ -1,0 +1,156 @@
+.bid-error .error{font-size: 12px;color: #ff3300;margin: 10px 0 0 145px;display: inline-block;}
+.home-main{background-color: #eff2f5;padding-bottom: 50px;}
+.bid-bread-wrap{padding: 10px 0;font-size: 12px;}
+.bid-bread-wrap span{color: #333;}
+.direction{margin: 0 5px;}
+.bid-bread-wrap .bread-link{color: #333;}
+.bread-link:hover{color: #00a0e9;}
+.bid-content-div{background-color: #fff;}
+.bid-content-head{height: 59px;border-bottom: 1px solid #eee;line-height: 59px;padding-right: 16px;background-color: #fcfcfc;}
+.bid-content-head-cell{color: #333;border-top: 2px solid #fcfcfc;height: 57px;line-height: 57px;width: 199px;border-right: 1px solid #eee;text-align: center;cursor: pointer;}
+.bid-head-cell-active{border-top-color: #00a0e9;background-color: #fff;font-weight: bold;}
+.bid-header-search{padding-top:5px;font-size: 0;}
+.bid-search-box,.bid-search-btn{font-size: 12px;}
+.bid-search-box{width: 342px;height: 34px;border: 1px solid #ccc;border-right: none;line-height: 34px;color: #999;padding-left: 5px;padding-right: 2px;background-color: #fff;}
+.bid-search-box:focus{border-color: #00a0e9;}
+.bid-search-btn{height: 36px;width: 72px;text-align: center;line-height: 36px;background-color: #008cd0;color: #fff;}
+.bid-content-wrap{margin: 20px 15px 0px;background-color: #f2f2f2;border: 1px solid #f2f2f2;border-bottom: none;}
+/*.bid-content-wrap-inner{padding: 0 20px;}*/
+/*.bid-content-table{background-color: #fff;}*/
+.bid-content-head-span01,.bid-content-head-span02,.bid-content-head-span03{font-size: 12px;color: #999;padding-right: 5px;height: 36px;line-height: 36px;}
+.list-td-01{width: 550px;padding-left: 15px;}
+.list-td-02{width: 350px;padding-left: 5px;padding-right: 5px;}
+.list-td-03{width: 211px;padding-right: 15px;}
+.list-td-001{width: 550px;}
+.list-td-003{width: 211px;}
+.list-td-001,.list-td-02,.list-td-003{vertical-align: middle;word-break: break-all;word-wrap: break-word;}
+.bid-list-table{margin-bottom: 12px;width: 100%;background-color: #fff;}
+.bid-list-table .td-li,.bid-list-table .th-li{text-align: left;}
+.bid-list-table .th-li{height: 50px;font-weight: normal;line-height: 50px;}
+.bid-list-table .td-li{min-height: 35px;padding:10px 0;border-bottom: 1px dotted #efefef;margin: 0 15px;}
+.bid-list-table .th-li{border-bottom: 1px solid #efefef;}
+/*.bid-list-table tbody .list-td-01{margin-left: ;}*/
+.hospital-span{color: #00a0e9;}
+.over-time-span{color: #999;margin-left: 12px;}
+.list-detail-div{height: 50px;line-height: 50px;}
+.list-detail-link{height: 26px;width: 74px;background-image: url(../../../style/images/menhu-icon.png);background-repeat: no-repeat;background-position: -30px -10px;text-align: center;line-height: 26px;color: #999;}
+.clear-margin-bottom{margin-bottom: 0px;}
+/*页码*/
+.page-wrap{margin-top: 30px;height: 50px;text-align: center;}
+#pagination a,#pagination span,.endpoint{padding-left:8px;padding-right:8px;height: 25px;color: #333;line-height: 25px;text-align: center;margin-left: 3px;border: 1px #e4e4e4 solid;vertical-align: middle;border-radius: 3px;font-size: 12px;}
+#pagination .current{background-color: #199ed8;color: #fff;}
+#pagination .prev,#pagination .next{background-color: #fff;color: #000;background-image: url(images/direction.png);background-repeat: no-repeat;width: 8px;}
+.prev{background-position: -1px -15px;}
+.next{background-position: -45px -14px;}
+.page-total{margin-left: 10px;height: 30px;line-height: 30px;font-size: 12px;}
+.total-page-num{margin: auto 5px;}
+/*空*/
+.bid-none-wrap{background-color: #fff;padding-top: 100px;padding-bottom: 100px;}
+.bid-none-inner{width: 145px;margin: auto;padding-top: 136px;background-image: url(images/none.png);background-repeat: no-repeat;background-position: center top;text-align: center;}
+.bid-none-p{color: #999; text-align: center;}
+/*竞价详情*/
+.list-clock{width: 186px;}
+.list-detail-wrap{padding: 15px 50px;}
+.hospital-head{font-size: 18px;color: #333;text-align: center;}
+.little-header{margin: 8px 0;border-bottom: 1px solid #eee;overflow: hidden;}
+.bid-num,.bid-detail-over-time{font-size: 12px;color: #333;height: 30px;line-height: 30px;}
+.bid-status-div{height: 100px;background-color: #f2f2f2;text-align: center;position: relative;}
+.bid-status-inner{width: 442px;margin: auto;height: 100px;line-height: 100px;padding-left: 115px;background-image: url(../../../style/images/menhu-icon.png);background-repeat: no-repeat;}
+.background-going{background-position: -598px 0px;}/*竞价中图标*/
+.background-over{background-position: -598px -100px;}/*已结束图标*/
+.status-doing-cell{font-size: 20px;color: #008cd0;}/*竞价中字体*/
+.status-over-cell{font-size: 20px;color: #666;}/*已结束字体*/
+.distance-over-time{font-size: 16px;color: #666;width: 288px;}
+.time-span{color: #008cd0;}
+.login-status{margin-right: 10px;text-align: center;margin-top: 10px;width: 150px;height: 80px;background-color: #fff;border-radius: 3px;position: absolute;top: 0px;right: 0px;}
+.login-status-p{color: #333;font-size: 12px;margin-bottom: 8px;margin-top: 8px;}
+.login-status-link{width: 100px;height: 34px;line-height: 34px;color: #fff;background-color: #008cd0;line-height: 34px;font-size: 16px;}
+.table-wrap-div{margin-top: 20px;}
+.list-detail-table,.bid-detail-table{border-collapse: collapse;width: 100%;}
+.list-detail-table th{border: none;height: 35px;font-weight: normal;color: #666;background-color: #f2f2f2;}
+.list-detail-table td{color: #333;border: 1px solid #e4e4e4;padding: 15px;word-break: break-all;word-wrap: break-word;}
+.list-detail-table td,.list-detail-table th{vertical-align: middle;text-align: center;}
+/*未登录表格*/
+.list-detail-th01{width: 50px;}
+.list-detail-th02{width: 170px;}
+.list-detail-th03{width: 100px;}
+.list-detail-th04{width: 100px;}
+.list-detail-th05{width: 100px;}
+.list-detail-th06{width: 210px;}
+.list-detail-th07{width: 70px;}
+.list-detail-cancel-th06{width: 310px;}
+/*已登录表格*/
+.list-detail-have-th01{width: 40px;}
+.list-detail-have-th02{width: 150px;}
+.list-detail-have-th03{width: 80px;}
+.list-detail-have-th04{width: 80px;}
+.list-detail-have-th05{width: 80px;}
+.list-detail-have-th06{width: 190px;}
+.list-detail-have-th07{width: 60px;}
+.list-detail-have-th08{width: 50px;}
+.list-detail-have-th09{width: 70px;}
+.list-detail-table .have-price-active,.bid-detail-table .have-price-active,.active{color: #008cd0;}
+.td-requirement{text-align: left;}
+.detail-link{color: #333;}
+.detail-link:hover{color: #00a0e9;}
+/*竞价商品详情*/
+.detail-head{font-weight: normal;font-size: 18px;color: #666;text-align: center;border-bottom: 1px #0099ff solid;height: 40px;line-height: 40px;}
+.bid-detail-table td{border: 1px solid #ccc;padding: 10px 20px;}
+.bid-detail-01{width: 80px;text-align: right;background-color: #fafafa;}
+.bid-detail-02{text-align: left;}
+.price-info-wrap{margin: 25px auto 30px;}
+.bid-info-div01,.bid-info-div02{width: 398px;height: 118px;margin: auto;padding: 30px 0;border-radius: 5px;}
+.bid-info-div01{border: 1px solid #ccc;background-color: #f2f2f2;}
+.bid-info-div02,.bid-info-div03{border: 1px solid #0099ff;background-color: #f7fcff;}
+.bid-info-status-icon{width: 80px;height: 80px;margin: auto;background-image: url(../../../style/images/menhu-icon.png);background-repeat: no-repeat;}
+.background-none-power{background-position: -600px -310px;}
+.background-power{background-position: -600px -210px;}
+.background-success{background-position: -600px -410px;}
+.bid-info-status-desc{text-align: center;color: #333;margin-top: 20px;}
+.login-bid-wrap{margin: 0 56px;}
+.login-bid-content-head{height: 30px;line-height: 30px;font-size: 16px;background-color: #f2f2f2;padding-left: 12px;margin: 20px 0;}
+.login-bid-chose01{margin: 20px 0;}
+.login-bid-chose-inner{height: 35px;line-height: 35px;}
+.chose-product-link,.chose-product-link01{height: 34px;line-height: 34px;width: 118px;text-align: center;}
+.chose-product-link,.chose-product-link02{margin: 0 20px;}
+.chose-product-link02,.chose-product-link03{width: 148px;text-align: center;height: 34px;line-height: 34px;}
+.style-link01{border: 1px solid #008cd0;color: #fff;background-color: #008cd0;}
+.style-link02{border: 1px solid #ccc;background-color: #f2f2f2;color: #666;}
+.write-price-wrap{margin: 24px 0;}
+.price-wrap-info{margin: 20px 0;font-size: 0;}
+.price-wrap-info01{margin: 15px 0;font-size: 0;}
+.flag-em{color: #ff0000;font-size: 12px;margin-right: 5px;}
+.price-wrap-info-title,.price-wrap-price-desc,.desc-wrap{height: 35px;font-size: 14px;}
+.price-wrap-info-title{text-align: right;color: #333;line-height: 35px;margin-right: 15px;width: 130px;}
+.price-wrap-info-input{width: 190px;line-height: 35px;padding: 0 5px;height: 33px;line-height: 33px;font-size: 14px;}
+.bid-my-virtues{width: 390px;padding: 5px;height: 80px;vertical-align: top;}
+.bid-validate{border-color: #FF3300;}
+.price-wrap-info-input,.bid-my-virtues{border: 1px solid #ccc;color: #999;font-size: 14px;}
+.price-wrap-info-input:focus,.bid-my-virtues:focus{border-color: #008cd0;}
+.price-wrap-price-desc{color: #999;width: 368px;word-break: break-all;word-wrap: break-word;margin-left: 12px;vertical-align: top;}
+.unit-flag{color: #333;margin-right: 12px;font-size: 14px;}
+.desc-wrap{line-height: 35px;vertical-align: top;}
+.submit-price{cursor: pointer;width: 250px;text-align: center;height: 35px;line-height: 35px;background-color: #008cd0;color: #fff;margin-top: 20px;border: none;font-size: 14px;}
+.chose-product-window{width: 510px;height: 456px;padding: 2px;position: absolute;top: 50%;left: 20%;display: none;}
+.chose-product-inner{border: 1px solid #c9c9c9;box-shadow: 0 0 3px rgba(0,0,0,.3);background-color: #fff;}
+.chose-product-search{padding: 14px;}
+.product-table-wrap{height: 334px;overflow-y: auto;}
+.product-table{width: 100%;border-collapse: collapse;}
+.product-table th,.product-table td{border: 1px solid #eee;text-align: center;vertical-align: middle;padding: 5px;height: 20px;}
+.product-table th{background-color: #0099ff;color: #fff;font-weight: normal;}
+.product-table td{color: #000;}
+.product-table tr:hover{background-color: #e4e4e4;}
+.bid-selected{background-color:#f2f2f2;}
+.bid-window-td01{width: 138px;}
+.bid-window-td02{width: 210px;}
+.file-link{height: 33px;line-height: 33px;width: 78px;text-align: center;background-color: #f2f2f2;border: 1px solid #ccc;color: #666;overflow: hidden;vertical-align: top;position: relative;}
+.file-input{height: 0px;width: 0px;opacity: 0;filter: alpha(opacity=0);position: absolute;z-index: 999;top: 0px;left: 0px;cursor: pointer;}
+.chose-product-control{margin: 16px auto;text-align: center;}
+.chose-product-control01{margin: 30px auto 15px;text-align: center;}
+.control-link01,.control-link02{height: 33px;line-height: 33px;width: 88px;text-align: center;}
+.control-link01{background-color: #0099ff;color: #fff;border: 1px solid #0099ff;}
+.control-link02{margin-left: 70px;background-color: #f2f2f2;border: 1px solid #ccc;color: #666;}
+.bid-input-width{width: 398px;}
+.price-wrap-info-span01,.price-wrap-info-span02{color: #333;font-size:12px;}
+.price-wrap-info-span01{margin-right: 30px;width: 90px;text-align: right;}
+.home-footer{padding: 15px 0;}

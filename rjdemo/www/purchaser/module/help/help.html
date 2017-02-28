@@ -1,0 +1,83 @@
+<!--头部搜索--->
+<div class="header-search-main">
+    <div class="cm-main">
+        <a href="#portal" class="left header-icon"></a>
+    </div>
+</div>
+<div class="header-nav">
+    <div class="cm-main">
+        <a href="#portal" id="s" class="header-main-nav-cell">首页</a>
+        <a href="index.html" class="header-main-nav-cell" id="f">采购首页</a>
+        <a href="#bidlist" class="header-main-nav-cell">在线竞价</a>
+        <a href="#information" class="header-main-nav-cell">信息公告</a>
+        <a href="javascript:;" class="header-main-nav-cell header-main-nav-select">帮助中心</a>
+    </div>
+</div>
+<div class="cm-main">
+    <div class="help-wrap">
+        <div class="help-header-bread">
+            <span class="help-bread-span"><a href="index.html">首页</a></span>
+            <span class="help-bread-span"><em>&gt;</em>帮助中心</span>
+        </div>
+    </div>
+    <div class="help-content">
+        <div class="help-content-left left">
+            <ul class="help-content-nav">
+                <!--<li class="help-li-header" data-id="<%= dto.id %>">常见问题分类</li>-->
+                <li class="help-li" style="margin-top: 0;">        
+                    <a href="javascript:void(0);" class="help-li-link" data-id="<%= dto.id %>"><%=dto.columnName%></a>
+                    <ul class="help-next-ul show">
+                        <% _.each(listdto,function(i,index){%>   
+                            <%if(index!=listdto.length-1){%>                        
+                            <li data-id="<%=i.id%>">
+                                <%=i.columnName%>
+                            </li>
+                            <%}else{%> 
+                                <li data-id="<%=i.id%>" style="border-bottom: 0;"><%=i.columnName%></li>
+                            <%}%>
+                        <%})%>    
+                    </ul>
+                </li>
+            </ul>
+            <div class="help-nav-image">
+                <img src="style/images/help.png" />
+            </div>
+        </div>
+        <div class="help-content-right left" id="helpList">
+            <h3 class="help-content-title">帮助中心</h3>
+            <ul class="help-items">
+                <%if(entities==null){%>
+                    <li class="help-none">暂无内容。</li>
+                <%}else{%>
+                    <%_.each(entities,function(i){%>
+                        <li class="overflow">
+                            <a href="#helpdetails/<%=i.id%>/<%=convert(i.publishTime)%>">
+                                <span class="left help-item-text">
+                                    [<%=i.columnName%>]&nbsp;<%=i.title%></span>
+                                <span class="right help-item-time">
+                                    <%=convert(i.publishTime)%>
+                                </span>
+                            </a>
+                        </li>
+                    <%})%>
+                <%}%>
+            </ul>
+            <div id="pagination"></div>
+        </div>
+    </div>
+</div>
+<div class="home-footer-01">
+    <p>
+         <a style="color:#666" href="index.html#help">帮助中心</a> | 客服QQ：2448328732 服务时间：周一至周五(节假日除外)9：00-18：00 
+        <span class="footer-logo">
+            <a href="tencent://message/?uin=2448328732&Site=在线QQ&amp;Menu=yes">
+                <img src="images/QQ.png" />
+                <span>QQ交谈</span>
+            </a>
+        </span>
+    </p>
+    <p>版权所有 @2014-2016 网站备案/许可证号：
+       <a target="_blank" style="color:#666;" href="http://www.miitbeian.gov.cn/">粤ICP备16055118号-2
+       </a>
+    </p>
+</div>

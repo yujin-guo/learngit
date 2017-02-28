@@ -1,0 +1,28 @@
+<div class="left nav-inner-left">
+    <ul class="secondary-nav">
+        <li class="header-title">结算管理</li>
+        <li class="secondary-title secondary-active" data-flag="all">
+            <a href="javascript:void(0)">全部结算单</a>
+        </li>
+        <% if($.cookie('organization')=='中山大学附属肿瘤医院'){%>
+        <li class="secondary-title" data-flag = "4">
+            <a href="javascript:void(0)">待提交验收单</a>
+        </li>
+        <li class="secondary-title" data-flag = "5">
+            <a href="javascript:void(0)">待提交供应商</a>
+        </li>
+        <%}%>
+        <li class="secondary-title" data-flag = "7">
+            <a href="javascript:void(0)">待递送</a>
+        </li>
+        <li class="secondary-title" data-flag = "1">
+            <a href="javascript:void(0)" >待审核</a>
+        </li>
+        <li class="secondary-title" data-flag = "2">
+            <a href="javascript:void(0)">待付款</a>
+        </li>
+        <li class="secondary-title" data-flag = "3">
+            <a href="javascript:void(0)">已完成</a>
+        </li>
+    </ul>
+</div>

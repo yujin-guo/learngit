@@ -1,0 +1,128 @@
+    <div class="add">
+    <div class="add-column">
+        <span class="add-column-title"><em class="add-asterisk">*</em>分类：</span>
+        <span class="add-column-box add-column-set add-ie add-column-first">
+            <p class="add-first-level">设置一级分类</p>
+            <ul class="add-first-category">
+                <%_.each(category,function(i){%>
+                <li><%=i.name%><input type="hidden" class="add-first-id" value="<%=i.id%>"></li>
+                <%})%>
+            </ul>
+        </span>
+        <span class="add-column-box add-column-set add-column-second">
+            <p class="add-second-level">设置二级分类</p>
+            <%_.each(arr,function(item){%>
+            <ul>
+                <%_.each(item,function(i){%>
+                <li><%=i.name%><input type="hidden" class="add-second-id" value="<%=i.id%>"></li>
+                <%})%>
+            </ul>
+            <%})%>
+        </span>
+    </div>
+    <div class="add-column">
+        <span class="add-column-title"><em>*</em>名称：</span>
+        <input class="add-column-box add-name" value="<%=product.name%>">
+    </div>
+    <div class="add-column">
+        <span class="add-column-title"><em>*</em>规格：</span>
+        <input class="add-column-box add-spec" value="<%=product.specification%>">
+    </div>
+    <div class="add-column">
+        <span class="add-column-title"><em>*</em>库存：</span>
+        <input class="add-column-box add-stock" value="<%=product.sku%>">
+    </div>
+    <div class="add-column">
+        <span class="add-column-title"><em>*</em>单位：</span>
+        <input class="add-column-box add-unit" value="<%=product.unit%>">
+    </div>
+    <div class="add-column">
+        <span class="add-column-title">品牌：</span>
+        <span class="add-column-box add-column-set add-column-brand">
+            <p class="add-brand">无品牌</p>
+            <ul>
+                <li>无品牌</li>
+                <%_.each(list,function(i){%>
+                <li><%=i.name%><input type="hidden" value="<%=i.id%>"></li>
+                <%})%>
+            </ul>
+        </span>
+        <span class="add-column-txt">
+                             如果该商品有正规的品牌，请准确填写，很多采购人只认品牌和货号。
+        </span>
+    </div>
+    <div class="add-column">
+        <span class="add-column-title"><em>*</em>货号：</span>
+        <input class="add-column-box add-product-num" value="<%=product.productNum%>">
+        <span class="add-column-txt">
+                             如果该商品有正规的货号，请准确填写，很多采购人只认品牌和货号。
+        </span>
+    </div>
+    <div class="add-column">
+        <span class="add-column-title"><em>*</em>统一销售价：</span>
+        <input class="add-column-box add-price" value="<%=product.price%>">
+    </div>
+    <div class="add-column">
+        <span class="add-column-title">差异销售价：</span>
+        <span class="add-hospital-differ">
+            <%_.each(hospitals,function(i){%>
+            <p class="add-hospital-item overflow">
+                <span class="add-checkbox"></span>
+                <span class="add-hospital-name"><%=i.name%></span>
+                <input class="add-hospital-price" type="text" placeholder="请填写价格">
+                <input type="hidden" class="add-hospital-id" value="<%=i.id%>">
+            </p>
+            <%})%>
+        </span>
+        <span class="add-column-txt-b add-vertical-top">
+                             选择你需要差异化价格的医院，没有选择的医院将会按照统一销售价销售。
+        </span>
+    </div>
+    <div class="add-column">
+        <span class="add-column-title add-vertical-top"><em>*</em>预览图：</span>
+        <div id="addImage2" style="display:inline-block">
+            <%if(product.photo){%>
+           <a href="<%=product.photo%>" target="_blank" style="position:relative"><img src="<%=product.photo%>" class="add-column-img" style="margin-right:10px" ><span class="close-photo">X</span></a>  
+            <%}%>
+        </div>
+        <a class="add-column-img add-column-img2" href="javascript:;">
+            <p class="add-plus">+</p>
+            <p>选择文件</p>
+        </a>
+        <span class="add-column-img-spec2">尺寸为340*340像素支持jpg、jpeg 、png格式照片，大小不超过10M。</span>
+        <form id="form2">
+            <input  type="file" name="file" style="display:none" class="add-file-upload2">
+            <input  type="hidden" name="fileType" value="image">
+            <input  type="hidden" name="category" value="NORMAL">
+        </form>
+    </div>
+    <div class="add-column">
+        <span class="add-column-title add-vertical-top"><em>*</em>详情图：</span>
+        <div id="addImage1" style="display:inline-block">
+            <%_.each(product.photos,function(i){%>
+            <a href="<%=i.photo%>" target="_blank" style="position:relative"><img src="<%=i.photo%>" class="add-column-img" style="margin-right:10px" ><span class="close-photo">X</span></a>    
+            <%})%>
+        </div>
+        <a class="add-column-img add-column-img1" href="javascript:;">
+            <p class="add-plus">+</p>
+            <p>选择文件</p>
+        </a>
+        <span class="add-column-img-spec">可上传5张图片，尺寸为340*340像素支持jpg、jpeg 、png格式照片，大小不超过10M。</span>
+        <form id="form1">
+            <input  type="file" name="file" style="display:none" class="add-file-upload1">
+            <input  type="hidden" name="fileType" value="image">
+            <input  type="hidden" name="category" value="NORMAL">
+        </form>
+    </div>
+    
+    <div class="add-column">
+        <span class="add-column-title add-vertical-top"><em>*</em>商品详情：</span>
+        <textarea id="add-editor" name="add-editor" class="add-column-box">
+            
+        </textarea>
+    </div>
+    <div class="add-save">
+        <input type="submit" class="add-save-push" value="保存并上架">
+        <a href="javascript:;" class="add-save-btn">保存草稿</a>
+    </div>
+</div>

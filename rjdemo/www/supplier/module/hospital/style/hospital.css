@@ -1,0 +1,44 @@
+.hospital-wrap span,.hospital-wrap a{display: inline-block;}
+.opacity{opacity: 0;filter:alpha(opacity=0);}
+/*医院列表*/
+.hospital-wrap{border: 1px solid #ccc;padding: 18px 0 10px 0;overflow: hidden;}
+.icons-color{background-color: #008cd0;height: 16px;width: 16px;vertical-align: -3px;}
+.icons-title{color: #008cd0;font-size: 16px;margin-left: 15px;margin-right: 26px;}
+.icons-hr{border-top:1px solid #008cd0;width: 826px;vertical-align: middle;height: 5px;}
+.hospital-content{padding: 43px 28px 10px 47px;}
+.hospital-cell{width: 200px;height: 311px;margin-right: 20px;text-align: center;margin-bottom: 40px;}
+.hospital-icon{padding-top:10px;height: 138px;width: 198px;border: 1px solid #ccc;border-radius: 5px;text-align: center;line-height: 138px;}
+.hospital-name{color: #999;margin-top: 30px ;margin-bottom: 35px;}
+.status{margin-bottom: 30px;color: #333;}
+.status-icon,.status-icon-big,.submit-link,.apply-icon{background-image: url(../../../style/images/icon02.png);background-repeat: no-repeat;vertical-align: middle;}
+.pass,.doing,.unpass,.unexit{width: 22px;height: 22px;margin-right: 9px;}
+.pass{background-position: -40px -204px;}
+.doing{background-position: -132px -204px;}
+.unpass{background-position: -319px -204px;}
+.unexit{background-position: -226px -204px;}
+.control-btn a{background-color: #008cd0;color: #fff;border-radius: 3px;height: 34px;width: 102px;text-align: center;line-height: 34px;}
+/*医院详情*/
+.hospital-detail{margin:54px auto 80px;width: 684px;overflow:hidden;}
+.hospital-01{height: 180px;margin-right: 54px;}
+.hospital-02{height: 180px;}
+.hospital-icon-01,.hospital-icon-02{border:1px solid #ccc;height: 98px;text-align: center;line-height: 98px;border-radius: 5px;}
+.hospital-icon-01{width: 178px;}
+.hospital-icon-02{width: 444px;}
+.status-desc{color: #333;margin-left: 23px;margin-right: 173px;}
+.big-doing,.big-unpass,.big-pass,.big-unexit{width: 38px;height: 38px;}
+.big-pass{background-position: -32px -132px;}
+.big-doing{background-position: -126px -132px;}
+.big-unexit{background-position: -217px -132px;}
+.big-unpass{background-position: -310px -132px;}
+.control-link{width: 100px;height: 30px;text-align: center;line-height: 30px;background-color: #008cd0;color: #fff;border-radius: 3px;}
+.detail-infomation{width: 680px;margin:42px auto ;word-wrap: break-word;word-break: break-all;line-height: 28px;}
+.apply-content{padding:60px 0 0 22px;width: 868px;}
+.apply-title{width: 110px;vertical-align: top;}
+.content{width: 744px;height: 256px;overflow-y: auto;padding: 3px;background-color:#fff;color:#000;text-align:left;line-height:30px;}
+.submit-link{text-align: center;height: 38px;line-height: 38px;width: 150px;color: #fff;background-position: -465px -50px;box-shadow: 0px 0px 3px rgba(0,140,208,.6);}
+.limit-words{text-align: right;margin-top: 5px;color: #333;}
+.submit-wrap{width: 155px;margin:73px auto 89px;padding-left: 100px;text-align: center;}
+.apply-waiting-wrap{margin: 60px auto 0;width: 400px;text-align: center;}
+.apply-icon{height: 140px;width: 140px;background-position: -1044px -35px;margin: auto;}
+.apply-sentence{font-size: 18px;color: #333;margin-top: 32px;}
+.link-wrap{margin:91px auto 81px;text-align: center;}

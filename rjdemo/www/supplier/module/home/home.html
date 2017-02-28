@@ -1,0 +1,187 @@
+<div class="home">
+    <div class="home-left">
+        <div class="home-item">
+            <div class="overflow">
+                <span class="home-item-box left"></span>
+                <span class="home-item-name left">商品</span>
+                <span class="home-item-line left"></span>
+            </div>
+            <ul>
+                <li class="home-item-width-a">
+                    <a href="#productlist/3" class="home-item-wrap">
+                        <p class="home-item-num">
+                            <%=r.onShelves%>
+                        </p>
+                        <p class="home-item-state">已上架</p>
+                    </a>
+                </li>
+                <li class="home-item-width-a">
+                    <a href="#productlist/2" class="home-item-wrap">
+                        <p class="home-item-num">
+                            <%=r.beforeOnShelves%>
+                        </p>
+                        <p class="home-item-state">未上架</p>
+                    </a>
+                </li>
+                <li class="home-item-width-a">
+                    <a href="#productlist/4" class="home-item-wrap">
+                        <p class="home-item-num">
+                            <%=r.offShelves%>
+                        </p>
+                        <p class="home-item-state">已下架</p>
+                    </a>
+                </li>
+                <li class="home-item-width-a">
+                    <a href="#productlist/5" class="home-item-wrap">
+                        <p class="home-item-num">
+                            <%=r.forceOffShelves%>
+                        </p>
+                        <p class="home-item-state">强制下架</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="home-item">
+            <div class="overflow">
+                <span class="home-item-box left"></span>
+                <span class="home-item-name left">订单</span>
+                <span class="home-item-line left"></span>
+            </div>
+            <ul>
+                <li class="home-item-width-a">
+                    <a href="#transactionlist?status=8" class="home-item-wrap">
+                        <p class="home-item-num">
+                            <%=r.newOrder%>
+                        </p>
+                        <p class="home-item-state">新订单</p>
+                    </a>
+
+                </li>
+                <li class="home-item-width-a">
+                    <a href="#transactionlist?status=4" class="home-item-wrap">
+                        <p class="home-item-num">
+                            <%=r.toBeShipped%>
+                        </p>
+                        <p class="home-item-state">待发货</p>
+                    </a>
+
+                </li>
+                <li class="home-item-width-a">
+                    <a href="#transactionlist?status=5" class="home-item-wrap">
+                        <p class="home-item-num">
+                            <%=r.toBeReceived%>
+                        </p>
+                        <p class="home-item-state">待收货</p>
+                    </a>
+
+                </li>
+                <!--<li class="home-item-width-b">
+                    <a href="#transactionlist?status=6" class="home-item-wrap">
+                        <p class="home-item-num">
+                            <%=r.toBeBanlance%>
+                        </p>
+                        <p class="home-item-state">待结算</p>
+                    </a>
+
+                </li>-->
+                <li class="home-item-width-a">
+                    <a href="#returnlist?status=0" class="home-item-wrap">
+                        <p class="home-item-num">
+                            <%=r.applyForReturn%>
+                        </p>
+                        <p class="home-item-state">退货申请</p>
+                    </a>
+
+                </li>
+            </ul>
+        </div>
+        <div class="home-item">
+            <div class="overflow">
+                <span class="home-item-box left"></span>
+                <span class="home-item-name left">结算</span>
+                <span class="home-item-line left"></span>
+            </div>
+            <ul>
+                <li class="home-item-width-c">
+                    <a href="#settleaccount/1" class="home-item-wrap">
+                    <p class="home-item-num">
+                        <%=r.newStatement%>
+                    </p>
+                    <p class="home-item-state">新结算单</p>
+                    </a>
+                </li>
+                <li class="home-item-width-c">   
+                    <a href="#settling" class="home-item-wrap">
+                    <p class="home-item-num">
+                        <%=r.gatheringConfirmation%>
+                    </p>
+                    <p class="home-item-state">确认收款</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="home-right right">
+        <div class="home-news">
+            <p class="home-news-title overflow">
+                <span class="home-news-icon home-icon-news left"></span>
+                <span class="left">消息</span>
+                <a class="home-news-more" href="#newslist">更多&gt;</a>
+            </p>
+            <ul class="home-news-content">
+                <%_.each(r.messageList.slice(0,6),function(i){%>
+                <%if(i.status==false){%>
+                <li>
+                    <a href="#newsdetails/<%=i.id%>">
+                        <%=i.title%>
+                    </a>
+                    <input type="hidden" value="<%=i.id%>">
+                </li>
+                <%}else{%>
+                <li>
+                    <a href="#newsdetails/<%=i.id%>" class='read-news'>
+                        <%=i.title%>
+                    </a>
+                    <input type="hidden" value="<%=i.id%>">
+                </li>
+                <%}%>
+                <%})%>
+            </ul>
+        </div>
+        <div class="home-news">
+            <p class="home-news-title overflow">
+                <span class="home-news-icon home-icon-hospital left"></span>
+                <span class="left">我入驻的医院</span>
+                <a class="home-news-more" href="#hospital">更多&gt;</a>
+            </p>
+            <ul class="home-news-content">
+                <%_.each(r.settleHospitalList.slice(0,6),function(i){%>
+                    <%if(i.status==2){%>             
+                    <li>
+                        <a href="#hospitalpass?id=<%=i.authId%>">
+                            <%=i.name%>
+                        </a>
+                    </li>
+                    <%}%>
+                   
+                <%})%>
+            </ul>
+        </div>
+        <div class="home-news">
+            <p class="home-news-title overflow">
+                <span class="home-news-icon home-icon-brand left"></span>
+                <span class="left">我的品牌</span>
+                <a class="home-news-more" href="#brand">更多&gt;</a>
+            </p>
+            <ul class="home-news-content">
+                <%_.each(r.brandList.slice(0,3),function(i){%>
+                <li>
+                    <a class="home-news-img" href="#agentbrand/<%=i.brandId%>">
+                        <img src="<%=i.logopic%>" class="home-brand-img" />
+                    </a>
+                </li>
+                <%})%>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="chose-product-window">
+    <div class="chose-product-inner">
+        <div class="chose-product-search">
+            <div class="bid-header-search">
+                <input type="text" class="bid-search-box bid-input-width" id="bid-com-search" placeholder="请输入商品编号或商品名称 " />
+                <a class="bid-search-btn" href="javascript:void(0);">搜索</a>
+            </div>
+        </div>
+        <div class="product-table-wrap">
+            <table class="product-table">
+                <thead>
+                    <tr>
+                        <th class="bid-window-td01">编码</th>
+                        <th class="bid-window-td02">名称</th>
+                        <th class="bid-window-td03">价格</th>
+                    </tr>
+                </thead>
+                <tbody id="com-tbody">
+                    <% _.each(products,function(R){%>
+                    <tr>
+                        <td class="bid-window-td01"><%= R.code %></td>
+                        <td class="bid-window-td02"><%= R.name %></td>
+                        <td class="bid-window-td03"><%var r=R.price.toFixed(2);%><%= r %></td>
+                        <input type="hidden" value="<%= R.id %>" />
+                    </tr>
+                    <%}) %>
+                </tbody>
+            </table>
+        </div>
+        <div class="chose-product-control">
+            <a href="javascript:void(0);" class="control-link01 control-common-link">确认</a>
+            <a href="javascript:void(0);" class="control-link02 control-common-link">取消</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<% if(flag==true){_.each(members,function(M){%>
+<tr>
+    <td class="detail-td-id">
+        <%= M.id %>
+    </td>
+    <td class="detail-td-name">
+        <%= M.realName %>
+    </td>
+    <td class="detail-td-mobile">
+        <%= M.mobile %>
+    </td>
+    <td class="detail-td-email">
+        <%= M.email %>
+    </td>
+    <td class="detail-td-role">
+        <%if(M.roles.length){_.each(M.roles,function(R){%>
+        <%= R.name %>&nbsp;&nbsp;
+        <%});}%>
+    </td>
+    <td class="detail-td-control">
+        <a href="javascript:void(0);" data-id="<%= M.id %>" class="control-link delete">从部门移除</a>
+        <a href="#editMember?id=<%= M.id %>" class="control-link">查看</a>
+    </td>
+</tr>
+<%});}else{%>
+<tr>
+    <td class="empty-td" colspan="6">暂无数据!</td>
+</tr>
+<%}%>

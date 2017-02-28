@@ -1,0 +1,45 @@
+<% if(flag==true){_.each(suppliers,function(i){%>
+<tr>
+    <td class="apply-id"><%=i.supplierCode%></td>
+    <td class="supplier">
+        <%if(i.supplierName){%>
+            <%=i.supplierName%>
+        <%}else{%>
+            (请去往供应商中心完善资料)      
+        <%}%>
+    </td>
+    <td class="date"><%=i.applicationTime%></td>
+    <td class="human"><%=i.contactPerson%></td>
+    <td class="phone-number"><%=i.mobile%></td>
+    <%if(i.status==1){%>
+    <td class="status-td">审核中</td>
+    <%}%>
+    <%if(i.status==2){%>
+    <td class="status-td">已入驻</td>
+    <%}%>
+    <%if(i.status==3){%>
+    <td class="status-td">未通过</td>
+    <%}%>
+    <%if(i.status==4){%>
+    <td class="status-td">已撤回</td>
+    <%}%>   
+    <%if(i.status==6){%>
+    <!-- <td class="status-td">黑名单</td> -->
+    <%}%>
+    <td class="control">
+        <a href="#supplydetails/<%=i.id%>/<%=i.status%>" class="supply-check">查看</a>
+        <%if(i.status==2){%>
+       <!--  <a href="javascript:;" class="supply-blacklist">拉到黑名单</a> -->
+        <%}%>
+        <%if(i.status==6){%>
+       <!--  <a href="javascript:;" class="supply-remove-blacklist">解除黑名单</a> -->
+        <%}%>
+    </td>
+</tr>
+<%})}else{%>
+<tr>
+    <td class="supply-no-result" colspan=7>
+                                        暂无结果。   
+    </td> 
+</tr>
+<%}%>

@@ -1,0 +1,227 @@
+<div class="purchase-list">
+    <div class="list-carring-head">
+        <p class="list-carring-title">当前采购单状态：
+            <% if(purchaseApply.status==1){%> 审批中
+            <%}else if(purchaseApply.status==3){%> 审批驳回
+            <%}else if(purchaseApply.status==4){%> 审批通过
+            <%}%>
+        </p>
+        <div class="list-carring-info">
+            <% if(purchaseApply.status==3){%>
+            <div class="clear">
+                <div class="list01 left">拒绝理由：</div>
+                <div class="list02 left">
+                    <%=purchaseApply.fcheckreason %>
+                </div>
+            </div>
+            <%} %>
+            <div class="clear">
+                <div class="list01 left">采购申请编号：</div>
+                <div class="list02 left">
+                    <%=purchaseApply.fbuyapplicationno %>
+                </div>
+            </div>
+            <div class="clear">
+                <div class="list01 left">采购课题组名：</div>
+                <div class="list02 left">
+                    <%=purchaseApply.fbuydepartment %>
+                </div>
+            </div>
+            <div class="clear">
+                <div class="list01 left">采购申请名称：</div>
+                <div class="list02 left">
+                    <%=purchaseApply.fbuyapplicationtitle %>
+                </div>
+            </div>
+            <div class="clear">
+                <div class="list01 left">采购申请时间：</div>
+                <div class="list02 left">
+                    <%=purchaseApply.fbuyapplicationdate %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list-carring-detail">
+        <div class="list-carring-content">
+            <div class="list-address left">
+                <div class="list-address-01">
+                    <span class="address-icon"></span>收货地址</div>
+                <div class="list-address-02">
+                    <div class="desc01">
+                        <span>收货姓名：</span>
+                        <span class="desc-inner">
+                            <%=purchaseApply.fbuyercontactman %>
+                        </span>
+
+                    </div>
+                    <div class="desc01">
+                        <span>联系电话：</span>
+                        <span class="desc-inner">
+                            <%=purchaseApply.fbuyertelephone %>
+                        </span>
+                    </div>
+                    <div class="desc01">
+                        <% if(purchaseApply.fdeliveryplace==""){
+                       purchaseApply.fdeliveryplace="无收货地址";                     
+                     }%>
+                        <span>收货地址：</span>
+                        <span class="desc-inner">
+                            <%=purchaseApply.fdeliveryplace %>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="lister-info right">
+                <p class="info-title">采购人信息</p>
+                <div class="left">
+                    <div class="clear info-01">
+                        <div class="list03 left">采购部门：</div>
+                        <div class="list01 left">
+                            <%=purchaseApply.fbuydepartment %>
+                        </div>
+                    </div>
+                    <div class="clear info-01">
+                        <div class="list03 left">采购人：</div>
+                        <div class="list01 left">
+                            <%=purchaseApply.name %>
+                        </div>
+                    </div>
+                    <div class="clear info-01">
+                        <div class="list03 left">联系电话：</div>
+                        <div class="list01 left">
+                            <% if(purchaseApply.tel==""||purchaseApply.tel==undefined){
+                            purchaseApply.tel="无";                     
+                        }%>
+                            <%=purchaseApply.contactphone %>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="clear info-01">
+                        <div class="list03 left">经费卡号：</div>
+                        <div class="card-div left">
+                            <%var arr=purchaseApply.projectnumber.replace(/(^\s*)|(\s*$)/g,"").split(";"); %>
+                            <% _.each(arr,function(a){%>
+                            <div class="card-ellipsis">
+                                <%= a %>
+                            </div>
+                            <%}); %>
+                        </div>
+                    </div>
+                    <div class="clear info-01">
+                        <div class="list03 left">&nbsp;</div>
+                        <div class="card-div left">
+                            <a class="change-link card-choose" href="javascript:void(0)">修改</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-detail-title-wrap clear">
+                <p class="list-detail-title left">采购申请商品详细表</p>
+                <% if(purchaseApply.status==3){%>
+                <a href="javascript:void(0);" id="list-detail-addcard" class="list-detail-addcard right"><em>+</em>&nbsp;&nbsp;&nbsp;&nbsp;加入购物车</a>
+                <%} %>
+            </div>
+            <table class="table-all">
+                <thead>
+                    <tr>
+                        <th class="detail-th-01">商品名称</th>
+                        <th class="detail-th-02">商品编号</th>
+                        <th class="detail-th-03">供应商</th>
+                        <th class="detail-th-04">规格</th>
+                        <th class="detail-th-05">单位</th>
+                        <th class="detail-th-06">单价</th>
+                        <th class="detail-th-07">数量</th>
+                        <th class="detail-th-08">金额</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%_.each(purchaseApplyDetails,function(d){%>
+                    <% var price=d.fprice.toFixed(2);var totalPrice=d.ftotalPrice.toFixed(2);%>
+                    <tr>
+                        <td>
+                            <a href="../purchaser/index.html#details/<%= d.sn %>/<%= d.suppId %>" class="purchase-detail-a" target="_blank">
+                                <%= d.name %>
+                            </a>
+                        </td>
+                        <td>
+                            <%= d.id %>
+                        </td>
+                        <td>
+                            <%= d.fsuppname %>
+                        </td>
+                        <td>
+                            <%= d.fspec %>
+                        </td>
+                        <td>
+                            <%= d.funit %>
+                        </td>
+                        <td>￥
+                            <%= price %>
+                        </td>
+                        <td>
+                            <%= d.fquantity %>
+                        </td>
+                        <td>￥
+                            <%= totalPrice %>
+                        </td>
+                    </tr>
+                    <%});%>
+                </tbody>
+            </table>
+            <div class="list-carring-account">
+                采购总金额：
+                <span class="list-all-account">
+                    <%= caigoutotalmoney %>
+                </span> 元
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--修改经费卡-->
+<div class="purchase-card-wrap"></div>
+<div class="card-wrap">
+    <div class="card-edit-title">
+        <div class="card-head left">修改经费卡号</div>
+        <div class="card-head-icon right"></div>
+    </div>
+    <div class="card-edit-content">
+        <div class="card-edit-inner">
+            <div class="selected-card">
+                <% var j=0; if(cardList.fundCards){ _.each(cardList.fundCards,function(F){_.each(arr,function(A){if(F.cardNo==A){j++;}});if(j>=1){%>
+                <span class="card-cell">
+                    <span class="class-card-icon choose">+</span>
+                    <span class="card-num choose">
+                        <%= F.cardNo %>
+                    </span>
+                    <input class="card-hidden" type="hidden" value="<%= F.cardName %>" data-id="<%= F.id %>" />
+                </span>
+                <%}else{%>
+                <span class="card-cell">
+                    <span class="class-card-icon card-flag">+</span>
+                    <span class="card-num">
+                        <%= F.cardNo %>
+                    </span>
+                    <input class="card-hidden" type="hidden" value="<%= F.cardName %>" data-id="<%= F.id %>" />
+                </span>
+                <%}j=0;});}%>
+
+            </div>
+            <div class="card-has">
+                <%if(cardList.fundCards){ _.each(cardList.fundCards,function(F){_.each(arr,function(A){if(F.cardNo==A){%>
+                <span>
+                    <span class="has-choose-card">
+                        <%= F.cardNo %>
+                    </span>
+                    <input class="card-hidden<%= F.id %>" type="hidden" value="<%= F.cardName %>" data-id="<%= F.id %>" data-num="<%= F.cardNo %>" />
+                </span>
+                <%}});});}%>
+            </div>
+        </div>
+    </div>
+    <div class="clear card-chose-div">
+        <a class="card-sure-link" href="javascript:void(0)">保存</a>
+    </div>
+</div>

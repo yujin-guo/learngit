@@ -1,0 +1,292 @@
+<!--bidDetails使用前缀b-details-->
+<div class="b-details">
+    <div class="b-details-info overflow">
+        <div class="left b-details-basic">
+            <h3 class="b-details-basic-title">竞价基本信息</h3>
+            <p><span class="b-details-basic-header">招标编号：</span><span class="b-details-basic-content"><%=order.sn%></span></p>
+            <p><span class="b-details-basic-header">采购人：</span><span class="b-details-basic-content"><%=order.userName%></span></p>
+            <p><span class="b-details-basic-header">采购组：</span><span class="b-details-basic-content"><%=order.deptName%></span></p>
+            <p><span class="b-details-basic-header">开始时间：</span><span class="b-details-basic-content"><%=convert(order.startDate)%></span></p>
+            <p><span class="b-details-basic-header">截止时间：</span><span class="b-details-basic-content"><%=convert(order.endDate)%></span></p>
+            <p><span class="b-details-basic-header b-details-basic-remark">备注信息：</span><span class="b-details-basic-content"><%=order.remark||"-"%></span></p>
+            <input type="hidden"  id="bidId" value="<%=order.id%>">
+            <input type="hidden"  id="bidDeptId" value="<%=order.deptId%>">
+        </div>
+        <%if(order.status!=29&&order.status!=99){%>
+        <div class="left b-details-flow" >
+            <div>
+                <span class="b-details-flow-item1">新建竞价</span>
+                <span class="b-details-flow-item2">提交初审</span>
+                <span class="b-details-flow-item3">初审审核</span>
+                <span class="b-details-flow-item4">结束竞价</span>
+                <span class="b-details-flow-item5">选择中标商</span>
+                <span class="b-details-flow-item6">一级终审</span>
+                <span class="b-details-flow-item7">二级终审</span>
+            </div>
+            <%_.each(flows,function(i,index){%>
+            <%if(i.selected==true){%>
+            <div class="b-details-flow-img b-details-flow-img<%=index%>"></div>
+            <%}%>
+            <%})%>
+            <div class="b-details-flow-time">
+                <span class="b-details-flow-item1 b-details-flow-finished">
+                    <p><%=convert(flows[0].operationTime).split(" ")[0]%></p>
+                    <p><%=convert(flows[0].operationTime).split(" ")[1]%></p>
+                </span>
+                <%if(flows[1].passed){%>
+                <span class="b-details-flow-item2 b-details-flow-finished">
+                    <p><%=convert(flows[1].operationTime).split(" ")[0]%></p>
+                    <p><%=convert(flows[1].operationTime).split(" ")[1]%></p>
+                </span>
+                <%}%>
+                <%if(flows[2].passed){%>
+                <span class="b-details-flow-item3 b-details-flow-finished">
+                    <p><%=convert(flows[2].operationTime).split(" ")[0]%></p>
+                    <p><%=convert(flows[2].operationTime).split(" ")[1]%></p>
+                </span>
+                <%}%>
+                <%if(flows[3].passed){%>
+                <span class="b-details-flow-item4 b-details-flow-finished">
+                    <p><%=convert(flows[3].operationTime).split(" ")[0]%></p>
+                    <p><%=convert(flows[3].operationTime).split(" ")[1]%></p>
+                </span>
+                <%}%>
+                <%if(flows[4].passed){%>
+                <span class="b-details-flow-item5 b-details-flow-finished">
+                    <p><%=convert(flows[4].operationTime).split(" ")[0]%></p>
+                    <p><%=convert(flows[4].operationTime).split(" ")[1]%></p>
+                </span>
+                <%}%>
+                <%if(flows[5].passed){%>
+                <span class="b-details-flow-item6 b-details-flow-finished">
+                    <p><%=convert(flows[5].operationTime).split(" ")[0]%></p>
+                    <p><%=convert(flows[5].operationTime).split(" ")[1]%></p>
+                </span>
+                <%}%>
+                <%if(flows[6].passed||flows[7].passed){%>
+                <span class="b-details-flow-item7 b-details-flow-finished">
+                    <p><%=convert(flows[6].operationTime).split(" ")[0]%></p>
+                    <p><%=convert(flows[6].operationTime).split(" ")[1]%></p>
+                </span>
+                <%}%>
+            </div>
+            <%if(order.status==19){%>
+            <div class="b-details-rejected">
+                <h3 class="b-details-rejected-title"><span class="b-details-rejected-icon"></span>初审驳回</h3>
+                <p class="b-details-rejected-reason"><%=flows[0].reason%></p>
+            </div>
+            <%}%>
+            <%if(order.status==49){%>
+            <div class="b-details-rejected">
+                <h3 class="b-details-rejected-title"><span class="b-details-rejected-icon"></span>终审驳回</h3>
+                <p class="b-details-rejected-reason"><%=flows[3].reason%></p>
+            </div>
+            <%}%>
+        </div>
+        <%}%>
+        <!--竞价取消和竞价流标-->
+        <%if(order.status==29||order.status==99){%>
+        <div class="left b-details-flow">
+            <%if(order.status==99){%>
+            <div class="b-details-flow-cancel" >
+                <div class="b-details-flow-cancel-icon"></div>
+                <p class="b-details-flow-cancel-text">竞价取消</p>
+            </div>
+            <%}%>
+            <%if(order.status==29){%>
+            <div class="b-details-flow-cancel">
+                <div class="b-details-flow-failure-icon"></div>
+                <p class="b-details-flow-cancel-text">竞价流标</p>
+            </div>
+            <%}%>
+        </div>
+        <%}%>
+    </div>
+    <!--草稿/初审中/初审驳回/竞价中/流标/取消-->
+    <%if(order.status==0||(order.status>=10&&order.status<19)||order.status==19||order.status==20||order.status==29||order.status==99){%>
+    <div class="b-details-product" style="display：none">
+        <h3 class="b-details-product-title">竞价商品信息</h3>
+        <table>
+            <tr>
+                <th class="b-details-product-item1">序号</th>
+                <th class="b-details-product-item2">商品名称</th>
+                <th class="b-details-product-item3">品牌要求</th>
+                <th class="b-details-product-item4">货号要求</th>
+                <th class="b-details-product-item5">采购数量</th>
+                <th class="b-details-product-item6">采购要求</th>
+                <th class="b-details-product-item7">要求附件</th>
+            </tr>
+            <%_.each(items,function(i,index){%>
+            <tr>
+                <td><%=index+1%></td>
+                <td><%=i.name%></td>
+                <td><%=i.brand||"-"%></td>
+                <td><%=i.itemNo||"-"%></td>
+                <td><%=i.count%></td>
+                <td><%=i.information||"-"%></td>
+                <td><%if(i.fileUrl){%><a href="/bid<%=i.fileUrl%>" class="b-details-download" download target="_blank">下载附件</a><%}else{%>无<%}%><input type="hidden" value="<%=i.id%>"></td>
+            </tr>
+            <%})%>
+        </table>
+        <div class="b-details-btn">
+            <%if(order.status==0||order.status==19){%>
+            <a href="javascript:;" class="b-details-submit">提交初审</a>
+            <a href="javascript:;" class="b-details-revise">修改</a>
+            <a href="javascript:;" class="b-details-cancel">删除</a>
+            <%}%>
+            <%if(order.status>=10&&order.status<19){%>
+            <a href="javascript:;" class="b-details-revoke">撤回申请</a>
+            <%}%>
+        </div>
+        
+    </div>
+    <!--初选中和终审驳回-->
+    <%}else if(order.status==30||order.status==49){%>
+    <div class="b-details-product">
+        <h3 class="b-details-product-title">竞价商品信息</h3>
+        <%_.each(items,function(i,index){%>
+        <table class="table-two">
+            <tr class="b-details-item-title">
+                <th colspan=2>商品名称</th>
+                <th >品牌要求</th>
+                <th  colspan=2>货号要求</th>
+                <th >采购数量</th>
+                <th  colspan=2>采购要求</th>
+                <th  colspan=2>要求附件</th>
+                <th  colspan=2>操作</th>
+            </tr>
+            <tr>
+                <td colspan=2><%=i.name%></td>
+                <td><%=i.brand||"-"%></td>
+                <td colspan=2><%=i.itemNo||"-"%></td>
+                <td><%=i.count%></td>
+                <td colspan=2><%=i.information||"-"%></td>
+                <td colspan=2><%if(i.fileUrl){%><a href="/bid<%=i.fileUrl%>" class="b-details-download" download target="_blank">下载附件</a><%}else{%>无<%}%></td>
+                <%if(i.bids.length>0){%>
+                <td colspan=2 class="b-details-abandon-o">全部放弃<input type="hidden" class="b-details-item-id" value="<%=i.id%>" data-status="<%=i.status%>"></td>
+                <%}else{%>
+                <td colspan=2 class="b-details-abandon">无人竞价<input type="hidden" class="b-details-item-id" value="<%=i.id%>" data-status="<%=i.status%>"></td>   
+                <%}%>
+            </tr>
+            <%if(i.bids.length>0){%>
+            <tr class="b-details-color">
+                <td rowspan=100 class="b-details-supplier-select">选择供应商</td>
+                <td class="b-details-width1">供应商</td>
+                <td class="b-details-width1">商品名称</td>
+                <td class="b-details-width2">品牌</td>
+                <td class="b-details-width2">货号</td>
+                <td class="b-details-width2">规格</td>
+                <td class="b-details-width3">单价/数量/总售价(元)</td>
+                <td class="b-details-width2">送货时间</td>
+                <td class="b-details-width4">报价说明</td>
+                <td class="b-details-width2">附件</td>
+                <td class="b-details-width4">总报价</td>
+                <td class="b-details-width5">操作</td>
+            </tr>
+            <%_.each(i.bids,function(j){%>
+            <tr>
+                <td><%=j.supplierName%></td>
+                <td><%=j.productName%></td>
+                <td><%=j.brand%></td>
+                <td><%=j.code%></td>
+                <td><%=j.spec%></td>
+                <td><%=j.productPrice.toFixed(2)%>/<%=j.count%>/<%=j.totalPrice.toFixed(2)%></td>
+                <td><%=j.deliveryDateDesc%></td>
+                <td><%=j.remark||"-"%></td>
+                <td><%if(j.attachmentUrl){%><a class="b-details-attachment"  href="/bid<%=j.attachmentUrl%>" download target="_blank">查看附件</a><%}else{%>无<%}%></td>
+                <td><%=j.bidPrice.toFixed(2)%>
+                    <%if(j.lowest==true){%>
+                    <p class="b-details-lowest-price">最低</p>
+                    <%}%>
+                </td>
+                <td class="b-details-radio b-details-last-td"><input type="radio" name="supplier<%=index%>" class="b-details-choose"><input type="hidden" value="<%=j.id%>" class="b-details-bid-id"></td>
+            </tr>
+            <%})%>
+            <%}%>
+        </table>
+        <%})%>
+        <div class="b-details-btn">
+            <a href="javascript:;" class="b-details-supplier-submit" >提交</a>
+        </div>
+        <div id="bidAddress"></div>
+    </div>
+    <%}else{%>
+    <div class="b-details-product">
+        <h3 class="b-details-product-title">竞价商品信息</h3>
+        <%_.each(items,function(i,index){%>
+        <%if(i.status==4){%>
+        <table class="table-two table-three">
+        <%}else{%>
+        <table class="table-two">    
+        <%}%>
+            <tr class="b-details-item-title">
+                <th colspan=2>商品名称</th>
+                <th >品牌要求</th>
+                <th  colspan=2>货号要求</th>
+                <th >采购数量</th>
+                <th  colspan=2>采购要求</th>
+                <th  colspan=2>要求附件</th>
+                <th  colspan=2>状态</th>
+            </tr>
+            <tr>
+                <td colspan=2><%=i.name%></td>
+                <td><%=i.brand||"-"%></td>
+                <td colspan=2><%=i.itemNo||"-"%></td>
+                <td><%=i.count%></td>
+                <td colspan=2><%=i.information||"-"%></td>
+                <td colspan=2><%if(i.fileUrl){%><a href="/bid<%=i.fileUrl%>" class="b-details-download" download target="_blank">下载附件</a><%}else{%>无<%}%></td>
+                <td class="b-details-abandon"><%=i.statusDesc%><input type="hidden" class="b-details-item-id" value="<%=i.id%>" ></td>
+            </tr>
+            <tr class="b-details-color">
+                <td rowspan=100 class="b-details-supplier-select">选择供应商</td>
+                <td class="b-details-width1">供应商</td>
+                <td class="b-details-width1">商品名称</td>
+                <td class="b-details-width2">品牌</td>
+                <td class="b-details-width2">货号</td>
+                <td class="b-details-width2">规格</td>
+                <td class="b-details-width3">单价/数量/总售价(元)</td>
+                <td class="b-details-width2">送货时间</td>
+                <td class="b-details-width4">报价说明</td>
+                <td class="b-details-width2">附件</td>
+                <td class="b-details-width4">总报价</td>
+            </tr>
+            <%_.each(i.bids,function(j){%>
+            <tr>
+                <td><%=j.supplierName%></td>
+                <td><%=j.productName%></td>
+                <td><%=j.brand||"-"%></td>
+                <td><%=j.code%></td>
+                <td><%=j.spec%></td>
+                <td><%=j.productPrice.toFixed(2)%>/<%=j.count%>/<%=j.totalPrice.toFixed(2)%></td>
+                <td><%=j.deliveryDateDesc%></td>
+                <td><%=j.remark||"-"%></td>
+                <td><%if(j.attachmentUrl){%><a class="b-details-attachment" href="/bid<%=j.attachmentUrl%>" download target="_blank">查看附件</a><%}else{%>无<%}%></td>
+                <td class="b-details-last-td"><%=j.bidPrice.toFixed(2)%>
+                    <%if(j.lowest==true){%>
+                    <p class="b-details-lowest-price">最低</p>
+                    <%}%>
+                    <%if(j.operate==2){%>
+                    <div class="b-bid" style="position:absolute">
+                        <p class="b-bid-top"></p>
+                        <p class="b-bid-middle"><span>中标</span></p>
+                        <p class="b-bid-bottom"></p>
+                    </div>
+                    <%}%>
+                </td>
+            </tr>
+            <%if(j.operate==2){%>
+            <tr>
+                <td colspan=10 class="b-details-winner-reason">选择理由：<span type="text" class="b-details-abandon-reason"><%=i.reason%></span></td>
+            </tr>
+            <%}%>
+            <%})%>
+            <%if(i.status==4){%>
+            <tr>
+                <td colspan=10 class="b-details-winner-reason">放弃理由：<span type="text" class="b-details-abandon-reason"><%=i.reason%></span></td>
+            </tr>
+            <%}%>
+        </table>
+        <%})%>
+    </div>   
+    <%}%>
+</div>

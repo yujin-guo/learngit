@@ -1,0 +1,26 @@
+<% if(flag==true){_.each(roles,function(R){%>
+<tr>
+    <td class="roles-td-id">
+        <%= R.roleId %>
+    </td>
+    <td class="roles-td-name">
+        <%= R.roleName %>
+    </td>
+    <td class="roles-td-mobile">
+        <%= R.creationTime %>
+    </td>
+    <td class="roles-td-control">
+        <% if(!R.common) { %>
+        <a href="#rolesCtrl?key=editRoles&id=<%= R.roleId %>" class="control-link">编辑</a>
+        <a href="javascript:void(0)" data-id="<%= R.roleId %>" class="control-link del-role">删除</a>
+        <%}%>
+    </td>
+</tr>
+<%})}else{%>
+<tr>
+    <td class="empty-td" colspan="6">
+        暂无数据!
+    </td>
+</tr>
+
+<%} %>

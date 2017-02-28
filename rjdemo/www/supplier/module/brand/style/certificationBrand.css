@@ -1,0 +1,48 @@
+.c-brand{border:solid #ccc 1px;padding-bottom:75px;zoom:1;margin-bottom:100px;}
+.c-brand .c-brand-flow{width:510px;height:40px;margin:50px auto;background:url(images/flow-1.png) no-repeat}
+.c-brand .c-brand-flow span{line-height:40px;color:#999;display:inline-block;margin-left:110px}
+.c-brand .c-brand-flow .c-brand-flow-01{margin-left:50px}
+.c-brand .c-brand-flow .c-brand-flow-white{color:#fff}
+.c-brand .c-brand-option{margin:35px 0;padding-left:230px;overflow:hidden}
+.c-brand .c-brand-option-a{float:left;text-align:center;color:#999999;width:200px;height:110px;line-height:110px;font-size:18px;border:1px solid #999999;border-radius:10px;background-color:#f2f2f2;margin-right:90px;}
+.c-brand .c-brand-choose{border:2px solid #008cd0;color:#008cd0;background-color:#E8F7FF;}
+.c-brand .c-brand-option-a:hover{border-color:#008cd0;color:#008cd0;}
+.c-brand .c-brand-next-step{display:block;width:150px;height:38px;line-height:38px;background-color:#008cd0;color:#fff;text-align:center;margin:20px auto 0;border-radius:5px}
+/*认证第二步*/
+.c-brand-private .c-brand-flow{background-image:url(images/flow-2.png)}
+.c-brand-agent .c-brand-flow{background-image:url(images/flow-2.png)}
+.c-brand .c-brand-header{margin-bottom:35px}
+.c-brand .c-brand-icon{width:16px;height:16px;background-color:#008cd0;margin-right:15px}
+.c-brand .c-brand-title{font-size:16px;color:#008cd0;margin-right:15px}
+.c-brand .c-brand-line{width:846px;border-top:solid #008cd0 1px;margin-top:10px}
+.c-brand .c-brand-item{margin-bottom:40px}
+.c-brand .c-brand-info{line-height:34px;margin-bottom:20px;color:#999}
+.c-brand .c-brand-info-left{float:left;width:115px;text-align:right;margin-right:15px}
+.c-brand .c-brand-info-right{float:left;position:relative;}
+.c-brand .c-brand-info-authorize{color:#333;border:solid #ccc 1px;height:30px;width:375px;line-height:30px;padding-left:10px;background:url(images/arrow-down.png) no-repeat 365px center;}
+.c-brand .c-brand-info-authorize-clicked{background-image:url(images/arrow-right.png);}
+.c-brand .c-brand-info-authorize:hover{border-color:#008cd0}
+.c-brand .clearfix:after{content:"";display:block;clear:both;height:0;}
+.c-brand .clearfix{zoom:1;z-index:2}
+.c-brand .c-brand-select{line-height:20px}
+.c-brand .c-brand-long-term{display:inline-block;width:78px;height:22px;text-align:center;line-height:22px;background-color:#008cd0;color:#fff;cursor:pointer}
+.c-brand .c-brand-info-right input{width:500px;height:32px;line-height:32px;color:#333;border:solid #ccc 1px;padding-left:5px}
+.c-brand .c-brand-info-right ul{display:none;position:absolute;top:32px;left:0;z-index:10;background-color:#fff;border:solid #008cd0 1px;width:385px}
+.c-brand .c-brand-info-right ul li{padding-left:10px;line-height:25px;color:#333}
+.c-brand .c-brand-info-right ul li:hover{background-color:#f2f2f2}
+.c-brand .c-brand-info-right ul li:active{background-color:#008cd0;color:#fff;}
+.c-brand .c-brand-file-select{display:inline-block;width:100px;height:100px;border:solid 1px #ccc;text-align:center;color:#999;margin-bottom:15px;vertical-align:top}
+.c-brand .c-brand-plus{font-size:48px;margin:20px 0 10px;line-height:34px}
+.c-brand .c-brand-submit{display:inine-block;text-align:center;width:150px;height:38px;line-height:38px;background-color:#008cd0;color:#fff;border-radius:5px;margin:0 40px 0 120px;}
+.c-brand .c-brand-pre-step{display:inine-block;text-align:center;width:148px;height:36px;line-height:36px;border:solid #008cd0 1px;color:#008cd0;box-shadow:0 0 4px;border-radius:5px;}
+/*认证第三部*/
+.c-brand-step-three .c-brand-flow{background-image:url(images/flow-3.png)}
+.c-brand .c-brand-success{text-align:center;margin-bottom:50px}
+.c-brand .c-brand-success-img{display:inline-block;width:140px;height:140px;background:url(images/success.png) no-repeat;margin-top:20px;}
+.c-brand .c-brand-success-text{font-size:16px;color:#333;margin:20px 0 5px;}
+
+.c-brand #startTime{line-height:20px;height:20px;margin-right:15px;width:120px}
+
+/*图片删除*/
+.close-photo{border:solid 1px ;display:inline-block;width:20px;height:20px;position:absolute;top:0;right:10px;background-color:#fff;color:#008cd0;text-align:center;line-height:20px}
+.close-photo:hover{background-color:#008cd0;color:#fff}

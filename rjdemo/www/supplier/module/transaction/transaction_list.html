@@ -1,0 +1,161 @@
+<div class="transaction-header">
+    <div class="left transaction-header-control">
+        <a class="control-link active" href="javascript:void(0)" data-id="0">全 部</a>
+        <a class="control-link list-hover" href="javascript:void(0)" data-id="8">新订单</a>
+        <a class="control-link list-hover" href="javascript:void(0)" data-id="4">待发货</a>
+        <a class="control-link list-hover" href="javascript:void(0)" data-id="5">待收货</a>
+        <a class="control-link list-hover" href="javascript:void(0)" data-id="11">已完成</a>
+    </div>
+    <div class="right transaction-header-search">
+        <span class="transaction-search">
+            <input type="text" id="search-input" placeholder="请输入订单编号／采购人／采购方／采购部门" /><!--我是消除空格的注释
+            --><a href="javascript:void(0);" class="search-btn active"  id="simple-search">搜索</a>
+        </span><span class="transaction-header-more">更多 </span><span class="direction-icon"></span>
+    </div>
+</div>
+<div class="more-content">
+    <form>
+        <div class="more-content-inner">
+            <div class="left"><span>订单编号:</span>
+                <input type="text" id="order-number" />
+            </div>
+            <div class="left more-content-choose"><span>采购人:</span>
+                <input type="text" id="order-per" />
+            </div>
+            <div class="left more-content-choose"><span>采购方:</span>
+                <input type="text" id="order-recon" />
+            </div>
+        </div>
+        <div class="more-content-inner border-style">
+            <div class="left">
+                <span>起始时间:</span>
+                <input type="text" id="begin-time" />
+            </div>
+            <div class="left more-content-choose">
+                <span>结束时间:</span>
+                <input type="text" id="over-time" />
+            </div>
+
+        </div>
+        <div class="more-content-control">
+            <input type="button" id="detail-search" value="搜索" />
+            <input type="reset" value="重置" />
+        </div>
+    </form>
+</div>
+<div class="table-header">
+    <div class="left commodity-name">商品名</div>
+    <div class="left commodity-price">单价(元)</div>
+    <div class="left commodity-num">数量</div>
+    <div class="left commodity-state">商品状态</div>
+    <div class="left commodity-account">总价(元)</div>
+    <div class="left transaction-state">交易状态
+        <!--<dl class="single-status-absolute">
+            <dt data-value="0">全部</dt>
+            <dt data-value="4">未发货</dt>
+            <dt data-value="6">已发货</dt>
+            <dt data-value="11">已完成</dt>
+        </dl>-->
+    </div>
+    <div class="left commodity-control">操作</div>
+</div>
+<div class="transaction-order-list" id="order-list">
+    <%if(flag==true){_.each(orderLists,function(O){%>
+    <table class="transaction-table">
+        <thead>
+            <tr>
+                <th colspan="7">
+                    订单编号：<span class="order-id"><%=O.order.forderno%></span><span class="order-name"><%=O.order.fbuyername%></span><span class="order-date"><%=O.order.forderdate%></span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <%_.each(O.orderDetails,function(D){%>
+            <tr>
+                <td class="commodity-name-01">
+                    <span class="commodity-picture">
+                        <img src="<%= D.fpicpath %>" />
+                    </span>
+                    <span class="comodity-name-detail">
+                        <a class="name-detail-link" href="#productdetails/<%= D.productSn %>" target="_blank"><%=D.fgoodname%></a>
+                        <p class="commodity-desc">货号：<%=D.fgoodcode%>&nbsp;&nbsp;&nbsp;规格： <%=D.fspec%></p>
+                    </span>
+                </td>
+                <% var fprice=D.fprice.toFixed(2);%>
+                <% var totalPrice=O.order.totalPrice.toFixed(2); %>
+                <td class="commodity-price-01">¥
+                    <%= fprice %>
+                </td>
+                <td class="commodity-num-01">
+                    <%= D.fquantity %>
+                </td>
+                <td class="commodity-state-01">
+                    <%if(D.returnStatus!=undefined){var returnStatus=D.returnStatus;if(returnStatus==0){%>
+                    <a class="order-return-status" href="#returndetail?detailId=<%=D.detailId%>">退货申请</a>
+                    <%}else if(returnStatus==1){%>
+                    <a class="order-return-status" href="#returndetail?detailId=<%=D.detailId%>">退货待发货</a>
+                    <%}else if(returnStatus==2){%>
+                    <a class="order-return-status" href="#returndetail?detailId=<%=D.detailId%>">拒绝退货</a>
+                    <%}else if(returnStatus==3){%>
+                    <a class="order-return-status" href="#returndetail?detailId=<%=D.detailId%>">退货取消</a>
+                    <%}else if(returnStatus==4){%>
+                    <a class="order-return-status" href="#returndetail?detailId=<%=D.detailId%>">退货待验收</a>
+                    <%}else if(returnStatus==5){%>
+                    <a class="order-return-status" href="#returndetail?detailId=<%=D.detailId%>">退货完成</a>
+                    <%}else if(returnStatus==6){%>
+                    <a class="order-return-status" href="#returndetail?detailId=<%=D.detailId%>">退货待验收</a>
+                    <%}}%>
+                </td>
+                <%if(O.orderDetails[0].detailId===D.detailId){%>
+                <td rowspan="<%=O.orderDetails.length%>" class="commodity-account-01">¥
+                    <%= totalPrice %>
+                </td>
+                <td rowspan="<%=O.orderDetails.length%>" class="transaction-state-01">
+                    <%if(O.order.status==8){%> 待确认
+                    <%}else if(O.order.status==3){%> 订单关闭
+                    <%}else if(O.order.status==4 || O.order.status==9){%> 待发货
+                    <%}else if(O.order.status==5){%> 待收货
+                    <%}else if(O.order.status==6 || O.order.status==15 ){%> 待结算
+                    <%}else if(O.order.status==10||O.order.status==12||O.order.status==13){%> 结算中
+                    <%}else if(O.order.status==11 || O.order.status==7 ){%> 订单完成
+                    <%}%><br/>
+                    <a class="order-detail" href="#transactiondetail?id=<%= O.order.orderId %>">订单详情</a>
+                </td>
+                <td rowspan="<%=O.orderDetails.length%>" class="commodity-control-01">
+                    <%if(O.order.status==4){%>
+                    <a href="#transactiondetail?id=<%= O.order.orderId %>" class="list-agree-link">确认发货</a>
+                    <%}else if(O.order.status==8){%>
+                    <a href="javascript:void(0)" class="sure list-agree-link" data-id="<%=O.order.orderId%>">确认订单</a>
+                    <%}else if(O.order.status==13){%>
+                    <a href="javascript:void(0)" class="sure list-agree-link" data-id="<%=O.order.orderId%>">确认收款</a>
+                    <%}%>
+                </td>
+
+                <%}%>
+
+            </tr>
+            <%});%>
+        </tbody>
+    </table>
+    <%});}else{%>
+    <p class="empty">
+        暂无数据
+    </p>
+    <%}%>
+
+    <!--页码-->
+    <div class="page-wrap" <% if(flag==false){%>style="display:none;"<%} %>>
+        <div class="right page-total">
+            共<span class="total-page-num"><% if(flag==true){%><%= totalPages %><%}else{%>0<%}%></span>页
+        </div>
+        <div class="right">
+            <a class="endpoint end" data-flag="end" href="javascript:void(0)">&nbsp;&nbsp;</a>
+        </div>
+        <div class="page right" id="pagination">
+        </div>
+        <div class="right">
+            <a class="endpoint head" data-flag="head" href="javascript:void(0)">&nbsp;&nbsp;</a>
+        </div>
+    </div>
+
+</div>

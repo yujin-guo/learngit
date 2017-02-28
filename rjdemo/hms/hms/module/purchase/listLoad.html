@@ -1,0 +1,36 @@
+<%if(flag==true){_.each(purchaseApplys,function(P){%>
+<tr>
+    <td class="apply-id">
+        <%= P.fbuyapplicationno%>
+    </td>
+    <td class="date">
+        <%= P.fbuyapplicationdate%>
+    </td>
+    <td class="group">
+        <%= P.fbuydepartment%>
+    </td>
+    <td class="human">
+        <%= P.name%>
+    </td>
+    <%var account=P.fprevbudgetamount.toFixed(2);%>
+    <td class="money">￥
+        <%= account%>
+    </td>
+    <td class="status-td">
+       <!-- <%= P.purchaseApproveStatus %>-->
+        <% if(P.status==1){%> 待审批
+        <%}else if(P.status==3){%> 审批驳回
+        <%}else if(P.status==4){%> 审批通过
+        <%}%>
+    </td>
+    <td class="control">
+        <a class="detail-link" href="#purcharseDetail?id=<%= P.id%>" data-id="<%= P.id%>" target="_blank">查看</a>
+    </td>
+</tr>
+<%});}else{%>
+<tr>
+    <td colspan="7" class="empty-td">
+        暂无数据！
+    </td>
+</tr>
+<%}%>

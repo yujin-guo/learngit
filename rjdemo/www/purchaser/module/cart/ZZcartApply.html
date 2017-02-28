@@ -1,0 +1,238 @@
+<div class="cart-header">
+    <div class="cart-header-nav">
+        <div class="cm-main overflow">
+            <div class="cart-overflow">
+                <a href="index.html#portal" class="left cart-header-icon"></a>
+                <!--<div class="right cart-header-search">
+                    <div class="cart-header-search-left">
+                                                         商品&nbsp;
+                        <a href="javascript:;" class="caret"></a>
+                    </div>
+                    <input type="text" class="cart-header-search-box" placeholder="输入名称、货号、商家名称进行搜索"/>
+                    <a class="right cart-header-search-btn" href="">搜索</a>
+                </div>-->
+                <div class="right header-center">
+                    <ul class="header-search-ul ac-key-search" style="margin-left: 38px;">
+                <li>
+                    <a href="javascript:;" data-flag="goods" class="ac-key-a-active">商品</a>
+                </li>
+                <li>
+                    <a href="javascript:;" data-flag="supplie" class="ac-key-hover">供应商</a>
+                </li>
+                <!--<li>
+                                <a href="javascript:;" data-flag="brand" class="ac-key-hover">品牌</a>
+                            </li>-->
+                <!--<li>
+                                <a href="javascript:;" data-flag="format" class="ac-key-hover">规格</a>
+                            </li>-->
+                <!--<li>
+                                <a href="javascript:;" data-flag="num" class="ac-key-hover">货号</a>
+                            </li>-->
+               <!-- <li>
+                    <a href="javascript:;" data-flag="category" class="ac-key-hover">类型</a>
+                </li>-->
+            </ul>
+                    <div class="header-search" style="top: 25px;">
+                        <a class="right header-search-btn ac-search" href="javascript:;">搜索</a>
+                        <div class="header-search-left">
+                            <!--<span id="searchOptionKey">商品</span>&nbsp;
+                            <div class="header-search-icon">
+                                <span class="caret"></span>
+                                <ul class="header-search-ul ac-key-search">
+                                    <li>
+                                <a href="javascript:;" data-flag="goods">商品</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-flag="supplie">供应商</a>
+                            </li>-->
+                            <!--<li>
+                                <a href="javascript:;" data-flag="brand">品牌</a>
+                            </li>-->
+                            <!--<li>
+                                <a href="javascript:;" data-flag="format">规格</a>
+                            </li>-->
+                            <!--<li>
+                                <a href="javascript:;" data-flag="num">货号</a>
+                            </li>-->
+                           <!-- <li>
+                                <a href="javascript:;" data-flag="category">类型</a>
+                            </li>
+                                </ul>
+                            </div>-->
+                        </div>
+                        <input type="text" class="header-search-box" placeholder="请输入商品名称、商品编码、货号、品牌名称进行搜索" id="searchKey"/>
+                    </div>
+                </div>
+            </div> 
+            <p class="cart-header-car">填写并核对采购单信息</p>
+        </div>
+    </div>
+</div><!--头部结束-->
+<div class="cm-main cart-apply-flow">
+    <div class="cart-apply">
+        <div class="cart-apply-third">
+            <p class="cart-apply-title">采购商品清单</p>
+            <p class="cart-apply-list-title">
+                <span class="cart-apply-pro-name">商品名</span><span>规格</span><span>单价（元）</span><span>数量</span><span>金额</span>
+            </p>
+            <%var totalPrice=0;%>
+            <%_.each(details,function(c){%>
+            <div class="cart-apply-item">
+                <p class="cart-apply-item-title"><%=c.supplier.name %></p>
+                <ul class="cart-apply-item-list">
+                    <%var a=1;%>
+                    <%_.each(c.cart,function(i){%>
+                        <% if( a<c.cart.length){%>
+                    <li>
+                        <input type="hidden" class="cart-apply-return-id" value="<%=i.id%>">
+                        <img class="cart-apply-item-pic" src="<%=i.product.photo%>"alt="">
+                        <a class="cart-apply-item-name" href="javascript:;"><%=i.product.name%></a>
+                        <input type="hidden" class="cart-apply-record-id" value='<%=i.product.sn%>'>
+                        <span><%=i.product.specification%></span>
+                        <span>￥<%=i.product.price.toFixed(2)%></span>
+                        <span><%=i.amount%></span>
+                        <span>￥<%=i.countPrice.toFixed(2)%></span>
+                        <%totalPrice+=i.countPrice%>
+                    </li>
+                    <%}else{%> 
+                    <li class="cart-apply-item-last">
+                        <input type="hidden" class="cart-apply-return-id" value="<%=i.id%>">
+                        <img class="cart-apply-item-pic" src="<%=i.product.photo%>"alt="">
+                        <a class="cart-apply-item-name" href="javascript:;"><%=i.product.name%></a>
+                        <input type="hidden" class="cart-apply-record-id" value='<%=i.product.sn%>'>
+                        <span><%=i.product.specification%></span>
+                        <span>￥<%=i.product.price.toFixed(2)%></span>
+                        <span><%=i.amount%></span>
+                        <span>￥<%=i.countPrice.toFixed(2)%></span>
+                        <%totalPrice+=i.countPrice%>
+                    </li>
+                    <%}%>
+                    <% a++;%>
+                <%})%>
+                </ul>
+            </div>
+            <%})%>
+        </div>
+         <div class="cart-apply-address">
+            <p class="cart-apply-title">*收货人信息</p>
+            <%_.each(address,function(i){%>
+                <%if(i.default==true){%>
+            <div class="cart-apply-address-item cart-apply-address-default overflow">
+                <input type="hidden" class="cart-apply-address-id" value='<%=i.id%>'>
+                <span class="cart-apply-address-checkbox left"></span>
+                <span class="left"><span class="cart-apply-consignee"><%=i.consignee%></span> <span class="cart-apply-address-spec"><%=i.deliveryAdress%> </span>&nbsp;<span class="cart-apply-mobile"><%=i.mobile%></span>&nbsp;&nbsp;<span class="cart-apply-telephone"><%=i.telephone%></span></span>
+                <span class="right"><a href="javascript:;" class="cart-apply-address-revise">修改</a><em class="cart-apply-address-line">|</em><a href="javascript:;" class="cart-apply-address-cancel">删除</a><em class="cart-apply-address-line">|</em><a href="javascript:;" class="cart-apply-address-setting">默认地址</a></span>
+            </div>        
+                <%}else{%>
+            <div class="cart-apply-address-item overflow">
+                <input type="hidden" class="cart-apply-address-id" value='<%=i.id%>'>
+                <span class="cart-apply-address-checkbox left"></span>
+                <span class="left"><span class="cart-apply-consignee"><%=i.consignee%></span> <span class="cart-apply-address-spec"><%=i.deliveryAdress%> </span>&nbsp;<span class="cart-apply-mobile"><%=i.mobile%></span>&nbsp;&nbsp;<span class="cart-apply-telephone"><%=i.telephone%></span></span>
+                <span class="right"><a href="javascript:;" class="cart-apply-address-revise">修改</a><em class="cart-apply-address-line">|</em><a href="javascript:;" class="cart-apply-address-cancel">删除</a><em class="cart-apply-address-line">|</em><a href="javascript:;" class="cart-apply-address-setting">设为默认</a></span>
+            </div>
+            <%}%>
+            <%})%>
+            <div class="cart-apply-address-item2 overflow">
+                <p class="cart-apply-address-add">添加新地址</p>
+            </div>
+        </div>
+        <div class="cart-apply-purchaser">
+            <p class="cart-apply-title">*选择项目</p>
+            <select class="cart-apply-project-choose">
+                <option  value="0" data-index="0">请选择项目名称</option>
+                <%_.each(project,function(i,index){%>
+                <option  value="<%=i.id%>" data-index="<%=index+1%>"><%=i.projectTitle%></option>   
+                <%})%>
+            </select>
+            <select class="cart-apply-subpro-choose cart-project-select">
+                <option  value="0" data-index="0">子项目名称</option>
+                <%_.each(project,function(i,index){%>
+                <%_.each(i.subProjectModelList,function(j,index2){%>
+                <option  data-index="<%=index+1%>-<%=index2+1%>"><%=j.subTitle%></option>
+                <%})%>
+                <%})%>
+            </select>
+            <select class="cart-apply-subject-choose cart-project-select">
+                <option  value="0" data-index="0">科目的筛选</option>
+                <%_.each(project,function(i,index){%>
+                <%_.each(i.subProjectModelList,function(j,index2){%>
+                <%_.each(j.courseModelList,function(k,index3){%>
+                <option  value="<%=k.id%>" data-index="<%=index+1%>-<%=index2+1%>-<%=index3+1%>" data-courseid="<%=k.courseId%>"><%=k.courseName%></option>
+                <%})%>
+                <%})%>
+                <%})%>
+            </select>
+        </div>
+        <div class="cart-apply-purchaser">
+            <p class="cart-apply-title">*选择部门(课题组)</p>
+            <select class="cart-apply-purchaser-choose">
+                <%_.each(card,function(i,index){%>
+                <option  value="<%=i.departmentId%>-<%=index%>"><%=i.departmentName%></option>
+                <%})%>
+            </select>
+        </div>
+        
+        <div class="cart-apply-second">
+            <p class="cart-apply-title">经费卡信息</p>
+            <%_.each(card,function(i){%>
+            <ul class="cart-apply-card">
+                <%_.each(i.fundCardInfoModels,function(j,index){%>
+                <li class="cart-hascard">
+                    <div class="cart-apply-card-name">
+                        <p><%=j.cardName%></p>
+                        <p><%=j.cardNo%></p>
+                        <input type="hidden" value="<%=j.id%>">
+                    </div>
+                    <span class="cart-apply-checkbox"></span>
+                </li>
+                <%})%>
+                <li class="add-fundcard">
+                    <div class="cart-apply-card-name">
+                        <p class="cart-apply-add-card">+</p>
+                        <p>添加经费卡</p>
+                    </div>
+                </li>
+            </ul>
+            <%})%>
+        </div>
+        <div class="cart-apply-first">
+            <div class="cart-apply-first-left">
+                <p class="cart-apply-title">采购申请说明</p>
+                <textarea class="cart-apply-desc"></textarea>
+            </div>
+        </div>
+       
+        <div class="cart-apply-third">
+            <div class="cart-apply-total">
+                <span class="right">总价&nbsp;:<em>￥<%=totalPrice.toFixed(2)%>元</em></span>
+                <span class="cart-apply-total-pro">商品<em><%=r.commodityItem%></em>项</span>
+                <span class="cart-apply-total-pro">服务<em><%=r.serviceItem%></em>项</span>
+                <span>余额&nbsp;<em class="cart-apply-project-money"></em></span>
+            </div>
+        </div>
+    </div><!--申请页面结束-->
+    <div class="cart-apply-footer">
+        <a class="cart-apply-submit" href="javascript:;">提  交</a>
+        <!--<a class="cart-apply-cancel" href="javascript:history.go(-1)" >取  消</a>-->
+    </div>
+</div><!--申请页面结束-->
+<div class="cm-main cart-apply-success">
+    <span class="cart-apply-success-pic"></span>
+    <p class="cart-apply-success-text">采购单提交成功，请等待通知！</p>
+    <p class="cart-apply-success-shopping">您还可以&nbsp;<a href="">继续购物</a></p>
+</div>
+<div class="home-footer">
+    <p>
+         <a style="color:#666;margin-right:10px;" href="index.html#help">帮助中心</a> |&nbsp;&nbsp;&nbsp;&nbsp;客服QQ：2448328732&nbsp;&nbsp;&nbsp;&nbsp;服务时间：周一至周五(节假日除外)&nbsp;&nbsp;&nbsp;&nbsp;9：00-18：00 
+        <span class="footer-logo">
+            <a href="tencent://message/?uin=2448328732&Site=在线QQ&amp;Menu=yes">
+                <img src="images/QQ.png" />
+                <span>QQ交谈</span>
+            </a>
+        </span>
+    </p>
+    <p>版权所有 @2014-2016&nbsp;&nbsp;&nbsp;&nbsp;网站备案/许可证号：
+       <a target="_blank" style="color:#666;" href="http://www.miitbeian.gov.cn/">粤ICP备16055118号-2
+       </a>
+    </p>
+</div>

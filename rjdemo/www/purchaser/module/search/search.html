@@ -1,0 +1,69 @@
+<!--引入搜索模块-->
+<%=search%>
+
+<!--引入导航模块-->
+<div id="navModule">
+</div>
+
+<div class="search-main">
+    <div class="cm-main" id="high-search-commodity">
+        <div class="search-wrap">
+            <p class="search-head">高级搜索</p>
+            <div class="search-content">
+            <form id="search-form">
+                <div class="search-info-wrap">
+                    <span class="search-info-title">关键字：</span>
+                    <input type="text" class="search-info-input" id="product-name" />
+                </div>
+                <div class="search-info-wrap">
+                    <span class="search-info-title">分类：</span>
+                    <select id="search-select-01" class="search-info-category-input">
+                        <option></option>
+                        <%_.each(c.list,function(C){%>
+                            <option value="<%= C.id %>"><%= C.name %></option>
+                        <%})%>
+                    </select>
+                    <select id="search-select-02" class="search-info-category-input">
+                    </select>
+                </div>
+                <div class="search-info-wrap">
+                    <span class="search-info-title">品牌：</span>
+                    <input type="text" class="search-info-input" id="brand-name" />
+                </div>
+                <div class="search-info-wrap">
+                    <span class="search-info-title">供应商：</span>
+                    <input type="text" class="search-info-input" id="supplier-name" />
+                </div>
+                <div class="search-info-wrap">
+                    <span class="search-info-title">价格区间：</span>
+                    <input type="text" class="search-info-pirce-input" id="low-price" />
+                    <input type="text" class="search-info-pirce-input" id="high-price"/>
+                </div>
+                <div class="search-info-ctrl">
+                    <span class="search-info-title"></span>
+                    <input type="button" class="search-info-btn" id="search-info-btn" value="搜索" />
+                    <input type="reset" class="search-info-reset" value="清空" />
+                </div>
+            </form>
+        </div>
+        </div>
+
+    </div>
+</div>
+<!--右侧banner-->
+<!--底部-->
+<div class="home-footer" style="color:#fff;">
+    <p>
+         <a style="color:#fff;margin-right:10px;" href="index.html#help">帮助中心</a>|&nbsp;&nbsp;&nbsp;&nbsp;客服QQ：2448328732&nbsp;&nbsp;&nbsp;&nbsp;服务时间：周一至周五(节假日除外)&nbsp;&nbsp;&nbsp;&nbsp;9：00-18：00 
+        <span class="footer-logo">
+            <a href="tencent://message/?uin=2448328732&Site=在线QQ&amp;Menu=yes">
+                <img src="images/QQ.png" />
+                <span>QQ交谈</span>
+            </a>
+        </span>
+    </p>
+    <p>版权所有 @2014-2016&nbsp;&nbsp;&nbsp;&nbsp;网站备案/许可证号：
+       <a target="_blank" style="color:#fff;" href="http://www.miitbeian.gov.cn/">粤ICP备16055118号-2
+       </a>
+    </p>
+</div>

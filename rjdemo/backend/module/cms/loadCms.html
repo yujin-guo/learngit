@@ -1,0 +1,45 @@
+<% if(flag==true){_.each(entities,function(i){%>       
+<tr>
+    <td class="cms-all sub-select">
+        <input type="checkbox" />
+    </td>
+    <td class="apply-id">
+        <%=i.columnName%>
+    </td>
+    <td class="date">
+         <%=i.title%>
+    </td>
+    <td class="group">
+        <%var c=new Date(i.creationTime);%><%=common.getLocalTime(c)%>
+    </td>
+    <td class="human">
+        <%if(i.publishTime!=null){%> 
+           <%var d=new Date(i.publishTime);%><%=common.getLocalTime(d)%>
+        <%}%>
+    </td>
+    <td class="money"><%=i.authorName%>
+    </td>
+    <td class="status-td">
+        <%if(i.status=="1"){%>
+            已发布
+        <%}else{%>
+            未发布
+        <%}%>        
+    </td>
+    <td class="control">
+        <%if(i.status=="1"){%>     
+            <a class="detail-link" id="del" href="javascript:void(0)" data-id="<%=i.id%>">下线
+            </a>                          
+        <%}else{%>
+            <a class="detail-link" id="edit" href="#newcms?key=<%=i.id%>">编辑</a>
+            <a class="detail-link" id="fabu" href="javascript:void(0)" data-id="<%=i.id%>">发布</a>    
+        <%}%>  
+    </td>
+</tr>
+<%})}else{%>
+<tr>
+    <td class="account-no-result" colspan="8" style="text-align:center;">
+        暂无结果。   
+    </td> 
+</tr>
+<%}%>     

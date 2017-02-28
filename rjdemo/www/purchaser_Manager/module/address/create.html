@@ -1,0 +1,60 @@
+<div class="address-wrap">
+    <div class="icon-wrap">
+        <span class="icon01"></span>
+        <span class="icon02">编辑收货地址</span>
+        <div class="icon03"></div>
+    </div>
+    
+    <div class="clear addr-info-wrap">
+        <form id="purcharse-form">
+            <div class="wrap-div">
+                <span class="info-left"><em class="color-must">*</em>收货人:</span>
+                <span class="info-right">
+                <%var consigneeC=null; if(consignee){consigneeC=consignee}%>
+                <input type="text" class="consignee common" name="addrName" value="<%= consigneeC %>"  />
+                <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class="wrap-div">
+                <span class="info-left"><em class="color-must">*</em>手机号码:</span>
+                <span class="info-right">
+                <%var mobileM=null; if(mobile){mobileM=mobile}%>
+                <input type="text" class="mobile common" name="AddressMobilephone" value="<%= mobileM %>" />
+                <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class="wrap-div">
+                <span class="info-left">固定电话:</span>
+                <span class="info-right">
+                <%var telephoneT=null; if(telephone){telephoneT=telephone}%>
+                <input type="text" class="tel common" name="phone" value="<%= telephoneT %>"/>
+                <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class="wrap-div">
+                <span class="info-left"><em class="color-must">*</em>所在地区:</span>
+                <span class="info-right">
+                <select class="province common" name="s_province" id="s_province"></select>
+                <select class="city common" name="s_city" id="s_city"></select>
+                <select class="area common" name="s_county" id="s_county"></select>
+                <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class="wrap-div">
+                <span class="info-left"><em class="color-must">*</em>详细地址:</span>
+                <span class="info-right textarea">
+                <%var addressA=null; if(address){addressA=address}%>
+                <textarea class="address common" name="address" placeholder="请填写街道地址，最少5个字，最多不能超过100字"><%= addressA %></textarea>
+                <span class="error-wrap address-error-span"></span>
+                </span>
+            </div>
+            <div class="wrap-div">
+                <span class="info-left"></span>
+                <span class="info-right">
+                <input type="submit" id="save-addr" class="set-new-address" value="保存地址"/>
+                <a href="#list" class="cancel-new-address">取消</a>
+            </span>
+            </div>
+        </form>
+    </div>
+</div>

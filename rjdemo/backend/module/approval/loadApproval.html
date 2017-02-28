@@ -1,0 +1,52 @@
+<% if(flag==true){_.each(entities,function(i){%>
+<tr>
+    <td class="apply-id">
+        <%=i.suppcode%>
+    </td>
+    <td class="supplier">
+        <%=i.suppname%>
+    </td>
+    <td class="date">
+        <%=common.getLocalTime(new Date(i.creationTime))%>
+    </td>
+    <td class="human">
+        <%=i.contactman%>
+    </td>
+    <td class="phone-number">
+        <%=i.mobile%>
+    </td>
+    <%if(i.status==0){%>
+    <td class="status-td">未认证</td>
+    <%}%>
+    <%if(i.status==1){%>
+    <td class="status-td">审核中</td>
+    <%}%>
+    <%if(i.status==2){%>
+    <td class="status-td">已认证</td>
+    <%}%>
+    <%if(i.status==3){%>
+    <td class="status-td">已驳回</td>
+    <%}%>
+    <%if(i.status==4){%>
+    <td class="status-td">已过期</td>
+    <%}%>
+    <%if(i.status==5){%>
+    <td class="status-td">已拉黑</td>
+    <%}%>
+    <td class="control">
+        <a href="#approvaldetails/<%=i.id%>/<%=i.status%>" class="supply-check">查看</a>
+        <!--<%if(i.status!==5){%>
+        <a href="javascript:;" data-id="<%=i.id%>" data-status="<%=i.status%>" class="supply-blacklist control-link-oms">拉到黑名单</a>
+        <%}%>
+        <%if(i.status==5){%>
+        <a href="javascript:;" data-id="<%=i.id%>" data-status="<%=i.status%>" class="supply-remove-blacklist control-link-oms">解除黑名单</a>
+        <%}%>-->
+    </td>
+</tr>
+<%})}else{%>
+<tr>
+    <td class="supply-no-result" colspan="7">
+        暂无结果。
+    </td>
+</tr>
+<%}%>

@@ -1,0 +1,35 @@
+.content-wrap{margin-left: 20px;margin-top: 40px;}
+.content-nav{padding-bottom: 10px;border-bottom: 1px solid #d7d7d7;}
+.symbol-icon01{border-left: 3px solid #13b5bd;}
+.symbol-title{margin-left: 10px;color: #666;font-size: 16px;}
+
+.order-details-back{margin-left:20px;color:#008cd0;}
+.order-details-flow{margin:20px 0;overflow:hidden}
+.order-details-flow-item{float:left;width:17%;overflow:hidden;height:30px;line-height:30px;text-align:center;color:#fff}
+.order-details-flow-last{float:left;width:15%;height:30px;line-height:30px;text-align:center;color:#fff}
+.order-details-arrow{float:right;width:13px;;height:30px;background:url(images/arrow.png) #fff}
+.order-details .color-one{background-color:#13b5bd}
+.order-details .color-two{background-color:#ccc}
+.order-details .bc-one{background-position:0 0;}
+.order-details .bc-two{background-position:-35px 0;}
+.order-details .bc-three{background-position:-70px 0;}
+
+.order-details-info{border:solid #ccc 1px;line-height:30px;font-size:12px;padding:10px;color:#333;margin:20px 0}
+.order-details-info-item{width:70px;color:#666}
+.order-details table{border:solid 1px #ccc;width:100%;font-size:12px}
+.order-details table thead{background-color:#f9fafc;color:#999}
+.order-details table td{border-bottom:solid 1px #ccc;height:40px;} 
+.order-details .order-details-product-name{padding-left:10px}
+.order-details .order-details-total-price{border-bottom:none;text-align:right;padding-right:20px;font-size:12px;color:#666}
+.order-details .td-width-one{width:18%}
+.order-details .td-width-two{width:6%}
+.order-details .td-width-three{width:5%}
+.order-details .td-width-four{width:6%}
+.order-details .td-width-five{width:12%}
+.order-details .order-details-return-title{color:#333;font-size:16px;line-height:40px;margin:35px 0 10px;}
+/*孙逸仙验收图片*/
+.order-details .order-details-photo{overflow:hidden;margin-top:30px}
+.order-details .order-details-photo-name{float:left;width:60px}
+.order-details .order-details-photo-wrap{float:left;width:80%}
+.order-details .order-details-photo-wrap img{max-width:800px}
+.order-details .order-details-photo-download{display:inline-block;width:104px;height:35px;line-height:35px;border:solid 1px #e4e4e4;text-align:center;margin:20px 0 50px;color:#333}

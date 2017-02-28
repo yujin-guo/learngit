@@ -1,0 +1,31 @@
+.brand{border:solid #ccc 1px;padding-bottom:50px;font-size:16px}
+.brand .brand-header{color:#008cd0;margin-top:15px}
+.brand-header .brand-header-text{font-size:16px}
+.brand-header .brand-header-title{width:16px;height:16px;background-color:#008cd0;margin-right:15px;margin-top:3px}
+.brand-header .brand-header-line{border-top:solid 1px #008cd0;width:846px;margin-left:15px;margin-top:10px}
+.brand .brand-list{padding:40px 0 30px;margin:0 30px;}
+.brand-list .brand-img{display:inline-block;width:198px;height:140px;border:solid 1px #ccc;border-radius:10px;text-align:center;color:#999;}
+.brand-list .brand-img img{max-width:198px;max-height:140px}
+.brand-list .brand-add{margin-left:20px}
+.brand-list .brand-img .brand-plus{width:64px;height:64px;margin:20px auto 15px;position:relative;}
+.brand-list .brand-h-line{position:absolute;width:54px;border:solid 5px #ccc;border-radius:5px;top:27px;left:0;line-height:0}
+.brand-list .brand-v-line{position:absolute;height:54px;border:solid 5px #ccc;border-radius:5px;top:0;left:27px}
+.brand-list .brand-img:hover{border-color:#008cd0}
+.brand-list .brand-name{margin:20px 0 15px;font-size:16px}
+.brand-list .brand-review{display:inline-block;width:20px;height:20px;margin-right:5px;vertical-align:middle}
+.brand-list .brand-review-one{background:url(images/pending.png) no-repeat;}
+.brand-list .brand-review-two{background:url(images/pass.png) no-repeat;}
+.brand-list .brand-review-three{background:url(images/failed.png) no-repeat;}
+.brand-list .brand-review-four{background:url(images/expired.png) no-repeat;}
+.brand-text{line-height:30px;margin:15px 0;}
+.brand-text .brand-text-left{width:115px;margin-right:15px;color:#999;text-align:right}
+.brand-text .brand-text-right{width:805px;color:#333}
+
+.brand-list-title{height:32px;background-color:#f2f2f2;line-height:32px;text-align:center}
+.brand-title-width{float:left;width:224px;height:100%}
+.brand-list-item{height:70px;border-bottom:solid #e4e4e4 1px;text-align:center;line-height:70px;display:block;color:#666}
+.brand-item-pic{max-width:99px;max-height:55px;margin-top:7px}
+.brand-list-item a{color:#666;display:block;height:100%}
+.brand-none{text-align:center}
+.brand-none-text{color:#999;line-height:50px;padding-bottom:30px}
+.brand-add-btn{width:150px;height:38px;color:#fff;background-color:#029ae4;text-align:center;line-height:38px;border-radius:2px;box-shadow:0 0 1px 0 #029ae4}

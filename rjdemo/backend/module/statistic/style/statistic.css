@@ -1,0 +1,90 @@
+.statistic-date{height:18px;width:90px;border:solid 1px #ccc;text-align:center;padding: 5px;border-radius: 5px;}
+/*.statistic-end-date{margin-right:10px}*/
+.statistic-line{padding:0 3px}
+.list-table{width: 100%;}
+.search-div{text-align: right;font-size: 12px;}
+.search-input{border: 1px solid #ccc;border-right:medium none;padding-left: 10px;padding-right: 10px;height: 28px;line-height: 28px;width: 251px;color: #999;font-size: 12px;}
+.search-btn{width: 34px;height: 30px;background-color: #0099cc;vertical-align: top;font-size:12px;}
+
+.page{text-align: right;font-size: 0;}
+.page a{color: #999;font-size:12px ;height: 28px;line-height: 28px;text-align: center;}
+.endpoint{width: 52px;border:1px #ccc solid ;}
+.direction-pre{border: 1px solid #ccc;border-left: medium none;width: 65px;}
+.direction-next{border-top:1px solid #ccc ;border-bottom: 1px solid #ccc;width: 66px;}
+.index{border: 1px solid #ccc;border-left: medium none;width: 27px;}
+.page .index-active{background-color: #13b5bd;color: #fff;}
+
+.content-wrap{margin-left: 20px;margin-top: 40px;}
+.content-nav{padding-bottom: 10px;border-bottom: 1px solid #d7d7d7;}
+.symbol-title{margin-left: 10px;color: #666;font-size: 16px;}
+.symbol-return-icon{margin: 0 7px;width: 20px;height: 20px;vertical-align: top;}
+
+.infomation table{border-collapse: collapse;font-size: 12px;}
+.infomation table th{color: #999;text-align: left;background-color: #f9fafc;padding: 13px 10px;word-break: break-all;word-wrap: break-word;}
+.infomation table td{color: #333;text-align: left;padding: 13px 10px;word-break: break-all;word-wrap: break-word;}
+.infomation table tr{border: 1px solid #ccc;height: 40px;}
+
+.statistic-limit-width{min-width: 878px;}
+.statistic-title{font-size:16px;width:140px;}
+.statistic-info{padding-bottom: 25px;}
+.statistic-info-wrap{font-size: 0;margin: 15px auto;}
+.statistic-info-title{font-size: 12px;color: #999;width: 70px;text-align: left;margin-right: 15px;}
+.statistic-info-info{color: #333;font-size: 12px;}
+.width-one a{color: #008cd0;}
+/*课题组交易统计  供应商交易统计 品牌交易统计 公用*/
+.statistic-subject .width-one{width:12%}
+.statistic-subject .width-two{width:12%}
+.statistic-subject .width-three{width:12%}
+.statistic-subject .width-four{width:12%}
+.statistic-subject .width-five{width:12%}
+.statistic-subject .width-six{width:12%}
+.statistic-subject .width-seven{width:12%}
+.statistic-subject .width-eight{width:12%}
+.statistic-subject .width-nine{width:24%}
+/*明细table*/
+.statistic-detail-table .width-one{width:10%}
+.statistic-detail-table .width-two{width:10%}
+.statistic-detail-table .width-three{width:12%}
+.statistic-detail-table .width-four{width:12%}
+.statistic-detail-table .width-five{width:12%}
+.statistic-detail-table .width-six{width:12%}
+.statistic-detail-table .width-seven{width:12%}
+.statistic-detail-table .width-eight{width:7%}
+.statistic-detail-table .width-night{width:9%}
+.statistic-hospital-ul{list-style: none;width: 100%;}
+.statistic-hospital-li01{height: 44px;border: 1px #ccc solid;background-color: #f2f2f2;line-height: 44px;text-align: right;}
+.statistic-hospital-tatol{margin-right: 5%;}
+.statistic-hospital-tatol,.statistic-hospital-title-next{color: #999;}
+.statistic-hospital-title-next{font-size: 16px;}
+.statistic-color,.statistic-hospital-title{color: #333;}
+.statistic-hospital-title{width: 50%;text-align: right;}
+.statistic-hospital-li02{padding: 20px 0;border: 1px #ccc solid;border-top: none;}
+.statistic-hospital-title,.statistic-hospital-title-next{line-height: 20px;}
+.statistic-hospital-content{width: 24%;border-right: 1px #ccc dotted;}
+.statistic-hospital-content div{line-height: 35px;}
+.statistic-checkbox{text-align: right;}
+.statistic-checkbox span{margin-right: 5%;}
+.statistic-supply-name{color: #333;font-size: 18px;margin-left: 2%;}
+.date-cycle-day,.date-cycle-7day,.date-cycle-30day{width: 38px;height: 22px;line-height: 22px;text-align: center;border: 1px solid #ccc;color: #333;background-color: #f2f2f2;vertical-align: middle;border-radius: 5px;}
+.date-cycle-7day{margin: 0 8px;}
+.date-cycle-day-active{background-color: #0099cc;color: #fff;}
+.statistic-hos-select{height: 20px;line-height: 20px;border: 1px solid #ccc;width: 216px;vertical-align: middle;}
+.date-cycle{vertical-align: middle;}
+.title-p{font-size: 18px;}
+/*系统使用查询*/
+.statistic-system .width-one{padding-left:10px;width:21%}
+.statistic-system .width-two{width:21%}
+.statistic-system .width-three{width:21%}
+.statistic-system .width-four{width:36%}
+
+/*评分列表*/
+.statistic-rate .width-one{padding-left:10px;width:15%;}
+.statistic-rate .width-two{width:20%;text-align:center;}
+.statistic-rate .width-three{width:20%;}
+.statistic-rate .width-four{width:13%;}
+.statistic-rate .width-five{width:8%;}
+.statistic-rate .width-six{width:8%;}
+.statistic-rate .width-seven{width:20%;}
+
+.statictis-hospital-chart,.statictis-supp-chart{width: 100%;height: 400px;background-color: #f2f2f2;}
+

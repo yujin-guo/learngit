@@ -1,0 +1,116 @@
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">人员管理</span>
+            </div>
+        </div>
+        <div class="infomation" id="infomation">
+            <div class="matures">
+                <div class="member-btn-div left">
+                    <a href="#addMember" class="member-btn-link relative">新增人员</a>
+                    <a href="javascript:void(0)" class="member-btn-link relative">批量导入
+                        <form id="form">
+                            <input type="file" name="file" class="batch-file" id="upload" />
+                        </form>
+                    </a>
+                    <a href="javascript:void(0)" class="get-template">下载人员导入模板</a>
+                </div>
+                <div class="search-div right">
+                    <select class="status-select" id="status-select">
+                        <option value="">人员状态</option>
+                        <option value=1>正常</option>
+                        <option value=0>禁用</option>
+                    </select>
+                    <input class="search-input" id="search-value" type="text" placeholder="真实姓名\手机号码\电子邮箱" />
+                    <a class="search-btn" id="search-btn" href="javascript:void(0)"></a>
+                </div>
+            </div>
+            <table class="member-list-table">
+                <thead>
+                    <tr>
+                        <th class="member-td-id">用户ID</th>
+                        <th class="member-td-name">真实姓名</th>
+                        <th class="member-td-mobile">手机号码</th>
+                        <th class="member-td-email">电子邮箱</th>
+                        <th class="member-td-department">部门</th>
+                        <th class="member-td-status">人员状态</th>
+                        <th class="member-td-control">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="list">
+                    <% if(flag==true){_.each(userList,function(U){%>
+                    <tr>
+                        <% if(U.status==false){%>
+                        <td class="member-td-id dis">
+                            <%= U.id %>
+                        </td>
+                        <td class="member-td-name dis">
+                            <%= U.name %>
+                        </td>
+                        <td class="member-td-mobile dis">
+                            <%= U.mobile %>
+                        </td>
+                        <td class="member-td-email dis">
+                            <%= U.email %>
+                        </td>
+                        <td class="member-td-department">
+                            <% if(U.hasOwnProperty("depts") && U.depts.length){var depStr=null,depLen=U.depts.length;_.each(U.depts,function(D,index){depStr==null?depStr=D:depStr+=('，'+D);})%><%= depStr %><%} %>
+                                
+                        </td>
+                        <td class="member-td-status dis">禁用</td>
+                        <td class="member-td-control dis">
+                            <a href="javascript:void(0)" class="control-link status-link-event" data-id="<%= U.id %>" data-flag="1">启用</a>
+                            <a href="#editMember?id=<%= U.id %>" class="control-link">查看</a>
+                        </td>
+
+                        <%}else{%>
+                        <td class="member-td-id">
+                            <%= U.id %>
+                        </td>
+                        <td class="member-td-name">
+                            <%= U.name %>
+                        </td>
+                        <td class="member-td-mobile">
+                            <%= U.mobile %>
+                        </td>
+                        <td class="member-td-email">
+                            <%= U.email %>
+                        </td>
+                        <td class="member-td-department">
+                            <% if(U.hasOwnProperty("depts") && U.depts.length){var depStr=null,depLen=U.depts.length;_.each(U.depts,function(D,index){depStr==null?depStr=D:depStr+=('，'+D);})%><%= depStr %><%} %>
+                        </td>
+                        <td class="member-td-status">正常</td>
+                        <td class="member-td-control">
+                            <a href="javascript:void(0)" class="control-link status-link-event" data-id="<%= U.id %>" data-flag="0">禁用</a>
+                            <a href="#editMember?id=<%= U.id %>" class="control-link">查看</a>
+                        </td>
+                        <%}%>
+                    </tr>
+                    <%})}else{%>
+                    <tr>
+                        <td class="empty-td" colspan="6">
+                            暂无数据!
+                        </td>
+                    </tr>
+
+                    <%} %>
+
+                </tbody>
+            </table>
+            <div class="matures">
+                <div class="page">
+                    <div class="right">
+                        <a class="endpoint" href="javascript:void(0)">尾页</a>
+                    </div>
+                    <div class="right" id="pagination">
+
+                    </div>
+                    <div class="right">
+                        <a class="endpoint" href="javascript:void(0)">首页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

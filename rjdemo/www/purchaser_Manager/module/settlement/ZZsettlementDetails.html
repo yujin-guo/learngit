@@ -1,0 +1,223 @@
+<!--浙江省肿瘤医院结算详情-->
+<div class="s-details">
+    <%if(status==0){%>
+    <ul class="s-details-header">
+        <li class="s-details-flow-two"><span class="left s-zzdetails-flow-text">待开票</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-three"><span class="left s-zzdetails-flow-text">待填发票</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-three"><span class="left s-zzdetails-flow-text">待审核</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-three"><span class="left s-zzdetails-flow-text">待付款</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-three s-details-flow-finished"><span class="left s-zzdetails-flow-text">已完成</span></li>
+    </ul>
+    <%}%>
+    <%if(status==6){%>
+    <ul class="s-details-header">
+        <li class="s-details-flow-one"><span class="left s-zzdetails-flow-text">待开票</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-two"><span class="left s-zzdetails-flow-text">待填发票</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-three"><span class="left s-zzdetails-flow-text">待审核</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-three"><span class="left s-zzdetails-flow-text">待付款</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-three s-details-flow-finished"><span class="left s-zzdetails-flow-text">已完成</span></li>
+    </ul>
+    <%}%>
+    <%if(status==1){%>
+    <ul class="s-details-header">
+        <li class="s-details-flow-one"><span class="left s-zzdetails-flow-text">待开票</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-one"><span class="left s-zzdetails-flow-text">待填发票</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-two"><span class="left s-zzdetails-flow-text">待审核</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-three"><span class="left s-zzdetails-flow-text">待付款</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-three s-details-flow-finished"><span class="left s-zzdetails-flow-text">已完成</span></li>
+    </ul>
+    <%}%>
+    <%if(status==2){%>
+    <ul class="s-details-header">
+        <li class="s-details-flow-one"><span class="left s-zzdetails-flow-text">待开票</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-one"><span class="left s-zzdetails-flow-text">待填发票</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-one"><span class="left s-zzdetails-flow-text">待审核</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-two"><span class="left s-zzdetails-flow-text">待付款</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-three s-details-flow-finished"><span class="left s-zzdetails-flow-text">已完成</span></li>
+    </ul>
+    <%}%>
+    <%if(status==3){%>
+    <ul class="s-details-header">
+        <li class="s-details-flow-one"><span class="left s-zzdetails-flow-text">待开票</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-one"><span class="left s-zzdetails-flow-text">待填发票</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-one"><span class="left s-zzdetails-flow-text">待审核</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-one"><span class="left s-zzdetails-flow-text">待付款</span><span class="left s-details-flow-icon"></span></li>
+        <li class="s-details-flow-two s-details-flow-finished"><span class="left s-zzdetails-flow-text">已完成</span></li>
+    </ul>
+    <%}%>
+    <div class="s-details-content overflow">
+        <ul class="s-details-info overflow">
+            <li>结算单号：<span class="s-details-syx-number"><%=details.summaryInfo.no%></span></li>
+            <li>供应商：<span><%=details.summaryInfo.suppName%></span></li>
+            <li>采购部门：<span><%=details.summaryInfo.dept%></span></li>
+            <li>结算日期：<span><%=details.summaryInfo.date%></span></li>
+            <li>结算方：<span><%=details.summaryInfo.org%></span></li>
+            <li>&nbsp;&nbsp;&nbsp;提交人：<span><%=details.summaryInfo.person%></span></li>
+            <li>&nbsp;&nbsp;&nbsp;科目：<span><%=details.summaryInfo.subject%></span></li>
+            <li>&nbsp;&nbsp;&nbsp;项目：<span><%=details.summaryInfo.project%></span></li>
+        </ul>
+        <div class="overflow">
+            <p class="left s-details-title">结算单信息</p>
+            <%if(status==1){%>
+            <div class="right">
+                <a href="javascript:;" class="s-details-print s-details-submit" >提交财务</a>
+            </div>
+            <%}%>
+        </div>
+        <ul class="s-details-balance-title">
+            <li class="s-details-balance-number">结算单号</li>
+            <li class="s-details-balance-committer">提交人</li>
+            <li class="s-details-balance-dept">采购部门</li>
+            <li class="s-details-balance-date">结算日期</li>
+            <li class="s-details-balance-money">结算金额</li>
+            <li class="s-details-balance-status">状态</li>
+        </ul>
+        <%_.each(details.statementInfos,function(i){%>
+        <ul class="s-details-balance-item">
+            <li class="s-details-balance-number"><%=i.statementNo%></li>
+            <li class="s-details-balance-committer"><%=i.person%></li>
+            <li class="s-details-balance-dept"><%=i.dept%></li>
+            <li class="s-details-balance-date"><%=i.date%></li>
+            <li class="s-details-balance-money">￥<%=parseFloat(i.price).toFixed(2)%></li>
+            <%if(i.status==0){%>
+            <li class="s-details-balance-status">待开票</li>
+            <%}%>
+            <%if(i.status==6){%>
+            <li class="s-details-balance-status">待填发票</li>
+            <%}%>
+            <%if(i.status==7){%>
+            <li class="s-details-balance-status">待递送</li>
+            <%}%>
+            <%if(i.status==1){%>
+            <li class="s-details-balance-status">待审核</li>
+            <%}%>
+            <%if(i.status==2){%>
+            <li class="s-details-balance-status">待付款</li>
+            <%}%>
+            <%if(i.status==3){%>
+            <li class="s-details-balance-status">已完成</li>
+            <%}%>
+        </ul>
+        <table cellspacing=0 class="settle-content sunyixian-settle-content">
+            <tr class="settle-content-item">
+                <th class="settle-title-a">订单号</th>
+                <th class="settle-title-b ">采购人</th>
+                <th class="settle-title-b ">课题组</th>
+                <th class="settle-title-b">订单日期</th>
+                <th class="settle-title-b">订单金额（元）</th>
+                <th class="settle-title-b">验收金额（元）</th>
+                <th class="settle-title-e">经费卡号</th>
+            </tr>
+            <%_.each(i.orderInfos,function(j){%>
+            <tr class="settle-content-item">
+                <td class="settle-title-a"><%=j.orderNo%></td>
+                <td class="settle-title-b"><%=j.person%></td>
+                <td class="settle-title-b"><%=j.dept%></td>
+                <td class="settle-title-b"><%=j.date%></td>
+                <td class="settle-title-b"><%=parseFloat(j.orderPrice).toFixed(2)%></td>
+                <td class="settle-title-b"><%=parseFloat(j.accpterPrice).toFixed(2)%></td>
+                <td class="settle-title-e settle-title-revise">
+                    <span>
+                        <%_.each(j.projectNumber.split(";"),function(k){%>
+                        <p><%=k%></p>
+                        <%})%>
+                    </span>
+                    <a href="javascript:;" class="settle-revise">修改</a>
+                    <input type="hidden" class="settle-order-id" value="<%=j.id%>">
+                </td>
+            </tr>
+            <%})%>
+        </table>
+        <%})%>
+        <p class="s-details-money">结算金额：<span class="s-details-money-num"><%=parseFloat(details.summaryInfo.amount).toFixed(2)%></span>元</p>
+        <div class="overflow s-details-zz-invoice">
+            <p class="left s-details-title">发票信息</p>
+        </div>
+        <%if(details.invoiceInfos&&details.invoiceInfos.length>0){%>
+        <%_.each(details.invoiceInfos,function(i){%>
+        <div class="s-details-invoice-item">
+            <div class="s-details-invoice-title">
+                <input type="hidden" class="s-details-invoice-id" value="<%=i.id%>">
+                <span class="s-details-invoice-width1 s-details-invoice-bold">发票号</span>
+                <span class="s-details-invoice-width2 s-details-invoice-bold"><%=i.no%></span>
+                <span class="s-details-invoice-money">￥<%=parseFloat(i.amount).toFixed(2)%></span>
+            </div>
+            <div class="s-details-invoice-content overflow">
+                <ul class="s-details-invoice-content-text">
+                    <li>
+                       <span class="s-details-invoice-width1">开票日期</span>
+                        <span class="s-details-invoice-width2"><%=i.operTime%></span> 
+                    </li>
+                    <li>
+                       <span class="s-details-invoice-width1">摘要内容</span>
+                        <span class="s-details-invoice-width2"><%=i.context%></span> 
+                    </li>
+                    <li>
+                       <span class="s-details-invoice-width1">开票单位</span>
+                        <span class="s-details-invoice-width2"><%=i.supp%></span> 
+                    </li>
+                    <li>
+                       <span class="s-details-invoice-width1">发票照片</span>
+                       <%if(status==2||status==3){%>
+                       <div class="s-details-invoice-width2 s-details-upload-file">
+                            <ul class="s-details-upload-wrapper">
+                               <% var urls=i.pic.split(';')%>
+                               <%_.each(urls,function(j){%>
+                                   <%if(j.match(/^.+\.(\w+)$/)[1].toLowerCase()=='pdf'){%>
+                                <li><a  class="s-details-invoice-pdf" href="<%=j%>" target="_blank" >打开文件</a></li>
+                                   <%}else{%>
+                                <li><a href="<%=j%>" target="_blank"><img  class="s-details-invoice-image" src="<%=j%>" alt="image"></a></li>       
+                                   <%}%>
+                               <%})%>
+                            </ul>
+                       </div>   
+                       <%}else{%>
+                       <div class="s-details-invoice-width2 s-details-upload-file">
+                            <ul class="s-details-upload-wrapper">
+                               <li class="s-details-invoice-upload"><p class="s-details-upload-icon">+</p>文件上传</li>
+                                <li class="s-details-file-format">
+                                    <p>请上传发票的扫描件</p>
+                                    <p>支持PDF、JPG、PNG格式</p>
+                                </li> 
+                            </ul>
+                            <form>
+                                <input type="file" accept="application/pdf,image/jpeg,image/png" name="file" style="display:none" class="pre-file-upload">
+                            </form>
+                       </div> 
+                       <%}%>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <%})%>
+        <%}else{%>
+        <div class="s-details-invoice-item">
+            <div class="s-details-invoice-title">
+                <span class="s-details-invoice-width1 s-details-invoice-bold">发票号</span>
+                <span class="s-details-invoice-width2 s-details-invoice-bold">待填写</span>
+                
+            </div>
+            <div class="s-details-invoice-content overflow">
+                <ul class="s-details-invoice-content-text">
+                    <li>
+                       <span class="s-details-invoice-width1">开票日期</span>
+                        <span class="s-details-invoice-width2">待填写</span> 
+                    </li>
+                    <li>
+                       <span class="s-details-invoice-width1">摘要内容</span>
+                        <span class="s-details-invoice-width2">待填写</span> 
+                    </li>
+                    <li>
+                       <span class="s-details-invoice-width1">开票单位</span>
+                        <span class="s-details-invoice-width2">待填写</span> 
+                    </li>
+                    <li>
+                       <span class="s-details-invoice-width1">发票照片</span>
+                        <span class="s-details-invoice-width2">待上传</span> 
+                    </li>
+                </ul>
+            </div>
+        </div> 
+        <%}%>
+    </div>
+</div>

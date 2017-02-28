@@ -1,0 +1,21 @@
+<p class="cart-apply-title">收货人信息</p>
+            <%_.each(address,function(i){%>
+                <%if(i.default==true){%>
+            <div class="cart-apply-address-item cart-apply-address-default overflow">
+                <input type="hidden" class="cart-apply-address-id" value='<%=i.id%>'>
+                <span class="cart-apply-address-checkbox left"></span>
+                <span class="left"><span class="cart-apply-consignee"><%=i.consignee%></span> <span class="cart-apply-address-spec"><%=i.deliveryAdress%> </span>&nbsp;<span class="cart-apply-mobile"><%=i.mobile%></span>&nbsp;&nbsp;<span class="cart-apply-telephone"><%=i.telephone%></span></span>
+                <span class="right"><a href="javascript:;" class="cart-apply-address-revise">修改</a><em class="cart-apply-address-line">|</em><a href="javascript:;" class="cart-apply-address-cancel">删除</a><em class="cart-apply-address-line">|</em><a href="javascript:;" class="cart-apply-address-setting">默认地址</a></span>
+            </div>        
+                <%}else{%>
+            <div class="cart-apply-address-item overflow">
+                <input type="hidden" class="cart-apply-address-id" value='<%=i.id%>'>
+                <span class="cart-apply-address-checkbox left"></span>
+                <span class="left"><span class="cart-apply-consignee"><%=i.consignee%></span> <span class="cart-apply-address-spec"><%=i.deliveryAdress%> </span>&nbsp;<span class="cart-apply-mobile"><%=i.mobile%></span>&nbsp;&nbsp;<span class="cart-apply-telephone"><%=i.telephone%></span></span>
+                <span class="right"><a href="javascript:;" class="cart-apply-address-revise">修改</a><em class="cart-apply-address-line">|</em><a href="javascript:;" class="cart-apply-address-cancel">删除</a><em class="cart-apply-address-line">|</em><a href="javascript:;" class="cart-apply-address-setting">设为默认</a></span>
+            </div>
+            <%}%>
+            <%})%>
+            <div class="cart-apply-address-item2 overflow">
+                <p class="cart-apply-address-add">添加新地址</p>
+            </div>

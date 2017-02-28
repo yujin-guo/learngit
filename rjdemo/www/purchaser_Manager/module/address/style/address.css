@@ -1,0 +1,42 @@
+.address-wrap{border: 1px solid #d7d7d7;height: 600px;margin-left: 15px;}
+/*地址列表*/
+.list-wrap{padding: 0 28px;}
+.div-h{margin: 30px 0;}
+.set-new-address{width: 150px; height: 35px; text-align: center; line-height: 30px;color: #fff;background-color: #32ab94;border: medium none;}
+.set-new-address:hover{background-color: #298d79;}
+.table-div{border-collapse: collapse;}
+.table-div th,.table-div td{padding-left: 22px;word-wrap:break-word;word-break: break-all;}
+.table-div th{background-color: #f2f2f2;text-align: left;height: 30px;color: #666;font-weight: normal;}
+.table-div td{padding-top:17px;padding-bottom:17px;color: #333;}
+.table-div thead tr{border: 1px solid #f2f2f2;}
+.table-div tbody tr{border: 1px solid #e4e4e4;}
+.table-div .active-tr{border-color: #b7ecdd;background-color: #f0fbf8}
+.table-div .active-tr td{border-top: 1px solid #b7ecdd;}
+.table-div .head-tr{}
+.addr-per{width: 80px;}
+.addr-detail{width: 294px;}
+.addr-mobile,.addr-phone{width: 118px;}
+.addr-control{width: 183px;}
+.link-control{margin-right: 10px;}
+.link-control,.link-control-01{color: #333;}
+.link-control-01,.link-control-02{margin-right: 10px;margin-left: 10px;}
+.link-control-02{color: #298d79;}
+.color-set-default{color: #298d79;}
+/*新增地址*/
+.icon-wrap{margin: 12px 18px;}
+.icon01{background-color: #32ab97;height: 16px;width: 5px;}
+.icon02{margin: 0 8px;color: #298d79;font-size: 16px;vertical-align: 2px;}
+.icon03{border-bottom:1px #298d79 solid;margin-top: 5px;}
+.wrap-div{margin-bottom: 30px;}
+.addr-info-wrap{padding-left: 60px;padding-top: 60px;}
+.info-left{width: 80px;text-align: right;height: 35px;line-height: 35px;color: #333;}
+.info-right{height: 37px;margin-left: 10px;vertical-align: top}
+.textarea{height: 102px;}
+.textarea textarea{height: 93px;width: 388px;border: 1px solid #d7d7d7;padding-left: 10px;padding-top: 5px;}
+.info-right input[type='text']{width: 388px;height: 33px;border: 1px solid #d7d7d7;line-height: 33px;padding-left: 10px;}
+.province,.city,.area{width: 118px;height: 33px;border: 1px solid #d7d7d7;line-height: 33px;color: #333;}
+.city{margin: 0 19px;}
+.cancel-new-address{width: 148px; height: 33px; text-align: center; line-height: 33px;border: 1px solid #e4e4e4;background-color: #f2f2f2;color: #666;margin-left: 33px;vertical-align: top;}
+.cancel-new-address:hover{border-color: #d7d7d7;}
+.color-must{color: #ff0000;vertical-align: top;margin: 0 3px;}
+.address-error-span{height: 35px;padding-top:8px;vertical-align: top;}

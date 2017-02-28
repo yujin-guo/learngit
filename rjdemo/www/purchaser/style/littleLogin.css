@@ -1,0 +1,29 @@
+.login-litte-wrap{position: fixed;top: 0;bottom: 0;left: 0;right: 0;display: none;z-index: 1000;}
+.login-litte-content{width: 350px;height: 311px;background-color: #fff;overflow: hidden;position: fixed;top: 0;right: 0;left: 0;bottom: 0;margin: auto;display: none;box-shadow: 0 0 3px 3px rgba(0,0,0,0.2);z-index: 1001;}
+.auto-login-check{margin-top: 3px;}
+.auto-login{margin: 0 3px;vertical-align: middle;}
+.auto-login-check{margin-top: 3px;}
+.height-01{height: 355px;}
+.login-inner{width: 300px;margin:auto;}
+.login-img{height: 500px;line-height: 500px;}
+.login-img img{vertical-align: middle;}
+.height-01{height: 355px;}
+.login-title-div{height: 50px;line-height: 50px;border-bottom: 1px solid #eee;margin-bottom: 30px;font-size: 0;}
+.login-title-01{font-size: 16px;color: #999;text-align: center;width: 174px;vertical-align: top;cursor: pointer;}
+.em01{height: 20px;border-left: 1px solid #eee ;display: inline-block;margin-top: 15px;}
+.word-active{color: #00a0e9;font-weight: bold;}
+.login-margin-left a{color: #00a0e9;font-size: 14px;}
+.login-info-div{border: 1px #999 solid;width: 298px;height: 38px;color: #999;margin-bottom: 21px;}
+.login-auto{width: 300px;height: 20px;line-height:20px;margin-bottom: 18px;color: #6f6f6f;}
+.login-auto a{color: #666;}
+.login-auto a:hover,.register a:hover{color: #0099ff;text-decoration: none;}
+.login-info input[type='text'],.login-info input[type='password']{padding-left: 13px;width: 246px;height: 37px;line-height: 37px;border: medium none;}
+.login-info input[type='button'],.login-info input[type='submit']{width: 300px;height: 40px;background-color: #00a0e9;color: #fff;font-size: 18px;cursor: pointer;border: medium none;}
+.login-info input[type='button']:hover,.login-info input[type='submit']:hover{background-color: #008cd0;}
+.login-icon{display:inline-block;width: 37px;height:38px;border-left:1px #999 solid;vertical-align: top;}
+.user{background-image: url(images/wwwicon.png);background-position: -440px -2px;}
+.pass{background-image: url(images/wwwicon.png);background-position: -440px -46px;}
+.login-margin-left{margin-left: 53%;}
+.login-error{background-image: url(images/error-icon.png);background-repeat: no-repeat;background-position: 98% center;}
+.login-info-div label{width: 0;height: 0;overflow: hidden;}
+.purchase-free-login{overflow: hidden;padding-top:3px;}

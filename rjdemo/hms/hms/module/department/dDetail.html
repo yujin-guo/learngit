@@ -1,0 +1,109 @@
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">部门管理</span>
+            </div>
+        </div>
+        <div class="infomation">
+            <div class="matures">
+                <div class="department-btn-div left">
+                    <p class="department-p1 left" id="department-p1">
+                        <%= departmentItem.name%>
+                    </p>
+                    <p class="department-p2 left" id="department-p2">(
+                        <% if(departmentItem.type==0){%>采购部门
+                        <%}else{%>管理部门
+                        <%}%>)</p>
+                </div>
+                <div class="search-div right">
+                    <input class="search-input" id="search-value" type="text" placeholder="搜索成员" />
+                    <a class="search-btn" id="search-btn" href="javascript:void(0)"></a>
+                </div>
+            </div>
+            <div class="matures font-size-space">
+                <% var department= encodeURIComponent(departmentItem.name); %>
+                <% if(departmentItem.type==0){if(flag==true||departmentItem.managerName){%>
+                <a href="#addDepartment?key=edit&id=<%= departmentItem.id %>&type=<%= type %>&depart=<%= departmentItem.name %><%if(departmentItem.managerId){%>&managerId=<%=departmentItem.managerId%><%}%>" class="control-link-edit">修改部门名称</a><em class="matures-em">|</em>
+                <a href="#ctrlMainPerson?key=editMain&id=<%= departmentItem.id %>&seq=<%= department %>&parentId=<%=departmentItem.parentId%><%if(departmentItem.managerId){%>&managerId=<%=departmentItem.managerId%><%}%>" class="control-link-edit">更换负责人</a><em class="matures-em">|</em>
+                <a href="#addDepartMember?key=0&seq=<%= department %>&departmentId=<%= departmentItem.id %>" class="control-link-edit">新增成员</a><em class="matures-em">|</em>
+                <a href="#card?departmentId=<%= departmentItem.id %>" class="control-link-edit">经费卡管理</a><em class="matures-em">|</em>
+                <a href="#config?departmentId=<%= departmentItem.id %>" class="control-link-edit">配置管理</a>
+                <%}else{%>
+                <a href="#addDepartment?key=edit&id=<%= departmentItem.id %>&type=<%= type %>&depart=<%= departmentItem.name %><%if(departmentItem.managerId){%>&managerId=<%=departmentItem.managerId%><%}%>" class="control-link-edit">修改部门名称</a>
+                <%}}else{if(flag==true){if(level !=0 ){%>
+                <a href="#addDepartment?key=edit&id=<%= departmentItem.id %>&type=<%= type %>&depart=<%= departmentItem.name %><%if(departmentItem.managerId){%>&managerId=<%=departmentItem.managerId%><%}%>" class="control-link-edit">修改部门名称</a><em class="matures-em">|</em>
+                <a href="#addDepartMember?key=1&seq=<%= department%>&departmentId=<%= departmentItem.id %>" class="control-link-edit">新增成员</a>
+                <%}else{%>
+                <a href="#addDepartMember?key=1&seq=<%= department%>&departmentId=<%= departmentItem.id %>" class="control-link-edit">新增成员</a>   
+                <%}}else{if(level !=0 ){%>
+                <a href="#addDepartment?key=edit&id=<%= departmentItem.id %>&type=<%= type %>&depart=<%= departmentItem.name %><%if(departmentItem.managerId){%>&managerId=<%=departmentItem.managerId%><%}%>" class="control-link-edit">修改部门名称</a>
+                <%}}}%>
+            </div>
+            <div id="depart-detail-div">
+                <% if(flag==true||departmentItem.managerName){%>
+                <div class="matures">
+                    <p class="num-p">成员
+                        <%= departmentItem.countMembers %>个</p>
+                </div>
+                <div class="matures">
+                    <table class="department-list-table">
+                        <thead>
+                            <tr>
+                                <th class="detail-td-id">用户ID</th>
+                                <th class="detail-td-name">真实姓名</th>
+                                <th class="detail-td-mobile">手机号码</th>
+                                <th class="detail-td-email">电子邮箱</th>
+                                <th class="detail-td-role">角色</th>
+                                <th class="detail-td-control">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="list">
+                            <%if(departmentItem.members.length){ _.each(departmentItem.members,function(M){%>
+                            <tr>
+                                <td class="detail-td-id">
+                                    <%= M.id %>
+                                </td>
+                                <td class="detail-td-name">
+                                    <%= M.realName %>
+                                </td>
+                                <td class="detail-td-mobile">
+                                    <%= M.mobile %>
+                                </td>
+                                <td class="detail-td-email">
+                                    <%= M.email %>
+                                </td>
+                                <td class="detail-td-role">
+                                    <%if(M.roles.length){_.each(M.roles,function(R){%>
+                                    <%= R.name %><% if(R.id!==M.roles[M.roles.length-1].id){%>&nbsp;&nbsp;<%} %>
+                                    <%});}%>
+                                </td>
+                                <td class="detail-td-control">
+                                    <a href="javascript:void(0);" data-id="<%= M.id %>" class="control-link delete">从部门移除</a>
+                                    <a href="#editMember?id=<%= M.id %>" class="control-link">查看</a>
+                                </td>
+                            </tr>
+                            <%});}else{%>
+                                <tr>
+                                    <td colspan="6" style="text-align: center;">暂时没有成员！</td>
+                                </tr>
+                                <%}%>
+                        </tbody>
+                    </table>
+                </div>
+                <%}else{%>
+                <div class="common-wrap-div">
+                    <div class="none-div">
+                        <p class="none-p">当前部门下没有成员，您可以</p>
+                        <% if(departmentItem.type==0){%>
+                        <a href="#ctrlMainPerson?key=addMain&id=<%= departmentItem.id %>&seq=<%= department %>&parentId=<%=departmentItem.parentId%>" class="save-value">新增负责人</a>
+                        <%}else{%>
+                        <a href="#addDepartMember?key=1&seq=<%= department %>&departmentId=<%= departmentItem.id %>" class="save-value">新增成员</a>
+                        <%}%>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</div>

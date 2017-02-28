@@ -1,0 +1,17 @@
+<%if(flag==true){ _.each(userList,function(U){ %>
+<span class="add-member-span">
+    <input type="checkbox" class="member-checkbox" value="<%= U.id%>" name="member" />
+    <%= U.name%>
+</span>
+<%});}else{if(p == 0){%>
+<div class="none-member">
+    如果没有找到成员，可以通过
+    <a href="#inviteMember?departmentId=<%= departmentId %>" class="control-link-edit" style="font-size: 14px;">邮件邀请</a>加入！
+</div>
+<%}else{%>
+<div class="none-member">
+    没有找到该成员！
+</div>
+<%}%>
+
+<%} %>

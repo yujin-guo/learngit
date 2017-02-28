@@ -1,0 +1,187 @@
+<!--<div class="door-header">
+    <div class="cm-main">
+        <div class="door-hearder-content">
+            <a class="door-contact" href="javascript:void(0)">联系我们</a>
+            <a class="door-collection" href="javascript:void(0)">加入收藏</a>
+        </div>
+    </div>
+</div>-->
+<!--头部搜索--->
+<div class="header-search-main">
+    <div class="cm-main">
+        <a href="#portal" class="left header-icon"></a>
+        <div class="right door-code-div relative">
+            <div><img src="module/door/style/images/code.png"/></div>
+            <p class="door-code-p">锐竞采购平台<br/>微信端</p>
+        </div>
+    </div>
+</div>
+<div class="door-header-nav">
+    <div class="cm-main">
+        <a href="#portal" class="header-main-nav-cell" style="background-color: #0080bd;color: #fff;">首页</a>
+        <a href="#bidlist" class="header-main-nav-cell">在线竞价</a>
+        <a href="#information" class="header-main-nav-cell">信息公告</a>
+        <a href="#help" class="header-main-nav-cell">帮助中心</a>
+    </div>
+</div>
+<div class="door-login-wrap">
+    <div class="cm-main-login relative">
+        <!--采购人登录后开始-->
+        <div class="after-login-pur absolute">
+            <div class="after-login-inner">
+                <div class="after-info">
+                    <div class="after-info-inner">
+                        <p class="after-info-name"></p>
+                        <p class="after-info-email"></p>
+                        <div class="after-info-ctr">
+                            <a href="../purchaser_Manager/index.html" class="after-info-link1 purchase-per">个人中心</a>
+                            <a href="index.html" class="after-info-link2">采购首页</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="after-order">
+                    <span class="after-order-cell01"><a href="../purchaser_Manager/index.html#order/4"><span class="pur-deliver">0</span>待发货</a></span>
+                    <span class="after-order-cell01 m"><a href="../purchaser_Manager/index.html#order/5"><span class="pur-receive">0</span>待收货</a></span>
+                    <span class="after-order-cell01 b"><a href="../purchaser_Manager/index.html#presettle"><span class="pur-account">0</span>待结算</a></span>
+                    <span class="after-order-cell01"><a href="../purchaser_Manager/index.html#settlement"><span class="pur-accounting">0</span>结算中</a></span>
+                </div>
+            </div>
+        </div>
+       <!-- 采购人登录后结束-->
+       <!--供应商登录后开始-->
+        <div class="after-login-supp absolute">
+            <div class="after-login-inner">
+                <div class="after-info">
+                    <div class="after-info-inner">
+                        <p class="after-info-name"></p>
+                        <p class="after-info-email"></p>
+                        <div class="after-info-ctr">
+                            <a href="../supplier/index.html#personal" class="after-info-link1" style="margin-right: 0;">个人中心</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="after-order">
+                    <span class="after-order-cell01"><a href="../supplier/index.html#transactionlist?status=8"><span class="supp-new">0</span>新订单</a></span>
+                    <span class="after-order-cell01 m"><a href="../supplier/index.html#transactionlist?status=4"><span class="supp-deliver">0</span>待发货</a></span>
+                    <span class="after-order-cell01 b"><a href="../supplier/index.html#transactionlist?status=5"><span class="supp-receiver">0</span>待收货</a></span>
+                    <span class="after-order-cell01"><a href="../supplier/index.html#settleaccount"><span class="supp-accounting">0</span>待结算</a></span>
+                </div>
+            </div>
+        </div>
+       <!-- 供应商登录后结束-->
+        <div class="login-content absolute">
+            <div class="login-title-div">
+                <span class="login-title-01 word-active" data-flag="purchase">采购人登录</span>
+                <em class="em01"></em>
+                <span class="login-title-01" data-flag="supplier">供应商登录</span>
+            </div>
+            <div class="login-inner">
+                <div class="login-info">
+                    <iframe id="loginFrame" src="<%=defaultSSOLoginSrc%>">
+                    </iframe>
+                </div>
+                <div class="purchase-free-login">
+                    <span class="login-margin-left right supp-register">
+                        <a href="#providerfirst?key=login">供应商注册</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="door-wrap">
+    <div class="door-content">
+        <h1 class="door-h1">4大优势</h1>
+        <p class="door-h1-desc">我们平台专注提供优质服务</p>
+        <div class="door-advantage-div">
+            <span class="door-advantage-profession">
+                <div class="profession-img"></div>
+                <div class="profession-word">专业</div>
+            </span>
+            <span class="door-advantage-sanshine">
+                <div class="sanshine-img"></div>
+                <div class="sanshine-word">阳光</div>
+            </span>
+            <span class="door-advantage-convenient">
+                <div class="convenient-img"></div>
+                <div class="convenient-word">高效</div>
+            </span>
+            <span class="door-advantage-quick">
+                <div class="quick-img"></div>
+                <div class="quick-word">服务</div>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="door-bottom">
+    <div class="door-bottom-content">
+        <h1 class="door-bottom-h1">供应商首选</h1>
+        <div style="font-size: 0;">
+            <span class="door-bottom-left-icon"></span>
+            <span class="door-bottom-middle-icon"></span>
+            <span class="door-bottom-right"></span>
+        </div>
+        <p class="door-bottom-desc">
+            建立稳定的销售渠道&nbsp;&nbsp;扩大品牌的影响力&nbsp;&nbsp;提升公司的运营能力
+        </p>
+        <div class="door-bottom-ctr">
+            <a href="#providerfirst?key=login" class="door-login-link">立即入驻</a>
+        </div>
+    </div>
+</div>
+<div class="door-footer-wrap">
+    <div class="cm-main">
+        <span class="left service-span">
+            <h2 class="door-footer-h2">客服热线</h2>
+            <p class="door-footer-content">
+                客服热线：4009005786
+            </p>
+            <p class="door-footer-content">
+                客服Q&nbsp;Q：2448328732
+            </p>
+            <p class="door-footer-content">
+                客服邮箱：service@rj-info.com
+            </p>
+        </span>
+        <span class="left supp-span">
+            <h2 class="door-footer-h2">供应商合作</h2>
+            <p class="door-footer-content">
+                联系人：李小姐
+            </p>
+            <p class="door-footer-content">
+                固定电话：13480873775
+            </p>
+            <p class="door-footer-content">
+                电子邮箱：lirongrong@rj-info.com
+            </p>
+        </span>
+        <span class="left hospital-span">
+            <h2 class="door-footer-h2">医院合作</h2>
+            <p class="door-footer-content">
+                联系人：丁荐君
+            </p>
+            <p class="door-footer-content">
+                固定电话：13602700138
+            </p>
+            <p class="door-footer-content">
+                电子邮箱：dingjianjun@rj-info.com
+            </p>
+        </span>
+        <span class="left copyright-span">
+            <h2 class="door-footer-h2">版权信息</h2>
+            <p class="door-footer-content">
+                公司地址：广州市海珠区新港东路10号琶洲商业
+            </p>
+            <p class="door-footer-content">
+                广场11号楼1405
+            </p>
+            <p class="door-footer-content">
+                <a target="_blank" style="color:#999;" href="http://www.miitbeian.gov.cn/">
+                    粤ICP备16055118号-2/Copyright
+                </a>
+                
+            </p>
+
+        </span>
+    </div>
+</div>

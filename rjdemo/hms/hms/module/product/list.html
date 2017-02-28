@@ -1,0 +1,68 @@
+<%= nav %>
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">审核审批</span>
+            </div>
+        </div>
+
+        <div class="infomation">
+            <div class="matures">
+                <div class="search-div">
+                    <input class="search-input" type="text" placeholder="采购申请编号/采购组/采购人" />
+                    <a class="search-btn" href="#"></a>
+                </div>
+            </div>
+            <table class="list-table">
+                <tr>
+                    <th class="apply-id">采购申请编号</th>
+                    <th class="date">采购日期</th>
+                    <th class="group">采购组</th>
+                    <th class="human">采购人</th>
+                    <th class="money">采购申请金额</th>
+                    <th class="status-td">
+                        <select>
+                            <option>状态</option>
+                            <option value="0">未确认</option>
+                            <option value="1">确认</option>
+                            <option value="2">审批</option>
+                            <option value="3">已撤消</option>
+                            <option value="4">生成订单</option>
+                        </select>
+                    </th>
+                    <th class="control">操作</th>
+                </tr>
+                <%if(flag==true){_.each(purchaseApplys,function(P){%>
+                <tr>
+                    <td class="apply-id">A201504230001</td>
+                    <td class="date">2015-12-23 11:44 </td>
+                    <td class="group">生物研发课题组</td>
+                    <td class="human">王生</td>
+                    <td class="money">2000.00</td>
+                    <td class="status-td">待审批</td>
+                    <td class="control">
+                        <a href="#">查看</a>
+                    </td>
+                </tr>
+                <%});}else{%>
+                    <tr>
+                        <td colspan="7">
+                            暂无数据！
+                        </td>
+                    </tr>
+                <%}%>
+            </table>
+            <div class="matures">
+                <div class="page">
+                    <a class="endpoint" href="#">首页</a>
+                    <a class="direction-pre" href="#">上一页</a>
+                    <a class="index index-active" href="#">1</a>
+                    <a class="index" href="#">2</a>
+                    <a class="direction-next " href="#">下一页</a>
+                    <a class="endpoint" href="#">尾页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

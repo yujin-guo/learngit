@@ -1,0 +1,176 @@
+<%= nav %>
+<div class="left content supply-details">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">供应商管理</span>
+                <a class="supply-details-back" href="javascript:;">&lt;返回上级</a>
+            </div>
+        </div>
+        <%if(suppacc.creationTime){var creation=new Date(suppacc.creationTime).toLocaleString().replace(/\//g,"-");}else{var creation=suppacc.creationTime}%>
+        <%if(suppacc.status==1){%>
+        <div class="supply-details-status-info">
+            <p>
+                <span class="supply-details-date">
+                    <%=creation%>
+                </span>供应商提交入驻申请，请审核。</p>
+        </div>
+        <%}%>
+        <%if(suppacc.status==2){%>
+        <%if(suppacc.approveTime){var approveTime=new Date(suppacc.approveTime).toLocaleString().replace(/\//g,"-");}else{var approveTime=suppacc.approveTime}%>
+        <div class="supply-details-status-info">
+            <p>
+                <span class="supply-details-date">
+                    <%=approveTime%>
+                </span> 供应商正式入驻</p>
+        </div>
+        <%}%>
+        <%if(suppacc.status==3){%>
+        <%if(suppacc.approveTime){var approveTime=new Date(suppacc.approveTime).toLocaleString().replace(/\//g,"-");}else{var approveTime=suppacc.approveTime}%>
+            
+        <div class="supply-details-status-info">
+            <p>
+                <span class="supply-details-date">
+                    <%=approveTime%>
+                </span>
+                <%=suppacc.approveComment%>
+            </p>
+        </div>
+        <%}%>
+        <div class="supply-details-info">
+            <p>
+                <span class="supply-details-info-item">企业全称：</span>
+                <span>
+                    <%=suppacc.company%>
+                </span>
+            </p>
+            <p>
+                <span class="supply-details-info-item">法定代表人：</span>
+                <span>
+                    <%=suppacc.legalPerson%>
+                </span>
+            </p>
+            
+            <%if(suppacc.unify==false){%>
+                <p><span class="supply-details-info-item">工商执照：</span><span><%=suppacc.regNumber%></span></p>
+                <p><span class="supply-details-info-item">机构代码：</span><span><%=suppacc.orgCode%></span></p>
+            <%}else{%>  
+                <p><span class="supply-details-info-item">社会信用代码：</span><span><%=suppacc.unifyCode%></span></p>
+            <%}%>
+            <p>
+                <span class="supply-details-info-item">服务电话：</span>
+                <span>
+                    <%=suppacc.telephone%>
+                </span>
+            </p>
+            <p>
+                <span class="supply-details-info-item">公司地址：</span>
+                <span>
+                    <%=suppacc.address%>
+                </span>
+            </p>
+            <p>
+                <span class="supply-details-info-item">注册邮箱：</span>
+                <span>
+                    <%=suppacc.email%>
+                </span>
+            </p>
+            <p>
+                <span class="supply-details-info-item">联系人：</span>
+                <span>
+                    <%=suppacc.contactman%>
+                </span>
+            </p>
+            <p>
+                <span class="supply-details-info-item">手机号码：</span>
+                <span>
+                    <%=suppacc.contactMobile%>
+                </span>
+            </p>
+            <div class="supply-details-license">
+                <%if(suppacc.hasOwnProperty("logo") && suppacc.logo!=null){%>
+                <span class="supply-details-license-pic">
+                    <span class="supply-details-pic-wrap">
+                        <a href="<%=suppacc.logo.replace(/\" /g, "").replace(/\)/g, "")%>" target="_blank">
+                            <img src="<%=suppacc.logo.replace(/\" /g, "").replace(/\)/g, "")%>" />
+                        </a>
+                    </span>
+                    <p class="supply-details-license-text">企业logo</p>
+                </span>
+                <%}%>
+                <%if(suppacc.hasOwnProperty("licensePic")&& suppacc.licensePic!=null){%>
+                <span class="supply-details-license-pic">
+                    <span class="supply-details-pic-wrap">
+                        <a href="<%=suppacc.licensePic%>" target="_blank">
+                            <img src="<%=suppacc.licensePic%>" />
+                        </a>
+                    </span>
+                    <p class="supply-details-license-text">工商营业执照</p>
+                </span>
+                <%}%>
+                <%if(suppacc.unify==false && suppacc.hasOwnProperty("orgCodePic")&& suppacc.orgCodePic!=null){%>
+                <span class="supply-details-license-pic">
+                    <span class="supply-details-pic-wrap">
+                        <a href="<%=suppacc.orgCodePic.replace(/\" /g, "").replace(/\)/g, "")%>" target="_blank">
+                            <img src="<%=suppacc.orgCodePic.replace(/\" /g, "").replace(/\)/g, "")%>" />
+                        </a>
+                    </span>
+                    <p class="supply-details-license-text">组织机构代码证</p>
+                </span>
+                <%}%>
+            </div>
+        </div>
+        <%if(suppacc.status==1){%>
+        <div class="supply-details-examine">
+            <div>
+                <label for="supplyPass">
+                    <input type="radio" name="status" id="supplyPass" value="1" checked />审批通过
+                </label>
+                <label for="supplyRejected">
+                    <input type="radio" name="status" id="supplyRejected" value="2" />审批驳回
+                </label>
+            </div>
+            <textarea placeholder="审批意见" id="myCheck" maxlength="500" class="oms-supply-opinion"></textarea>
+            <div>
+                <a class="supply-details-submit" href="javascript:;">提交审核</a>
+            </div>
+        </div>
+        <%}%>
+        <% if(suppacc.status==2) {%>
+        <div class="oms-approval-passing-div">
+            <table cellspacing=0>
+                <thead>
+                    <tr>
+                        <td class="td-width-one">编号</td>
+                        <td class="td-width-two">入驻医院全称</td>
+                        <td class="td-width-three">医院简称</td>
+                        <td class="td-width-four">入驻日期</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%if(suppacc.hasOwnProperty("listorg") && suppacc.listorg!=null && suppacc.listorg.length!=0){_.each(suppacc.listorg,function(i){%>
+                    <tr>
+                        <td class="td-width-one">
+                            <%= i.id %>
+                        </td>
+                        <td class="td-width-two">
+                            <%= i.name %>
+                        </td>
+                        <td class="td-width-three">
+                            <%=i.alias%>
+                        </td>
+                        <td class="td-width-four">
+                            <%=new Date(i.enterDate).toLocaleString().replace(/\//g,"-")%>
+                        </td>
+                    </tr>
+                    <%});}else{%>
+                    <tr>
+                        <td colspan="4" style="text-align: center;">暂无医院入住</td>
+                    </tr>
+                    <%}%>
+                </tbody>
+            </table>
+        </div>
+        <%}%>
+    </div>
+</div>

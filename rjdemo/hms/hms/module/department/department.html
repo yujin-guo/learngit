@@ -1,0 +1,113 @@
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">部门管理</span>
+            </div>
+        </div>
+        <div class="infomation">
+            <div class="matures">
+                <div class="department-btn-div left">
+                    <a href="#addDepartment?key=add" class="member-btn-link">新增部门</a>
+                </div>
+                <div class="search-div right">
+                    <input class="search-input" id="search-value" type="text" placeholder="部门名称/负责人" />
+                    <a class="search-btn" id="search-btn" href="javascript:void(0)"></a>
+                </div>
+            </div>
+            <table class="department-list-table">
+                <thead>
+                    <tr>
+                        <th class="department-td-name">部门名称</th>
+                        <th class="department-td-status">部门类型</th>
+                        <th class="department-td-main">负责人</th>
+                        <!--<th class="department-td-num">成员数量</th>-->
+                        <th class="department-td-control">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="list">
+                    <tr>
+                        <td class="department-td-name">
+                            <span class="hospital-deparment">-</span> 医院
+                        </td>
+                        <td class="department-td-status">
+                            -
+                        </td>
+                        <td class="department-td-main">
+                            -
+                        </td>
+                        <!--<td class="department-td-control">
+                            <a href="#dDetail?id=" class="control-link">查看</a>
+                        </td>-->
+                    </tr>
+                    <%if(flag==true){_.each(departmentItems,function(D){%>
+                    <tr>
+                        <% if(D.level==0){%>
+                        <td class="department-td-name">
+                            <span class="hospital-root"><%= D.name %></span>
+                        </td>
+                        <%}else if(D.level==1){%>
+                        <td class="department-td-name">
+                            <span class="hospital-children01"><%= D.name %></span>
+                        </td>
+                        <%}else if(D.level==2){%>
+                        <td class="department-td-name">
+                            <span class="hospital-children02"><%= D.name %></span>
+                        </td>
+                        <%}else if(D.level==3){%>
+                        <td class="department-td-name">
+                            <span class="hospital-children03"><%= D.name %></span>
+                        </td>
+                        <%}else if(D.level==4){%>
+                        <td class="department-td-name">
+                            <span class="hospital-children04"><%= D.name %></span>
+                        </td>
+                        <%}else if(D.level==5){%>
+                        <td class="department-td-name">
+                            <span class="hospital-children05"><%= D.name %></span>
+                        </td>
+                        <%}else if(D.level==6){%>
+                        <td class="department-td-name">
+                            <span class="hospital-children06"><%= D.name %></span>
+                        </td>
+                        <%}%>
+                        <td class="department-td-status">
+                            <% if(D.type==1){%> 管理部门
+                            <%}else{%> 采购部门
+                            <%} %>
+                        </td>
+                        <td class="department-td-main">
+                            <% if(D.managerName){%>
+                            <%= D.managerName %>
+                            <%}else{%> --
+                            <%}%>
+                        </td>
+                        <!--<td class="department-td-num"><%= D.countMembers %></td>-->
+                        <td class="department-td-control">
+                            <a href="#dDetail?id=<%= D.id %>&type=<%= D.type %>&level=<%= D.level %>" class="control-link">查看</a>
+                            <a href="javascript:void(0);" data-id="<%= D.id %>" class="control-link delete-department">删除</a>
+                        </td>
+                    </tr>
+                    <%})}else{%>
+                    <tr>
+                        <td class="empty-td" colspan="5">暂无数据!</td>
+                    </tr>
+                    <%}%>
+                </tbody>
+            </table>
+            <div class="matures">
+                <!-- <div class="page">
+                    <div class="right">
+                        <a class="endpoint" href="javascript:void(0)">尾页</a>
+                    </div>
+                    <div class="right" id="pagination">
+
+                    </div>
+                    <div class="right">
+                        <a class="endpoint" href="javascript:void(0)">首页</a>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>

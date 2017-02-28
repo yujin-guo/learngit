@@ -1,0 +1,64 @@
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">部门管理</span>
+            </div>
+        </div>
+        <form id="department-form">
+            <div class="common-wrap-div">
+                <div class="person-info-wrap">
+                    <span class="person-info-title">部门名称：</span>
+                    <input type="text" name="dename" id="name" placeholder="请输入部门名称" <% if(flag=="edit" ){%>value='<%= department %>'<%} %> />
+                    <span class="find-error"></span>
+                </div>
+                <% if(flag=="add"){ %>
+                <div class="person-info-wrap">
+                    <span class="person-info-title">部门类型：</span>
+                    <span class="radio-status">
+                        <input class="radio-input" type="radio" name="roles" id="purcharse-dep" value="0"/>
+                        <label class="label-choose" for="purcharse-dep">采购部门</label>
+                    </span>
+                    <span class="radio-status">
+                        <input class="radio-input" type="radio" name="roles" id="manager-dep" value="1"/>
+                        <label class="label-choose" for="manager-dep">管理部门</label>
+                    </span>
+                    <span class="find-error"></span>
+                </div>
+                <%}else if(flag=="edit"){%>
+                <div class="person-info-wrap">
+                    <span class="person-info-title">部门类型：</span>
+                    <span class="edit-department-type">
+                        <% if(type==0){%>
+                            采购部门
+                        <%} else if(type==1){%>
+                            管理部门
+                         <%}%>
+                    </span>
+                </div>
+                <%} %>
+
+                <div class="person-info-wrap">
+                    <span class="person-info-title">上级部门：</span>
+                    <select class="department-select" id="department-select">
+                        <!--<option value=""></option>-->
+                        <% if(flag=="add"){_.each(departmentItems,function(D){if(D.type==1){%>
+                                <option value="<%= D.id %>">
+                                    <%= D.name %>
+                                </option>
+                            <%}})}else if(flag=="edit"){ _.each(departmentItems,function(D){if(D.type==1 && D.id != editDepartId){%>
+                                <option value="<%= D.id %>">
+                                    <%= D.name %>
+                                </option>
+                            <%}})} %>
+                    </select>
+                </div>
+                <div class="person-info-wrap add-margin-top">
+                    <span class="person-info-title"></span>
+                    <input type="submit" class="save-value" value="保 存" />
+                    <a class="back-link" href="javascript:window.history.back()">返&nbsp;回</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

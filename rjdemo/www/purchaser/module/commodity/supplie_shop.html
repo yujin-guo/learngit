@@ -1,0 +1,267 @@
+<%= search %>
+<div id="navModule"></div>
+<div class="commodity-wrap" style="overflow: hidden;">
+    <div class="cm-main">
+        <div class="commodity-header">
+            <div class="commodity-header-bread">
+                当前位置 ：
+                <span>供应商店铺</span>
+                <!--<span>实验耗材 &gt;</span> <span>细胞培养耗材</span>-->
+            </div>
+        </div>
+       <div class="commodity-catalog-section supplie-header">
+            <!-- <ul class="supplie-nav">
+                <li>
+                    <a href="#supplie?id=<%= supplierIds%>&name=<%= supplierName%>" class="supplie-active">首页</a>
+                </li>
+                <li>
+                    <a class="supplie-active" href="javascript:void(0)">全部商品</a>
+                </li>
+                <li>
+                    <a href="#">诚信档案</a>
+                </li>
+                <li>
+                    <a href="#">信用评价</a>
+                </li>
+                <li>
+                    <a href="#" target="_blank">联系我们</a>
+                </li>
+                <li>
+                    <a href="#">售后服务</a>
+                </li>
+                <li>
+                    <a href="#">咨询留言</a>
+                </li>
+            </ul> -->
+        </div>
+        <div class="supplie-content">
+            <div class="supplie-content-left">
+                <div class="supplie-info">
+                    <div class="supplie-info-inner">
+                        <h2>商家信息</h2>
+                        <div class="supplie-info-logo">
+                            <img src="images/icon-01.jpg" alt="logo" />
+                        </div>
+                        <p class="supplie-info-name">
+                            <%= supplierName%>
+                        </p>
+                    </div>
+                </div>
+                <div class="supplie-info">
+                    <div class="supplie-info-inner">
+                        <p class="supplie-commodity-title"><b>本店商品搜索</b></p>
+                        <div class="supplie-commodity-search">
+                            <span style="width:0;overflow:hidden;display:inline-block;float:left;">&nbsp;</span>
+                            <input type="text" class="key-word" placeholder="关键字" />
+                            <span class="search-btn" id="search-btn">搜索</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="supplie-info">
+                    <div class="supplie-info-inner">
+                        <p class="supplie-commodity-title clear-border"><b>本店商品分类</b></p>
+                        <ul class="supplie-commodity-classify">
+                            <%_.each(categorys,function(C){%>
+                            <li class="classify01">
+                                <a class="classify-control" href="javascript:void(0)">
+                                    <span class="triangle01"></span>
+                                    <%= C.name%>
+                                </a>
+                                <input class="category-value" type="hidden" value="<%= C.id %>" />
+                                <!--<ul class="classify-hide">
+                                    <li>
+                                        <a href="#">某某</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">某某</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">某某</a>
+                                    </li>
+                                </ul>-->
+                            </li>
+                            <%});%>
+                            <!--   <li class="classify01">
+                                <a class="classify-control" href="javascript:void(0)">
+                                    <span class="triangle01"></span>试剂</a>
+                                <ul class="classify-hide">
+                                    <li>
+                                        <a href="#">某某</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">某某</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">某某</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="classify01">
+                                <a class="classify-control" href="javascript:void(0)">
+                                    <span class="triangle01"></span>试剂 </a>
+                                <ul class="classify-hide">
+                                    <li>
+                                        <a href="#">某某</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">某某</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">某某</a>
+                                    </li>
+                                </ul>
+                            </li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="supplie-content-right">
+                <div class="commodity-section clear-margin">
+                    <div class="commodity-sort">
+                        <span class="commodity-sort-left left commodity-active clear-border-half" data-flag="sale">销量
+                            <span class="com-sale-triangle">
+                                <span class="up-triangle"></span>
+                                <span class="down-triangle"></span>
+                            </span>
+                        </span>
+                        <span class="commodity-sort-left left flag" data-flag="price">价格
+                            <span class="com-price-triangle">
+                                <span class="up-triangle"></span>
+                                <span class="down-triangle"></span>
+                            </span>
+                        </span>
+                        <span class="right find-active">
+                            <span class="commodity-sort-right commodity-active" data-flag="list">列表模式
+                                <span class="list-icon"></span>
+                            </span>
+                            <span class="commodity-sort-right" data-flag="pic">图片模式
+                                <span class="pic-icon"></span>
+                            </span>
+                        </span>
+                    </div>
+                    <!--商品列表strat-->
+                    <div class="commodity-list" id="commodity-list">
+                        <!--图片模式-->
+                        <div class="commodity-list-pic">
+                            <%if(flag==true){ _.each(datas.products,function(p){%>
+                            <% var prices=p.price.toFixed(2)%>
+                            <a class="commodity-pic-cell" href="#/details/<%= p.sn %>/<%=p.suppId%>" target="_blank">
+                                <span class="commodity-pic-wrap"><img src="<%= p.photo %>" /></span>
+                                <span class="commodity-pic-price">
+                                    <span class="pic-price">￥
+                                        <%= prices %>
+                                    </span>
+                                    <!--<span class="deal-numbers">成交量：<span><%= p.saleAmount %></span></span>-->
+                                </span>
+                                <span class="commodity-pic-description">
+                                    <span class="commodity-link">
+                                        <%= p.name%>
+                                    </span>
+                                </span>
+                            </a>
+                            <% });}else{%>
+                            <div class="commodity-empty">
+                                <div class="commodity-empty-inner">
+                                    <div class="commodity-empty-p01">抱歉，沒有找到相关的宝贝</div>
+                                    <p class="commodity-empty-p02">建议您：</p>
+                                    <p class="commodity-empty-p02">1. 看看输入文字是否有误</p>
+                                    <p class="commodity-empty-p02">2. 调整关键词</p>
+                                </div>
+                            </div>
+
+                            <%} %>
+                        </div>
+                        <!--列表模式-->
+                        <div class="commodity-list-lists">
+                            <div class="commodity-list-v2">
+                                <span class="supp-list-v2-name">名称</span>
+                                <span class="supp-list-v2-unit">规格</span>
+                                <span class="supp-list-v2-sn">货号</span>
+                                <span class="supp-list-v2-brand">品牌</span>
+                                <span class="supp-list-v2-price">价格</span>
+                            </div>
+                            <ul class="commodity-lists-cell">
+                                <%if(flag==true){ _.each(datas.products,function(p){%>
+                                <% var prices=p.price.toFixed(2)%>
+                                <li>
+                                    <!-- <div class="lists-img"><img src="<%= p.photo %>" /></div>-->
+                                    <a href="#/details/<%= p.sn %>/<%=p.suppId%>" target="_blank" style="vertical-align: middle;font-size: 0;">
+                                        <span class="supp-list-v2-name">
+                                            <span class="supp-list-v2-01">
+                                                <%= p.name%>
+                                            </span>
+                                        </span>
+                                        <span class="supp-list-v2-unit">
+                                            <span class="supp-list-v2-02">
+                                                <%=p.specification%>
+                                            </span>
+                                        </span>
+                                        <span class="supp-list-v2-sn">
+                                            <span class="supp-list-v2-03">
+                                                <%=p.productNum%>
+                                            </span>
+                                        </span>
+                                        <span class="supp-list-v2-brand">
+                                            <span class="supp-list-v2-04">
+                                                <% if(p.brandName==undefined || p.brandName=='null' || p.brandName==''){%> 无
+                                                <%}else{%>
+                                                <%=p.brandName%>
+                                                <%} %>
+                                            </span>
+                                        </span>
+                                        <span class="supp-list-v2-price">
+                                            <span class="supp-list-v2-05">￥
+                                                <%= prices%>
+                                            </span>
+                                        </span>
+                                        <!--<div class="lists-deal">成交量：<span><%= p.saleAmount %></span></div>-->
+                                    </a>
+                                </li>
+                                <% })}else{%>
+                                <div class="commodity-empty">
+                                    <div class="commodity-empty-inner">
+                                        <div class="commodity-empty-p01">抱歉，沒有找到相关的宝贝</div>
+                                        <p class="commodity-empty-p02">建议您：</p>
+                                        <p class="commodity-empty-p02">1. 看看输入文字是否有误</p>
+                                        <p class="commodity-empty-p02">2. 调整关键词</p>
+                                    </div>
+                                </div>
+                                <%} %>
+                            </ul>
+                        </div>
+                        <!--商品列表end-->
+                        <!--页码-->
+                        <div class="page">
+                            <div class="right total-page-show">
+                                共
+                                <span class="total-page-num">
+                                    <%if(flag==true){%>
+                                    <%= datas.totalPages %>
+                                    <%}else{%>0
+                                    <%}%>
+                                </span>页
+                            </div>
+                            <div class="commodity-page" id="pagination">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="home-footer">
+    <p>
+        <a style="color:#666;margin-right:10px;" href="index.html#help">帮助中心</a>|&nbsp;&nbsp;&nbsp;&nbsp;客服QQ：2448328732 &nbsp;&nbsp;&nbsp;&nbsp;服务时间：周一至周五(节假日除外)&nbsp;&nbsp;&nbsp;&nbsp;9：00-18：00
+        <span class="footer-logo">
+            <a href="tencent://message/?uin=2448328732&Site=在线QQ&amp;Menu=yes">
+                <img src="images/QQ.png" />
+                <span>QQ交谈</span>
+            </a>
+        </span>
+    </p>
+    <p>版权所有 @2014-2016&nbsp;&nbsp;&nbsp;&nbsp;网站备案/许可证号：
+        <a target="_blank" style="color:#666;" href="http://www.miitbeian.gov.cn/">粤ICP备16055118号-2
+        </a>
+    </p>
+</div>

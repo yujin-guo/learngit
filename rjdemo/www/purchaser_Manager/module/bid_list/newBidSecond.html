@@ -1,0 +1,165 @@
+<div class="bid-wrap" style="min-height: 800px;">
+    <div class="bid-header-wrap">
+        <span class="bid-icon01"></span>
+        <span class="bid-header-title">新建竞价申请</span>
+        <div class="borderbottom"></div>
+    </div>
+    <div class="bid-flow">
+        <div class="bid-flow-img bid-img-second"></div>
+        <div class="bid-flow-text">
+            <span class="bid-flow-text-item bid-flow-item-finished">填写基本信息</span>
+            <span class="bid-flow-text-item bid-flow-item-finished">填写商品信息</span>
+            <span class="bid-flow-text-item">完成</span>
+        </div>
+    </div>
+    <div class="clear bid-content">
+        <div class="bid marginbottom">
+            <span class="bid-title">*商品名称:</span>
+            <span class="bid-info">
+                <input class="common" name="p_name" id="p_name" type="text" placeholder="请输入商品名称" />
+                <span class="error-wrap"></span>
+            </span>
+        </div>
+        <div class="bid marginbottom">
+            <span class="bid-title">*采购数量:</span>
+            <span class="bid-info">
+                <input class="common" name="p_num" id="p_num" type="text" placeholder="请选择采购数量" />
+                <span class="error-wrap"></span>
+            </span>
+            <span class="bid-column-txt">
+                例如20，15，10
+            </span>
+        </div>
+        <div class="bid marginbottom">
+            <span class="bid-title">规格:</span>
+            <span class="bid-info">
+                <input class="common" name="p_special" id="p_special" type="text" placeholder="请输入规格" />
+                <span class="error-wrap"></span>
+            </span>
+            <span class="bid-column-txt">
+                例如支，个，件
+            </span>
+        </div>
+        <div class="bid marginbottom">
+            <span class="bid-title">品牌要求:</span>
+            <span class="bid-info">
+                <input class="common" type="text" name="brand_yaoqiu" id="brand_name" placeholder="请输入品牌名称" maxlength="100" />
+                <span class="error-wrap"></span>
+            </span>
+        </div>
+        <div class="bid marginbottom">
+            <span class="bid-title">货号要求:</span>
+            <span class="bid-info">
+                <input class="common" type="text" name="pro_num" id="pro_num" placeholder="请输入货号" maxlength="10" />
+                <span class="error-wrap"></span>
+            </span>
+        </div>
+        <div class="bid marginbottom" style="height:150px;">
+            <span class="bid-title">备注信息:</span>
+            <span class="bid-info">
+                <textarea class="common" style="resize:auto;" id="bid-beizhu" name="beizhu" maxlength="2000" placeholder="为了让供应商更加充分地了解您的采购需求，请在此处填写您的需求(2000个字以内)"></textarea>
+                <span class="error-wrap"></span>
+            </span>
+            <span class="bid-column-txt" style="position:relative;top:30px;">
+                例如:送货要求，服务要求，规格要求等，请根据实际情况填写
+            </span>
+        </div>
+        <div class="bid marginbottom">
+            <span class="bid-title">补充资料:</span>
+            <span class="bid-info">
+                <span class="bid-haven-upload"></span>
+                <img src="style/images/close.png" class="bid-upload-cancel-img" />
+                <span class="bid-upload-file" id="fujian">上传附件</span>
+                <span class="error-wrap"></span>
+            </span>
+            <form id="form" style="display:inline-block;">
+                <input type="file" name="file" style="display:none" class="file-upload">
+                <input type="hidden" name="orgId" value="" />
+                <input type="hidden" name="depId" value="" />
+                <input type="hidden" name="fileType" value="0" />
+                <input type="hidden" name="userType" value="0" />
+            </form>
+            <span class="bid-file-txt">
+                文件大小不超过10M，支持excel、word、pdf、zip、rar的文件格式
+            </span>
+        </div>
+        <div class="bid marginbottom">
+            <span class="bid-title"></span>
+            <span class="bid-info bid-save-product">
+                保存商品
+            </span>
+            <span class="bid-info bid-back-btn bid-non-product">
+                返回上一步
+            </span>
+        </div>
+    </div>
+    <div class="list-content" id="list-content" style="display:none;">
+        <table class="table-all">
+            <thead>
+                <tr>
+                    <th class="table-th-01">序号</th>
+                    <th class="table-th-01">商品名称</th>
+                    <th class="table-th-01">采购数量</th>
+                    <th class="table-th-01">品牌要求</th>
+                    <th class="table-th-01">货号要求</th>
+                    <th class="table-th-01">其他要求</th>
+                    <th class="table-th-01">文件要求</th>
+                    <th class="table-th-01">操作</th>
+                </tr>
+            </thead>
+            <tbody id="list-tbody">
+                <% _.each(results,function(L,index){%>
+                <tr>
+                    <td class="cname">
+                       <%=index+1%>  
+                    </td>
+                    <td class="cname">
+                        <%= L.itemName %>
+                    </td>
+                    <td class="cname">
+                        <%= L.count %>
+                    </td>
+                    <td class="cname">
+                        <%if(L.brand==""){%>-<%}else{%>
+                            <%= L.brand %>
+                        <%}%>    
+                    </td>
+                    <td class="cname">
+                        <%if(L.itemNo==""){%>-<%}else{%>
+                            <%= L.itemNo %>
+                        <%}%> 
+                    </td>
+                    <td class="cname">
+                        <%if(L.information==""){%>-<%}else{%>
+                            <%= L.information %>
+                        <%}%>
+                    </td>
+                    <td class="cname">
+                        <%if(L.fileUrl!=""){%>      
+                            <a href="<%= common.bidBaseUrl+L.fileUrl %>">下载文件</a>
+                        <%}else{%>
+                            无      
+                        <%}%>                        
+                    </td>
+                    <td>
+                        <a data-id="<%=L.id%>" class="del_product" href="javascript:void(0);">删除</a><br />
+                        <a data-id="<%=L.id%>" class="check_product" href="javascript:void(0);">修改</a>
+                    </td>
+                </tr>
+                <%}); %>
+            </tbody>
+        </table>
+        <div class="bid margintop">
+            <span class="bid-title"></span>
+            <span class="bid-info bid-add-product">
+                继续新增商品
+            </span>
+            <span class="bid-info bid-check">
+                提交初审
+            </span>
+            <span class="bid-info bid-have-product">
+                返回上一步
+            </span>
+        </div>
+    </div>
+</div>

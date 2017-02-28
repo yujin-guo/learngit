@@ -1,0 +1,31 @@
+<div class="hospital-wrap">
+    <div class="hospital-wrap-top">
+        <span class="icons-color"></span>
+        <span class="icons-title">审核状态</span>
+        <span class="icons-hr"></span>
+    </div>
+    <div class="hospital-detail">
+        <div class="hospital-01 left">
+            <div class="hospital-icon-01">
+                <img src="http://www.rjmart.cn/cms/file/downLoad?type=image&category=ORG_LOGO&about=<%=hospital.orgId%>&serial=0" style="height:85px;padding-top:5px;" />
+            </div>
+            <p class="hospital-name"><%=hospital.name %></p>
+        </div>
+        <div class="hospital-02 left">
+            <div class="hospital-icon-02">
+                <span class="status-icon-big big-unpass"></span>
+                <span class="status-desc">未通过</span>
+                <a class="control-link" href="javascript:void(0);">重新申请</a>
+            </div>
+            <p class="hospital-name">您的申请被驳回，驳回原因为：<%=hospital.refuseReason%></p>
+        </div>
+    </div>
+    <div class="hospital-wrap-top">
+        <span class="icons-color"></span>
+        <span class="icons-title">申请信息</span>
+        <span class="icons-hr"></span>
+    </div>
+    <p class="detail-infomation">
+        <%=hospital.appReason %>
+    </p>
+</div>

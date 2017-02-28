@@ -1,0 +1,98 @@
+/* 弹出窗 */
+.login{ background:white; -webkit-box-shadow:13px;-moz-box-shadow:13px;box-shadow:13px;border:1px solid #ccc;position:fixed; left:0; top:0;border-radius:5px;}
+.poptitle{ height:30px; line-height: 30px;  color:#fff;}
+.poptitle .popclose{ float:right; width:25px; height: 25px; margin: 12px 12px ; text-align: center;  cursor: pointer; line-height: 30px;background-image: url(../../../style/images/5.svg);background-repeat: no-repeat;background-size: 60% 60%;background-position: center;}
+.poptitle .popclose:hover{background-image: url(../../../style/images/6.svg);}
+.pop-sure,.pop-cancel{width: 120px;text-align: center;height: 30px;line-height:30px;vertical-align: middle;}
+.pop-sure{color: #fff;background-color: #008cd0;margin-right: 30px;}
+.pop-cancel{color: #008cd0;border: 1px solid #008cd0;}
+.pop-inner{padding: 0 30px;}
+.title-f1{color: #008cd0;font-size: 18px;font-weight: normal;text-align: center;}
+.content-f1{color: #999;margin: 45px 0;text-align:center;}
+.bank-title{color:#666;margin-top:30px;margin-left:35px;width:78px;}
+.bank-inputValue,.account-inputValue{height:30px;line-height:30px;width:250px;text-indent:10px;}
+.account-inputValue{margin-top:10px;}
+.account-title{color:#666;margin-left:35px;margin-top:10px;width:78px;}
+.account-ErrInput{margin-left:113px;color:#ff593f;margin-top:5px;display:none;}
+.addInvoice-title{color: #008cd0;font-size:18px;font-weight:400;text-align:center;border-bottom:2px solid #ccc;padding-bottom:10px;}
+.addInvoice-errorTip{color:#f00;margin-top:10px;display:none;}
+.addInvoice-num{display:inline-block;height:50px;width:100%;margin-top:10px;}
+.addInvoice-num-input{height:50px;font-size:16px;border:1px solid #ccc;border-radius:5px;width:50%;text-indent:10px;}
+.addInvoice-jiesuanamount,.addInvoice-experimentamount,.addInvoice-textamount{display:inline-block;width:100px;height:50px;line-height:25px;text-align:center;position:relative;top:10px;left:20px;}
+.addInvoice-table{margin-top:30px;width:100%;text-align:center;border-collapse: collapse;}
+.addInvoice-table .addInvoice-table-title{background-color:#f2f2f2;border: none;}
+.addInvoice-table tr{border-bottom: 1px dotted #ccc;}
+.addInvoice-table td{padding-top:12px ;padding-bottom: 12px;word-wrap: break-word;word-break: break-all;}
+.addInvoice-jiesuanamount .money,.addInvoice-experimentamount .money,.addInvoice-textamount .money{color:#f00;}
+.updateInvoice-title{color: #008cd0;font-size:18px;font-weight:400;text-align:center;padding-bottom:10px;}
+.updateInvoice-num{display:inline-block;height:50px;width:100%;margin-top:20px;}
+.updateInvoice-num-input{height:50px;font-size:16px;border:1px solid #ccc;border-radius:5px;width:100%;text-indent:10px;}
+.updateInvoice-errorTip{color:#f00;text-align:center;margin-top:10px;display:none;}
+/* 填写发票 */
+.settle-details-accountList{width:90%;border-collapse: collapse;text-align: center;margin-left:40px;}
+.settle-details-accountList .jiesuan-number{width:130px;}
+.settle-details-accountList thead tr{height: 36px;}
+.settle-details-accountList tbody tr{height: 50px;border-bottom: 1px dotted #e4e4e4;} 
+.settle-details-accountList th{background-color: #f2f2f2;color: #999;border: medium none;padding-left: 10px;}
+.settle-details-accountList td{color: #333;padding-left: 10px;word-wrap:break-word;word-break: break-all;}
+
+.balance-header ul li{float:left;width:70px;height:34px;line-height:34px;background-color:#e4e4e4;text-align:center;margin-right:14px;cursor:pointer;}
+.balance-header ul li:hover{background-color:#ccc;}
+.balance-header ul li:active{background-color:#008cd0;}
+.balance-header .balance-header-selected{background-color:#008cd0;color:#fff;}
+.balance-header .balance-search{line-height:34px;}
+.balance-header .balance-search-box{width:295px;padding-left:5px;height:32px;line-height:32px;border:solid 1px #008cd0;}
+.balance-header .balance-search-text{width:64px;height:34px;line-height:34px;text-align:center;background-color:#008cd0;color:#fff;}
+.balance-header .balance-search-more{color:#333;font-size:12px;line-height:34px;padding:0 5px;}
+.balance-header .balance-search-more:hover{color:#008cd0}
+
+.balance-more{border:solid #ccc 1px;margin-top:20px;padding:20px;display:none;}
+.balance-more .balance-more-search{color:#333;font-size:12px;padding-bottom:20px;border-bottom:dotted #ccc 1px;}
+.balance-more .balance-more-search input{height:30px;width:190px;line-height:30px;border: 1px solid #ccc;padding: 0 5px;}
+.balance-more .balance-more-name{margin-right:50px;}
+.balance-more .balance-more-number,#balance-more-startdate,#balance-more-enddate{margin-right:50px;}
+#balance-more-enddate,#balance-more-startdate{margin-top:20px;}
+.balance-more .balance-more-btn{text-align:center;padding-top:15px;}
+.balance-more .balance-more-submit{width:92px;height:30px;line-height:30px;display:inline-block;color:#fff;background-color:#008cd0;text-align:center;border-radius:5px;margin-right:10px;}
+.balance-more .balance-more-reset{width:90px;height:28px;line-height:28px;display:inline-block;color:#008cd0;text-align:center;border-radius:5px;border:solid 1px #008cd0;}
+
+.balance-list{margin-bottom:40px;padding:30px 25px 60px;}
+.balance-list table{color:#333;}
+.balance-list table th{height:36px;background-color:#f2f2f2;font-weight:bold;color:#999;}
+.balance-list table td{border-bottom:1px solid #e4e4e4;padding:15px 0;vertical-align:top;text-align:center;font-size:12px;}
+.balance-gap{height:15px;}
+.balance-listgroup{background-color:#f2f2f2;height:40px;}
+.balance-listgroup-collect-btn{display:inline-block;width:90px;height:25px;line-height:25px;color:#000;background-color:#ccc;float:right;margin-right:25px;cursor:pointer;border-radius:3px;}
+.balance-forbilling-money{display:none;float:right;margin-right:120px;color:#9b9999;font-size:14px;}
+.forbilling-money-amount{color:#f00;font-size:16px;}
+.balance-list .balance-name{width:150px;}
+.balance-list .balance-number{width:140px;text-align:left;}
+.balance-hospital{width:120px;background:transparent;}
+.balance-fapiaotime{width:90px;background:transparent;}
+.balance-department{background:transparent;}
+.balance-list .balance-unit{width:120px;}
+.balance-list .balance-price{width:120px;}
+.balance-list .balance-price p{font-size:12px;}
+.balance-list .balance-price-b{color:#64a727;}
+.balance-list .balance-time{width:90px;}
+.balance-list .balance-status{width:60px;}
+.balance-list .balance-fapiao{width:65px;height:auto;word-break:break-all;word-wrap:break-word;}
+.balance-list .balance-operate{width:145px;}
+.balance-list .balance-operate a{}
+.balance-list .balance-img{display:inline-block;width:64px;height:64px;background-color:#ccc;}
+.balance-list .balance-size{color:#999;font-size:12px;}
+.balance-list .balance-name-desc{display:inline-block;width:300px;vertical-align:top;text-align:left;line-height:23px;}
+.balance-list .balance-name-words{color:#333;display:block;font-size:12px;}
+.balance-list .balance-name-words:hover{text-decoration:underline;color:#008cd0;}
+.balance-list .balance-shelve{color:#fff;width:46px;height:24px;display:inline-block;line-height:24px;background-color:#008cd0;margin-right:12px;font-size:12px;}
+.balance-list .balance-off-shelve{color:#999;width:46px;height:24px;display:inline-block;line-height:24px;background-color:#e4e4e4;margin-right:12px;font-size:12px;}
+.balance-list .balance-particular{display:inline-block;height:22px;line-height:22px;color:#199ed8;font-size:12px;}
+.balance-list .balance-shelve{color:#fff;width:46px;height:24px;display:inline-block;line-height:24px;background-color:#008cd0;margin-right:12px;font-size:12px;}
+.balance-list .balance-off-shelve{color:#999;width:46px;height:24px;display:inline-block;line-height:24px;background-color:#e4e4e4;margin-right:12px;font-size:12px;}
+.balance-list .balance-particular{display:inline-block;height:22px;line-height:22px;color:#199ed8;font-size:12px;}
+.supplier-account-check{width: 18px;height: 18px;background-color:#c7cfd1 ;display: inline-block;margin-left: 15px;cursor: pointer;}	
+.checked{background:url(image/checked.png) no-repeat center center;}
+/*分页设置*/
+.page-wrap{margin-top: 50px;height: 50px;}
+.page{float: right;}
+#pagination span{display:inline-block;}

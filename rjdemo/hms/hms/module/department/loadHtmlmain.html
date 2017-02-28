@@ -1,0 +1,15 @@
+<%if(flag=='addMain'){if(userList.length){ _.each(userList,function(U){ %>
+<span class="add-member-span">
+    <input type="radio" name="mainperson" value="<%= U.id%>" />
+    <%= U.name%>
+</span>
+<%});}else{%>
+<div class="none-member">
+    没有找到该成员！
+</div>
+<%}}else{_.each(members,function(M){ %>
+<span class="add-member-span">
+    <input type="radio" name="mainperson" value="<%= M.id%>" />
+    <%= M.realName%>
+</span>
+<%})}%>

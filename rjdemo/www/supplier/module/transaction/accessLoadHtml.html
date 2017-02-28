@@ -1,0 +1,62 @@
+<% if(flag==true){_.each(orderList,function(A){%>
+<div class="accessment-list">
+    <div class="list-title">
+        订单编号：<span class="order-id"><%= A.forderno %></span><span class="order-name"><%= A.buyer %></span><span class="order-date"><%= A.date %></span>
+    </div>
+    <%_.each(A.infos,function(I){%>
+    <div class="accessment-list-inner">
+        <div class="left">
+            <span class="accessment-show">
+                    <% if(I.level==1){%>
+                    <span class="accessment-pic-bad"></span>
+            <p class="accessment">差评</p>
+            <%}else if(I.level==2){%>
+            <span class="accessment-pic-soso"></span>
+            <p class="accessment">中评</p>
+            <%}else if(I.level==3){%>
+            <span class="accessment-pic-good"></span>
+            <p class="accessment">好评</p>
+            <%} %>
+
+            </span>
+            <span class="accessment-simple">
+                <p class="accessment-sentence"><%= I.comment %></p>
+            </span>
+        </div>
+        <div class="left">
+            <span class="commodity-picture"><img src="<%= I.picpath %>" /></span>
+            <span class="comodity-name-detail">
+                <a class="name-detail-link" href="#productdetails/<%= I.productSn %>" target="_blank"><%= I.name %></a>
+                <p class="commodity-desc"><%= I.spec %></p>
+            </span>
+        </div>
+        <div class="left">
+                <a href="#aDetail/<%= I.productSn %>" class="accessment-num-link">
+                    <span class="accessment-num"><%= I.comCount %></span>
+                    <span class="accessment-desc">条评论</span>
+                </a>
+            </div>
+    </div>
+    <%})%>
+
+</div>
+<%})}else{%>
+<p class="empty" style="margin: 20px 0;">
+        暂无评论！
+    </p>
+<%} %>
+
+<!--页码-->
+<div class="page-wrap" <% if(flag==false){%>style="display:none"<%} %>>
+    <div class="right page-total">
+        共<span class="total-page-num"><% if(flag==true){%><%= totalPages %><%}else{%>0<%}%></span>页
+    </div>
+    <div class="right">
+        <a class="endpoint end" data-flag="end" href="javascript:void(0)">&nbsp;&nbsp;</a>
+    </div>
+    <div class="page right" id="pagination">
+    </div>
+    <div class="right">
+        <a class="endpoint head" data-flag="head" href="javascript:void(0)">&nbsp;&nbsp;</a>
+    </div>
+</div>

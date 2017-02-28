@@ -1,0 +1,55 @@
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">人员详情</span>
+            </div>
+        </div>
+        <div class="common-wrap-div">
+            <form id="member-form">
+                <div class="member-info-wrap">
+                    <span class="member-info-title">*姓名：</span>
+                    <input type="text" class="real" name="real" placeholder="请输入真实姓名" value="<%= name %>" />
+                </div>
+                <div class="member-info-wrap">
+                    <span class="member-info-title">*手机：</span>
+                    <input type="text" class="mobile" name="mobile" maxlength="11" placeholder="请输入手机号码" value="<% if(mobile){%><%= mobile %><%} %>" />
+                </div>
+                <div class="member-info-wrap">
+                    <span class="member-info-title">*邮箱：</span>
+                    <input type="text" class="email" name="email" placeholder="请输入电子邮箱" value="<%= email %>" />
+                </div>
+                    <div class="member-info-wrap">
+                    <span class="member-info-title">工号：</span>
+                    <input type="text" class="job-number" name="jobNumber" placeholder="请输入员工工号" maxlength="50" value="<%if(hasOwnProperty('jobNumber')){%><%= jobNumber %><%}%>" />
+                    <span class="job-number-desc">工号用于与医院内部系统对接</span>
+                </div>
+                <div class="member-info-wrap">
+                    <span class="member-info-title">修改密码：</span>
+                    <a href="javascript:void(0)" class="link-pass">修改</a>
+                </div>
+                <div class="flag-div pass-hide">
+                    <div class="member-info-wrap">
+                        <span class="member-info-title">密码：</span>
+                        <input type="password" name="pass" id="pass" placeholder="请输入密码" />
+                    </div>
+                    <div class="member-info-wrap">
+                        <span class="member-info-title">确认密码：</span>
+                        <input type="password" class="again" name="again" placeholder="请输入确认密码" />
+                    </div>
+                    <div class="member-info-wrap add-margin-top">
+                        <span class="member-info-title"></span>
+                        <span class="checkbox-span">
+                    <input type="checkbox" />用户登录时重设密码
+                </span>
+                    </div>
+                </div>
+                <div class="member-info-wrap add-margin-top">
+                    <span class="member-info-title"></span>
+                    <input type="submit" class="save-value" value="保 存" />
+                    <a class="link-back" href="javascript:window.history.back()">返&nbsp;回</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

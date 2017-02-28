@@ -1,0 +1,46 @@
+<%if(list.length!=0){%>
+<%_.each(list,function(i){%>
+<table cellspacing=0 class="settle-content">
+     <tr class="settle-content-title ">
+         <td colspan=7 class="no-padding ">
+            <span class="settle-checkbox left"></span><span class="left settle-supplier"><%=i.supplierName%></span><span class="left">( <em class="settle-department-name"><%=i.orderModel[0].department%></em> )<input type="hidden" class="settle-department-id" value="<%=i.departmentId%>"></span>
+            <span class="settle-money right">结算金额：<span class="settle-money-num">0.00</span>元</span>
+        </td>
+    </tr>
+    <%_.each(i.orderModel,function(item){%>
+    <tr class="settle-content-item">
+        <td class="settle-title-a">
+            <span class="settle-checkbox"></span>
+            <input type="hidden" class="settle-order-submit-id" value="<%=item.orderId%>">
+        </td>
+        <td class="settle-title-b"><%=item.orderNo%></td>
+        <td class="settle-title-c"><%=item.buyer%></td>
+        <td class="settle-title-d"><%=item.orderDate%></td>
+        <td class="settle-title-d"><%=item.orderMoney.toFixed(2)%></td>
+        <td class="settle-title-d settle-order-money"><%=item.checkMoney.toFixed(2)%></td>
+        <td class="settle-title-e settle-title-revise">
+            <span>
+            <%if(item.fundCardNo){%>
+            <%if(item.fundCardNo.indexOf(",")!=-1){%>
+            <%_.each(item.fundCardNo.split(","),function(l){%>
+                <p><%=l%></p>
+            <%})%>    
+            <%}else{%>
+            <%_.each(item.fundCardNo.split(";"),function(l){%>
+                <p><%=l%></p>
+            <%})%>
+            <%}%>
+            <%}%>
+            </span>
+            <a href="javascript:;" class="settle-revise">修改</a>
+            <input type='hidden' class="settle-order-id" value="<%=item.orderId%>">
+        </td>
+    </tr>
+    <%})%>
+</table>
+ <%})%>
+<%}else{%>
+<div class="settle-no-padding">暂无数据</div>
+<%}%>   
+    
+

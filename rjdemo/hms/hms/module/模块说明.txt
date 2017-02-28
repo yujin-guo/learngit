@@ -1,0 +1,15 @@
+account：结算
+config:配置
+bid:竞价
+member:人员
+my: 用户中心
+order:订单
+product:商品
+purchase: 采购
+statistic：统计
+supply:供应商医院审核
+approval:供应商资质审核
+control: 控制台
+brand:品牌管理
+department:部门管理
+cms:内容管理

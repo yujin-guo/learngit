@@ -1,0 +1,213 @@
+<%= nav %>
+<div class="left content bid-details">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">竞价详情</span><a class="bid-details-back" href="javascript:history.back()">&lt;返回上级</a>
+            </div>
+        </div>
+        <input type="hidden" id='bidDetailsId' value="<%=data.id%>">
+        <%if(data.status==0){%>
+        <div class="bid-details-flow">
+            <span class="bid-details-flow-item color-one">新建申请单<span class="bid-details-arrow bc-two"></span></span>
+            <span class="bid-details-flow-item color-two">提交初审单<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-item color-two">初审审核<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-item color-two">结束竞价<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-item color-two">选择中标商<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-item color-two">一级终审<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-last color-two">二级终审</span>
+        </div>
+        <%}%>
+        <%if(data.status>=10&&data.status<19){%>
+        <div class="bid-details-flow">
+            <span class="bid-details-flow-item color-one">新建申请单<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">提交初审单<span class="bid-details-arrow bc-two"></span></span>
+            <span class="bid-details-flow-item color-two">初审审核<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-item color-two">结束竞价<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-item color-two">选择中标商<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-item color-two">一级终审<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-last color-two">二级终审</span>
+        </div>
+        <%}%>
+        <%if(data.status==20){%>
+        <div class="bid-details-flow">
+            <span class="bid-details-flow-item color-one">新建申请单<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">提交初审单<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">初审审核<span class="bid-details-arrow bc-two"></span></span>
+            <span class="bid-details-flow-item color-two">结束竞价<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-item color-two">选择中标商<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-item color-two">一级终审<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-last color-two">二级终审</span>
+        </div>
+        <%}%>
+        <%if(data.status==30){%>
+        <div class="bid-details-flow">
+            <span class="bid-details-flow-item color-one">新建申请单<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">提交初审单<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">初审审核<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">结束竞价<span class="bid-details-arrow bc-two"></span></span>
+            <span class="bid-details-flow-item color-two">选择中标商<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-item color-two">一级终审<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-last color-two">二级终审</span>
+        </div>
+        <%}%>
+        <%if(data.status==41){%>
+        <div class="bid-details-flow">
+            <span class="bid-details-flow-item color-one">新建申请单<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">提交初审单<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">初审审核<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">结束竞价<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">选择中标商<span class="bid-details-arrow bc-two"></span></span>
+            <span class="bid-details-flow-item color-two">一级终审<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-last color-two">二级终审</span>
+        </div>
+        <%}%>
+        <%if(data.status==42){%>
+        <div class="bid-details-flow">
+            <span class="bid-details-flow-item color-one">新建申请单<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">提交初审单<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">初审审核<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">结束竞价<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">选择中标商<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">一级终审<span class="bid-details-arrow bc-two"></span></span>
+            <span class="bid-details-flow-last color-two">二级终审</span>
+        </div>
+        <%}%>
+        <%if(data.status==50){%>
+        <div class="bid-details-flow">
+            <span class="bid-details-flow-item color-one">新建申请单<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">提交初审单<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">初审审核<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">结束竞价<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">选择中标商<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">一级终审<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-last color-one">二级终审</span>
+        </div>
+        <%}%>
+        <%if(data.status==19||data.status==49||data.status==29||data.status==99){%>
+        <div class="bid-details-flow">状态：<%=data.procurement.statusDesc%></div>
+        <%}%>
+        <div class="bid-details-info">
+            <p><span class="bid-details-info-item">招标编号：</span><span><%=data.procurement.sn%></span></p>
+            <p><span class="bid-details-info-item">采购人：</span><span><%=data.procurement.buyname%></span></p>
+            <p><span class="bid-details-info-item">采购组：</span><span><%=data.procurement.deptname%></span></p>
+            <p><span class="bid-details-info-item">创建时间：</span><span><%=data.procurement.startTime%></span></p>
+            <p><span class="bid-details-info-item">截标时间：</span><span><%=data.procurement.endTime%></span></p>
+            <p><span class="bid-details-info-item">备注：</span><span><%=data.procurement.remark||"-"%></span></p>
+        </div>
+        <%if((data.status>=10&&data.status<19)||data.status==19||data.status==20||data.status==29||data.status==30||data.status==99){%>
+        <table >
+            <thead>
+                <tr>
+                    <td class="td-width-two bid-details-statement-num">序号</td>
+                    <td class="td-width-three">商品名称</td>
+                    <td class="td-width-one">品牌</td>
+                    <td class="td-width-one">货号</td>
+                    <td class="td-width-one">采购数量</td>
+                </tr>
+            </thead>
+            <tbody>
+                <%_.each(data.items,function(i){%>
+                <tr>
+                    <td class="bid-details-statement-num"><%=i.num%></td>
+                    <td><%=i.name%></td>
+                    <td><%=i.brand||"-"%></td>
+                    <td><%=i.code||"-"%></td>
+                    <td><%=i.count%></td>
+                </tr>
+                <%})%>
+            </tbody>
+        </table>
+        <%}else{%>
+        <%_.each(data.itemExs,function(i,index){%>
+        <table style="margin-top:20px">
+            <tr class="bid-details-bcolor">
+                <td rowspan=100 class="bid-width-one"><%=index+1%></td>
+                <td rowspan=2 class="bid-width-one">竞价商品</td>
+                <td class="bid-width-two">商品名称</td>
+                <td class="bid-width-three">品牌要求</td>
+                <td colspan=2 class="bid-width-six">货号要求</td>
+                <td class="bid-width-four">采购数量</td>
+                <td colspan=3 class="bid-width-seven">采购要求</td>
+                <td colspan=2 class="bid-width-eight">要求附件</td>
+            </tr>
+            <tr>
+                <td><%=i.itemVo.itemName%></td>
+                <td><%=i.itemVo.brand||"-"%></td>
+                <td colspan=2><%=i.itemVo.itemNo||"-"%></td>
+                <td><%=i.itemVo.count%></td>
+                <td colspan=3><%=i.itemVo.information||"-"%></td>
+                <td colspan=2><%if(i.itemVo.fileUrl){%><a href="/bid<%=i.itemVo.fileUrl%>" download>下载附件</a><%}else{%>无<%}%></td>
+            </tr>
+            <%if(i.hasBids){%>
+            <%if(i.suppname){%>
+            <tr>
+                <td colspan=11 class="bid-winner">中标商：<span class="bid-winner-company"><%=i.suppname%></span>  选择理由：<span class="bid-winner-reason"><%=i.reason%></span></td>
+            </tr>
+            <%}else{%>
+            <tr>
+                <td colspan=11 class="bid-winner"><span class="bid-winner-reason">放弃理由：<%=i.reason%></span></td>
+            </tr>   
+            <%}%>
+            <tr class="bid-details-bcolor">
+                <td rowspan=100 class="bid-width-one">报价详情</td>
+                <td class="bid-width-two">供应商</td>
+                <td class="bid-width-three">商品名称</td>
+                <td class="bid-width-three">品牌</td>
+                <td class="bid-width-three">货号</td>
+                <td class="bid-width-four">规格</td>
+                <td class="bid-width-five">单价/数量/总售价</td>
+                <td class="bid-width-four">送货时间</td>
+                <td class="bid-width-four">报价说明</td>
+                <td class="bid-width-four">附件</td>
+                <td class="bid-width-four">总报价</td>
+            </tr>
+            <%_.each(i.bids,function(j){%>               
+            <tr <%if(j.status==2){%>class="bid-lowest-price"<%}%>>
+                <td><%=j.suppname%></td>
+                <td><%=j.name%></td>
+                <td><%=j.brandName||"-"%></td>
+                <td><%=j.code||"-"%></td>
+                <td><%=j.spec%></td>
+                <td><%=j.productPrice.toFixed(2)%> / <%=j.count%> / <%=(j.productPrice*j.count).toFixed(2)%></td>
+                <td><%=j.deliveryTime%>天</td>
+                <td><%=j.remark||"-"%></td>
+                <td><%if(j.attachmentUrl){%><a href="/bid<%=j.attachmentUrl%>" download >查看附件</a><%}else{%>无<%}%></td>
+                <td>
+                    <p><%=j.bidPrice%></p>
+                    <%if(j.lowest){%>
+                    <p>最低</p>
+                    <%}%>
+                </td>
+            </tr>
+            <%})%>
+            <%}else{%>
+            <tr>
+                <td colspan=11 class="bid-winner"><span class="bid-winner-reason">无人竞价</span></td>
+            </tr>   
+            <%}%>
+        </table>
+        <%})%>
+        <%}%>
+        <%if(data.logs.length>0){%>
+        <div class="bid-details-info">
+            <%_.each(data.logs,function(i){%>
+            <p><%=i.approvalTime%>  &nbsp;<%=i.approver%> &nbsp; <%=i.result%>  &nbsp;<%=i.comment%></p>
+            <%})%>
+        </div>
+        <%}%>
+        <%if(((data.status>=10&&data.status<19)||(data.status>=40&&data.status<49))&&data.hasAccess){%>
+        <div class="bid-details-examine">
+            <div>
+                <label for="bidPass"><input type="radio" name="status" id="bidPass" checked >审批通过</label>
+                <label for="bidRejected"><input type="radio" name="status" id="bidRejected">审批驳回</label>
+            </div>    
+            <textarea placeholder="审批意见" class="bid-details-comment"></textarea>
+            <div>
+                <a  class="bid-details-submit" href="javascript:;">提交审核</a>
+            </div>
+        </div>
+        <%}%>
+    </div>
+</div>
+    

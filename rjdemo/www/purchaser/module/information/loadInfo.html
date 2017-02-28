@@ -1,0 +1,7 @@
+<%if(entities.length==0){%>
+<li class="information-none">暂无公告。</li>
+<%}else{%>
+<%_.each(entities,function(i){%>
+<li class="overflow"><a href="#infodetails/<%=i.id%>/<%=convert(i.publishTime)%>"><span class="left information-item-text"><%if(i.columnz==1){%>[公告] <%}%><%=i.title%></span><span class="right information-item-time"><%=convert(i.publishTime)%></span></a></li>
+<%})%>
+<%}%>

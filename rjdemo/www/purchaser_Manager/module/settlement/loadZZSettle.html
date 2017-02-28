@@ -1,0 +1,38 @@
+    <%if(statement.length>0){_.each(statement,function(i){%>
+    <tr class="settle-content-item">
+        <td class="settle-title-b settlement-number"><span class="settle-checkbox"></span><span class="settle-balance-number"><%=i.no%></span></td>
+        <td class="settle-title-c "><%=i.supplier%> | <%_.each(i.commiters,function(j){%><%=j%>&nbsp;<%})%></td>
+        <td class="settle-title-d"><%=i.banlanceDate%></td>
+        <td class="settle-title-d"><%=parseFloat(i.laboratoryConsumableCost).toFixed(2)%></td>
+        <td class="settle-title-d"><%=parseFloat(i.testAnalysisCost).toFixed(2)%></td>
+        <td class="settle-title-d">
+            <%if(i.invoices.length>0){%>
+            <%_.each(i.invoices,function(j){%>
+            <p><%=j%></p>
+            <%})%>
+            <%}else{%>
+            <p>-</p> 
+            <%}%>
+        </td>
+        <%if(i.status==0){%>
+        <td class="settle-title-f">待开票</td>
+        <%}%>
+        <%if(i.status==6){%>
+        <td class="settle-title-f">待填发票</td>
+        <%}%>
+        <%if(i.status==1){%>
+        <td class="settle-title-f">待审核</td>
+        <%}%>
+        <%if(i.status==2){%>
+        <td class="settle-title-f">待付款</td>
+        <%}%>
+        <%if(i.status==3){%>
+        <td class="settle-title-f">已完成</td>
+        <%}%>
+        <td class="settle-title-e">
+            <p><a href="javascript:;" class="settle-content-check"><%if(i.status==1){%>审核<%}else{%>查看<%}%></a><input type="hidden" value="<%=i.id%>" data-status="<%=i.status%>" class="settle-statement-id"></p>
+        </td>
+    </tr>
+    <%})}else{%>
+    <tr><td class="settle-no-padding" colspan=8>暂无数据。</td></tr>
+    <%}%>

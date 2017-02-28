@@ -1,0 +1,65 @@
+.bidlist{border:solid #d7d7d7 1px;}
+.bidlist .bidlist-title{background-color:#fafafa;height:50px;line-height:50px;padding-right:25px;border-bottom:solid #d7d7d7 1px;}
+.bidlist-title .bidlist-title-list{float:left;}
+.bidlist-title .bidlist-title-list li{float:left;height:50px;width:100px;border-right:solid #d7d7d7 1px;text-align:center;color:#666;font-size:16px;line-height:50px;cursor:pointer}
+.bidlist-title .bidlist-title-list .bidlist-title-list-highlight{background-color:#fff;border-bottom:solid 1px #fff;}
+.bidlist-title .bidlist-title-search{float:left;border:solid #d7d7d7 1px;margin-top:8px}
+.bidlist-title .bidlist-title-search .bidlist-title-search-txt{float:left;width:217px;height:32px;border:none;line-height:32px;color:#666;padding-left:5px}
+.bidlist-title .bidlist-title-search .bidlist-title-search-btn{float:left;width:72px;height:32px;line-height:32px;background-color:#32ab94;color:#fff;text-align:center;}
+.bidlist-title .bidlist-title-more{padding:0 10px;color:#333}
+.bidlist-title .bidlist-title-more:hover{color:#008cd0}
+.bidlist .bidlist-main{padding:25px 0}
+.bidlist .bidlist-main-product-name{width:245px;padding-left:20px;text-align:left}
+.bidlist .bidlist-main-product-number{width:145px}
+.bidlist .bidlist-main-brand{width:145px}
+.bidlist .bidlist-main-quantity{width:95px}
+.bidlist .bidlist-main-status{width:115px;border-left:solid #b7ecdd 1px}
+.bidlist .bidlist-main-operate{width:156px;border-left:solid #b7ecdd 1px;text-align:center;}
+.bidlist-main .bidlist-main-more{padding:20px 0 35px 20px;display:none}
+.bidlist-main-more .bidlist-more-input{width:200px;height:30px;line-height:30px;margin-right:36px;margin-bottom:20px}
+.bidlist-main-more .bidlist-more-btn{text-align:center}
+.bidlist-main-more .bidlist-more-btn-search{width:92px;height:30px;line-height:30px;background-color:#32ab94;color:#fff;text-align:center;margin-right:10px;cursor:pointer}
+.bidlist-main-more .bidlist-more-btn-reset{width:92px;height:30px;line-height:30px;background-color:#fff;color:#32ab94;text-align:center;border:solid #32ab94 1px;cursor:pointer}
+.bidlist-main-more .bidlist-status-choose{position:relative}
+.bidlist-main-more .bidlist-status-choices{position:absolute;top:33px;left:70px;line-height:25px;width:202px;border:solid #e4e4e4 1px;display:none;background-color:#fff;z-index:100}
+.bidlist-main-more .bidlist-status-choices li:hover{background-color:#f2f2f2;padding-left:5px}
+.bidlist-main-more .bidlist-dept-choose{position:relative}
+.bidlist-main-more .bidlist-dept-choices{position:absolute;top:33px;left:70px;line-height:25px;width:202px;border:solid #e4e4e4 1px;display:none;background-color:#fff;z-index:100}
+.bidlist-main-more .bidlist-dept-choices li:hover{background-color:#f2f2f2;padding-left:5px}
+.bidlist-main-more .bidlist-more-search-title{display:inline-block;width:58px;text-align:right}
+.bidlist-main .bidlist-main-top{height:36px;background-color:#f2f2f2;line-height:36px;color:#999;margin:0 25px 10px}
+.bidlist-main .bidlist-main-top li{float:left;text-align:center;}
+
+.bidlist-main .bidlist-main-item{border:solid #b7ecdd 1px;margin:20px 25px;border-bottom:none}
+.bidlist-main .bidlist-main-item-top{height:36px;line-height:36px;background-color:#f0fbf8;color:#666;padding-left:15px;border-bottom:solid #b7ecdd 1px;}
+.bidlist-main-top li.bidlist-main-status{width:115px;border:none}
+.bidlist-main-top li.bidlist-main-operate{width:156px;border:none}
+.bidlist-main-item .bidlist-main-item-num{padding-right:30px;}
+.bidlist-main-item table td{padding:20px 0;border-bottom:solid #b7ecdd 1px;text-align:center;word-break: break-all;word-wrap: break-word;overflow:hidden}
+.bidlist-main-item .bidlist-main-item-list{color:#333;}
+.bidlist-main-item .bidlist-main-item-btn{cursor:pointer;width:80px;height:25px;color:#fff;text-align:center;line-height:25px;background-color:#32ab94;display:block;margin:0 auto 10px}
+.bidlist-main-item .bidlist-main-item-btn2{margin-bottom:10px;cursor:pointer;color:#333}
+.bidlist-no-data{text-align:center;line-height:100px}
+/*分页*/
+#pagination{text-align:center;}
+#pagination a{display:inline-block;text-align:center;padding:0 7px;height:25px;line-height:25px;border:solid 1px #e4e4e4;color:#666;margin-right:5px}
+#pagination span{display:inline-block;text-align:center;padding:0 7px;height:25px;line-height:25px;border:solid 1px #e4e4e4;color:#666;margin-right:5px}
+#pagination .current{background-color:#32ab94;color:#fff;}
+#pagination .prev{background-color:#fff;background-position:-251px -25px}
+#pagination .next{background-color:#fff;background-position:-296px -24px}
+
+/*弹窗样式*/
+.bidlist-alert{position:absolute;z-index:10;width:100%;height:100%;background-color:#b3b3b3;top:0;left:0;opacity:.3;filter:alpha(opacity=30)}
+.bidlist-window{width:500px;height:300px;position:absolute;z-index:100;top:180px;left:50%;margin-left:-250px;background-color:#fff;}
+.bidlist-window .bidlist-window-title{height:45px;background-color:#32ab94;font-size:18px;color:#fff;line-height:45px;padding-left:20px;padding-right:15px}
+.bidlist-window .bidlist-window-close{float:right;width:24px;height:24px;margin-top:10px;cursor:pointer;background:url(images/cross.png) no-repeat}
+.bidlist-window .bidlist-window-content-a{height:190px;line-height:190px;color:#333;font-size:18px;text-align:center;}
+.bidlist-window-content-a .bidlist-window-img{background:url("images/question.png") no-repeat;display:inline-block;width:80px;height:80px;vertical-align:middle;margin-right:15px}
+.bidlist-window .bidlist-window-footer{text-align:center}
+.bidlist-window-footer .bidlist-window-submit{display:inline-block;width:150px;height:35px;line-height:35px;border-radius:3px;color:#fff;background-color:#32ab94;margin-right:35px;cursor:pointer;}
+.bidlist-window-footer .bidlist-window-close-btn{display:inline-block;width:150px;height:33px;line-height:33px;border-radius:3px;color:#32ab94;background-color:#f2f2f2;border:solid #ccc 1px;cursor:pointer}
+
+.bidlist-window .bidlist-window-content-b{height:140px;color:#333;padding:25px 50px;margin-bottom:15px}
+.bidlist-window .bidlist-window-content-b p{line-height:20px;margin-bottom:15px;font-size:16px}
+.bidlist-window-content-b .bidlist-window-content-reason{height:100px;width:380px;border:solid #ccc 1px;resize:none;background-color:#fafafa;padding:10px;color:#666;overflow:auto;}
+

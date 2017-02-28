@@ -1,0 +1,109 @@
+<%= nav %>
+<div class="home-main">
+    <div class="cm-main">
+        <div class="bid-bread-wrap">
+            <span class="bid-bread-span">在线招标</span>
+            <span class="bid-bread-span"><em class="direction">&gt;</em>
+                <span class="bread-link">竞价中</span>
+            </span>
+        </div>
+        <div class="bid-content-div">
+            <div class="bid-content-head">
+                <span class="bid-content-head-cell left bid-head-cell-active" data-flag="going">竞价中</span>
+                <span class="bid-content-head-cell left" data-flag="over">已结束</span>
+                <div class="right bid-header-search">
+                    <input type="text" class="bid-search-box" placeholder="请输入竞价号/竞价单位 " />
+                    <a class="bid-search-btn" id="search-btn" href="javascript:void(0);">搜索</a>
+                </div>
+            </div>
+            <div class="bid-content-wrap">
+                <div class="bid-content-wrap-inner">
+                    <span class="bid-content-head-span01 list-td-01">竞价商品</span>
+                    <span class="bid-content-head-span02 list-td-02">品牌要求</span>
+                    <span class="bid-content-head-span03 list-td-03">货号要求</span>
+                </div>
+                <div class="bid-content-wrap-inner">
+                    <div class="bid-content-table" id="bid-content-table">
+                        <% if(flag==true){_.each(entities,function(E){%>
+                        <ul class="bid-list-table <% if(E.id==entities[entities.length-1].id){%>clear-margin-bottom<%} %>">
+                            <li class="th-li">
+                                <span class="list-td-01">
+                                    <span class="hospital-span">
+                                        <%= E.unit %>&nbsp;-&nbsp;
+                                        <%= E.sn %>
+                                    </span>
+                                    <span class="over-time-span">结束时间：
+                                        <%= E.endTime %>
+                                    </span>
+                                </span>
+                                <span class="list-td-02"></span>
+                                <span class="list-td-03 right">
+                                    <div class="list-detail-div right">
+                                        <a href="#listdetail?id=<%= E.id %>" class="list-detail-link">查看</a>
+                                    </div>
+                                </span>
+                            </li>
+                            <%_.each(E.items,function(I){%>
+                            <li class="td-li">
+                                <span class="list-td-001">
+                                    <%= I.itemName %>
+                                </span>
+                                <span class="list-td-02">
+                                    <%= I.brand %>
+                                    <% if(I.brand==undefined || !I.brand){%>
+                                        -
+                                    <%}%>
+                                </span>
+                                <span class="list-td-003">
+                                    <%= I.itemNo %>
+                                    <% if(I.itemNo==undefined || !I.itemNo){%> -
+                                    <%}%>
+                                </span>
+                            </li>
+                            <%})%>
+                        </ul>
+                        <%})}else{%>
+                        <div class="bid-none-wrap">
+                            <div class="bid-none-inner">
+                                <p class="bid-none-p">暂时没有竞价消息！</p>
+                            </div>
+                        </div>
+                        <%} %>
+                    </div>
+                </div>
+            </div>
+
+            <!--页码-->
+            <div class="page-wrap">
+                <span>
+                    <div class="right page-total">
+                        共
+                        <span class="total-page-num">
+                            <% if(flag==true){%>
+                            <%= totalPage %>
+                            <%}else{%>0
+                            <%} %>
+                        </span>页
+                    </div>
+                    <div class="page right" id="pagination">
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="home-footer">
+    <p>
+         <a style="color:#666" href="index.html#help">帮助中心</a> | 客服QQ：2448328732 服务时间：周一至周五(节假日除外)9：00-18：00 
+        <span class="footer-logo">
+            <a href="tencent://message/?uin=2448328732&Site=在线QQ&amp;Menu=yes">
+                <img src="images/QQ.png" />
+                <span>QQ交谈</span>
+            </a>
+        </span>
+    </p>
+    <p>版权所有 @2014-2016 网站备案/许可证号：
+       <a target="_blank" style="color:#666;" href="http://www.miitbeian.gov.cn/">粤ICP备16055118号-2
+       </a>
+    </p>
+</div>

@@ -1,0 +1,54 @@
+.statistic-date{height:28px;width:90px;border:solid 1px #ccc;text-align:center}
+.statistic-end-date{margin-right:40px}
+.statistic-line{padding:0 8px}
+.list-table{width: 100%;}
+.search-div{text-align: right;font-size: 12px;}
+.search-input{border: 1px solid #ccc;border-right:medium none;padding-left: 10px;padding-right: 10px;height: 28px;line-height: 28px;width: 251px;color: #999;font-size: 12px;}
+.search-btn{width: 34px;height: 30px;background-color: #13b5be;vertical-align: top;font-size:12px;}
+
+.page{text-align: right;font-size: 0;}
+.page a{color: #999;font-size:12px ;height: 28px;line-height: 28px;text-align: center;}
+.endpoint{width: 52px;border:1px #ccc solid ;}
+.direction-pre{border: 1px solid #ccc;border-left: medium none;width: 65px;}
+.direction-next{border-top:1px solid #ccc ;border-bottom: 1px solid #ccc;width: 66px;}
+.index{border: 1px solid #ccc;border-left: medium none;width: 27px;}
+.page .index-active{background-color: #13b5bd;color: #fff;}
+
+.content-wrap{margin-left: 20px;margin-top: 40px;}
+.content-nav{padding-bottom: 10px;border-bottom: 1px solid #d7d7d7;}
+.symbol-icon01{border-left: 3px solid #13b5bd;}
+.symbol-title{margin-left: 10px;color: #666;font-size: 16px;}
+.symbol-return-icon{margin: 0 7px;width: 20px;height: 20px;vertical-align: top;}
+
+.infomation table{border-collapse: collapse;font-size: 12px;}
+.infomation table th{color: #999;text-align: left;background-color: #f9fafc;}
+.infomation table td{color: #333;text-align: left;}
+.infomation table tr{border: 1px solid #ccc;height: 40px;}
+
+.statistic-limit-width{min-width: 878px;}
+.statistic-title{font-size:16px;width:140px;}
+.statistic-info{padding-bottom: 25px;}
+.statistic-info-wrap{font-size: 0;margin: 15px auto;}
+.statistic-info-title{font-size: 12px;color: #999;width: 70px;text-align: left;margin-right: 15px;}
+.statistic-info-info{color: #333;font-size: 12px;}
+
+/*课题组交易统计  供应商交易统计 品牌交易统计 公用*/
+.statistic-subject .width-one{padding-left:40px;width:20%}
+.statistic-subject .width-two{width:29%}
+.statistic-subject .width-three{width:29%}
+.statistic-subject .width-four{width:20%}
+
+/*系统使用查询*/
+.statistic-system .width-one{padding-left:10px;width:21%}
+.statistic-system .width-two{width:21%}
+.statistic-system .width-three{width:21%}
+.statistic-system .width-four{width:36%}
+
+/*评分列表*/
+.statistic-rate .width-one{padding-left:10px;width:15%;}
+.statistic-rate .width-two{width:20%;text-align:center;}
+.statistic-rate .width-three{width:20%;}
+.statistic-rate .width-four{width:13%;}
+.statistic-rate .width-five{width:8%;}
+.statistic-rate .width-six{width:8%;}
+.statistic-rate .width-seven{width:20%;}

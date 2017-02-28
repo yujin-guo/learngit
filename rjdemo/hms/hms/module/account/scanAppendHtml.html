@@ -1,0 +1,12 @@
+<% _.each(orders,function(x){%>
+        <li class="scan-content-body">
+            <input type="hidden" value="<%= banlanceNo %>" class="scan-hidden-value" />
+        <span class="scan-content-order"><%= banlanceNo %></span>
+        <span class="scan-content-purchaser"><%= x.buyer %></span>
+        <span class="scan-content-checker"><% if(x.hasOwnProperty('accepter')){%><%= x.accepter %><%} %></span>
+        <span class="scan-content-cardnumber"><%= x.fundCardNo %></span>
+        <span class="scan-content-order-account">￥<%= x.orderMoney.toFixed(2) %></span>
+        <span class="scan-content-check-account">￥<%= x.acceptMoney.toFixed(2) %></span>
+        <span class="scan-content-ctr"></span>
+    </li>
+    <%});%>

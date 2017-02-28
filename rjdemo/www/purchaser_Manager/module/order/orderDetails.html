@@ -1,0 +1,345 @@
+<!--orderDetails使用前缀o-details-->
+<div class="o-details">
+    <div class="o-details-flow">
+        <p class="o-details-flow-txt">订单号&nbsp;&nbsp;:<span class="o-details-flow-num"><%=r.forderno%></span></p>
+        <div class="o-details-flow-condition">
+            <%if(status==8){%>
+            <div class="o-details-flow-steps overflow">
+                <span class="o-details-flow-one o-details-flow-done">买家下单</span>
+                <span class="o-details-flow-one">卖家确认订单</span>
+                <span class="o-details-flow-one">卖家发货</span>
+                <span class="o-details-flow-one">买家验收</span>
+                <span class="o-details-flow-one">买家结算</span>
+                <span class="o-details-flow-one o-details-flow-finish">结算完成</span>
+            </div>
+            <div class="o-details-flow-img o-details-flow-pos1"></div>
+            <%}%>
+            <%if(status==4||status==9){%>
+            <div class="o-details-flow-steps overflow">
+                <span class="o-details-flow-one o-details-flow-done">买家下单</span>
+                <span class="o-details-flow-one o-details-flow-done">卖家确认订单</span>
+                <span class="o-details-flow-one">卖家发货</span>
+                <span class="o-details-flow-one">买家验收</span>
+                <span class="o-details-flow-one">买家结算</span>
+                <span class="o-details-flow-one o-details-flow-finish">结算完成</span>
+            </div>
+            <div class="o-details-flow-img o-details-flow-pos2"></div>
+            <%}%>
+            <%if(status==5){%>
+            <div class="o-details-flow-steps overflow">
+                <span class="o-details-flow-one o-details-flow-done">买家下单</span>
+                <span class="o-details-flow-one o-details-flow-done">卖家确认订单</span>
+                <span class="o-details-flow-one o-details-flow-done">卖家发货</span>
+                <span class="o-details-flow-one">买家验收</span>
+                <span class="o-details-flow-one">买家结算</span>
+                <span class="o-details-flow-one o-details-flow-finish">结算完成</span>
+            </div>
+            <div class="o-details-flow-img o-details-flow-pos3"></div>
+            <%}%>
+            <%if(status==6||status==15){%>
+            <div class="o-details-flow-steps overflow">
+                <span class="o-details-flow-one o-details-flow-done">买家下单</span>
+                <span class="o-details-flow-one o-details-flow-done">卖家确认订单</span>
+                <span class="o-details-flow-one o-details-flow-done">卖家发货</span>
+                <span class="o-details-flow-one o-details-flow-done">买家验收</span>
+                <span class="o-details-flow-one">买家结算</span>
+                <span class="o-details-flow-one o-details-flow-finish">结算完成</span>
+            </div>
+            <div class="o-details-flow-img o-details-flow-pos4"></div>
+            <%}%>
+            <%if(status==10||status==12||status==13){%>
+            <div class="o-details-flow-steps overflow">
+                <span class="o-details-flow-one o-details-flow-done">买家下单</span>
+                <span class="o-details-flow-one o-details-flow-done">卖家确认订单</span>
+                <span class="o-details-flow-one o-details-flow-done">卖家发货</span>
+                <span class="o-details-flow-one o-details-flow-done">买家验收</span>
+                <span class="o-details-flow-one o-details-flow-done">买家结算</span>
+                <span class="o-details-flow-one o-details-flow-finish">结算完成</span>
+            </div>
+            <div class="o-details-flow-img o-details-flow-pos5"></div>
+            <%}%>
+            <%if(status==11){%>
+            <div class="o-details-flow-steps overflow">
+                <span class="o-details-flow-one o-details-flow-done">买家下单</span>
+                <span class="o-details-flow-one o-details-flow-done">卖家确认订单</span>
+                <span class="o-details-flow-one o-details-flow-done">卖家发货</span>
+                <span class="o-details-flow-one o-details-flow-done">买家验收</span>
+                <span class="o-details-flow-one o-details-flow-done">买家结算</span>
+                <span class="o-details-flow-one o-details-flow-finish o-details-flow-done">结算完成</span>
+            </div>
+            <div class="o-details-flow-img o-details-flow-pos6"></div>
+            <%}%>
+            <% if(status!=3&&status!=false&&status!=7){%>
+            <div class="o-details-flow-steps overflow">
+                <span class="o-details-flow-one o-details-flow-done">
+                    <%if(r.forderdate){%>
+                    <% var a=r.forderdate.split(" ")%>
+                    <p><%=a[0]%></p>
+                    <p class="o-details-flow-time"><%=a[1]%></p>
+                    <%}%>
+                </span>
+                <span class="o-details-flow-one o-details-flow-done">
+                    <%if(r.fconfirmdate){%>
+                    <% var b=r.fconfirmdate.split(" ")%>
+                    <p><%=b[0]%></p>
+                    <p class="o-details-flow-time"><%=b[1]%></p>
+                    <%}%>
+                </span>
+                <span class="o-details-flow-one o-details-flow-done">
+                    <%if(r.fdeliverydate){%>
+                    <% var c=r.fdeliverydate.split(" ")%>
+                    <p><%=c[0]%></p>
+                    <p class="o-details-flow-time"><%=c[1]%></p>
+                    <%}%>
+                </span>
+                <span class="o-details-flow-one o-details-flow-done">
+                    <%if(r.flastreceivedate){%>
+                    <% var d=r.flastreceivedate.split(" ")%>
+                    <p><%=d[0]%></p>
+                    <p class="o-details-flow-time"><%=d[1]%></p>
+                    <%}%>
+                </span>
+                <span class="o-details-flow-one o-details-flow-done">
+                    <%if(r.fsettleCreateDate){%>
+                    <% var e=r.fsettleCreateDate.split(" ")%>
+                    <p><%=e[0]%></p>
+                    <p class="o-details-flow-time"><%=e[1]%></p>
+                    <%}%>
+                </span>
+                <span class="o-details-flow-one o-details-flow-done o-details-flow-finish">
+                    <%if(r.fsettleFinishDate){%>
+                    <% var f=r.fsettleFinishDate.split(" ")%>
+                    <p><%=f[0]%></p>
+                    <p class="o-details-flow-time"><%=f[1]%></p>
+                    <%}%>
+                </span>
+            </div>
+            <%}%>
+            <%if(status==3){%>
+            <div>
+                <p class="o-details-order-status">当前订单状态：订单关闭</p>
+                <p class="o-details-order-cancel">关闭原因：<%=r.fcancelReason||"订单取消"%></p>
+            </div>   
+            <%}%>
+            <%if(status==7){%>
+            <div>
+                <p class="o-details-order-status">当前订单状态：订单完成</p>
+            </div>   
+            <%}%>
+        </div>
+    </div>
+    <% if(status==8){%>
+    <div class="o-details-state">
+        <p class="o-details-current">当前订单状态：
+            <span class="o-details-state-name">待确认</span>
+        </p>
+        <p>买家已经下单，等待卖家确认。</p>
+        <p class="o-details-state-tip">1、正在等待卖家确认订单，您可以联系卖家提醒其确认。</p>
+        <p class="o-details-state-tip">2、如果您不想要货物，您可以 <span class="o-details-state-cancel">取消订单</span></p>
+    </div>
+    <%}%>
+    <% if(status==4){%>
+    <div class="o-details-state">
+        <p class="o-details-current">当前订单状态：
+            <span class="o-details-state-name">待发货</span>
+        </p>
+        <p>卖家已确认订单，请等待卖家发货。</p>
+        <p class="o-details-state-tip">1、如果卖家一直不发货，您可以联系卖家提醒其发货</p>
+        <p class="o-details-state-tip">2、如果您不想要货物，您可以 <span class="o-details-state-cancel">取消订单</span></p>
+        <p class="o-details-state-tip">3、如果超过365天后卖家还未发货，系统将自动关闭订单</p>
+    </div>
+    <%}%>
+    <% if(status==9){%>
+    <div class="o-details-state">
+        <p class="o-details-current">当前订单状态：
+            <span class="o-details-state-name">买家申请取消订单</span>
+        </p>
+        <p>已经申请取消订单，请等待卖家回复</p>
+        <p class="o-details-state-tip">卖家确认后，则可以取消订单；</p>
+        <p class="o-details-state-tip">若卖家不同意取消订单，您可以与卖家继续沟通，再次取消订单。</p>
+    </div>
+    <%}%>
+    <% if(status==5){%>
+    <div class="o-details-state">
+        <p class="o-details-current">当前订单状态：
+            <span class="o-details-state-name">待收货</span>
+        </p>
+        <p>卖家已发货。</p>
+        <p class="o-details-state-tip">1、请您收货后，及时验收货物</p>
+        <p class="o-details-state-tip">2、如果您不想要货物，您可以 <span class="o-details-state-cancel">申请退货，申请退货需要卖家确认</span></p>
+    </div>
+    <%}%>
+    <% if(status==6||status==15){%>
+    <div class="o-details-state">
+        <p class="o-details-current">当前订单状态：
+            <span class="o-details-state-name">待结算</span>
+        </p>
+        <p>货物已经验收，请进行结算</p>
+        <p class="o-details-state-tip">1、验收完成后，请尽快进行结算</p>
+        <p class="o-details-state-tip">2、结算审批通过后，请打印验收单，去选择需要打印的验收单</p>
+        <p class="o-details-state-tip">3、如果您不想要货物，您可以<span class="o-details-state-cancel">申请退货，申请退货需要卖家确认</span></p>
+    </div>
+    <%}%>
+    <% if(status==10||status==12||status==13){%>
+    <div class="o-details-state">
+        <p class="o-details-current">当前订单状态：
+            <span class="o-details-state-name">结算中</span>
+        </p>
+        <p>货物已经验收，正在进行结算。</p>
+        <p class="o-details-state-tip">1、请打印验收单，提供给供应商</p>
+        <p class="o-details-state-tip">2、供应商获得验收单后，将提交给办公室，进行财务结算</p>
+        <p class="o-details-state-tip">3、财务结算后，供应商点击结算完成，订单将变成已完成状态</p>
+    </div>
+    <%}%>
+    <% if(status==11){%>
+    <div class="o-details-state">
+        <p class="o-details-current">当前订单状态：
+            <span class="o-details-state-name">订单完成</span>
+        </p>
+        <p>卖家已确认订单，请等待卖家发货。</p>
+        <p class="o-details-state-tip">1、如果卖家一直不发货，您可以联系卖家提醒其发货</p>
+        <p class="o-details-state-tip">2、如果您不想要货物，您可以 <span class="o-details-state-cancel">取消订单</span></p>
+        <p class="o-details-state-tip">3、如果超过365天后卖家还未发货，系统将自动关闭订单</p>
+    </div>
+    <%}%>
+    <div class="o-details-info">
+        <div class="overflow">
+            <div class="left o-details-address">
+                <h3 class="o-details-address-title">收货地址</h3>
+                <p>收货姓名：<%=r.fbuyercontactman%></p>
+                <p>联系电话：<%=r.fbuyertelephone%></p>
+                <p>收货地址：<%=r.fbiderdeliveryplace%></p>
+            </div>
+            <div class="left o-details-sides">
+                <div class="o-details-one-side overflow">
+                    <h3>采购人信息</h3>
+                    <dl>
+                        <dt>采购方：</dt>
+                        <dd class="o-details-dd"><%=r.fusername%></dd>
+                        <dt>&nbsp;&nbsp;&nbsp;采购人：</dt>
+                        <dd><%=r.fbuyername%></dd>
+                        <dt>采购商：</dt>
+                        <dd class="o-details-dd"><%=r.fbuydepartment%></dd>
+                        <dt>联系电话：</dt>
+                        <dd><%=r.contactphone%></dd>
+                    </dl>
+                </div>
+                <div class="o-details-one-side overflow">
+                    <h3>供应商信息</h3>
+                    <dl>
+                        <dt>供应商：</dt>
+                        <dd class="o-details-dd"><%=r.fsuppname%></dd>
+                        <dt>联系电话：</dt>
+                        <dd><%=r.fsupptel%></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="o-details-product">
+            <p class="o-details-product-title">商品信息</p>
+             <%if(details.length!=0){%>
+            <table cellspacing=0 class="o-details-table">
+                <tr class="o-details-product-title-list">
+                    <th class="o-details-width-a">商品</th>
+                    <th class="o-details-width-b">品牌</th>
+                    <th class="o-details-width-b">货号</th>
+                    <th class="o-details-width-c">单价（元）</th>
+                    <th class="o-details-width-d">数量</th>
+                    <th class="o-details-width-d">状态</th>
+                </tr>
+                <%var first=_.first(details)%>
+                <tr>
+                    <td class="o-details-width-a ">
+                        <img class="o-details-product-img" src="<%=first.fpicpath%>" alt="">
+                        <span class="o-details-product-text">
+                            <a href="../purchaser/index.html#details/<%=first.productSn%>/<%=r.suppId%>" target="_blank"><%=first.fgoodname%></a>
+                            <p class="o-details-product-size">规格：<%=first.fspec%></p>
+                        </span>
+                    </td>
+                    <td class="o-details-width-b"><%=first.fbrand%></td>
+                    <td class="o-details-width-b"><%=first.fgoodcode%></td>
+                    <td class="o-details-width-c"><%=first.fprice%></td>
+                    <td class="o-details-width-d"><%=first.fquantity%></td>
+                    <td class="o-details-width-e" rowspan=200>
+                        <%if(status==8){%>待确认<%}%>
+                        <%if(status==3){%>订单关闭<%}%>
+                        <%if(status==4){%>待发货<%}%>
+                        <%if(status==9){%>申请取消<%}%>
+                        <%if(status==5){%>待收货<%}%>
+                        <%if(status==6||status==15){%>待结算<%}%>
+                        <%if(status==10){%>结算中<%}%>
+                        <% if(status==11||status==7){%>订单完成<%}%>
+                    </td>
+                </tr>
+                <% var le=details.length%>
+                <% if(le>1){%>
+                    <%_.each(_.rest(details),function(i){%>
+                <tr>
+                    <td class="o-details-width-a ">
+                        <img class="o-details-product-img" src="<%=i.fpicpath%>" alt="">
+                        <span class="o-details-product-text">
+                            <a href="../purchaser/index.html#details/<%=i.productSn%>/<%=r.suppId%>" target="_blank"><%=i.fgoodname%></a>
+                            <p class="o-details-product-size">规格：<%=i.fspec%></p>
+                        </span>
+                    </td>
+                    <td class="o-details-width-b"><%=i.fbrand%></td>
+                    <td class="o-details-width-b"><%=i.fgoodcode%></td>
+                    <td class="o-details-width-c"><%=i.fprice%></td>
+                    <td class="o-details-width-d"><%=i.fquantity%></td>
+                </tr>
+                    <%})%>
+                <%}%>
+            </table>
+            <%}%>
+            <%if(returned.length!=0){%>
+            <table cellspacing=0 class="o-details-table">
+                <tr class="o-details-product-title-list">
+                    <th class="o-details-width-a">商品</th>
+                    <th class="o-details-width-b">品牌</th>
+                    <th class="o-details-width-b">货号</th>
+                    <th class="o-details-width-c">单价（元）</th>
+                    <th class="o-details-width-d">数量</th>
+                    <th class="o-details-width-d">状态</th>
+                </tr>
+                <%_.each(returned,function(j){%>
+                <tr>
+                    <td class="o-details-width-a ">
+                        <img class="o-details-product-img" src="<%=j.fpicpath%>" alt="">
+                        <span class="o-details-product-text">
+                            <a href="../purchaser/index.html#details/<%=j.productSn%>/<%=r.suppId%>" target="_blank"><%=j.fgoodname%></a>
+                            <p class="o-details-product-size">规格：<%=j.fspec%></p>
+                        </span>
+                    </td>
+                    <td class="o-details-width-b"><%=j.fbrand%></td>
+                    <td class="o-details-width-b"><%=j.fgoodcode%></td>
+                    <td class="o-details-width-c"><%=j.fprice%></td>
+                    <td class="o-details-width-d"><%=j.fquantity%></td>
+                    <td class="o-details-width-e">
+                        <%if(j.returnStatus==0||j.returnStatus==1||j.returnStatus==4){%>退货中<%}%>
+                        <%if(j.returnStatus==2){%>拒绝退货<%}%>
+                        <%if(j.returnStatus==5){%>已退货<%}%>
+                    </td>
+                </tr>
+                <%})%>
+            </table>
+            <%}%>
+            <p class="o-details-product-footer">
+                                    订单总金额：<span class="o-details-product-price"><%=parseFloat(r.totalPrice).toFixed(2)%></span>元
+            </p>
+        </div>
+        <%if($.cookie("organization")=="中山大学附属第二医院"||$.cookie("organization")=="中山大学孙逸仙纪念医院"){%>
+        <div class="o-details-photos">
+            <h3 class="o-details-photos-title">验收照片</h3>
+            <%if(r.urls){var urls=r.urls.split(";")%>
+            <div class="o-details-photos-item">
+            <%_.each(urls,function(i){%>
+                <a href="<%=i%>" target="_blank"><img src="<%=i%>" alt="验收照片"></a>
+            <%})%>
+            </div>
+            <%}else{%>
+            <p>无图片</p>    
+            <%}%>
+        </div>
+        <%}%>
+    </div>
+</div>

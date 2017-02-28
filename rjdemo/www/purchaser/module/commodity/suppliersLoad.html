@@ -1,0 +1,11 @@
+<%if(suppliers!=undefined){_.each(suppliers,function(s){%>
+<span class="supplier-icon-span">
+    <a class="breads" href="javascript:void(0)">
+        <label class="supplier-label"></label>
+        <input type="checkbox" class="checkbox-value" value="<%= s.name%>" />
+        <input type="hidden" value="<%= s.id%>" class="supplies-value" />
+        <%= s.name%>
+    </a>
+
+</span>
+<%});}%>

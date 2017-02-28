@@ -1,0 +1,59 @@
+<% if(flag==true){_.each(statementList,function(i){%>
+<tr>
+    <td class="account-select">
+        <input type="checkbox" class="account-checkbox">
+        <input type="hidden" class="account-id" value="<%=i.id%>" data-No="<%=i.banlanceNo%>">
+    </td>
+    <td class="apply-id">
+        <%=i.banlanceNo%>
+    </td>
+    <td class="supplier">
+        <%=i.supplierName%>
+    </td>
+    <td class="group">
+        <%=i.department%>
+    </td>
+    <td class="human">
+        <%=i.commiter%>
+    </td>
+    <td class="date">
+        <%if(i.hasOwnProperty('submitTheFinancialTime')){%>    
+            <%=i.submitTheFinancialTime.split(" ")[0]%>
+        <%}%>
+    </td>
+    <td class="money">
+        <%=i.banlanceMoney.toFixed(2)%>
+    </td>
+    <td class="status-td">
+        <%if(i.status==0){%> 待开票
+        <%}else if(i.status==1){%> 待审核
+        <%}else if(i.status==2){%> 待付款
+        <%}else if(i.status==3){%> 已完成
+        <%}else if(i.status==4){%> 待提交验收单
+        <%}else if(i.status==5){%> 待提交供应商
+        <%}else if(i.status==6){%> 待填发票
+        <%}else if(i.status==7){%> 待递送
+        <%}%>
+    </td>
+    <td class="control">
+        <a href="#accountdetails/<%=i.banlanceNo%>/<%=i.status%>" class="account-check">查看</a>
+        <% if($.cookie('orgId')==2){%>
+        <%_.each(userPermissions,function(u){if(u=="接收材料"){if(i.status==5){%>
+        <a href="javascript:;" class="account-receive ctrl-common" data-flag="single" data-id="<%=i.banlanceNo%>" data-status="0">提交供应商</a>
+        <%}else if(i.status==4){%>
+        <a href="javascript:;" class="account-receive ctrl-common" data-flag="single" data-id="<%=i.banlanceNo%>" data-status="0">提交供应商</a>
+        <%}}});%>
+        <!--<%_.each(userPermissions,function(u){if(u=="提交财务"){if(i.status==1){%>
+                            <a href="javascript:;" class="account-submit ctrl-common" data-flag="sinInvoice" data-id="<%=i.banlanceNo%>" data-status="WaitingToPay">提交财务</a>
+                            <%}}});%>-->
+        <%}%>
+
+    </td>
+</tr>
+<%});}else{%>
+<tr>
+    <td class="account-no-result" colspan=9>
+        暂无结果。
+    </td>
+</tr>
+<%}%>

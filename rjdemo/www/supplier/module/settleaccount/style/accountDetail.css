@@ -1,0 +1,79 @@
+.balance-details{border:solid #ccc 1px;}
+.balance-details-statusimg{position:relative;left:50%;margin-left:-440px;margin-bottom:30px;margin-top:30px;}
+.balance-details-column{margin-bottom:14px;display:inline-block;width:430px;margin-left:40px;}
+.balance-details-column .balance-details-title{color:#999;text-align:right;display:inline-block;margin-right:15px;line-height:32px;}
+.balance-details-column .balance-details-box{line-height:32px;display:inline-block;color:#333;}
+.balance-details-amend{display:inline-block;margin:20px 0 60px 45%;width:150px;height:38px;line-height:38px;text-align:center;border-radius:4px;display:inline-block;background-color:#05aaf9;color:#fff;}
+/* 汇总单详情 */
+.settleDetail-header{margin-top:15px;}
+.settleDetail-header-icon{width:16px;height:16px;background-color:#008cd0;margin-right:15px;margin-top:3px;}
+.settleDetail-header-text{color:#008cd0;margin-right:15px;font-size:16px;}
+.settleDetail-header-line,.settleDetail-content-line{border-top:1px solid #008cd0;margin-top:10px;width:829px;}
+.settle-details-column{margin-bottom:14px;width:430px;margin-left:40px;display:inline-block;}
+.settle-details-amount{width:200px;border-right:1px solid #ccc;display:inline-block;}
+.settle-details-cost{display:inline-block;position:relative;top:5px;margin-left:15px;}
+.settle-details-column .settle-details-title{color:#999;text-align:right;display:inline-block;line-height:32px;width:100px;}
+.settle-details-column .settle-details-box{line-height:32px;display:inline-block;color:#333;}
+.settleDetail-jiesuan{display:inline-block;width:100%;height:48px;line-height:48px;background-color:#f3f2f0;margin-top:35px;}
+.settle-details-amount .settle-details-box{color:#f00;font-size:16px;}
+.settleDetail-icon01,.settleDetail-icon02{background-image:url(image/2.svg);background-repeat: no-repeat;background-position: 15px center;}
+.settleDetail-icon01{width: 14%;background-size: 25% 30%;}
+.settleDetail-icon02{width: 9%;background-size: 40% 30%;}
+.settleDetail-icon-active01{background-image:url(image/1.svg);background-size: 13% 60%;}
+.settleDetail-icon-active02{background-image:url(image/1.svg);background-size: 20% 55%;}
+.settleDetail-jiesuan-num{display:inline-block;width:166px;color: #999;}
+.settleDetail-jiesuan-dept{display:inline-block;margin-left:30px;width:154px;color: #999;}
+.settleDetail-jiesuan-date{margin-left:30px;display:inline-block;color: #999;}
+.settleDetail-jiesuan-amount{background-color:#666666;color:#fff;text-align:center;width:197px;float:right;}
+.settleDetail-order{display:inline-block;width:94%;background-color:#f3f2f0;height:48px;line-height:48px;margin-left:6%;margin-top:10px;margin-bottom:10px;}
+.settleDetail-order-num{display:inline-block;width:175px;color: #999;}
+.settleDetail-order-dept{display:inline-block;margin-left:20px;width:154px;color: #999;}
+.settleDetail-order-date{margin-left:30px;display:inline-block;color: #999;}
+.settleDetail-order-amount{background-color:#9a9691;color:#fff;text-align:center;width:197px;float:right;}
+.title-span01{color: #333;}
+.title-span02{color: #fff;font-size: 16px;vertical-align: top;}
+.settle-ul{list-style: none;width: 93%;margin-left: 7%;}
+.settle-ul-header{background-color: #f2f2f2;color: #999;height: 36px;line-height: 36px;width: 100%;}
+.settle-ul-header span{color: inherit;}
+.settle-li-name,.settle-li-sn,.settle-li-unit,.settle-li-single,.settle-li-account{padding: 0 1%;text-align: left;word-break: break-all;word-wrap: break-word;}
+.settle-li-name{width: 35%;padding-left: 2%;}
+.settle-li-sn{width: 15%;}
+.settle-li-unit,.settle-li-account{width: 10%;}
+.settle-li-single{width: 15%;}
+.settle-ul-body{border-bottom: 1px dotted #ccc;padding-top: 15px;padding-bottom: 15px;color: #333;line-height: 20px;}
+.settle-ul-body span,.settle-ul-body a{color: inherit;vertical-align: top;line-height: 20px;}
+.settle-commdity-link{word-break: break-all;word-wrap: break-word;}
+.settle-commdity-link:hover{text-decoration: underline;color: #008cd0;}
+.settleDetail-order-list{margin-top:10px;margin-bottom: 10px;}
+span,a{display: inline-block;}
+/*进度条*/
+.settleDetail-schdule-wrap{width: 100%;height: 28px;line-height: 28px;margin-bottom: 22px;font-size: 0;}
+.settleDetail-schdule-wrap span{font-size: 12px;vertical-align: top;}
+.settleDetail-schdule-active,.settleDetail-schdule-unactive{color: #fff;width: 148px;text-align: center;}
+.settleDetail-schdule-active{background-color: #008cd0;}
+.settleDetail-schdule-unactive{background-color: #ccc;}
+.settleDetail-schdule-icon-active,.settleDetail-schdule-icon-unactive{width: 13px;height: 28px;overflow: hidden;}
+.settleDetail-schdule-icon-active img,.settleDetail-schdule-icon-unactive img{width: 100%;height: 28px;}
+
+/* 发票详情 */
+.settle-details-invoice{width:100%;border:1px solid #ccc;margin-bottom:15px;}
+.settle-details-invoice-firstpart,.settle-details-invoice-secpart{width:30%;display:inline-block;margin:20px 0 20px 50px;line-height:40px;}
+.settle-details-invoice-firstpart .invoice-title,.settle-details-invoice-secpart .invoice-title{width:80px;text-align:right;}
+.settle-details-invoice-img{width:120px;height:120px;display:inline-block;border:1px solid #ccc;margin-right:10px;}
+.settle-details-invoice-imgpart{margin:20px 0 20px 50px;}
+.settle-details-addInvoice{margin:20px 0;line-height:40px;border:1px solid #ccc;padding:20px 0 20px 40px;}
+.settle-details-addInvoice .invoice-title{width:80px;text-align:right;}
+.settle-details-addInvoice .invoice-num-input{width:350px;line-height:30px;text-indent:10px;}
+.settle-details-addInvoice .invoice-num-input:focus{border:1px solid #008cd0;text-indent:10px;}
+.invoiceNumErrTip{margin-left:15px;color:#ff593f;display:none;}
+.invoiceBank{height:34px;}
+.settle-details-addInvoice .invoiceAccount-add-btn{cursor:pointer;border:1px solid #ccc;height:34px;width:80px;text-align:center;margin-left:15px;line-height:32px;}
+.settle-details-addInvoice .settle-details-addInvoice-info{width:93%;display:inline-block;}
+.settle-details-addInvoice .invoice-tab{width:7%;height:320px;background-color:#f3f2f0;float:right;display:inline-block;position:relative;top:-20px;}
+.settle-details-addInvoice .invoice-tab .invoice-tab-info{position:relative;top:160px;left:15px;}
+.settle-details-addInvoice .invoice-tab .invoice-tab-close{float:right; width:25px; height: 25px; margin:5px; text-align: center;  cursor: pointer; line-height: 30px;background-image: url(../../../style/images/5.svg);background-repeat: no-repeat;background-size: 60% 60%;background-position: center;}
+.settle-details-addInvoice-block{border:1px solid #ccc;width:100%;height:40px;}
+.settle-details-addInvoice-btn{width:7%;height:40px;line-height:40px;text-align:center;background-color:#008cd0;float:right;color:#fff;cursor:pointer;}
+.settle-details-save-btn,.settle-details-cancel-btn{text-align:center;font-size:16px;cursor:pointer;display:inline-block;}
+.settle-details-save-btn{background:url("../../../style/images/icon02.png") no-repeat -465px -51px;width:150px;height:38px;line-height:38px;color:#fff;margin-top:20px;}
+.settle-details-cancel-btn{background:url("../../../style/images/icon02.png") no-repeat -669px -50px;width:150px;height:38px;line-height:38px;color:#008cd0;margin-top:20px;margin-left:15px;}

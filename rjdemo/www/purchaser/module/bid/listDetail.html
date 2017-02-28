@@ -1,0 +1,238 @@
+<%= nav %>
+<div class="home-main">
+    <div class="cm-main">
+        <div class="bid-bread-wrap">
+            <span class="bid-bread-span">在线招标</span>
+            <span class="bid-bread-span"><em class="direction">&gt;</em>
+                <a class="bread-link" href="javascript:void(0)">
+                    <% if(status==4){%>竞价中
+                    <%}else if(status==100){%>已结束
+                    <%} %>
+                </a>
+            </span>
+            <span class="bid-bread-span"><em class="direction">&gt;</em>
+                <a class="bread-link" href="javascript:void(0)">
+                    <%= unit %> </a>
+            </span>
+        </div>
+        <div class="bid-content-div">
+            <div class="list-detail-wrap">
+                <h1 class="hospital-head"><%= unit %></h1>
+                <div class="little-header">
+                    <span class="bid-num left">竞价编号：
+                        <%= sn %>
+                    </span>
+                    <span class="bid-detail-over-time right">结束时间：
+                        <%= endDate %>
+                    </span>
+                </div>
+                <div class="bid-status-div">
+                    <span class="bid-status-inner <% if(status=='4'){%>background-going <%}else{%> background-over <%} %>">
+                        <!--background-over已结束-->
+                        <% if(status==4){%>
+                        <div class="status-doing-cell  left">竞价中</div>
+                        <%}else{%>
+                        <div class="status-over-cell  left">
+                            <%if(status==8){%>已取消
+                            <%}else if(status==100){%>已结束
+                            <%}%>
+                        </div>
+                        <%} %>
+                        <!--status-over-cell已结束-->
+                        <div class="distance-over-time right">
+                            距结束时间：
+                            <span id="list-detail-clock" class="list-clock">
+                            </span>
+                        </div>
+                    </span>
+                    <% if(isLogin==false){%>
+                    <span class="login-status">
+                        <p class="login-status-p">若想报价，请</p>
+                        <a href="javascript:void(0);" class="login-status-link" id="list-login">登&nbsp;录</a>
+                    </span>
+                    <%} %>
+
+                </div>
+                <div class="table-wrap-div">
+                    <% if(isSupp==false && (status==4 || status==100)){%>
+                    <table class="list-detail-table">
+                        <thead>
+                            <tr>
+                                <th class="list-detail-th01">序号</th>
+                                <th class="list-detail-th02">商品名称</th>
+                                <th class="list-detail-th03">品牌要求</th>
+                                <th class="list-detail-th04">货号要求</th>
+                                <th class="list-detail-th05">采购数量</th>
+                                <th class="list-detail-th06">采购要求</th>
+                                <th class="list-detail-th07">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%_.each(items,function(I,index){%>
+                            <tr>
+                                <td class="list-detail-th01">
+                                    <%=index+1%>
+                                </td>
+                                <td class="list-detail-th02">
+                                    <%= I.itemName %>
+                                </td>
+                                <td class="list-detail-th03">
+                                    <%= I.brand %>
+                                    <% if(I.brand==undefined || !I.brand){%> -
+                                    <%}%>
+                                </td>
+                                <td class="list-detail-th04">
+                                    <%= I.itemNo %>
+                                    <% if(I.itemNo==undefined || !I.itemNo){%> -
+                                    <%}%>
+                                </td>
+                                <td class="list-detail-th05">
+                                    <%= I.count %>
+                                </td>
+                                <td class="list-detail-th06">
+                                    <p class="td-requirement">
+                                        <%= I.information %>
+                                    </p>
+                                    <% if(I.information==undefined || !I.information){%> -
+                                    <%}%>
+                                </td>
+                                <td class="list-detail-th07">
+                                    <a href="#biddetail?id=<%= I.id %>&unit=<%= unit %>" class="detail-link">查看详情</a>
+                                </td>
+                            </tr>
+                            <%})%>
+                        </tbody>
+                    </table>
+                    <%}else if((isLogin == true && isSupp==true) && (status==4 || status==100)){%>
+                    <!--已登录供应商-->
+                    <table class="list-detail-table">
+                        <thead>
+                            <tr>
+                                <th class="list-detail-have-th01">序号</th>
+                                <th class="list-detail-have-th02">商品名称</th>
+                                <th class="list-detail-have-th03">品牌要求</th>
+                                <th class="list-detail-have-th04">货号要求</th>
+                                <th class="list-detail-have-th05">采购数量</th>
+                                <th class="list-detail-have-th06">采购要求</th>
+                                <th class="list-detail-have-th07">报价</th>
+                                <th class="list-detail-have-th08">状态</th>
+                                <th class="list-detail-have-th09">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%_.each(items,function(I,index){%>
+
+                            <tr>
+                                <td class="list-detail-have-th01">
+                                    <%=index+1%>
+                                </td>
+                                <td class="list-detail-have-th02">
+                                    <%= I.itemName %>
+                                </td>
+                                <td class="list-detail-have-th03">
+                                    <%= I.brand %>
+                                    <% if(I.brand==undefined || !I.brand){%> -
+                                    <%}%>
+                                </td>
+                                <td class="list-detail-have-th04">
+                                    <%= I.itemNo %>
+                                    <% if(I.itemNo==undefined || !I.itemNo){%> -
+                                    <%}%>
+                                </td>
+                                <td class="list-detail-have-th05">
+                                    <%= I.count %>
+                                </td>
+                                <td class="list-detail-have-th06">
+                                    <p class="td-requirement">
+                                        <%= I.information %>
+                                    </p>
+                                    <% if(I.information==undefined || !I.information){%> -
+                                    <%}%>
+                                </td>
+                                <%if(I.status==0||I.status==2){%>
+                                <td class="list-detail-have-th07">
+                                    <%= I.price %>
+                                </td>
+                                <td class="list-detail-have-th08 have-price-active">已报价</td>
+                                <%}else if(I.status==1){%>
+                                <td class="list-detail-have-th07">-</td>
+                                <td class="list-detail-have-th08">已放弃</td>
+                                <%}else if(I.status==3){%>
+                                <td class="list-detail-have-th07">-</td>
+                                <td class="list-detail-have-th08 ">未报价</td>
+                                <%}%>
+                                <td class="list-detail-have-th09">
+                                    <a href="#biddetail?id=<%= I.id %>&unit=<%= unit %>" class="detail-link">查看详情</a>
+                                </td>
+                            </tr>
+                            <%})%>
+                        </tbody>
+                    </table>
+                    <%}else if(status==8){%>
+                    <!--已取消-->
+                    <table class="list-detail-table">
+                        <thead>
+                            <tr>
+                                <th class="list-detail-th01">序号</th>
+                                <th class="list-detail-th02">商品名称</th>
+                                <th class="list-detail-th03">品牌要求</th>
+                                <th class="list-detail-th04">货号要求</th>
+                                <th class="list-detail-th05">采购数量</th>
+                                <th class="list-detail-cancel-th06">采购要求</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%_.each(items,function(I,index){%>
+                            <tr>
+                                <td class="list-detail-th01">
+                                    <%=index+1%>
+                                </td>
+                                <td class="list-detail-th02">
+                                    <%= I.itemName %>
+                                </td>
+                                <td class="list-detail-th03">
+                                    <%= I.brand %>
+                                    <% if(I.brand==undefined || !I.brand){%> -
+                                    <%}%>
+                                </td>
+                                <td class="list-detail-th04">
+                                    <%= I.itemNo %>
+                                    <% if(I.itemNo==undefined || !I.itemNo){%> -
+                                    <%}%>
+                                </td>
+                                <td class="list-detail-th05">
+                                    <%= I.count %>
+                                </td>
+                                <td class="list-detail-cancel-th06">
+                                    <p class="td-requirement">
+                                        <%= I.information %>
+                                    </p>
+                                    <% if(I.itemNo==undefined || !I.itemNo){%> -
+                                    <%}%>
+                                </td>
+                            </tr>
+                            <%})%>
+                        </tbody>
+                    </table>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="home-footer">
+    <p>
+        <a style="color:#666" href="index.html#help">帮助中心</a> | 客服QQ：2448328732 服务时间：周一至周五(节假日除外)9：00-18：00
+        <span class="footer-logo">
+            <a href="tencent://message/?uin=2448328732&Site=在线QQ&amp;Menu=yes">
+                <img src="images/QQ.png" />
+                <span>QQ交谈</span>
+            </a>
+        </span>
+    </p>
+    <p>版权所有 @2014-2016 网站备案/许可证号：
+        <a target="_blank" style="color:#666;" href="http://www.miitbeian.gov.cn/">粤ICP备16055118号-2
+        </a>
+    </p>
+</div>
+<%= little %>

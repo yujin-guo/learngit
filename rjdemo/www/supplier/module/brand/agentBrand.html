@@ -1,0 +1,190 @@
+<div class="a-brand">
+    <div class="a-brand-header overflow">
+        <span class="a-brand-header-title left"></span>
+        <span class="a-brand-header-text left">审核状态</span>
+        <span class="a-brand-header-line left"></span>
+    </div>
+    <% if(auth.status==1){%>
+    <!--审核中页面-->
+    <div class="a-brand-state">
+        <span class="a-brand-state-left">
+            <div class="a-brand-state-img"><img src="<%=basic.logo%>"></div>
+            <p><%=basic.cName%></p>
+        </span>
+        <span class="a-brand-state-right">
+            <div class="a-brand-state-operate">
+                <div class="a-brand-state-desc left">
+                    <span class="a-brand-state-icon"></span>
+                    <span class="a-brand-state-text">审核中</span>
+                </div>
+                <div class="a-brand-state-btn right">
+                    <span class="a-brand-state-cancel brand-cancel">撤回审核</span>
+                </div>
+            </div>
+            <p>您的品牌正在审核中，将会在3天内完成审核，请耐心等待。</p>
+        </span>
+    </div>
+    <%}%>
+    <% if(auth.status==2){%>
+    <!--已通过页面-->    
+    <div class="a-brand-state a-brand-pass">
+        <span class="a-brand-state-left">
+            <div class="a-brand-state-img"><img src="<%=basic.logo%>"></div>
+            <p><%=basic.cName%></p>
+        </span>
+        <span class="a-brand-state-right">
+            <div class="a-brand-state-operate">
+                <div class="a-brand-state-desc left">
+                    <span class="a-brand-state-icon"></span>
+                    <span class="a-brand-state-text">已通过</span>
+                </div>
+                <div class="a-brand-state-btn right">
+                    <span class="a-brand-state-cancel brand-cancel">删除品牌</span>
+                </div>
+            </div>
+        </span>
+    </div>
+    <%}%>
+    <% if(auth.status==3){%>
+    <!--未通过页面-->  
+    <div class="a-brand-state">
+        <span class="a-brand-state-left">
+            <div class="a-brand-state-img"><img src="<%=basic.logo%>"></div>
+            <p><%=basic.cName%></p>
+        </span>
+        <span class="a-brand-state-right">
+            <div class="a-brand-state-operate">
+                <div class="a-brand-state-desc left">
+                    <span class="a-brand-state-icon"></span>
+                    <span class="a-brand-state-text">未通过</span>
+                </div>
+                <div class="a-brand-state-btn right">
+                    <span class="a-brand-state-cancel-b brand-cancel">删除品牌</span>
+                    <span class="a-brand-state-cancel-b brand-modify">重新提交</span>
+                </div>
+            </div>
+            <p>您的品牌审核被驳回，请修改后提交，驳回原因为：<%=auth.approvalComment%></p>
+        </span>
+    </div>
+    <%}%>
+    <% if(auth.status==4){%>
+    <!--已过期页面--> 
+    <div class="a-brand-state">
+        <span class="a-brand-state-left">
+            <div class="a-brand-state-img"><img src="<%=basic.logo%>"></div>
+            <p><%=basic.cName%></p>
+        </span>
+        <span class="a-brand-state-right">
+            <div class="a-brand-state-operate">
+                <div class="a-brand-state-desc left">
+                    <span class="a-brand-state-icon"></span>
+                    <span class="a-brand-state-text">已过期</span>
+                </div>
+                <div class="a-brand-state-btn right">
+                    <span class="a-brand-state-cancel-b brand-cancel">删除品牌</span>
+                    <span class="a-brand-state-cancel-b brand-modify">重新提交</span>
+                </div>
+            </div>
+            <p>您的品牌授权已过期。</p>
+        </span>
+    </div>
+    <%}%>
+    <input class="a-brand-authid" type="hidden" value="<%=auth.authId%>">
+    <% if(auth.status==5){%>
+    <!--已撤回页面--> 
+    <div class="a-brand-state">
+        <span class="a-brand-state-left">
+            <div class="a-brand-state-img"><img src="<%=basic.logo%>"></div>
+            <p><%=basic.cName%></p>
+        </span>
+        <span class="a-brand-state-right">
+            <div class="a-brand-state-operate">
+                <div class="a-brand-state-desc left">
+                    <span class="a-brand-state-icon"></span>
+                    <span class="a-brand-state-text">已撤回</span>
+                </div>
+                <div class="a-brand-state-btn right">
+                    <span class="a-brand-state-cancel-b brand-cancel">删除品牌</span>
+                    <span class="a-brand-state-cancel-b brand-modify">修改信息</span>
+                </div>
+            </div>
+            <p>您的主动取消申请。</p>
+        </span>
+    </div>
+    <%}%>
+    <div class="a-brand-item">
+        <div class="a-brand-header overflow">
+            <span class="a-brand-header-title left"></span>
+            <span class="a-brand-header-text left">基本信息</span>
+            <span class="a-brand-header-line left"></span>
+        </div>
+        <div class="a-brand-info overflow">
+            <span class="a-brand-info-left">品牌中文名称：</span>
+            <span class="a-brand-info-right"><%=basic.cName%></span>
+        </div>
+        <div class="a-brand-info overflow">
+            <span class="a-brand-info-left">品牌英文名称：</span>
+            <span class="a-brand-info-right"><%=basic.eName%></span>
+        </div>
+        <div class="a-brand-info overflow">
+            <span class="a-brand-info-left">品牌制造商：</span>
+            <span class="a-brand-info-right"><%=basic.manufacture%></span>
+        </div>
+        <div class="a-brand-info overflow">
+            <span class="a-brand-info-left">品牌LOGO：</span>
+            <span class="a-brand-info-logo"><img src="<%=basic.logo%>"></span>
+        </div>
+        <%if(auth.level==0){%>
+        <div class="a-brand-info overflow">
+            <span class="a-brand-info-left">品牌商标证书：</span>
+            <span class="a-brand-info-logo">
+                <%if(auth.hasOwnProperty("authPic")){%>
+                <%_.each(auth.authPic.split(","),function(i){%>
+                <img src="<%=i%>">
+                <%})%>
+                <%}%>
+            </span>
+        </div>
+        <%}%>
+    </div>
+    <input type="hidden" class="a-brand-level" value="<%=auth.level%>">
+    <%if(auth.level!=0){%>
+    <div class="a-brand-item">
+        <div class="a-brand-header overflow">
+            <span class="a-brand-header-title left"></span>
+            <span class="a-brand-header-text left">授权信息</span>
+            <span class="a-brand-header-line left"></span>
+        </div>
+        <div class="a-brand-info overflow">
+            <span class="a-brand-info-left">代理级别：</span>
+            <%if(auth.level==1){%>
+            <span class="a-brand-info-right">一级代理</span>
+            <%}%>
+            <%if(auth.level==2){%>
+            <span class="a-brand-info-right">二级代理</span>
+            <%}%>
+            <%if(auth.level==3){%>
+            <span class="a-brand-info-right">三级代理</span>
+            <%}%>
+        </div>
+        <div class="a-brand-info overflow">
+            <span class="a-brand-info-left">授权到期时间：</span>
+            <span class="a-brand-info-right"><%if(auth.isLongAuth){%>长期<%}else{%><%=auth.endDate.split(" ")[0]%><%}%></span>
+        </div>
+        <div class="a-brand-info overflow">
+            <span class="a-brand-info-left">品牌授权资料：</span>
+            <span class="a-brand-info-logo">
+                <%if(auth.hasOwnProperty("authPic")){%>
+                <%_.each(auth.authPic.split(","),function(i){%>
+                <img src="<%=i%>">
+                <%})%>
+                <%}%>
+            </span>
+        </div>
+    </div>
+    <% if(auth.status==4){%>
+    <!--已过期页面--> 
+    <div class="a-brand-revise brand-modify">修改</div>
+    <%}%>
+    <%}%>
+</div>

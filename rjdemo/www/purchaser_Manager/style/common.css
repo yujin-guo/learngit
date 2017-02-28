@@ -1,0 +1,88 @@
+*{margin:0px;padding: 0px;font-size:12px;}
+input:-webkit-autofill{ -webkit-box-shadow: 0 0 0px 1000px white inset !important;}
+button, input, select, textarea {font-family: inherit; font-size: inherit; line-height: inherit;background-color: #fff;outline: none;}
+a{outline: none;blr:expression(this.onFocus=this.blur());}
+input:focus{ outline: none;}
+textarea{resize: none;}
+.left{ float:left;}
+.right{ float:right;}
+.clear{clear: both;}
+ul{list-style: none;}
+.header-nav{width:100%;height: 80px;line-height: 80px;}
+.header-backcolor{background-color:#32ab94;color: #fff;}
+.header-active{background-color: #298d79;}
+body{ background-color:#fff; font: 12px/1.5 "Microsoft YaHei",tahoma,arial,"Hiragino Sans GB",宋体,sans-serif;color: #666;position:relative;}
+.cm-main{ width: 1198px; margin:auto; overflow: hidden;}
+.bread{color: #999;font-size:12px ;margin:22px 0;}
+a{text-decoration: none;display: inline-block;}
+span{display: inline-block;}
+.overflow{ overflow: hidden;}
+.header-color{background-color: #32ab94;}
+.header a{color: #fff;}
+.header-banner a{color:#333}
+.header-banner a:hover{color:#138cdd}
+.header a:hover{text-decoration: none;}
+.hospital-manage{display:none;}
+.header-icon{ background: url("images/logo.svg") no-repeat center; width: 234px; height: 80px; display: block;}
+.header-icon-return{background: url("images/icon.jpg") no-repeat; width: 202px; height: 54px; display: block;margin-top: 23px;}
+.header-right a{margin-left: 20px;font-size:16px;vertical-align: top;}
+.header ul{height: 80px;width: 540px;margin: auto;}
+.header ul li{float: left;height: 80px;}
+.header li a{width: 90px;height: 80px;line-height: 80px;text-align: center;font-size: 16px;}
+.header li a:hover{background-color:#0072a8 ;}
+.left-nav{width: 200px;margin-right: 25px;margin-bottom: 21px;}
+.right-content{width: 973px; margin-bottom: 21px;}
+.left-nav ul{width: 100%;}
+.pd-lf-10{ padding-left:10px;font-style:normal}
+.pd-rg-10{ padding-right:10px;font-style:normal}
+.pd-lf-8{ padding-left:8px;font-style:normal}
+.pd-rg-8{ padding-right:8px;font-style:normal}
+.left-nav .left-nav-li-active{background-color: rgb(228,228,228);}
+.left-nav a{color: #666;font-size: 16px;height: 50px;line-height: 50px;width: 143px;height:50px;padding-left: 57px;background-color: #f2f2f2;}
+.left-nav .next-nav-link{background-color: #f8f8f8;font-size: 16px;padding-left: 67px;width: 133px;}
+.left-nav .hover-flag:hover{text-decoration: none;background-color: rgb(228,228,228);}
+.my-price-icon01,.my-price-icon02{background-image: url(images/duble-solid.png);background-repeat: no-repeat;}
+.my-price-icon01{background-position: 35px -9px;}
+.my-price-icon02{background-position: 35px -116px;}
+.next-ul-nav{display: none;}
+.show{display: block;}
+.home-footer{ background-color: #ccc; text-align: center; height: 40px; padding:15px 0;  color: #666; line-height:20px; margin-top:50px;}
+.welcome{color: #999;}
+.header-border-bottom{border-bottom: 1px solid #ccc;}
+.header-banner{ background-color:#eff2f5; height:30px; color:#7c95ad; line-height: 30px;}
+.header-search-main{height: 100px;}
+.header01-wrap{width: 100%;background-color: #eff2f5;height: 100px;}
+.empty-td{color: #999;height: 100px;vertical-align: middle;text-align: center;}
+.purchase-bread{color: #999;}
+.purchase-bread:hover{color: #32ab94;}
+/*页码*/
+.table-all .list-page{margin-top: 30px;border: medium none;}
+.page-td{height: 90px;vertical-align: middle;text-align: center;line-height:90px}
+#pagination{margin: auto;}
+#pagination a,#pagination span{display: inline-block;padding-left:8px;padding-right:8px;height: 25px;color: #000;line-height: 25px;text-align: center;margin-left: 3px;border: 1px #e4e4e4 solid;vertical-align: middle;color: #666;}
+#pagination .page-active,#pagination .current{background-color: #298d79;color: #fff;}
+#pagination .prev,#pagination .next{background-color: #fff;color: #000;background-image: url(images/icons.png);background-repeat: no-repeat;width: 8px;}
+.prev{background-position: -249px -24px;}
+.next{background-position: -294px -24px;}
+.total-page-show {height: 30px;line-height: 30px;margin-left: 15px;margin-right: 50px;}
+.total-page-num{margin: 0 10px;}
+/*header01*/
+.logo-wrapper{border-bottom:solid #008cd0 1px}
+.header01-logo{height:100px;background:url(images/icon.png) no-repeat 0 20px;}
+.header01-logo-pic{height:48px;width:237px;margin-top:20px;display:inline-block}
+.content-container{background-color:#f2f2f2}
+.header-01-bread{height:40px;line-height:40px}
+.header-01-bread a{color:#333}
+.bread-hover:hover{color:#008cd0;text-decoration:underline}
+.header01-arrow{padding:0 5px}
+.bread-span{margin-left: 5px;margin-right: 5px;}
+.loading-gif{position: fixed;left:0;right:0;top: 0;bottom: 0;background-color: rgba(0,0,0,.1);z-index: 9999;}
+.loading-gif img{width: 40px;height: 40px;margin: auto;display: block;margin-top: 20%;}
+.left-nav .home-active{background-color: #32ab94;color: #fff;}
+.header-banner a{color:#33333;}
+.basket-num{margin-left: 10px;font-size:14px;vertical-align: top;}
+
+.footer-logo{display:inline-block;background-color:#1a8ed0;width:100px;height:30px;line-height:30px;vertical-align:middle;border-radius:5px;position:relative;left:10px;}
+.footer-logo a{color:#fff;text-decoration:none;}
+.footer-logo img{padding-top:5px;}
+.footer-logo span{position:relative;bottom:3px;}

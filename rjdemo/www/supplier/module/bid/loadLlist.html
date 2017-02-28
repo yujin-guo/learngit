@@ -1,0 +1,90 @@
+<% if(flag){_.each(entities,function(E){%>
+<table class="transaction-table">
+    <thead>
+        <tr>
+            <th colspan="7">
+                竞价编号：
+                <span class="order-id">
+                    <%= E.sn %>
+                </span>
+                <span class="order-name">
+                    <%= E.unit %>
+                </span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <%_.each(E.products,function(P){%>
+        <tr>
+            <td class="commodity-name-01">
+                <span class="commodity-picture">
+                    <img src="<%= P.picpath %>" />
+                </span>
+                <span class="comodity-name-detail">
+                    <a class="name-detail-link" href="#productdetails/<%= P.productSn %>">
+                        <%= P.name %>
+                    </a>
+                    <p class="commodity-desc">
+                        <%= P.spec %>
+                    </p>
+                </span>
+            </td>
+            <td class="commodity-num-01">
+                <%= P.count %>
+            </td>
+            <td class="commodity-state-01">
+                <a href="../purchaser/index.html#biddetail?id=<%= P.itemId %>" class="bid-status-link" target="_blank">
+                    <% if(P.status==1){%> 已放弃
+                        <%} %>
+                        <% if(P.status==0 && E.status==0 && E.orderStatus==50 ){%>未中标
+                        <%}else if(P.status==0 && E.status==1){%>已报价
+                        <%}else if(P.status==0 || P.status==2 && E.status==0 && E.orderStatus!=50){if(E.orderStatus == 99){%>已报价<%}else{%>待开标<%}%>
+                        <%} else if(P.status==2 && E.orderStatus==50){%>已中标
+                        <%}%>
+                </a>
+            </td>
+            <%if(P.id==E.products[0].id){%>
+            <td rowspan="<%= E.products.length %>" class="transaction-state-01">
+                <div class="bid-time-div">
+                    <a href="../purchaser/index.html#listdetail?id=<%= E.id %>" class="bid-status-link" target="_blank">
+                        <% if(E.status==1){%>竞价中
+                        <%}else if(E.status==0){if(E.orderStatus == 99){%>已取消<%}else{%>已结束<%}%>
+                        <%} %>
+                    </a>
+                </div>
+                <div class="bid-start-time">开始时间:
+                    <%= E.startTime %>
+                </div>
+                <div class="bid-end-time">结束时间:
+                    <%= E.endTime %>
+                </div>
+            </td>
+            <%}%>
+        </tr>
+        <%}) %>
+    </tbody>
+</table>
+
+<%})}else{%>
+<p class="empty">
+    暂时没有竞价单！
+</p>
+<%} %>
+
+<!--页码-->
+<div class="page-wrap <% if(flag==false){%>hide<%} %>">
+    <div class="right page-total">
+        共
+        <span class="total-page-num">
+            <%= totalPage %>
+        </span>页
+    </div>
+    <div class="right">
+        <a class="endpoint end" data-flag="end" href="javascript:void(0)">&nbsp;&nbsp;</a>
+    </div>
+    <div class="page right" id="pagination">
+    </div>
+    <div class="right">
+        <a class="endpoint head" data-flag="head" href="javascript:void(0)">&nbsp;&nbsp;</a>
+    </div>
+</div>

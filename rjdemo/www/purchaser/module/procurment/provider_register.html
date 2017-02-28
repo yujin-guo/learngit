@@ -1,0 +1,57 @@
+<%= nav %>
+<div class="cm-main">
+    <div class="provider-wrap">
+        <div class="provider-schdule-wrap">
+        <div class="provider-register-01">
+            <div class="provider-first-icon"></div>
+            <div class="provider-schedule">
+                <span class="step-first schedule-active">填写基本信息</span>
+                <span class="step-second">激活邮箱</span>
+                <span class="step-third">完善资料</span>
+                <span class="step-fourth">注册成功</span>
+            </div>
+        </div>
+        </div>
+        <div class="provider-register-01">
+            <div class="provider-register-content">
+                <form id="register-form" autocomplete="off">
+                    <div class="procurment-info" style="border-bottom:medium none ;">
+                        <div class="procurment-info-01 margin01">
+                            <span class="procurment-info-title">邮&nbsp;&nbsp;&nbsp;&nbsp;箱：</span><input name="email" type="text" class="common" id="email" placeholder="请输入邮箱" />
+                            <span class="provider-error"></span>
+                        </div>
+                        <div class="procurment-info-01 margin02">
+                            <span class="procurment-info-title">密&nbsp;&nbsp;&nbsp;&nbsp;码：</span><input id="password" name="password" type="password" class="common" placeholder="密码由6-20位字母,数字组合组成" />
+                            <span class="provider-error"></span>
+                        </div>
+                        <div class="procurment-info-01 margin02">
+                            <span class="procurment-info-title">确认密码：</span><input name="passagin" type="password" class="common" placeholder="请再次输入密码" />
+                            <span class="provider-error"></span>
+                        </div>
+                        <!--<div class="procurment-info-01 margin02">
+                            <span class="procurment-info-title">验&nbsp;&nbsp;证&nbsp;&nbsp;码：</span>
+                            <span class="validate-number">
+                            <span style="width:0;overflow:hidden;display:inline-block;float:left;margin: 0;">&nbsp;</span>
+                            <input class="common" name="piccode" id="validate-code" type="text" placeholder="请输入验证码" />
+                            <span class="login-code"><img class="code-img" src="" /></span>
+                            </span>
+                            <span class="provider-error"></span>
+                        </div>-->
+                        <div class="procurment-info-01 margin02">
+                            <span class="procurment-info-title"></span>
+                            <input type="checkbox" id="protocol-checkbox" />我同意并遵守上述的
+                            <a href="javascript:void(0);" class="protocol-link">《锐竞采购平台服务协议》</a>
+                        </div>
+                        <div class="procurment-info-01">
+                            <span class="procurment-info-title"></span>
+                            <input type="submit" id="confirm" value="下一步" disabled="true" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="protocol-wrap-01">
+        <%= protocol %>
+    </div>
+</div>

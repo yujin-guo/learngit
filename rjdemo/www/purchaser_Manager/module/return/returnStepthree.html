@@ -1,0 +1,93 @@
+<!--导入header-->
+<%=header%>
+
+<div class="return cm-main">
+    <div class="return-bread">
+        <a href="" class="return-index">采购人中心</a>&nbsp;&gt;&nbsp;<a href="javascript:;" class="return-list">退货单列表</a>&nbsp;&gt;&nbsp;<a href="javascript:;">退货详情</a>
+    </div>
+    <div class="return-flow return-position-three">
+        <span class="return-word-color"><em class="return-flow-step return-num-color">1</em> 采购人申请退货</span><span class="return-word-color"><em class="return-flow-step return-num-color">2</em> 供应商处理退货申请</span><span><em class="return-flow-step return-num-color">3</em> 采购人退货给供应商</span><span><em class="return-flow-step">4</em> 供应商确认收货，退货成功</span>
+    </div>
+    <div class="return-info overflow">
+        <div class="return-info-order left">
+            <h3 class="return-info-order-title">订单信息</h3>
+            <p ><img class="return-info-order-img" src="<%=details.fpicpath%>"><span class="return-info-order-name"><%=details.fgoodname%></span></p>
+            <p class="return-info-order-item"><span class="return-word-space">规 格</span>：<span class="return-info-order-item-content"><%=details.fspec%></span></p>
+            <p class="return-info-order-item"><span class="return-word-space">单 价</span>：<span class="return-info-order-item-content"><%=details.fprice.toFixed(2)%></span></p>
+            <p class="return-info-order-item"><span class="return-word-space">数 量</span>：<span class="return-info-order-item-content"><%=details.fquantity%></span></p>
+            <p class="return-info-order-item return-info-order-supplier"><span class="return-word-align">供应商</span>：<span class="return-info-order-item-content"><%=main.fsuppname%></span></p>
+            <p class="return-info-order-item"><span class="return-word-align">订单编号</span>：<span class="return-info-order-item-content"><%=main.forderno%></span></p>
+            <p class="return-info-order-item"><span class="return-word-align">采购部门</span>：<span class="return-info-order-item-content"><%=main.fbuydepartment%></span></p>
+            <%var last=_.last(returned)%>
+            <p class="return-info-order-item return-info-order-supplier"><span class="return-word-align">退货编号</span>：<span class="return-info-order-item-content"><%=last.returnNo%></span></p>
+            <p class="return-info-order-item"><span class="return-word-align">退货数量</span>：<span class="return-info-order-item-content"><%=last.quantity%></span></p>
+            <p class="return-info-order-item"><span class="return-word-align">退货原因</span>：<span class="return-info-order-item-content"><%=last.returnReason%></span></p>
+            <p class="return-info-order-item"><span class="return-word-space">说 明</span>：<span class="return-info-order-item-content"><%=last.remark%></span></p>
+        </div>
+        <div class="return-info-handle left">
+            <%if(details.returnStatus==1){%>
+            <div class="return-handle-top">
+                <h3 class="return-info-handle-title">请退货给供应商</h3>
+                <p>• 如果供应商同意，请把货退给供应商。</p>
+                <p>• 供应商收到商品后，并确认收货，退货申请才会完成。</p>
+                <a href="javascript:;" class="return-info-handle-returned">已退还货物</a>
+                <div class="return-info-revise">
+                    <span>你还可以：</span><span class="return-info-revise-apply" id="returnCancel">撤销退货申请</span>
+                </div>
+            </div>
+            <%}%>
+            <%if(details.returnStatus==4){%>
+            <div class="return-handle-top">
+                <h3 class="return-info-handle-title">请等待商家处理</h3>
+                <p>• 您已退货给商家，等待商家确认收货。</p>
+            </div>
+            <%}%>
+            <div class="return-message-board">留言板</div>
+            <%var returnNo=9%>
+            <div id="returnMessage">
+                <%_.each(returned,function(j,index){%>
+                <div class="return-handle-bottom">
+                    <%if(j.receiveTime){%>
+                    <p class="return-handle-bottom-name"><span class="return-handle-bottom-purchaser"><%=j.supplierName%>- 供应商</span><span>确认收货，退货成功</span><span class="right"><%=j.receiveTime%></span></p>    
+                    <%}%>
+                    <%if(j.returnTime){%>
+                    <p class="return-handle-bottom-name"><span class="return-handle-bottom-purchaser"><%=j.applyName%>- 采购人</span><span>退还货物</span><span class="right"><%=j.returnTime%></span></p>    
+                    <%}%>
+                    <%if(j.cancelTime){%>
+                    <p class="return-handle-bottom-name"><span class="return-handle-bottom-purchaser"><%=j.applyName%>- 采购人</span><span>撤销退货申请</span><span class="right"><%=j.cancelTime%></span></p>    
+                    <%}%>
+                    <%if(j.replyTime){%>
+                    <p class="return-handle-bottom-name">
+                        <span class="return-handle-bottom-purchaser"><%=j.supplierName%>- 供应商</span>
+                        <%if(index+1==returned.length){%>
+                            <%if(details.returnStatus!=2){%>
+                        <span>同意了退货申请</span>
+                            <%}else{%>
+                        <span>拒绝了退货申请</span>    
+                            <%}%>
+                        <%}else{%>
+                            <%if(j.hasOwnProperty("goodsReturnStatus")&&j.goodsReturnStatus==2||j.goodsReturnStatus==3){%>
+                        <span>拒绝了退货申请</span> 
+                            <%}%>
+                            <%if(j.hasOwnProperty("goodsReturnStatus")&&j.goodsReturnStatus==6){%>
+                        <span>同意了退货申请</span> 
+                            <%}%>
+                        <%}%>
+                        <span class="right"><%=j.replyTime%></span>
+                    </p>    
+                    <%}%>
+                    <p class="return-handle-bottom-name"><span class="return-handle-bottom-purchaser"><%=j.applyName%>- 采购人</span><%if(j.returnNo==returnNo){%><span>修改了退货申请</span><%}else{%><span>发起了退货申请</span><%}%><span class="right"><%=j.creationTime%></span></p>
+                    <p class="return-handle-bottom-item"><span class="return-handle-bottom-color">退货原因：</span><span><%=j.returnReason%></span></p>
+                    <p class="return-handle-bottom-item"><span class="return-word-space">说 明：</span><span class="return-handle-item-content"><%=j.remark%></span></p>
+                    <p class="return-handle-bottom-item">
+                        <span class="return-handle-bottom-color">退货凭证：</span>
+                         <%_.each(j.urls,function(i){%>
+                        <a href="<%=i%>" target="_blank"><img src="<%=i%>"></a>
+                        <%})%>
+                    </p>
+                    <%returnNo=j.returnNo%>
+                <%})%>
+            </div>
+        </div>
+    </div>
+</div>

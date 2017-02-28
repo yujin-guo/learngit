@@ -1,0 +1,31 @@
+.bid .information{margin-left:0}
+.bid .list-table{width: 100%;}
+.bid .search-div{text-align: right; font-size:12px}
+.bid .bid-date{height:28px;width:90px;border:solid 1px #ccc;text-align:center}
+.bid .bid-line{padding:0 8px}
+.bid .search-input{border: 1px solid #ccc;border-right:none;padding-left: 10px;padding-right: 10px;height: 28px;line-height: 28px;width: 251px;color: #999;font-size: 12px;margin-left:10px}
+.search-btn{width: 34px;height: 30px;background-color: #13b5be;vertical-align: top;}
+.bid .apply-id{width: 15%;padding-left: 7px;}
+.bid .group{width: 16%;}
+.bid .human{width: 10%;}
+.bid .date{width: 11%;}
+.bid .status-td{width: 12%;}
+.bid select{width: 100px;height:22px;color: #999;}
+.bid .control{width: 14%;}
+.bid .control a{color: #008cd0;margin-right:15px}
+.page{text-align: right;font-size: 0;}
+.page a{color: #999;font-size:12px ;height: 28px;line-height: 28px;text-align: center;}
+.endpoint{width: 52px;border:1px #ccc solid ;}
+.content-wrap{margin-left: 20px;margin-top: 40px;}
+.content-nav{padding-bottom: 10px;border-bottom: 1px solid #d7d7d7;}
+.symbol-icon01{border-left: 3px solid #13b5bd;}
+.symbol-title{margin-left: 10px;color: #666;font-size: 16px;}
+.matures{margin: 20px 0;}
+.infomation table{border-collapse: collapse;font-size: 12px;}
+.infomation table th{color: #999;text-align: left;background-color: #f9fafc;}
+.infomation table td{color: #333;text-align: left;}
+.infomation table tr{border: 1px solid #ccc;height: 40px;}
+
+.secondary-title{cursor:pointer}
+.bid .bid-no-result{text-align:center}
+.bid .bid-status{width:80px}

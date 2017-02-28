@@ -1,0 +1,136 @@
+<!--the module of search-->
+<%=search%>
+
+<!--the module of navigate-->
+<div id="navModule"></div>
+
+<div class="home-main">
+    <div class="cm-main" id="0f">
+        <div class="home-header">
+            <div class="home-header-img">
+                <ul class="home-header-box" id="homeScroll1">
+                    <%if(navigator.userAgent.indexOf("Safari")>-1&&navigator.userAgent.indexOf("Chrome")==-1){%>
+                    <li class="home-scroll-cell">
+                        <img src="images/img21.jpg" alt="1"/>
+                    </li>
+                    <!-- <li class="home-scroll-cell">
+                        <img src="images/img22.jpg" alt="2"/>
+                    </li> -->
+                    <%}else{%>
+                    <li class="home-scroll-cell">
+                        <img src="images/img1.jpg" alt="1"/>
+                    </li>
+                    <!-- <li class="home-scroll-cell">
+                        <img src="images/img2.jpg" alt="2"/>
+                    </li> -->
+                    <%}%>
+                </ul>
+
+            </div>
+            <div class="home-right">
+                <div class="home-header-section home-header-line">
+                    <div class="home-header-inner">
+                        <div id="announce_title" class="home-header-title">
+                            <a href="#information" class="right home-header-more">更多 &gt;</a>
+                            通知公告
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- <div class="home-header-section">
+                    <div class="home-header-inner">
+                        <div class="home-header-title">
+                            <a href="#" class="right home-header-more">更多 &gt;</a>
+                            最新招标
+                        </div>
+                        <a href="#" class="home-header-link">中山大学肿瘤医院招标采购</a>
+                        <a href="#" class="home-header-link">中山大学肿瘤医院招标采购</a>
+                        <a href="#" class="home-header-link">中山大学肿瘤医院招标采购</a>
+                        <a href="#" class="home-header-link">中山大学肿瘤医院招标采购</a>
+                        <a href="#" class="home-header-link">中山大学肿瘤医院招标采购</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <!--
+        <div class="home-section" style="display:none;">
+            <h1 class="home-section-title">
+                <em class="home-decoration"></em>
+                <span class="home-title-sub">1F</span>优质品牌
+            </h1>
+
+            <ul class="home-section-f01">
+
+                <li class="home-section-f01-li">
+                    <a href="#" class="home-section-f01-img">
+                        <img src="#" >
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+        -->
+        <!--layer-->
+        <%_.each(arr,function(i,index){%>
+        <div class="home-section" >
+            <h1 class="home-section-title">
+                <em class="home-decoration"></em>
+                <span class="home-title-sub"><%=index+1%>F</span><%= i.name %>
+            </h1>
+        
+            <div class="home-section-f02">
+                <div class="left home-section-f02-link">
+                    <% _.each(i.subList,function(n){ %>
+                    <% var _key = encodeURIComponent(n.name, 'utf8')%>
+                    <a href="#commoditylist?key=<%= _key %>&id=<%=n.id%>" title="<%= n.name %>"><%= n.name %></a>
+                    <% }); %>
+                </div>
+        
+                <div class="home-section-list">
+                    <% _.each(i.productList,function(l){ %>
+                    <div class="home-section-cell">
+                        <div class="home-section-cell-inner">
+                            <a href="#details/<%= l.sn%>/<%=l.suppId%>" target="_blank">
+                                <img src="<%=l.photo %>"/>
+                                <p class="home-section-cell-title"><%= l.name %></p>
+                            </a>
+                        </div>
+                    </div>
+                    <% });%>
+                </div>
+            </div>
+        </div>    
+        <%})%>
+
+
+    </div>
+
+    <!--right banner-->
+    <div class="home-banner" id="ac-banner">
+        <a href="javascript:;" class="home-banner-cell">返回顶部</a>
+        <%var i=1;%>
+        <% _.each(arr,function(item){%>
+        <a href="javascript:;" class="home-banner-cell"><%= i%>F</a>
+        <% i++;%>
+        <% });%>
+        <!-- <a href="javascript:;" class="home-banner-last">收藏本页</a> -->
+    </div>
+</div>
+
+<div class="home-footer">
+    <p>
+        <a style="color:#666;margin-right:10px;" href="index.html#help">帮助中心</a>|&nbsp;&nbsp;&nbsp;&nbsp;客服QQ：2448328732&nbsp;&nbsp;&nbsp;&nbsp;服务时间：周一至周五(节假日除外)&nbsp;&nbsp;&nbsp;&nbsp;9：00-18：00 
+        <span class="footer-logo">
+            <a href="tencent://message/?uin=2448328732&Site=在线QQ&amp;Menu=yes">
+                <img src="images/QQ.png" />
+                <span>QQ交谈</span>
+            </a>
+        </span>
+    </p>
+    <p>版权所有 @2014-2016 &nbsp;&nbsp;&nbsp;&nbsp;网站备案/许可证号：
+       <a target="_blank" style="color:#666;" href="http://www.miitbeian.gov.cn/">粤ICP备16055118号-2
+       </a>
+    </p>
+</div>

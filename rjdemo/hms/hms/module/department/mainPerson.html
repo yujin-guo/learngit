@@ -1,0 +1,43 @@
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">部门管理</span>
+            </div>
+        </div>
+        <div class="matures">
+            <div class="department-btn-div left">
+                <p class="department-p1 left">
+                    <%= department %>
+                </p>
+                <p class="department-p2 left">
+                    (采购部门)
+                </p>
+            </div>
+            <div class="search-div right">
+                <input class="search-input" id="search-value" type="text" placeholder="搜索成员" />
+                <a class="search-btn" id="search-btn" href="javascript:void(0)"></a>
+            </div>
+        </div>
+        <form id="main-form">
+            <div class="common-wrap-div">
+                <div class="add-member-info-wrap" id="add-member-info-wrap">
+                    <% _.each(userList,function(U){ %>
+                    <span class="add-member-span">
+                    <input type="radio" <%if(U.id==managerId){%>checked="true"<%}%> name="mainperson" value="<%= U.id%>" /><%= U.name%>
+                </span>
+                    <%})%>
+                </div>
+            </div>
+            <div class="matures">
+                <span class="edit-error-place"></span>
+            </div>
+            <div class="matures">
+                <div class="person-info-wrap">
+                    <input type="submit" class="save-value" value="保 存" />
+                    <a class="back-link" href="javascript:window.history.back()">返&nbsp;回</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

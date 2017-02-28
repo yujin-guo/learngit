@@ -1,0 +1,126 @@
+<div class="header02-wrap">
+    <div class="left header-right-wrap">
+        <div class="left purchaser-manage-logo header-right-border">
+           <span class="logo-pur"><img src="" /></span>
+            <span class="name-pur"></span>
+        </div>
+        <div class="left header-console-title">
+        </div>
+        <div class="right out-login-wrap">
+             <span class="out-login" id="out-login">退出登录</span>
+        </div>
+        <div class="right purchaser-personal-info">
+            <span class="purchaser-name" name="purchaser-name"></span>
+            <!--<span class="icons-triangle"></span>-->
+        </div>
+    </div>
+</div>
+<div class="limit-width">
+    <div class="left ">
+        <ul class="nav-left">
+            <li class="nav-show-hide">
+                <span class="nav-show-hide-icon"></span>
+                <span class="nav-show-hide-title"></span>
+           </li>
+           <% for(var i in userPermissions){%>
+           <%if(userPermissions[i]=='采购单查看'){%>
+            <li class="nav-li list-active">
+               <a href="#purcharseManger"><span class="nav-icon-cell purchase-nav-icon-active"></span>
+               <span class="nav-icon-title">采购管理</span></a>
+            </li>
+            <%}%>
+            <%}%>
+            <% for(var i in userPermissions){%>
+            <%if(userPermissions[i]=='竞价查看'){%>
+            <li class="nav-li li-hover-null">
+                <a href="#bid"><span class="nav-icon-cell bidding-nav-icon"></span>
+                <span class="nav-icon-title">竞价管理</span></a>
+            </li>
+            <%}%>
+            <%}%>
+            <% for(var i in userPermissions){%>
+            <%if(userPermissions[i]=='订单查看'){%>
+            <li class="nav-li li-hover-null">
+                <a href="#order"><span class="nav-icon-cell order-nav-icon"></span>
+                <span class="nav-icon-title">订单管理</span></a>
+            </li>
+            <%}%>
+            <%}%>
+            <% for(var i in userPermissions){%>
+            <%if(userPermissions[i]=='结算单查看'){%> 
+            <li class="nav-li li-hover-null">
+                <a href="#account"><span class="nav-icon-cell account-nav-icon"></span>
+                <span class="nav-icon-title">结算管理</span></a>
+            </li>
+            <%}%>
+            <%}%>
+            <% for(var i in userPermissions){%>
+            <%if(userPermissions[i]=='商品配置查看'){%>
+            <li class="nav-li li-hover-null">
+                <a href="javascript:void(0);"><span class="nav-icon-cell commodity-nav-icon"></span>
+                <span class="nav-icon-title">商品管理</span></a>
+            </li>
+            <%}%>
+            <%}%>
+            <% for(var i in userPermissions){%>
+            <%if(userPermissions[i]=='品牌列表'){%>
+            <li class="nav-li li-hover-null">
+                <a href="#brandlist"><span class="nav-icon-cell brand-nav-icon"></span>
+                <span class="nav-icon-title">品牌管理</span></a>
+            </li>
+            <%}%>
+            <%}%>
+            <% for(var i in userPermissions){%>
+            <%if(userPermissions[i]=='供应商医院审批'){%>
+            <li class="nav-li li-hover-null">
+                <a href="#supply"><span class="nav-icon-cell provider-nav-icon"></span>
+                <span class="nav-icon-title">供应商管理</span></a>
+            </li>
+            <%}%>
+            <%}%>
+            <% for(var i in userPermissions){%>
+            <%if(userPermissions[i]=='供应商平台审批'){%>
+            <li class="nav-li li-hover-null">
+                <a href="#approval"><span class="nav-icon-cell provider-nav-icon"></span>
+                <span class="nav-icon-title">供应商管理</span></a>
+            </li>
+            <%}%>
+            <%}%>
+            <% for(var i in userPermissions){%>
+            <%if(userPermissions[i]=='人员查看'){%>
+            <li class="nav-li li-hover-null">
+                <a href="#member"><span class="nav-icon-cell human-nav-icon"></span>
+                <span class="nav-icon-title">成员管理</span></a>
+            </li>
+            <%}%>
+            <%}%>
+            <% for(var i in userPermissions){%>
+            <%if(userPermissions[i]=='统计查看'){%>
+            <li class="nav-li li-hover-null">
+                <a href="#statistic"><span class="nav-icon-cell statistic-nav-icon"></span>
+                <span class="nav-icon-title">统计管理</span></a>
+            </li>
+            <%}%>
+            <%}%>
+           <!-- <% for(var i in userPermissions){%>
+            <%if(userPermissions[i]=='采购配置查看'||userPermissions[i]=='竞价配置查看'){%>
+            <li class="nav-li li-hover-null">
+                <a href="#config"><span class="nav-icon-cell config-nav-icon"></span>
+                <span class="nav-icon-title">配置管理</span></a>
+            </li>
+            <%break;}%>
+            <%}%>-->
+            <!--<li class="nav-li li-hover-null">
+                <a href="#cms?key=cont"><span class="nav-icon-cell bidding-nav-icon"></span>
+                    <span class="nav-icon-title">内容管理</span></a>
+            </li>-->
+            <li class="nav-li li-hover-null">
+                <a href="#personal"><span class="nav-icon-cell personal-nav-icon"></span>
+                <span class="nav-icon-title">个人中心</span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="left right-container" id="right-container">
+        
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<%= nav %>
+<div class="left content">
+    <div class="content-wrap">
+        <div id="purchase-div">
+            <div class="content-nav">
+                <div class="symbol-icon01">
+                    <span class="symbol-title">品牌管理</span>
+                </div>
+            </div>
+            <div class="infomation">
+                <div class="matures">
+                    <div class="search-div right">
+                       <span class="apply-time-span">
+                           <span class="apply-time-title">申请时间：</span>
+                           <input class="apply-time-input" type="text" placeholder="<%=common.getOneMonthDate()%>" id="startTime" />-
+                           <input class="apply-time-input" type="text" placeholder="<%=common.getDate()%>"
+                           id="endTime" />
+                       </span>
+                        <input class="search-input" id="search-value" type="text" placeholder="供应商名称/品牌名称" />
+                        <a class="search-btn" id="search-btn" href="javascript:void(0)"></a>
+                    </div>
+                </div>
+                <table class="list-table">
+                    <thead>
+                        <tr>
+                            <th class="apply-id">申请流程号</th>
+                            <th class="provider-name">供应商名称</th>
+                            <th class="brand-name">品牌名称</th>
+                            <th class="apply-time">申请时间</th>
+                            <th class="status-td">
+                                <select>
+                                    <option>状态</option>
+                                    <option value="1">审核中</option>
+                                    <option value="2">已通过</option>
+                                    <option value="3">未通过</option>
+                                    <option value="4">已过期</option>
+                                </select>
+                            </th>
+                            <th class="control">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="list">
+                        <%if(flag==true){_.each(brandAppList,function(i,index){%>                 
+                        <tr>
+                            <td class="apply-id"><%=i.authId%></td>
+                            <td class="provider-name"><%=i.suppName%></td>
+                            <td class="brand-name"><%if(i.name&&i.name!=""){%><%=i.name%><%}else{%>无名称<%}%></td>
+                            <td class="apply-time"><%=i.creationTime%></td>
+                            <%if(i.status==1){%>
+                            <td class="status-td">审核中</td>
+                            <%}%>
+                            <%if(i.status==2){%>
+                            <td class="status-td">已通过</td>
+                            <%}%>
+                            <%if(i.status==3){%>
+                            <td class="status-td">未通过</td>
+                            <%}%>
+                            <%if(i.status==4){%>
+                            <td class="status-td">已过期</td>
+                            <%}%>
+                            <td class="control">
+                                <a href="#branddetail?id=<%=i.authId%>">查看</a>
+                            </td>
+                        </tr>
+                        <%})%>
+                        <%}else{%>
+                        <tr>
+                            <td colspan="7" style="text-align:center;">暂无数据</td>
+                        </tr>  
+                        <%}%>
+                    </tbody>
+                </table>
+                <div class="matures">
+                    <div class="page">
+                        <div class="right">
+                            <a class="endpoint" href="javascript:void(0)">尾页</a>
+                        </div>
+                        <div class="right" id="pagination">
+
+                        </div>
+                        <div class="right">
+                            <a class="endpoint" href="javascript:void(0)">首页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

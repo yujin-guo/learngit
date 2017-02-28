@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>页面出错了</title>
+	<style>
+	    body{
+		   background-color:#eef9ff;
+		}
+		.box{
+		    display:table-cell;
+			text-align:center;
+			*display:block;
+			*font-size:175px;
+			*font-family:Arial;
+			width:800px;
+			height:800px;
+			position:absolute;
+			left:50%;
+			top:50%;
+			margin-left:-400px;
+			margin-top:-200px;
+            diaplay:inline-block;
+		}
+        .box div{
+            display:inline-block;
+        }
+        .error_content{
+            width:400px;
+            text-align:left;
+        }
+        .error_title{
+            font-size:18px;
+            font-weight:700;
+        }
+        .error_tip{
+            color:#aba8a8;
+            margin-top:10px;
+        }
+        .error_jump{
+            margin-top:10px;
+        }
+        .error_jump a{
+           color:#008cd2;
+           cursor:pointer;
+           text-decoration:none;
+        }
+        .margin{
+            margin-top:50px;
+        }
+		.box img{
+            vertical-align:top;
+		    display:inline-block;
+            width:300px;
+            margin-left:50px;
+		}
+	</style>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <div class="error_content">
+                <div class="error_title">抱歉,页面无法访问......</div><br />
+                <div class="error_tip margin">可能因为:</div><br />   
+                <div class="error_tip">网址有错误&gt;请检查地址是否完整或存在多余字符</div><br />    
+                <div class="error_tip">网址已失效&gt;可能页面已删除，活动已下线等</div><br />  
+                <div class="error_tip margin">您可以访问:</div> 
+                <div class="error_jump">
+                    <a href="index.html#login">门店首页</a>或
+                    <a href="index.html#login">帮助中心</a>
+                </div>                
+            </div>            
+            <img src="style/images/404.gif" />
+        </div>       
+      
+	</div>
+</body>
+</html>

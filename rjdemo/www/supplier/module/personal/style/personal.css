@@ -1,0 +1,38 @@
+/*基本信息*/
+.flag{display: none;}
+label[class='error']{background-image:url(../../../style/images/error.png);background-repeat:no-repeat;color: #ff6868;margin: 5px;padding-left: 25px;display: inline-block;height: 22px;}
+.personal-wrap{border: 1px solid #d7d7d7;/*height: 450px;*/margin-left: 15px;width: 956px;padding-bottom: 50px;}
+.personal-header-wrap{padding-top: 12px;}
+.personal-header-wrap span{display: inline-block;}
+.personal-icon01{background-color: #008cd0;height: 16px;width: 16px;}
+.personal-header-title{color: #008cd0;font-size: 16px;margin: 0 12px;vertical-align: 2px;}
+.borderbottom{border-bottom: 1px solid #008cd0;height: 22px;width: 831px;}
+.personal-content{padding: 36px 32px;}
+.personal{/*height: 35px;*/margin-bottom: 28px;}
+.personal span{display: inline-block;}
+.personal-title{margin-right: 17px;text-align: right;width: 120px;color: #999;}
+.personal-info{color: #333;}
+.personal-edit-btn{border-top: 1px solid #ccc;width: 750px;padding-top: 39px;margin-top: 30px;}
+.personal-edit-btn a,.personal-edit input[type='submit'],.personal-edit a,.personal-success-icon,.success-a,.personal-error-icon{background-image:url(../../../style/images/icon02.png);background-repeat:no-repeat;border:medium none;text-align: center;font-size: 16px;cursor: pointer;}
+.personal-edit-btn a,.personal-edit input[type='submit'],.personal-edit a,.success-a{width: 150px;height: 38px;line-height: 38px;box-shadow: 0px 0px 3px rgba(4,165,242,.6) ;}
+.personal-edit-btn a,.personal-edit input[type='submit'],.success-a{background-position:-465px -51px;color: #fff;}
+/*修改信息*/
+/*.personal-edit-height01{height: 79px;}
+.personal-edit-height{height: 620px;}*/
+.personal-info>input[type='text'],.personal-info>input[type='password'],.personal-info>textarea,.edit-code{border: 1px solid #ccc;padding-left: 5px;width: 398px;color: #333;}
+.personal-info>input[type='text'],.personal-info>input[type='password'],.edit-code{height: 32px;line-height: 32px;vertical-align: middle;}
+.personal-info>textarea{vertical-align: top;padding-top: 3px;height: 74px;}
+.personal-info .readonly[type='text']{background-color: #f2f2f2;color: #999;}
+.personal-edit{padding-top: 25px;width: 340px;/*margin-top: 49px;*/}
+.edit-code>input{border: medium none;height: 30px;line-height: 30px;width: 300px;}
+.edit-code-a{background-color: #008cd0;color: #fff;display: inline-block;height: 32px;line-height: 32px;text-align: center;width: 90px;margin-left: 5px;vertical-align: top;}
+.personal-edit a{background-position: -669px -50px; color:#008cd0;margin-left: 35px;vertical-align: top;}
+.person-area{width: 125px;height: 32px;line-height: 32px;border: 1px solid #ccc;color: #333;}
+/*修改成功*/
+.success{margin:28px auto 0;text-align: center;width:140px ;}
+.personal-success-icon,.personal-error-icon{height: 142px;width: 141px;}
+.personal-success-icon{background-position: -1044px -34px;}
+.desc{color: #999;margin-top:32px ;margin-bottom: 45px;}
+/*修改密码*/
+.personal-info p{color: #666;}
+.personal-error-icon{background-position: -1264px -34px;}

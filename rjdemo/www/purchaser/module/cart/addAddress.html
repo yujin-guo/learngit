@@ -1,0 +1,18 @@
+<form class="address-add" id="addressForm">
+    <h3 class="address-title">请填写收货地址</h3>
+    <p class="address-add-item"><span class="address-add-item-title">收货人</span>：<input type="text" id="consignee" name="consignee" class="address-add-info address-add-consignee" placeholder="必填项"><span class="address-error-wrap"></span></p>
+    <p class="address-add-item">
+        <span class="address-add-item-title">所在地区</span>：
+        <select class="address-add-province" name="s_province" id="s_province" ></select>
+        <select class="address-add-city" name="s_city" id="s_city"></select>
+        <select class="address-add-district" name="s_county" id="s_county"></select><span class="address-error-wrap"></span>
+    </p>
+    <p class="address-add-item"><span class="address-add-item-title">详细地址</span>：<textarea id="address" name="address" class="address-add-extra" placeholder="必填项"></textarea><span class="address-error-wrap"></span></p>
+    <p class="address-add-item"><span class="address-add-item-title">手机号码</span>：<input type="text" id="mobile" name="mobile" class="address-add-info address-add-mobile" placeholder="必填项"><span class="address-error-wrap"></span></p>
+    <p class="address-add-item"><span class="address-add-item-title">固定电话</span>：<input type="text" id="phone" name="phone" class="address-add-info address-add-telephone"></p>
+    <div class="address-add-btn">
+        <input type="hidden" href="javascirpt:;" id="addressAddCofirm">
+        <input type="submit" href="javascript:;" class="address-add-btn-confirm" value="确认">
+        <a href="javascript:;" class="address-add-btn-cancel">取消</a>
+    </div>
+</form>

@@ -1,0 +1,66 @@
+<%= nav %>
+<div class="left content">
+    <div class="content-wrap">
+        <div id="purchase-div">
+            <div class="content-nav">
+                <div class="symbol-icon01">
+                    <span class="symbol-title">栏目管理</span>
+                </div>
+            </div>
+            <div class="matures">
+                <a href="#newcolumn?key=add" class="cms-there-link">新建</a>
+            </div>
+            <div class="infomation">
+               
+                <table class="list-table">
+                    <thead>
+                        <tr class="column">
+                            <th style="margin-left:20px;">栏目</th>
+                            <th>排序</th>
+                            <th class="control">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="columnlist">
+                        <% if(flag==true){_.each(list,function(i){%>
+                        <tr>
+                            <%if(i.tag==0){%>     
+                            <td style="margin-left:20px;">
+                                <%=i.columnName%>
+                            </td>
+                            <%}%>
+                            <%if(i.tag==1){%>     
+                            <td style="margin-left:20px;">
+                                &nbsp;&nbsp;&nbsp;&nbsp;<%=i.columnName%>
+                            </td>
+                            <%}%>
+                            <%if(i.tag==2){%>     
+                            <td style="margin-left:20px;">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=i.columnName%>
+                            </td>
+                            <%}%>
+                            <td class="sorted-td">
+                                <%=i.sort%>
+                            </td>
+                            <%if(i.parentId!=null){%>      
+                            <td class="control">
+                                <a class="detail-link" href="#newcolumn?key=<%=i.id%>" data-id="<%=i.id%>">编辑</a>
+                                <a class="detail-link del" href="javascript:void(0)" data-id="<%=i.id%>">删除</a>
+                            </td>
+                            <%}else{%>
+                            <td class="control"></td>
+                            <%}%>                            
+                        </tr>
+                        <%})}else{%>
+                        <tr>
+                            <td class="account-no-result" colspan="8" style="text-align:center;">
+                                暂无结果。   
+                            </td> 
+                        </tr>
+                        <%}%>     
+                    </tbody>
+                </table>
+               
+            </div>
+        </div>
+    </div>
+</div>

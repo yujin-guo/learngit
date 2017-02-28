@@ -1,0 +1,178 @@
+<%= nav %>
+<div class="left content order-details">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">订单详情</span><a class="order-details-back" href="javascript:;">&lt;返回上级</a>
+            </div>
+        </div>
+        <%if(status==8){%>
+        <div class="order-details-flow">
+            <span class="order-details-flow-item color-one">买家下单<span class="order-details-arrow bc-two"></span></span>
+            <span class="order-details-flow-item color-two">卖家确认下单<span class="order-details-arrow bc-three"></span></span>
+            <span class="order-details-flow-item color-two">卖家发货<span class="order-details-arrow bc-three"></span></span>
+            <span class="order-details-flow-item color-two">买家验收<span class="order-details-arrow bc-three"></span></span>
+            <span class="order-details-flow-item color-two">买家结算<span class="order-details-arrow bc-three"></span></span>
+            <span class="order-details-flow-last color-two">卖家收款</span>
+        </div>
+        <%}%>
+        <%if(status==4){%>
+        <div class="order-details-flow">
+            <span class="order-details-flow-item color-one">买家下单<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-item color-one">卖家确认下单<span class="order-details-arrow bc-two"></span></span>
+            <span class="order-details-flow-item color-two">卖家发货<span class="order-details-arrow bc-three"></span></span>
+            <span class="order-details-flow-item color-two">买家验收<span class="order-details-arrow bc-three"></span></span>
+            <span class="order-details-flow-item color-two">买家结算<span class="order-details-arrow bc-three"></span></span>
+            <span class="order-details-flow-last color-two">卖家收款</span>
+        </div>
+        <%}%>
+        <%if(status==5){%>
+        <div class="order-details-flow">
+            <span class="order-details-flow-item color-one">买家下单<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-item color-one">卖家确认下单<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-item color-one">卖家发货<span class="order-details-arrow bc-two"></span></span>
+            <span class="order-details-flow-item color-two">买家验收<span class="order-details-arrow bc-three"></span></span>
+            <span class="order-details-flow-item color-two">买家结算<span class="order-details-arrow bc-three"></span></span>
+            <span class="order-details-flow-last color-two">卖家收款</span>
+        </div>
+        <%}%>
+        <%if(status==6||status==15){%>
+        <div class="order-details-flow">
+            <span class="order-details-flow-item color-one">买家下单<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-item color-one">卖家确认下单<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-item color-one">卖家发货<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-item color-one">买家验收<span class="order-details-arrow bc-two"></span></span>
+            <span class="order-details-flow-item color-two">买家结算<span class="order-details-arrow bc-three"></span></span>
+            <span class="order-details-flow-last color-two">卖家收款</span>
+        </div>
+        <%}%>
+        <%if(status==10||status==12||status==13){%>
+        <div class="order-details-flow">
+            <span class="order-details-flow-item color-one">买家下单<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-item color-one">卖家确认下单<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-item color-one">卖家发货<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-item color-one">买家验收<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-item color-one">买家结算<span class="order-details-arrow bc-two"></span></span>
+            <span class="order-details-flow-last color-two">卖家收款</span>
+        </div>
+        <%}%>
+        <%if(status==11||status==7){%>
+        <div class="order-details-flow">
+            <span class="order-details-flow-item color-one">买家下单<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-item color-one">卖家确认下单<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-item color-one">卖家发货<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-item color-one">买家验收<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-item color-one">买家结算<span class="order-details-arrow bc-one"></span></span>
+            <span class="order-details-flow-last color-one">卖家收款</span>
+        </div>
+        <%}%>
+       
+        <div class="order-details-info">
+            <p><span class="order-details-info-item">订单编号：</span><span><%=order.forderno%></span></p>
+            <p><span class="order-details-info-item">订单日期：</span><span><%=order.forderdate%></span></p>
+            <p><span class="order-details-info-item">采购组：</span><span><%=order.fbuydepartment%></span></p>
+            <p><span class="order-details-info-item">采购人：</span><span><%=order.fbuyername%></span></p>
+            <p><span class="order-details-info-item">联系电话：</span><span><%=order.contactphone%></span></p>
+            <p><span class="order-details-info-item">经费卡号：</span><span><%if(typeof card!="undefined"){%><%=card.cardNo%><%}%></span></p>
+            <p><span class="order-details-info-item">收货信息：</span><span><%=order.fbuyercontactman%>&nbsp; <%=order.fbuyertelephone%>&nbsp; <%=order.fbiderdeliveryplace%></span></p>
+        </div>
+        <table cellspacing=0>
+            <thead>
+                <tr>
+                    <td class="td-width-one order-details-product-name">商品名称</td>
+                    <td class="td-width-one">品牌</td>
+                    <td class="td-width-one">货号</td>
+                    <td class="td-width-one">规格</td>
+                    <td class="td-width-one">供应商</td>
+                    <td class="td-width-two">单价(元)</td>
+                    <td class="td-width-three">数量</td>
+                </tr>
+            </thead>
+            <tbody>
+                <%_.each(details,function(i){%>
+                <tr>
+                    <td class="order-details-product-name"><%=i.fgoodname%></td>
+                    <td><%=i.fbrand%></td>
+                    <td><%=i.fgoodcode%></td>                     
+                    <td><%=i.fspec%></td>
+                    <td><%=order.fsuppname%></td>
+                    <td><%=i.fprice%></td>
+                    <td><%=i.fquantity%></td>
+                </tr>
+                <%})%>
+                <tr>
+                    <td colspan=7 class="order-details-total-price">订单金额:￥<%=order.totalPrice.toFixed(2)%>元</td>
+                </tr>
+            </tbody>
+        </table>
+        <%if(returned.length>0){%>
+        <p class="order-details-return-title">退货信息</p>
+        <table cellspacing=0>
+            <thead>
+                <tr>
+                    <td class="td-width-one order-details-product-name">商品名称</td>
+                    <td class="td-width-one">品牌</td>
+                    <td class="td-width-one">货号</td>
+                    <td class="td-width-five">规格</td>
+                    <td class="td-width-one">供应商</td>
+                    <td class="td-width-two">单价(元)</td>
+                    <td class="td-width-three">数量</td>
+                    <td class="td-width-four">退货状态</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% var totalMoney=0;%>
+                <%_.each(returned,function(i){%>
+                    <%totalMoney+=i.count*i.price%>
+                <tr>
+                    <td class="order-details-product-name"><%=i.productName%></td>
+                    <td><%=i.brand%></td>
+                    <td><%=i.code%></td>                     
+                    <td><%=i.spec%></td>
+                    <td><%=i.supp%></td>
+                    <td><%=i.price%></td>
+                    <td><%=i.count%></td>
+                    <%if(i.returnStatus==0){%>
+                    <td>申请退货</td>
+                    <%}%>
+                    <%if(i.returnStatus==1){%>
+                    <td>同意退货</td>
+                    <%}%>
+                    <%if(i.returnStatus==2){%>
+                    <td>拒绝退货</td>
+                    <%}%>
+                    <%if(i.returnStatus==3){%>
+                    <td>取消退货</td>
+                    <%}%>
+                    <%if(i.returnStatus==4){%>
+                    <td>退货中</td>
+                    <%}%>
+                    <%if(i.returnStatus==5){%>
+                    <td>已退货</td>
+                    <%}%>
+                    <%if(i.returnStatus==6){%>
+                    <td>取消退货</td>
+                    <%}%>
+                </tr>
+                <%})%>
+                <tr>
+                    <td colspan=8 class="order-details-total-price">退货金额:￥<%=totalMoney.toFixed(2)%>元</td>
+                </tr>
+            </tbody>
+        </table>
+        <%}%>
+        <%if($.cookie("organization")=="中山大学附属第二医院"||$.cookie("organization")=="中山大学孙逸仙纪念医院"){%>
+        <%if(order.urls){var urls=order.urls.split(";");%>
+        <div class="order-details-photo">
+            <span class="order-details-photo-name">验收照片:</span>
+            <span class="order-details-photo-wrap">
+                <%_.each(urls,function(i){%>
+                <img src="<%=i%>" />
+                <p><a class="order-details-photo-download" href="<%=i%>" download>下载原图</a></p>
+                <%})%>
+            </span>
+        </div>
+        <%}%>
+        <%}%>
+    </div>
+</div>

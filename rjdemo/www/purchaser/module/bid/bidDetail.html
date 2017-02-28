@@ -1,0 +1,401 @@
+<!--头部start-->
+<!--<div class="bid-header">
+    <div class="header-banner">
+        <div class="cm-main">
+            <div class="left col-lg-9">
+                <a href="javascript:void(0);">欢迎登录锐竞采购平台 !</a>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!--头部end-->
+<%= nav %>
+<div class="home-main">
+    <div class="cm-main relative">
+        <div class="bid-bread-wrap">
+            <span class="bid-bread-span">在线招标</span>
+            <span class="bid-bread-span"><em class="direction">&gt;</em>
+                <span class="bread-link">
+                    <% if(isEnd==true){%>已结束
+                    <%}else{%>竞价中
+                    <%} %>
+                </span>
+            </span>
+            <span class="bid-bread-span"><em class="direction">&gt;</em>
+                <span class="bread-link">
+                    <%= unit %> </span>
+            </span>
+            <span class="bid-bread-span"><em class="direction">&gt;</em>
+                <span class="bread-link">商品详情</span>
+            </span>
+        </div>
+        <div class="bid-content-div">
+            <div class="list-detail-wrap">
+                <h1 class="detail-head">商品信息</h1>
+                <div class="table-wrap-div">
+                    <table class="bid-detail-table">
+                        <tbody>
+                            <tr>
+                                <td class="bid-detail-01">商品名称</td>
+                                <td class="bid-detail-02">
+                                    <%= item.itemName %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">品牌要求</td>
+                                <td class="bid-detail-02">
+                                    <%= item.brand %>
+                                    <% if(item.brand==undefined || !item.brand){%> -
+                                    <%}%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">货号要求</td>
+                                <td class="bid-detail-02">
+                                    <%= item.itemNo %>
+                                    <% if(item.itemNo==undefined || !item.itemNo){%> -
+                                    <%}%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">采购数量</td>
+                                <td class="bid-detail-02">
+                                    <%= item.count %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">采购要求</td>
+                                <td class="bid-detail-02">
+                                    <p class="td-requirement">
+                                        <%= item.information %>
+                                    </p>
+                                    <% if(item.information==undefined || !item.information){%> -
+                                    <%}%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">要求文件</td>
+                                <td class="bid-detail-02">
+                                    <%if(item.fileUrl){%>
+                                    <a href="<%= item.fileUrl %>" class="have-price-active" id="load-link">下载文件</a>
+                                    <%}else{%> 无
+                                    <%}%>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="list-detail-wrap">
+                <h1 class="detail-head">报价信息</h1>
+                <%if(isLogin==true){if(isSupp==true){if(status==0||status==2){if(isEnd==true){%>
+                <div class="table-wrap-div" id="table-wrap-div">
+                    <table class="bid-detail-table">
+                        <tbody>
+                            <tr>
+                                <td class="bid-detail-01">商品名称</td>
+                                <td class="bid-detail-02">
+                                    <%= bid.name %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">商品货号</td>
+                                <td class="bid-detail-02">
+                                    <%= bid.code %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">商品规格</td>
+                                <td class="bid-detail-02">
+                                    <%= bid.spec %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">商品价格</td>
+                                <td class="bid-detail-02">
+                                    <% var p=bid.productPrice.toFixed(2); %>
+                                    <%= p %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">商品数量</td>
+                                <td class="bid-detail-02">
+                                    <%= bid.count %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">商品报价</td>
+                                <td class="bid-detail-02">
+                                    <% var b=bid.bidPrice.toFixed(2); %>
+                                    <%= b %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">发货时间</td>
+                                <td class="bid-detail-02">
+                                    <%= bid.deliveryTime %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">文件附件</td>
+                                <td class="bid-detail-02">
+                                   <%if(bid.attachmentUrl){%>
+                                    <a href="<%= bid.attachmentUrl %>" class="have-price-active" id="price-path">下载文件</a>
+                                    <%}else{%> 无
+                                    <%}%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">我的优势</td>
+                                <td class="bid-detail-02">
+                                    <%= bid.remark %>
+                                    <% if(bid.remark==undefined || !bid.remark){%> -
+                                    <%}%>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <%}else{%>
+                <div class="table-wrap-div">
+                    <table class="bid-detail-table">
+                        <tbody>
+                            <tr>
+                                <td class="bid-detail-01">商品名称</td>
+                                <td class="bid-detail-02">
+                                    <%= bid.name %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">商品货号</td>
+                                <td class="bid-detail-02">
+                                    <%= bid.code %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">商品规格</td>
+                                <td class="bid-detail-02">
+                                    <%= bid.spec %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">商品价格</td>
+                                <td class="bid-detail-02">
+                                    <% var p=bid.productPrice.toFixed(2); %>
+                                    <%= p %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">商品数量</td>
+                                <td class="bid-detail-02">
+                                    <%= bid.count %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">商品报价</td>
+                                <td class="bid-detail-02">
+                                    <% var b=bid.bidPrice.toFixed(2); %>
+                                    <%= b %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">发货时间</td>
+                                <td class="bid-detail-02">
+                                    <%= bid.deliveryTime %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">文件附件</td>
+                                <td class="bid-detail-02">
+                                    <%if(bid.attachmentUrl){%>
+                                    <a href="<%= bid.attachmentUrl %>" class="have-price-active" id="price-path">下载文件</a>
+                                    <%}else{%> 无
+                                    <%}%>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bid-detail-01">我的优势</td>
+                                <td class="bid-detail-02">
+                                    <%= bid.remark %>
+                                    <% if(bid.remark==undefined || !bid.remark){%> -
+                                    <%}%>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="chose-product-control01">
+                    <a href="#editprice?id=<%= item.id %>" class="chose-product-link02 style-link01" id="edit-price">修改报价</a>
+                    <a href="javascript:void(0);" class="chose-product-link03 style-link02" id="giveup-price">放弃竞价</a>
+                </div>
+
+                <%}}else if(status==3){if(isEnd==true){%>
+                <div class="price-info-wrap">
+                    <div class="bid-info-status">
+                        <div class="bid-info-div01">
+                            <div class="bid-info-status-icon background-none-power"></div>
+                            <div class="bid-info-status-desc">
+                                您没有参与竞价！
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%}else{%>
+                <div class="price-info-wrap">
+                    <div class="login-bid-wrap">
+                        <div class="login-bid-content">
+                            <h3 class="login-bid-content-head">选择商品</h3>
+                            <div class="login-bid-chose01">
+                                <div id="bid-price-common">
+                                    <!--竞价中-未报价商品选择start-->
+                                    <div class="login-bid-chose-inner">
+                                        请选择要参与竞价的商品。
+                                        <a href="javascript:void(0)" class="chose-product-link style-link01" id="bid-chose-com">选择商品</a>
+                                        如果您的商品库中没有该商品，您可以从这里新增。
+                                        <a href="../supplier/index.html#add?id=<%=item.id%>" class="chose-product-link style-link02">
+                                            新增商品
+                                        </a>
+                                    </div>
+                                    <!--竞价中-未报价商品选择end-->
+                                </div>
+
+                                <h3 class="login-bid-content-head">填写报价信息</h3>
+                                <div class="write-price-wrap">
+                                    <form id="bid-price-form">
+                                        <div class="price-wrap-info">
+                                            <span class="price-wrap-info-title">
+                                                <em class="flag-em">*</em>竞价商品数量：
+                                            </span>
+                                            <input type="text" class="price-wrap-info-input" name="bidcount" id="count" />
+                                            <span class="price-wrap-price-desc">
+                                                由于不同供应商的商品包装规格不同，请按照采购入购买的商品数量，根据您的包装规格来填写竞价商品数量。
+                                            </span>
+                                            <div class="bid-error"></div>
+                                        </div>
+                                        <div class="price-wrap-info">
+                                            <span class="price-wrap-info-title">
+                                                <em class="flag-em">*</em>竞价报价：
+                                            </span>
+                                            <input type="text" class="price-wrap-info-input" name="bidprice" id="price"/>
+                                            <span class="price-wrap-price-desc">
+                                                <span class="desc-wrap">
+                                                    <em class="unit-flag">元</em>
+                                                    <span id="bid-accont-text">竞价采用报总价的方式，报价金额不能超过总销售价。</span>
+                                                </span>
+                                            </span>
+                                            <div class="bid-error"></div>
+                                        </div>
+                                        <div class="price-wrap-info">
+                                            <span class="price-wrap-info-title">
+                                                <em class="flag-em">*</em>发货天数：
+                                            </span>
+                                            <input type="text" class="price-wrap-info-input" id="day" name="bidday"/>
+                                            <span class="price-wrap-price-desc">
+                                                <span class="desc-wrap">
+                                                    <em class="unit-flag">天</em> 从中标日期开始，几天内送货。
+                                                </span>
+                                            </span>
+                                            <div class="bid-error"></div>
+                                        </div>
+                                        <div class="price-wrap-info">
+                                            <span class="price-wrap-info-title">
+                                                我的优势：
+                                            </span>
+                                            <textarea class="bid-my-virtues" maxlength="2000" id="adv" name="advan" placeholder="写一些自己的优势，增加中标的可能性。"></textarea>
+                                            <span>(0/2000)</span>
+                                            <div class="bid-error"></div>
+                                        </div>
+                                        <div class="price-wrap-info">
+                                            <span class="price-wrap-info-title">
+                                                补充资料：
+                                            </span>
+                                            <span class="desc-wrap">
+                                                <span class="active" id="file-path" style="max-width: 259px;word-break: break-all;word-wrap: break-word;"></span>
+                                                <a href="javascript:void(0);" class="file-link" id="file-link">
+                                                    上传附件
+                                                </a>
+                                                <span class="desc-wrap">支持小于等于10M jpg、jpeg、png、excel、word、pdf、rar、zip格式文件。</span>
+                                            </span>
+                                            <div class="bid-error"></div>
+                                        </div>
+                                        <div class="price-wrap-info">
+                                            <span class="price-wrap-info-title"></span>
+
+                                            <input type="submit" class="submit-price" value="提交报价" />
+                                        </div>
+                                    </form>
+                                    <form id="bid">
+                                        <input type="file" class="file-input" id="file-input" name="file" />
+                                        <input type="hidden" name="orgId" />
+                                        <input type="hidden" name="depId" />
+                                        <input type="hidden" name="fileType" value="1" />
+                                        <input type="hidden" name="userType" value="1" />
+                                    </form>
+
+                                    <!--选择商品弹出框start-->
+                                    <div id="com-list">
+
+                                    </div>
+                                    <!--选择商品弹出end-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%}}else if(status==1){%>
+                    <div class="price-info-wrap">
+                        <div class="bid-info-status">
+                            <div class="bid-info-div01">
+                                <div class="bid-info-status-icon background-none-power"></div>
+                                <div class="bid-info-status-desc">
+                                    您已放弃竞价！
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <%}}else{%>
+                    <div class="price-info-wrap">
+                        <div class="bid-info-status">
+                            <div class="bid-info-div01">
+                                <div class="bid-info-status-icon background-none-power"></div>
+                                <div class="bid-info-status-desc">
+                                    您的账户没有权限竞价！
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <%}}else{%>
+                    <div class="price-info-wrap">
+                        <div class="bid-info-status">
+                            <div class="bid-info-div02">
+                                <div class="bid-info-status-icon background-power"></div>
+                                <div class="bid-info-status-desc">
+                                    若想报价或查看已报价，请
+                                    <a href="javascript:void(0);" id="bid-login" class="active">登录</a>！
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="home-footer">
+    <p>
+        <a style="color:#666" href="index.html#help">帮助中心</a> | 客服QQ：2448328732 服务时间：周一至周五(节假日除外)9：00-18：00
+        <span class="footer-logo">
+            <a href="tencent://message/?uin=2448328732&Site=在线QQ&amp;Menu=yes">
+                <img src="images/QQ.png" />
+                <span>QQ交谈</span>
+            </a>
+        </span>
+    </p>
+    <p>版权所有 @2014-2016 网站备案/许可证号：
+        <a target="_blank" style="color:#666;" href="http://www.miitbeian.gov.cn/">粤ICP备16055118号-2
+        </a>
+    </p>
+</div>
+<%= little %>

@@ -1,0 +1,37 @@
+<div class="address-change-wrap">
+    <div class="address-change-content">
+        <h4 class="address-change-title">请填写收货地址</h4>
+        <form id="addr-change-form">
+            <div class="address-content-inner">
+                <div class="address-info-div">
+                    <span class="transaction-info-title">收货人：</span>
+                    <input type="text" name="addrname" class="address-info-input common" id="addr-change-name" value="<%= consignee %>" />
+                </div>
+                <div class="address-info-div">
+                    <span class="transaction-info-title">所在地区：</span>
+                    <select class="area common" id="s_province" name="addrpro"></select>
+                    <select class="area margin06 common" id="s_city" name="addrcity"></select>
+                    <select class="area common" id="s_county" name="addrarea"></select>
+                </div>
+                <div class="address-info-div">
+                    <span class="transaction-info-title">详细地址： </span>
+                    <textarea class="address-textarea common" id="addr-change-textarea" name="addrtextarea"><%=address%></textarea>
+                </div>
+                <div class="address-info-div">
+                    <span class="transaction-info-title">手机号码：</span>
+                    <input type="text" class="address-info-input common" id="addr-change-mobie" name="addrmobile" value="<%= mobile %>" />
+                </div>
+                <!--<div class="address-info-div">
+                    <span class="transaction-info-title">固定电话：</span>
+                    <input type="text" class="address-info-input common" name="phone" id="addr-change-tel" value="<%= telephone %>" />
+                </div>-->
+                <div class="reason-control" style="width: 100%;height: 40px;">
+                    <div class="ctrl-div">
+                        <input type="submit" value="确认" class="refuse-link addr-change-sure" />
+                        <input type="reset" value="取消" class="cancel-address" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

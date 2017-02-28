@@ -1,0 +1,62 @@
+<%= nav %>
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">角色管理</span>
+            </div>
+        </div>
+        <div class="infomation">
+            <div class="matures">
+                <div class="member-btn-div">
+                    <a href="#rolesCtrl?key=addRoles" class="member-btn-link">新增角色</a>
+                </div>
+            </div>
+            <table class="roles-list-table">
+                <thead>
+                    <tr>
+                        <th class="roles-td-id">用户ID</th>
+                        <th class="roles-td-name">角色名称</th>
+                        <th class="roles-td-time">创建时间</th>
+                        <th class="roles-td-control">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="list">
+                    <% if(flag==true){_.each(roles,function(R){%>
+                         <tr>
+                        <td class="roles-td-id"><%= R.roleId %></td>
+                        <td class="roles-td-name"><%= R.roleName %></td>
+                        <td class="roles-td-mobile"><%= R.creationTime %></td>
+                        <td class="roles-td-control">
+                            <% if(R.common==false) { %>
+                            <a href="#rolesCtrl?key=editRoles&id=<%= R.roleId %>" class="control-link">编辑</a>
+                            <a href="javascript:void(0)" data-id="<%= R.roleId %>" class="control-link del-role">删除</a>
+                            <%}%>
+                        </td>
+                    </tr>
+                    <%})}else{%>
+                    <tr>
+                        <td class="empty-td" colspan="6">
+                            暂无数据!
+                        </td>
+                    </tr>
+
+                    <%} %>
+                </tbody>
+            </table>
+            <div class="matures">
+                <div class="page">
+                    <div class="right">
+                        <a class="endpoint" href="javascript:void(0)">尾页</a>
+                    </div>
+                    <div class="right" id="pagination">
+
+                    </div>
+                    <div class="right">
+                        <a class="endpoint" href="javascript:void(0)">首页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

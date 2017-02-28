@@ -1,0 +1,35 @@
+/*品牌列表*/
+.list-table{border-collapse: collapse;font-size: 12px;width: 100%;}
+.list-table th,.list-table td{padding-left: 10px;text-align: left;}
+.list-table th{color: #999;background-color: #f9fafc;}
+.list-table td{color: #333;}
+.list-table tr{border: 1px solid #ccc;height: 40px;}
+.apply-id{width: 10%;}
+.provider-name{width: 20%;}
+.brand-name{width: 20%;}
+.apply-time{width: 20%;}
+.status-td{width: 15%;}
+.status-td select{height: 22px;color: #999;width: 60%;}
+.control{width: 10%;}
+.control a{color: #008cd0;}
+/*品牌详情*/
+.symbol-return-icon{margin: 0 7px;width: 20px;height: 20px;vertical-align: top;}
+.link-btn{font-size: 12px;color: #008cd0;}
+.matures-next{padding: 12px;border: 1px solid #ccc;}
+.matures-min{padding-bottom: 18px;font-size: 12px;}
+.min-title{width: 85px;text-align: right;color: #999;}
+.min-info{color: #333;margin-left: 20px;}
+.min-info span{margin-right: 10px;}
+.status-p{font-size: 12px;color: #666;word-break: break-all;word-wrap: break-word;}
+.matures-min-next{padding: 22px 10px 50px 10px;background-color: #fcf8e2;border: 1px solid #ccc;}
+.statu-div{height: 25px;}
+.statu-div span{margin-right: 22px;font-size: 12px;color: #333;}
+.suggestion{margin: 14px 0 22px;}
+.suggestion textarea{width: 464px;height: 84px;overflow-y: auto;border: 1px solid #ccc;padding: 3px;}
+.btn-link{color: #fff;font-size: 16px;height: 40px;line-height: 40px;width: 150px;text-align: center;background-color: #13b5bd;border-radius: 3px;border: none;cursor: pointer;}
+label.error{background-image: url(images/error-icon.png);background-repeat:no-repeat;padding-left: 25px;color: #ff0000;display: inline-block;height: 20px;}
+.apply-time-span{height: 28px;line-height: 28px;font-size:12px;vertical-align: top;margin-right: 75px;}
+.apply-time-input{width: 88px;border: 1px #d7d7d7 solid;text-align: center;height: 28px;line-height: 28px;border-radius: 3px;margin: 0 8px;}
+
+.brand-detail-logo{width:120px;height:120px;vertical-align:top;margin-right:10px}
+.brand-detail-certification{width:100px;height:100px;vertical-align:top}

@@ -1,0 +1,153 @@
+<%= nav %>
+<div class="left content bid-details">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">配置管理</span><a class="bid-details-back" href="javascript:history.back()">&lt;返回上级</a>
+            </div>
+        </div>
+        <%if(status=="0"){%>
+        <div class="bid-details-flow">
+            <span class="bid-details-flow-item color-one">新建申请单<span class="bid-details-arrow bc-two"></span></span>
+            <span class="bid-details-flow-item color-two">提交初审单<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-item color-two">初审审核<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-item color-two">结束竞价<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-item color-two">选择中标商<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-item color-two">办公室审核<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-last color-two">负责人审核</span>
+        </div>
+        <%}%>
+        <%if(status=="1"){%>
+        <div class="bid-details-flow">
+            <span class="bid-details-flow-item color-one">生成采购单<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">接收结算资料<span class="bid-details-arrow bc-two"></span></span>
+            <span class="bid-details-flow-item color-two">审批完成，递交财务<span class="bid-details-arrow bc-three"></span></span>
+            <span class="bid-details-flow-last color-two">确认收款，结算完成</span>
+        </div>
+        <%}%>
+        <%if(status=="2"){%>
+        <div class="bid-details-flow">
+            <span class="bid-details-flow-item color-one">生成采购单<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">接收结算资料<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">审批完成，递交财务<span class="bid-details-arrow bc-two"></span></span>
+            <span class="bid-details-flow-last color-two">确认收款，结算完成</span>
+        </div>
+        <%}%>
+        <%if(status=="3"){%>
+        <div class="bid-details-flow">
+            <span class="bid-details-flow-item color-one">生成采购单<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">接收结算资料<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-item color-one">审批完成，递交财务<span class="bid-details-arrow bc-one"></span></span>
+            <span class="bid-details-flow-last color-one">确认收款，结算完成</span>
+        </div>
+        <%}%>
+        
+        <div class="bid-details-info">
+            <p><span class="bid-details-info-item">招标编号：</span><span>2015082211211</span></p>
+            <p><span class="bid-details-info-item">采购人：</span><span>里满足</span></p>
+            <p><span class="bid-details-info-item">采购组：</span><span>前景生物研究院</span></p>
+            <p><span class="bid-details-info-item">创建时间：</span><span>2016-12-12 11：00</span></p>
+            <p><span class="bid-details-info-item">截标时间：</span><span>2016-12-12 11：00</span></p>
+        </div>
+        <table >
+            <thead>
+                <tr>
+                    <td class="td-width-two bid-details-statement-num">序号</td>
+                    <td class="td-width-three">商品名称</td>
+                    <td class="td-width-one">品牌</td>
+                    <td class="td-width-one">货号</td>
+                    <td class="td-width-one">采购数量</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="bid-details-statement-num">1</td>
+                    <td>Human G-CSF ELISA kit（人粒细胞集落刺激因子）</td>
+                    <td>Synaptic Systems</td>
+                    <td>FSP-010209-10</td>
+                    <td>1200个</td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="margin-top:20px">
+            <tr>
+                <td rowspan=6 class="bid-width-one">1</td>
+                <td rowspan=2 class="bid-width-one">竞价商品</td>
+                <td>商品名称</td>
+                <td>品牌要求</td>
+                <td colspan=2>货号要求</td>
+                <td>采购数量</td>
+                <td colspan=3>采购要求</td>
+                <td colspan=2>要求附件</td>
+            </tr>
+            <tr>
+                <td>试管</td>
+                <td>-</td>
+                <td colspan=2>-</td>
+                <td>1220个</td>
+                <td colspan=3>-</td>
+                <td colspan=2>无</td>
+            </tr>
+            <tr>
+                <td colspan=11 class="bid-winner">中标商：<span class="bid-winner-company">广州市海禁生物科技有限公司</span>  选择理由：<span class="bid-winner-reason">价格最低，服务相对很好</span></td>
+            </tr>
+            <tr>
+                <td rowspan=3 class="bid-width-one">报价详情</td>
+                <td>供应商</td>
+                <td>商品名称</td>
+                <td>品牌</td>
+                <td>货号</td>
+                <td>规格</td>
+                <td>单价/数量/总售价</td>
+                <td>送货时间</td>
+                <td>报价说明</td>
+                <td>附件</td>
+                <td>总报价</td>
+            </tr>
+            <tr class="bid-lowest-price">
+                <td>广州市海进生物科技有限公司</td>
+                <td>SySy MemEx membran protein extraction kit</td>
+                <td>Synaptic Systems</td>
+                <td>FSP-010209-10</td>
+                <td>1000支/箱</td>
+                <td>2000.00 / 3 / 6000.00</td>
+                <td>5天内</td>
+                <td>服务好，送货及时</td>
+                <td>查看附件</td>
+                <td>
+                    <p>5000.00</p>
+                    <p>最低</p>
+                </td>
+            </tr>
+            <tr>
+                <td>广州市海进生物科技有限公司</td>
+                <td>SySy MemEx membran protein extraction kit</td>
+                <td>Synaptic Systems</td>
+                <td>FSP-010209-10</td>
+                <td>1000支/箱</td>
+                <td>2000.00 / 3 / 6000.00</td>
+                <td>5天内</td>
+                <td>服务好，送货及时</td>
+                <td>查看附件</td>
+                <td>
+                    <p>5000.00</p>
+                </td>
+            </tr>
+        </table>
+        <div class="bid-details-info">
+            <p>2016-12-11 11:01:02  &nbsp;祝工 &nbsp; 提交审批  </p>
+            <p>2016-12-11 11:01:02  &nbsp;助攻 &nbsp; 撤回审批  &nbsp;需要修改一下  </p>
+            <p>2016-12-12 11:01:02  &nbsp;张宁 &nbsp; 审批驳回  &nbsp;再修改一下  </p>
+        </div>
+        <div class="bid-details-examine">
+            <div>
+                <label for="bidPass"><input type="radio" name="status" id="bidPass">审批通过</label>
+                <label for="bidRejected"><input type="radio" name="status" id="bidRejected">审批驳回</label>
+            </div>    
+            <textarea placeholder="审批意见"></textarea>
+            <div>
+                <a  class="bid-details-submit" href="javascript:;">提交审核</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="address-wrap">
+    <div class="list-wrap">
+        <div class="div-h">
+            <a href="#/create?keyword=create" class="set-new-address">新增收货地址</a>
+        </div>
+        <div>
+            <table class="table-div">
+                <thead>
+                    <tr class="head-tr">
+                        <th class="addr-per">收货人</th>
+                        <th class="addr-detail">详细地址</th>
+                        <th class="addr-mobile">手机号码</th>
+                        <th class="addr-phone">固定电话</th>
+                        <th class="addr-control">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%if(addressList.length>0){ _.each(addressList,function(A){%>
+                    <tr <% if(A.default==true){%> class='active-tr'
+                        <%}%>>
+                        <td class="addr-per">
+                            <%=A.consignee %>
+                        </td>
+                        <td class="addr-detail">
+                            <%=A.deliveryAdress %>
+                        </td>
+                        <td class="addr-mobile">
+                            <%=A.mobile %>
+                        </td>
+                        <td class="addr-phone">
+                            <%=A.telephone %>
+                        </td>
+                        <td class="addr-control">
+                            <input type="hidden" class="address-id" value="<%=A.id%>" />
+                            <a class="link-control edit-address" href="#create?keyword=edit&id=<%=A.id%>">修改</a>|
+                            <a class="link-control-01 delete-address" href="javascript:void(0)">删除</a>|
+                            <% if(A.default==true){%>
+                            <a class="link-control-01 color-set-default" href="javascript:void(0)"> 默认地址</a>
+                            <%}else{%>
+                            <a class="link-control-01 set-default" href="javascript:void(0)">设为默认</a>
+                            <%}%>
+                        </td>
+                    </tr>
+                    <%});}else{%>
+                    <tr>
+                        <td colspan="5">您还没收货地址，赶紧添加吧！</td>
+                    </tr>
+                    <%}%>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>

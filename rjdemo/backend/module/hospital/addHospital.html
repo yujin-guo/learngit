@@ -1,0 +1,104 @@
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">新增医院信息</span>
+            </div>
+        </div>
+        <div class="common-wrap-div">
+            <p class="hospital-p">基本信息</p>
+            <form id="hospital-form">
+                <div class="hospital-div">
+                    <div class="hospital-info-wrap">
+                        <span class="hospital-info-title">医院全称</span>
+                        <input type="text" class="real" name="real" maxlength="20" placeholder="请输入医院全称" />
+                        <span class="oms-hospital-error"></span>
+                    </div>
+                    <div class="hospital-info-wrap">
+                        <span class="hospital-info-title">医院简称</span>
+                        <input type="text" class="alias" name="alias" maxlength="20" placeholder="请输入医院简称" />
+                        <span class="oms-hospital-error"></span>
+                    </div>
+                    <div class="hospital-info-wrap">
+                        <span class="hospital-info-title">医院LOGO</span>
+                        <span class="hospital-logo-span">
+                            <span class="logo-span-wrap">
+                                <span class="color-contain" id="colorful">
+                                    <div class="hosiptal-logo-wrap">
+                                        <p class="color-contain-inner">+</p>
+                                        <p class="color-contain-desc">选择文件</p>
+                                        <span  name="logo" class="hospital-file" id="colorful-logo" ></span>
+                                    </div>
+                                    <p class="hospital-logo-desc">彩色LOGO<br/>110x110</p>
+                                </span>
+                            </span>
+                            <span class="logo-span-wrap">
+                                <span class="color-contain" id="transparent">
+                                    <div class="hosiptal-logo-wrap">
+                                        <p class="color-contain-inner">+</p>
+                                        <p class="color-contain-desc">选择文件</p>
+                                        <span name="transparent" class="hospital-file" id="transparent-logo" ></span>
+                                    </div>
+                                    <p class="hospital-logo-desc">透明LOGO<br/>200x110</p>
+                                </span>
+                            </span>
+                        </span>
+                        <span class="oms-hospital-error"></span>
+                    </div>
+                    <div class="hospital-info-wrap">
+                        <span class="hospital-info-title">医院管理员姓名</span>
+                        <input type="text" class="adminname" name="adminname" maxlength="20" placeholder="请输入管理员姓名" />
+                        <span class="oms-hospital-error"></span>
+                    </div>
+                    <div class="hospital-info-wrap">
+                        <span class="hospital-info-title">医院管理员帐号</span>
+                        <input type="text" class="username" name="username" maxlength="20" placeholder="请输入工号、手机号码或邮箱" />
+                        <span class="oms-hospital-error"></span>
+                    </div>
+                    <div class="hospital-info-wrap">
+                        <span class="hospital-info-title">帐号密码</span>
+                        <input type="password" class="pass" name="pass" maxlength="20" placeholder="不输入密码则默认为123456" />
+                        <span class="oms-hospital-error"></span>
+                    </div>
+                </div>
+                <p class="hospital-p" style="margin-bottom: 20px;">采购配置</p>
+                <div class="hospital-div">
+                    <div class="hospital-info-wrap commit-method">
+                        <span class="hospital-info-title">验收方式</span>
+                        <span class="hospital-input-radio">
+                            <input type="radio" value="1" name="methos" id="intersect" />
+                            <label for="intersect">交叉验收</label>
+                        </span>
+                        <span class="hospital-input-radio">
+                            <input type="radio" value="0" name="methos" id="self" checked />
+                            <label for="self">采购人自行验收</label>
+                        </span>
+                        <span class="hospital-input-desc">
+                            同一个课题组内，采购人不可以确认自己的订单已收货，必须由其他采购人验收
+                        </span>
+                    </div>
+                    <div class="hospital-info-wrap brand-method" style="margin: 35px 0;">
+                        <span class="hospital-info-title">无品牌商品</span>
+                        <span class="hospital-input-radio">
+                            <input type="radio" value="1" id="show" name="brand" />
+                            <label for="show">显示无品牌商品</label>
+                        </span>
+                        <span class="hospital-input-radio">
+                            <input type="radio" value="0" id="refuse" name="brand" checked />
+                            <label for="refuse">不显示无品牌商品</label>
+                        </span>
+                    </div>
+                    <div class="hospital-info-wrap">
+                        <span class="hospital-info-title"></span>
+                        <input type="submit" class="save-value" value="保 存" style="margin-left: 20px;margin-top: 33px;" />
+                    </div>
+                </div>
+            </form>
+            <form id="logo-form">
+                <input type="file" name="file" class="logo-upload" />
+                <input type="hidden" name="fileType" value="image" />
+                <input type="hidden" name="category" value="ORG_LOGO"/>
+            </form>
+        </div>
+    </div>
+</div>

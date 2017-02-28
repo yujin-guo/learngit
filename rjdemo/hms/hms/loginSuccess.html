@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>登录成功</title>
+    </head>
+    <body>
+        登录成功，正在进入医院管理系统。
+        <script src="js/libs/jquery.js">
+        </script>
+        <script src="js/libs/jquery.cookie.js">
+        </script>
+        <script>
+            $(document).ready(function() {
+                $.get("/store/api/identity")
+                    .success(function(data) {
+                        // 登出各个系统（如果单点登出生效，这步没什么意义。所以这步是用来保证单点登出的）
+                        var cond = encodeURIComponent(data.user.username);
+                        $.when(
+                            $.get("/store/sso/logout?local=true&cond=" + cond),
+                            $.get("/supp/sso/logout?local=true&cond=" + cond),
+                            $.get("/bid/sso/logout?local=true&cond=" + cond)
+                        ).always(function() {
+                            $.cookie('id', data.user.id, {
+                                path: '/'
+                            });
+                            $.cookie('username', data.user.realName, {
+                                path: '/'
+                            });
+                            $.cookie('organization', data.user.organization.name, {
+                                path: '/'
+                            });
+                            $.cookie("departments", data.user.departments, {
+                                path: '/'
+                            });
+                            $.cookie("orgId", data.user.organization.id, {
+                                path: '/'
+                            });
+                            $.cookie('userEmail', data.user.email, {
+                                path: '/'
+                            });
+                            var permission_list = data.user.permissions;
+                            var new_arr = [];
+                            for(var i = 0; i < permission_list.length; i++) {
+                                var items = permission_list[i].name;
+                                if($.inArray(items, new_arr) == -1) {
+                                    new_arr.push(items);
+                                }
+                            }
+                            window.userPermissions = new_arr;
+                            var a = JSON.stringify(new_arr);
+                            $.cookie("permissions", a, {
+                                path: "/"
+                            });
+
+                            if($.cookie("saveHmsLoginUrl")) {
+                                window.parent.location.href = $.cookie("saveHmsLoginUrl");
+                            } else {
+                                window.parent.location = "index.html#control";
+                            }
+                        });
+                    });
+            });
+        </script>
+    </body>
+</html>

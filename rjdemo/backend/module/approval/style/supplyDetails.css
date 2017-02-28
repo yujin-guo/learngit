@@ -1,0 +1,33 @@
+.content-wrap{margin-left: 20px;margin-top: 40px;}
+.content-nav{padding-bottom: 10px;border-bottom: 1px solid #d7d7d7;}
+.symbol-icon01{border-left: 3px solid #13b5bd;}
+.symbol-title{margin-left: 10px;color: #666;font-size: 16px;}
+.oms-supply-opinion{border: 1px solid #ccc;height: 80px;width: 460px;padding: 5px;resize: none;overflow-y: auto;word-break: break-all;word-wrap: break-word;}
+.supply-details-back{margin-left:20px;color:#008cd0;}
+.supply-details-date{margin-right:10px}
+.supply-details .bc-one{background-position:0 0;}
+.supply-details .bc-two{background-position:-35px 0;}
+.supply-details .bc-three{background-position:-70px 0;}
+.supply-details-status-info{background-color:#fcf8e2;line-height:20px;padding:10px;color:#666;font-size:12px;position:relative;margin-top:20px}
+.supply-details-info{border:solid #ccc 1px;line-height:30px;font-size:12px;padding:10px;color:#333;margin:20px 0;position:relative}
+.supply-details-license{position:absolute;top:20px;right:0;}
+.supply-details-license-pic{margin-right:20px;vertical-align:top;overflow:hidden}
+.supply-details-pic-wrap{width:100px;height:100px;line-height:100px;border:solid 1px #d7d7d7;overflow:hidden}
+.supply-details-license-pic img{max-width:100px;max-height:100px;margin-bottom:20px}
+.supply-details-license-text{text-align:center;} 
+.supply-details-info-item{width:85px;color:#666}
+.supply-details table{border:solid 1px #ccc;width:100%;font-size:12px;border-collapse: collapse;}
+.supply-details table thead{background-color:#f9fafc;color:#999}
+.supply-details table td{border-bottom:solid 1px #ccc;height:40px;} 
+.supply-details .supply-details-total-price{border-bottom:none;text-align:right;padding-right:20px;font-size:12px;color:#666}
+.supply-details .td-width-one{width:15%;padding-left:10px}
+.supply-details .td-width-two{width:32%}
+.supply-details .td-width-three{width:32%}
+.supply-details .td-width-four{width:20%}
+
+.supply-details-examine{background-color:#fcf8e2;padding:20px 0 30px 10px;margin:20px 0}
+.supply-details-examine label{margin-right:20px}
+.supply-details-examine textarea{height:90px;width:50%;resize:none;margin:15px 0 20px}
+.supply-details-submit{width:150px;height:40px;background-color:#13b5bd;font-size:16px;color:#fff;line-height:40px;text-align:center}
+.supply-details-operation{width:150px;height:40px;line-height:40px;font-size:16px;color:#fff;text-align:center;background-color:#13b5bd;position:absolute;top:10px;right:1%;border-radius:5px}
+.supply-details-check{color:#008cd0}

@@ -1,0 +1,84 @@
+<%= nav %>
+<div class="left content content-height">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">医院配置</span>
+            </div>
+        </div>
+        <div class="infomation" id="infomation">
+            <div class="matures">
+                <div class="member-btn-div left">
+                    <a href="#ctrHosConfig" class="member-btn-link relative">新增配置</a>
+                </div>
+                <div class="search-div right">
+                    <select class="status-select hoslist-config-select" id="status-select">
+                        <option value="all">所有</option>
+                        <option value="0">全部医院</option>
+                        
+                    </select>
+                    <input class="search-input" id="search-value" type="text" placeholder="请输入名字/值/code" />
+                    <a class="search-btn" id="search-btn" href="javascript:void(0)"></a>
+                </div>
+            </div>
+            <table class="member-list-table">
+                <thead>
+                    <tr>
+                        <th class="member-td-configcode">CODE</th>
+                        <th class="member-td-configName">名字</th>
+                        <th class="member-td-configValue">值</th>
+                        <th class="member-td-hospitalFullName">医院全称</th>
+                        <th class="member-td-addTime">添加时间</th>
+                        <th class="member-td-control">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="list">
+                    <% if(flag==true){_.each(entities,function(E){%>
+                    <tr>
+                        <td class="member-td-configcode">
+                            <%= E.code %>
+                        </td>
+                        <td class="member-td-configName">
+                            <%= E.name %>
+                        </td>
+                        <td class="member-td-configValue">
+                            <%= E.value %>
+                        </td>
+                        <td class="member-td-hospitalFullName">
+                            <%= E.orgName %>
+                        </td>
+                        <td class="member-td-addTime">
+                           <%= common.getLocalTime(new Date(E.time)).split(" ")[0] %>
+                        </td>
+                        <td class="member-td-control">
+                            <a href="#ctrHosConfig/<%= E.id %>" class="control-link">修改配置</a>
+                            <a href="javascript:void(0);" class="hospital-config-enabled" data-id="<%= E.id %>" data-flag="<%=E.enabled%>"><% var a='禁用',b='启用' %><%= E.enabled===true?a:b%></a>
+                        </td>
+                    </tr>
+
+                    <%})}else{%>
+                    <tr>
+                        <td class="empty-td" colspan="5">
+                            暂无数据!
+                        </td>
+                    </tr>
+                    <%} %>
+
+                </tbody>
+            </table>
+            <div class="matures">
+                <div class="page">
+                    <div class="right">
+                        <a class="endpoint" href="javascript:void(0)">尾页</a>
+                    </div>
+                    <div class="right" id="pagination">
+
+                    </div>
+                    <div class="right">
+                        <a class="endpoint" href="javascript:void(0)">首页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

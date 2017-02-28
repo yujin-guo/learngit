@@ -1,0 +1,25 @@
+.content-wrap{margin-left: 20px;margin-top: 40px;}
+.content-body{border:1px solid #ccc;margin-top:20px;padding-bottom: 50px;}
+.content-title{color:#999;width: 100px;margin-right: 16px;}
+.content-line{padding-top:20px;padding-left:15px;}
+.content-check-select,.content-check-radio{}
+.content-check-radio span{margin-right: 45px;}
+.content-check-radio input[type=radio]{vertical-align: middle;}
+.content-check-radio label{color: #333;}
+.content-check-select select{width:200px;}
+.content-nav{padding-bottom: 10px;border-bottom: 1px solid #d7d7d7;}
+.symbol-icon01{border-left: 3px solid #13b5bd;}
+.symbol-title{margin-left: 10px;color: #666;font-size: 16px;}
+.matures{margin: 20px 0;}
+.infomation table{border-collapse: collapse;font-size: 12px;}
+.infomation table th{color: #999;text-align: left;background-color: #f9fafc;}
+.infomation table td{color: #333;text-align: left;}
+.infomation table tr{border: 1px solid #ccc;height: 40px;}
+.hms-config-p-com{margin: 10px;border-bottom: 1px solid #ccc;color: #333;font-size: 14px;padding: 10px 0;}
+.secondary-title{cursor:pointer}
+.yanshou-info{margin-left:50px;color:#999;}
+.content-save{display:inline-block;height:30px;width:150px;line-height:30px;text-align:center;background-color:#13b5bd;color:#fff;border-radius:3px;cursor:pointer;border: none medium;margin-top: 10px;}
+.hms-config-div-com{height: 280px;}
+.hms-config-select{width: 20%;border: 1px solid #ccc;vertical-align: middle;height: 30px;padding:0 5px;}
+.hms-config-purchase{width: 80%;}
+.hms-config-chose-input{border: 1px solid #ccc;width: 35%;vertical-align: middle;height: 30px;padding: 0 5px;line-height: 30px;}

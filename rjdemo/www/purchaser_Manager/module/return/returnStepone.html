@@ -1,0 +1,75 @@
+<!--导入header-->
+<%=header%>
+
+<div class="return cm-main">
+    <div class="return-bread">
+        <a href="" class="return-index">采购人中心</a>&nbsp;&gt;&nbsp;<a href="javascript:;" class="return-list">退货单列表</a>&nbsp;&gt;&nbsp;<a href="javascript:;">退货详情</a>
+    </div>
+    <div class="return-flow">
+        <span><em class="return-flow-step return-num-color">1</em> 采购人申请退货</span><span><em class="return-flow-step">2</em> 供应商处理退货申请</span><span><em class="return-flow-step">3</em> 采购人退货给供应商</span><span><em class="return-flow-step">4</em> 供应商确认收货，退货成功</span>
+    </div>
+    <div class="return-info overflow">
+        <div class="return-info-order left">
+            <h3 class="return-info-order-title">订单信息</h3>
+            <% var number;%>
+            <%_.each(details,function(i){%>
+                <%if(i.id==id){%>
+            <input id="return-item-id" type="hidden" value="<%=i.id%>">
+            <p ><img class="return-info-order-img" src="<%=i.fpicpath%>"><span class="return-info-order-name"><%=i.fgoodname%></span></p>
+            <p class="return-info-order-item"><span class="return-word-space">规 格</span>：<span class="return-info-order-item-content"><%=i.fspec%></span></p>
+            <p class="return-info-order-item"><span class="return-word-space">单 价</span>：<span class="return-info-order-item-content"><%=i.fprice%></span></p>
+            <p class="return-info-order-item"><span class="return-word-space">数 量</span>：<span class="return-info-order-item-content"><%=i.fquantity%></span></p>
+                <% number=i.fquantity%>
+                <%}%>
+            <%})%>
+            <p class="return-info-order-item return-info-order-supplier"><span class="return-word-align">供应商</span>：<span class="return-info-order-item-content"><%=main.fsuppname%></span></p>
+            <p class="return-info-order-item"><span class="return-word-align">订单编号</span>：<span class="return-info-order-item-content"><%=main.forderno%></span></p>
+            <p class="return-info-order-item"><span class="return-word-align">采购部门</span>：<span class="return-info-order-item-content"><%=main.fbuydepartment%></span></p>
+        </div>
+        <div class="return-info-apply left">
+            <h3 class="return-info-apply-title">退货申请</h3>
+            <div class="return-info-apply-spec">
+                <span class="return-info-apply-spec-title">退货原因</span>:<em>*</em>
+                <span class="return-info-apply-reason">
+                    <p class="return-info-reason">请选择退货原因</p>
+                    <ul>
+                        <li>供应商发错货</li>
+                        <li>尺寸/容量与商品描述不符</li>
+                        <li>收到商品少件/破损/污渍等</li>
+                        <li>商品为假货</li>
+                        <li>商品材质不符合</li>
+                        <li>效果不符合</li>
+                        <li>其它</li>
+                    </ul>
+                </span>
+            </div>
+            <div class="return-info-apply-spec">
+                <span class="return-info-apply-spec-title">退货数量</span>:<em>*</em>
+                <input class="return-info-apply-number"><span>最多退<em class="return-info-apply-color return-total-num"><%=number%></em>个。</span><!--<a class="return-info-apply-color" href="#">退货说明</a>-->
+            </div>
+            <div class="return-info-apply-spec">
+                <span class="return-info-apply-spec-title return-info-words-limit">
+                    <p>说明 &nbsp;:<em>*</em></p>
+                    <p class="return-info-words">(<span id="returnWords">0</span>/200字)</p>
+                </span>
+                <textarea class="return-info-apply-desc"></textarea>
+            </div>
+            <div class="return-info-apply-spec">
+                <san class="return-info-apply-spec-title">退货凭证</san>:
+                <a href="javascript:;" class="return-info-apply-spec-photo">选择凭证图片</a><span class="return-info-apply-limit">最多上传五张凭证图片</span>
+            </div>
+            <form id="returnForm">
+                <input type="file" name="file" style="display:none" id="returnFile">
+                <input type='hidden' name="fileType" value="image">
+                <input type="hidden" name="category" value="NORMAL">
+            </form>
+            <div class="return-apply-photos overflow" id="addImage">
+
+            </div>
+            <div class="return-apply-btn">
+                <span class="return-apply-btn-submit">提交申请</span>
+                <a href="javascript:;" class="return-apply-btn-cancel">取消并返回</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+/*采购列表*/
+.list-table{width: 100%;}
+.apply-id,.date,.group,.human,.money,.status-td,.control{padding-right: 10px;}
+.apply-id{width: 12%;padding-left: 7px;}
+.date{width: 17%;}
+.group{width: 24%;}
+.human{width: 8%;}
+.money{width: 15%;}
+.status-td{width: 11%;}
+.status-td select{width: 80px;height: 22px;color: #999;border: 1px #ccc solid;}
+.control{width: 6%;}
+.control a{color: #008cd0;}
+/*采购申请详情（待申请）*/
+.symbol-return-icon{margin: 0 7px;width: 20px;height: 20px;vertical-align: top;}
+.link-btn{font-size: 12px;color: #008cd0;}
+.matures-next{padding: 12px;border: 1px solid #ccc;}
+.matures-min{padding-bottom: 18px;font-size: 12px;}
+.min-title{width: 65px;text-align: right;color: #999;}
+.min-info{color: #333;margin-left: 20px;}
+.min-info span{margin-right: 10px;}
+.apply-info-div{font-size: 12px;}
+.apply-info-span{color: #333;margin-right: 10px;}
+.infomation table{border-collapse: collapse;font-size: 12px;width: 100%;}
+.infomation table th{color: #999;text-align: left;background-color: #f9fafc;}
+.infomation table td{color: #333;text-align: left;}
+.infomation table tr{border: 1px solid #ccc;height: 40px;}
+.commdity-name,.brand,.sizes,.provider,.price,.numbers{padding-right: 15px;}
+.commdity-name{width: 23%;padding-left: 7px;}
+.brand{width: 22%;}
+.sizes{width: 15%;}
+.provider{width: 22%;}
+.price{width: 10%;}
+.numbers{width:8%;}
+.infomation .apply-money{text-align: right;padding-right: 14px;font-size: 12px;color: #666;}
+.matures-min-next{padding: 22px 10px 50px 10px;background-color: #fcf8e2;border: 1px solid #ccc;}
+.statu-div{height: 25px;}
+.statu-div span{margin-right: 22px;font-size: 12px;color: #333;}
+.suggestion{margin: 14px 0 22px;}
+.suggestion textarea{width: 464px;height: 84px;overflow-y: auto;border: 1px solid #ccc;padding: 3px;}
+.btn-link{color: #fff;font-size: 16px;height: 40px;line-height: 40px;width: 150px;text-align: center;background-color: #13b5bd;border-radius: 3px;border: none;cursor: pointer;}
+label.error{background-image: url(images/error-icon.png);background-repeat:no-repeat;padding-left: 25px;color: #ff0000;display: inline-block;height: 20px;}
+.detail-enclosure{margin-left: 5%;font-size: 14px;}
+.detail-enclosure-money{font-size: 16px;}

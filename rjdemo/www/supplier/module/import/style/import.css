@@ -1,0 +1,45 @@
+.import{border:solid #ccc 1px;min-height:570px}
+.import-header{margin-top:15px;}
+.import-header-icon{width:16px;height:16px;background-color:#008cd0;margin-right:15px;margin-top:3px}
+.import-header-text{color:#008cd0;margin-right:15px;font-size:16px}
+.import-header-line{border-top:solid #008cd0 1px;margin-top:10px;width:814px;}
+.import-choose{width:125px;margin-right:20px;margin-top:80px;text-align:right}
+.import-right{margin-top:60px;padding-right:30px;width:780px;}
+.import-choose-btn{cursor:pointer;display:inline-block;padding:0 10px;height:50px;border:solid #ccc 1px;line-height:50px;margin-bottom:30px;color:#999;text-align:center;background-color:#f2f2f2;background:-webkit-linear-gradient(#fff, #f2f2f2);background:-o-linear-gradient(#fff, #f2f2f2);background:-moz-linear-gradient(#fff, #f2f2f2)}
+.import-desc-text{line-height:60px;border-top:solid 1px #ccc;border-bottom:solid 1px #ccc;}
+.import-desc-text a{color:#008cd0;padding:0 5px}
+.import-desc-text a:hover{text-decoration:underline}
+.import-btn{font-size:16px;color:#fff;display:inline-block;background-color:#03a1ee;border-radius:4px;width:150px;height:38px;line-height:38px;text-align:center;margin-top:70px;letter-spacing:3px;cursor:pointer}
+.import-btn-b{font-size:16px;color:#03a1ee;display:inline-block;border:solid #03a1ee 1px;box-shadow:0 0 1px;border-radius:4px;width:148px;height:36px;line-height:36px;text-align:center;}
+/*确认导入 页面*/
+.import .import-confirm{margin-top:80px;}
+.import-confirm .import-confirm-item{line-height:50px; color:#333;margin-left:240px;padding-left:15px}
+.import-confirm .import-confirm-position{line-height:50px; color:#999;margin-left:240px;border:solid 1px #e4e4e4;padding-left:15px;display:inline-block;min-width:520px}
+.import-confirm .import-confirm-num{color:#333;font-size:16px}
+.import-confirm .num-color{font-style:normal;color:#008cd0;font-size:16px}
+.import-confirm .import-repeat{display:inline-block;margin-left:200px}
+.import-confirm .import-repeat-choose{margin-left:30px}
+.import-confirm .import-confirm-data{line-height:50px; color:#999;margin-left:240px;padding-left:15px;width:520px;margin-top:20px;border-bottom:#e4e4e4 solid 1px;overflow:hidden}
+.import-confirm .import-data-item{float:left;width:170px}
+.import-confirm .import-confirm-continue{display:block;color:#008cd0;margin:70px auto;font-size:16px;text-align:center}
+.import-confirm .import-confirm-btn{text-align:center;padding-bottom:40px}
+.import-confirm .import-btn{letter-spacing: 0;margin-right:40px;margin-top:0px;}
+/*导入成功页面*/
+.import-success{text-align:center;margin-top:80px}
+.import-success .import-success-img{width:140px;height:140px;margin:0 auto;background:url(images/success.png) no-repeat;}
+.import-success .import-success-txt{color:#999;padding:30px 0;}
+.import-success .import-btn{letter-spacing:0;margin-right:40px;margin-top:70px}
+
+/*批量上传功能说明页面*/
+.import-desc{border:solid #ccc 1px;zoom:1;padding-bottom:100px}
+.import-desc .import-header-line{width:846px}
+.import-desc .import-desc-customer{margin:20px 20px 0 140px ;color:#333;line-height:28px}
+.import-desc .import-desc-list{margin:20px 20px 0 0;line-height:28px;}
+.import-desc .import-desc-list li{overflow:hidden}
+.import-desc .import-desc-num{width:120px;text-align:right;margin-right:20px;color:#999;height:28px}
+.import-desc .import-desc-words{color:#333;width:790px}
+.import-desc .import-desc-img{width:780px;height:100px;background:url(images/desc.png) no-repeat;margin:20px 0;background-size:100% 100%}
+.import-desc .import-desc-example{margin:30px 0 30px}
+.import-desc .import-desc-download{color:#008cd0}
+.import-desc .import-desc-download:hover{text-decoration: underline;}
+.import-desc .import-desc-color{color:red}

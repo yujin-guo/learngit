@@ -1,0 +1,47 @@
+<%= nav%>
+<div class="cm-main">
+    <div class="procurment">
+        <div class="procurment-register-01">
+            <p class="procurment-register-title01">欢迎注册</p>
+            <p class="invite-info"><%= org %>，<em class="info-em"><%= person %></em>，邀请您进入到 <em class="info-em"><%= department %></em></p>
+            <p class="refined-info">请完善您的资料：</p>
+            <form id="register-form">
+                <div class="procurment-info" style="border-bottom:medium none ;">
+                    <div class="procurment-info-01">
+                        <span class="procurment-info-title01">真实姓名：</span><input type="text" name="name" id="name" class="common" placeholder="请输入姓名" />
+                        <span class="procure-error"></span>
+                    </div>
+                    <div class="procurment-info-01">
+                        <span class="procurment-info-title01">手机号码：</span><input type="text" name="mobile" id="mobile" class="common" maxlength="11" placeholder="请输入手机号码" />
+                        <span class="procure-error"></span>
+                    </div>
+                    <div class="procurment-info-01">
+                        <span class="procurment-info-title01">验证码：</span>
+                        <span class="validate-number">
+                        <input class="common" id="pin" name="validatecode" type="text" placeholder="请输入验证码"/><span class="active01" id="get-code">获取手机验证码</span>
+                        </span>
+                        <span class="procure-error"></span>
+                    </div>
+                    <div class="procurment-info-01">
+                        <span class="procurment-info-title01">登录密码：</span><input name="password" id="password" type="password" class="common" placeholder="请输入密码" />
+                        <span class="procure-error"></span>
+                    </div>
+                    <div class="procurment-info-01">
+                        <span class="procurment-info-title01">确认密码：</span><input name="passagin" type="password" class="common" placeholder="请再次输入密码" />
+                        <span class="procure-error"></span>
+                    </div>
+                    <div class="procurment-info-01">
+                        <span class="procurment-info-title01"></span><input type="checkbox" id="protocol-checkbox" />我同意并遵守上述的
+                        <a href="javascript:void(0);" class="protocol-link">《锐竞采购平台服务协议》</a>
+                    </div>
+                    <div class="procurment-info-01">
+                        <span class="procurment-info-title01"></span><input type="submit" id="confirm" value="提交" disabled="true" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="protocol-wrap-01">
+        <%= protocol %>
+    </div>
+</div>

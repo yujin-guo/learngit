@@ -1,0 +1,200 @@
+<div class="left content account">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">结算清单</span>
+            </div>
+        </div>
+        <div class="infomation">
+            <div class="matures">
+                <div class="account-btn left">
+                    <% if($.cookie('orgId')==2){%>
+                    <% for(var u in userPermissions){if(userPermissions[u]=='接收材料'){%>
+                    <a href="javascript:;" class="account-export checker" data-flag="scan-check">扫描验收单</a>
+                    <a href="javascript:;" class="account-export ctrl-common" data-flag="batch-supplier">提交供应商</a>
+                    <a href="javascript:;" class="account-export checker" data-flag="scan-invoice">扫描清单</a>
+                    <a href="javascript:;" class="account-export export">导出验收汇总表</a>
+                    <a href="javascript:;" class="account-download" target="_blank">
+                        <span class="account-download"></span>
+                    </a>
+                    <%break;}}%>
+                    <!-- <% for(var u in userPermissions){if(userPermissions[u]=='提交财务'){%>
+                    <a href="javascript:;" class="account-export ctrl-common" data-flag="batch-invoice">批量提交财务</a>
+                    <%break;}}%>-->
+                    <%}%>
+                </div>
+                <div class="search-div right ">
+                    <span>结算时间：
+                        <input class="account-date" type="text" placeholder="<%=common.getOneMonthDate()%>" id="startTime">
+                        <span class="account-line">-</span>
+                        <input class="account-date" type="text" placeholder="<%=common.getDate()%>" id="endTime">
+                    </span>
+                </div>
+            </div>
+            <div class="matures">
+                <div class="search-div right">
+                    <span>供应商：
+                        <input class="account-supp" type="text" placeholder="请输入供应商" id="supp">
+                    </span>
+                    <span>课题组：
+                        <input class="account-dept" type="text" placeholder="请输入课题组名称" id="dept">
+                    </span>
+                    <input class="search-input" type="text" placeholder="结算编号/提交人" /><!--
+                    --><a class="search-btn" href="javascript:;"></a>
+                </div>
+            </div>
+            <table class="list-table">
+                <thead>
+                    <tr>
+                        <th class="account-select">
+                            <input type="checkbox" class="account-checkbox-all" />全选</th>
+                        <th class="apply-id">结算单号</th>
+                        <th class="supplier">供应商</th>
+                        <th class="group">采购组</th>
+                        <th class="human">提交人</th>
+                        <th class="date">提交财务日期</th>
+                        <th class="money">结算金额(元)</th>
+                        <th class="status-td">
+                            <select>
+                                <option value="all">状态</option>
+                                <% if($.cookie('orgId')==2){%>
+                                <option value="4">待提交验收单</option>
+                                <option value="5">待提交供应商</option>
+                                <%}%>
+                                <option value="0">待开票</option>
+                                <option value="6">待填发票</option>
+                                <option value="7">待递送</option>
+                                <option value="1">待审核</option>
+                                <option value="2">待付款</option>
+                                <option value="3">已完成</option>
+                            </select>
+                        </th>
+                        <th class="control">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="accountList">
+                    <% if(flag==true){_.each(statementList,function(i){%>
+                    <tr>
+                        <td class="account-select">
+                            <input type="checkbox" class="account-checkbox">
+                            <input type="hidden" class="account-id" value="<%=i.id%>" data-No="<%=i.banlanceNo%>">
+                        </td>
+                        <td class="apply-id">
+                            <%=i.banlanceNo%>
+                        </td>
+                        <td class="supplier">
+                            <%=i.supplierName%>
+                        </td>
+                        <td class="group">
+                            <%=i.department%>
+                        </td>
+                        <td class="human">
+                            <%=i.commiter%>
+                        </td>
+                        <td class="date">
+                            <%if(i.hasOwnProperty('submitTheFinancialTime')){%>    
+                                <%=i.submitTheFinancialTime.split(" ")[0]%>
+                            <%}%>
+                        </td>
+                        <td class="money">
+                            <%=i.banlanceMoney.toFixed(2)%>
+                        </td>
+                        <td class="status-td">
+                            <%if(i.status==0){%> 待开票
+                            <%}else if(i.status==1){%> 待审核
+                            <%}else if(i.status==2){%> 待付款
+                            <%}else if(i.status==3){%> 已完成
+                            <%}else if(i.status==4){%> 待提交验收单
+                            <%}else if(i.status==5){%> 待提交供应商
+                            <%}else if(i.status==6){%> 待填发票
+                            <%}else if(i.status==7){%> 待递送
+                            <%}%>
+                        </td>
+                        <td class="control">
+                            <a href="#accountdetails/<%=i.banlanceNo%>/<%=i.status%>" class="account-check">查看</a>
+                            <% if($.cookie('orgId')==2){%>
+                            <%_.each(userPermissions,function(u){if(u=="接收材料"){if(i.status==5){%>
+                            <a href="javascript:;" class="account-receive ctrl-common" data-flag="single" data-id="<%=i.banlanceNo%>" data-status="0">提交供应商</a>
+                            <%}else if(i.status==4){%>
+                            <a href="javascript:;" class="account-receive ctrl-common" data-flag="single" data-id="<%=i.banlanceNo%>" data-status="0">提交供应商</a>
+                            <%}}});%>
+                            <!--<%_.each(userPermissions,function(u){if(u=="提交财务"){if(i.status==1){%>
+                            <a href="javascript:;" class="account-submit ctrl-common" data-flag="sinInvoice" data-id="<%=i.banlanceNo%>" data-status="WaitingToPay">提交财务</a>
+                            <%}}});%>-->
+                            <%}%>
+
+                        </td>
+                    </tr>
+                    <%});}else{%>
+                    <tr>
+                        <td class="account-no-result" colspan=9>
+                            暂无结果。
+                        </td>
+                    </tr>
+                    <%}%>
+                </tbody>
+            </table>
+            <div class="matures">
+                <div class="page">
+                    <div class="right">
+                        <a class="endpoint" href="javascript:void(0)">尾页</a>
+                    </div>
+                    <div class="right" id="pagination">
+                    </div>
+                    <div class="right">
+                        <a class="endpoint" href="javascript:void(0)">首页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--扫描验收单开始-->
+<div class="scan-background">
+</div>
+<div class="scan-wrap">
+    <div class="scan-close-icon right">&nbsp;</div>
+    <div class="scan-content clear">
+        <h3 class="scan-title">扫描验收单</h3>
+        <div class="scan-ctrl-wrap">
+            <!--<div class="left scan-check-ctr-left">
+                <a href="javascript:void(0);" class="scan-start-link scan-active-link">开始扫描</a>
+                <a href="javascript:void(0);" class="scan-pause-link">暂停</a>
+            </div>-->
+            <div class="right scan-check-ctr-right">
+                <input type="text" placeholder="输入订单号手动添加验收单" class="scan-add-input" />
+                <a href="javascript:void(0);" class="scan-add-btn">添加</a>
+            </div>
+        </div>
+        <div class="scan-content-inner clear">
+            <div class="scan-content-header">
+                <span class="scan-content-order">订单号</span>
+                <span class="scan-content-purchaser">采购人</span>
+                <span class="scan-content-checker">验收人</span>
+                <span class="scan-content-cardnumber">经费卡号</span>
+                <span class="scan-content-order-account">订单金额</span>
+                <span class="scan-content-check-account">验收金额</span>
+                <span class="scan-content-ctr">
+                    <span class="scan-all-hidden right" data-flag="hidden">&nbsp;</span>
+                    <span class="scan-all-show right" data-flag="show">&nbsp;</span>
+                </span>
+            </div>
+            <div class="scan-content-list" id="scan-content-list">
+                <!--空数据-->
+                <p class="scan-empty">
+                    请扫描发票清单或验收汇总单上的编码，或手动输入添加
+                </p>
+            </div>
+        </div>
+        <div class="scan-content-footer">
+            <div class="left scan-error"></div>
+            <div class="right scan-footer-ctr">
+                <a href="javascript:void(0)" class="right scan-save-supplier scan-supplier ctrl-common" data-flag="supplier">保存并提交供应商</a>
+                <a href="javascript:void(0)" class="right scan-save-supplier scan-finance ctrl-common" data-flag="finance">保存并提交财务</a>
+                <a href="javascript:void(0)" class="right scan-save-result ctrl-common">保存扫描结果</a>
+                <a href="javascript:void(0)" class="right scan-cancel">关闭窗口，取消扫描</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--扫描验收单结束-->

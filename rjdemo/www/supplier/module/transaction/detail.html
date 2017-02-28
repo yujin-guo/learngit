@@ -1,0 +1,898 @@
+<div class="transaction-top">
+    <div class="transaction-top-header">
+        订单编号：
+        <span class="detail-order-id">
+            <%= orderInfo.order.forderno%>
+        </span>
+    </div>
+    <div class="pre-order">
+        <!--状态判断-->
+        <% var statusFlag=orderInfo.order.status;if(statusFlag==8){%>
+        <div class="pre-order-desc">
+            <span class="order-submit">买家下单</span>
+            <span class="order-sure">卖家确认订单</span>
+            <span class="order-deliver">卖家发货</span>
+            <span class="order-receive">买家验收</span>
+            <span class="order-account">买家结算</span>
+            <span class="order-success">结算完成</span>
+        </div>
+        <div class="pre-order-pic">
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-02">
+                <div class="pic-02-div"></div>
+            </span>
+            <span class="pic-02">
+                <div class="pic-02-div"></div>
+            </span>
+            <span class="pic-02">
+                <div class="pic-02-div"></div>
+            </span>
+            <span class="pic-02">
+                <div class="pic-02-div"></div>
+            </span>
+            <span class="pic-03"></span>
+        </div>
+        <div class="pre-order-time">
+            <span class="order-submit-time">
+                <%var orderDate1=orderInfo.order.forderdate; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1]%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+        </div>
+        <%}else if(statusFlag==3){if(orderInfo.order.fconfirmdate){%>
+        <div class="pre-order-desc">
+            <span class="order-submit">买家下单</span>
+            <span class="order-sure">卖家确认订单</span>
+            <span class="order-close">订单关闭</span>
+        </div>
+        <div class="pre-order-pic">
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-04"></span>
+        </div>
+        <div class="pre-order-time">
+            <span class="order-submit-time">
+                <%var orderDate1=orderInfo.order.forderdate; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1]%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+            <span class="order-sure-time">
+                <% if(orderInfo.order.fconfirmdate){%>
+                <%var orderDate2=orderInfo.order.fconfirmdate; var date2=orderDate2.split(' ')[0],time2=orderDate2.split(' ')[1];%>
+                <div>
+                    <%= date2%>
+                </div>
+                <div>
+                    <%= time2%>
+                </div>
+                <%}%>
+            </span>
+            <span class="order-close-time">
+                <% if(orderInfo.order.shutDownDate){%>
+                <%var orderDate7=orderInfo.order.shutDownDate; var date7=orderDate7.split(' ')[0],time7=orderDate7.split(' ')[1];%>
+                <div>
+                    <%= date7%>
+                </div>
+                <div>
+                    <%= time7%>
+                </div>
+                <%}%>
+            </span>
+
+        </div>
+
+        <%}else{%>
+        <div class="pre-order-desc">
+            <span class="order-submit">买家下单</span>
+            <span class="order-close">订单关闭</span>
+        </div>
+        <div class="pre-order-pic">
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-04"></span>
+        </div>
+        <div class="pre-order-time">
+            <span class="order-submit-time">
+                <%var orderDate1=orderInfo.order.forderdate; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1]%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+            <span class="order-close-time">
+                <% if(orderInfo.order.shutDownDate){%>
+                <%var orderDate7=orderInfo.order.shutDownDate; var date7=orderDate7.split(' ')[0],time7=orderDate7.split(' ')[1];%>
+                <div>
+                    <%= date7%>
+                </div>
+                <div>
+                    <%= time7%>
+                </div>
+                <%}%>
+
+            </span>
+        </div>
+
+        <%}}else if(statusFlag==4){%>
+        <div class="pre-order-desc">
+            <span class="order-submit">买家下单</span>
+            <span class="order-sure">卖家确认订单</span>
+            <span class="order-deliver">卖家发货</span>
+            <span class="order-receive">买家验收</span>
+            <span class="order-account">买家结算</span>
+            <span class="order-success">结算完成</span>
+        </div>
+        <div class="pre-order-pic">
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-02">
+                <div class="pic-02-div"></div>
+            </span>
+            <span class="pic-02">
+                <div class="pic-02-div"></div>
+            </span>
+            <span class="pic-02">
+                <div class="pic-02-div"></div>
+            </span>
+            <span class="pic-03"></span>
+        </div>
+        <div class="pre-order-time">
+            <span class="order-submit-time">
+                <%var orderDate1=orderInfo.order.forderdate; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1]%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+            <span class="order-sure-time">
+                <% if(orderInfo.order.fconfirmdate){%>
+                <%var orderDate2=orderInfo.order.fconfirmdate; var date2=orderDate2.split(' ')[0],time2=orderDate2.split(' ')[1];%>
+                <div>
+                    <%= date2%>
+                </div>
+                <div>
+                    <%= time2%>
+                </div>
+                <%}%>
+            </span>
+
+        </div>
+
+        <%}else if(statusFlag==5){%>
+        <div class="pre-order-desc">
+            <span class="order-submit">买家下单</span>
+            <span class="order-sure">卖家确认订单</span>
+            <span class="order-deliver">卖家发货</span>
+            <span class="order-receive">买家验收</span>
+            <span class="order-account">买家结算</span>
+            <span class="order-success">结算完成</span>
+        </div>
+        <div class="pre-order-pic">
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-02">
+                <div class="pic-02-div"></div>
+            </span>
+            <span class="pic-02">
+                <div class="pic-02-div"></div>
+            </span>
+            <span class="pic-03"></span>
+        </div>
+        <div class="pre-order-time">
+            <span class="order-submit-time">
+                <%var orderDate1=orderInfo.order.forderdate; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1]%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+            <span class="order-sure-time">
+                <% if(orderInfo.order.fconfirmdate){%>
+                <%var orderDate2=orderInfo.order.fconfirmdate; var date2=orderDate2.split(' ')[0],time2=orderDate2.split(' ')[1];%>
+                <div>
+                    <%= date2%>
+                </div>
+                <div>
+                    <%= time2%>
+                </div>
+                <%}%>
+            </span>
+            <span class="order-deliver-time">
+                <% if(orderInfo.order.fdeliverydate){%>
+                <%var orderDate3=orderInfo.order.fdeliverydate; var date3=orderDate3.split(' ')[0],time3=orderDate3.split(' ')[1];%>
+                <div>
+                    <%= date3%>
+                </div>
+                <div>
+                    <%= time3%>
+                </div>
+                <%}%>
+            </span>
+
+        </div>
+
+        <%}else if(statusFlag==6||statusFlag==15){%>
+        <div class="pre-order-desc">
+            <span class="order-submit">买家下单</span>
+            <span class="order-sure">卖家确认订单</span>
+            <span class="order-deliver">卖家发货</span>
+            <span class="order-receive">买家验收</span>
+            <span class="order-account">买家结算</span>
+            <span class="order-success">结算完成</span>
+        </div>
+        <div class="pre-order-pic">
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-02">
+                <div class="pic-02-div"></div>
+            </span>
+            <span class="pic-03"></span>
+        </div>
+        <div class="pre-order-time">
+            <span class="order-submit-time">
+                <%var orderDate1=orderInfo.order.forderdate; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1]%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+            <span class="order-sure-time">
+                <% if(orderInfo.order.fconfirmdate){%>
+                <%var orderDate2=orderInfo.order.fconfirmdate; var date2=orderDate2.split(' ')[0],time2=orderDate2.split(' ')[1];%>
+                <div>
+                    <%= date2%>
+                </div>
+                <div>
+                    <%= time2%>
+                </div>
+                <%}%>
+            </span>
+            <span class="order-deliver-time">
+                <% if(orderInfo.order.hasOwnProperty('fdeliverydate')){%>
+                <%var orderDate3=orderInfo.order.fdeliverydate; var date3=orderDate3.split(' ')[0],time3=orderDate3.split(' ')[1];%>
+                <div>
+                    <%= date3%>
+                </div>
+                <div>
+                    <%= time3%>
+                </div>
+                <%}%>
+            </span>
+            <span class="order-receive-time">
+                <% if(orderInfo.order.flastreceivedate){%>
+                <%var orderDate4=orderInfo.order.flastreceivedate; var date4=orderDate4.split(' ')[0],time4=orderDate4.split(' ')[1];%>
+                <div>
+                    <%= date4%>
+                </div>
+                <div>
+                    <%= time4%>
+                </div>
+                <%}%>
+            </span>
+
+        </div>
+
+        <%}else if(statusFlag==9){%>
+        <div class="pre-order-desc">
+            <span class="order-submit">买家下单</span>
+            <span class="order-sure">卖家确认订单</span>
+            <span class="order-deliver">卖家发货</span>
+            <span class="order-receive">买家验收</span>
+            <span class="order-account">买家结算</span>
+            <span class="order-success">结算完成</span>
+        </div>
+        <div class="pre-order-pic">
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-02">
+                <div class="pic-02-div"></div>
+            </span>
+            <span class="pic-02">
+                <div class="pic-02-div"></div>
+            </span>
+            <span class="pic-02">
+                <div class="pic-02-div"></div>
+            </span>
+            <span class="pic-03"></span>
+        </div>
+        <div class="pre-order-time">
+            <span class="order-submit-time">
+                <%var orderDate1=orderInfo.order.forderdate; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1]%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+            <span class="order-sure-time">
+                <% if(orderInfo.order.fconfirmdate){%>
+                <%var orderDate2=orderInfo.order.fconfirmdate; var date2=orderDate2.split(' ')[0],time2=orderDate2.split(' ')[1];%>
+                <div>
+                    <%= date2%>
+                </div>
+                <div>
+                    <%= time2%>
+                </div>
+                <%}%>
+            </span>
+
+        </div>
+
+        <%}else if(statusFlag==13||statusFlag==10||statusFlag==12){%>
+        <div class="pre-order-desc">
+            <span class="order-submit">买家下单</span>
+            <span class="order-sure">卖家确认订单</span>
+            <span class="order-deliver">卖家发货</span>
+            <span class="order-receive">买家验收</span>
+            <span class="order-account">买家结算</span>
+            <span class="order-success">结算完成</span>
+        </div>
+        <div class="pre-order-pic">
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-03"></span>
+        </div>
+        <div class="pre-order-time">
+            <span class="order-submit-time">
+                <%var orderDate1=orderInfo.order.forderdate; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1]%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+            <span class="order-sure-time">
+                <% if(orderInfo.order.fconfirmdate){%>
+                <%var orderDate2=orderInfo.order.fconfirmdate; var date2=orderDate2.split(' ')[0],time2=orderDate2.split(' ')[1];%>
+                <div>
+                    <%= date2%>
+                </div>
+                <div>
+                    <%= time2%>
+                </div>
+                <%}%>
+            </span>
+            <span class="order-deliver-time">
+                <% if(orderInfo.order.fdeliverydate){%>
+                <%var orderDate3=orderInfo.order.fdeliverydate; var date3=orderDate3.split(' ')[0],time3=orderDate3.split(' ')[1];%>
+                <div>
+                    <%= date3%>
+                </div>
+                <div>
+                    <%= time3%>
+                </div>
+                <%}%>
+            </span>
+            <span class="order-receive-time">
+                <% if(orderInfo.order.flastreceivedate){%>
+                <%var orderDate4=orderInfo.order.flastreceivedate; var date4=orderDate4.split(' ')[0],time4=orderDate4.split(' ')[1];%>
+                <div>
+                    <%= date4%>
+                </div>
+                <div>
+                    <%= time4%>
+                </div>
+                <%}%>
+            </span>
+            <span class="order-account-time">
+                <% if(orderInfo.order.fsettleCreateDate){%>
+                <%var orderDate5=orderInfo.order.fsettleCreateDate; var date5=orderDate5.split(' ')[0],time5=orderDate5.split(' ')[1];%>
+                <div>
+                    <%= date5%>
+                </div>
+                <div>
+                    <%= time5%>
+                </div>
+                <%}%>
+            </span>
+
+        </div>
+
+        <%}else if(statusFlag==11 || statusFlag==7){%>
+        <div class="pre-order-desc">
+            <span class="order-submit">买家下单</span>
+            <span class="order-sure">卖家确认订单</span>
+            <span class="order-deliver">卖家发货</span>
+            <span class="order-receive">买家验收</span>
+            <span class="order-account">买家结算</span>
+            <span class="order-success">结算完成</span>
+        </div>
+        <div class="pre-order-pic">
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-01">
+                <div class="pic-01-div"></div>
+            </span>
+            <span class="pic-04"></span>
+        </div>
+        <div class="pre-order-time">
+            <span class="order-submit-time">
+                <%var orderDate1=orderInfo.order.forderdate; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1]%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+            <span class="order-sure-time">
+                <% if(orderInfo.order.fconfirmdate){%>
+                <%var orderDate2=orderInfo.order.fconfirmdate; var date2=orderDate2.split(' ')[0],time2=orderDate2.split(' ')[1];%>
+                <div>
+                    <%= date2%>
+                </div>
+                <div>
+                    <%= time2%>
+                </div>
+                <%}%>
+            </span>
+            <span class="order-deliver-time">
+                <% if(orderInfo.order.fdeliverydate){%>
+                <%var orderDate3=orderInfo.order.fdeliverydate; var date3=orderDate3.split(' ')[0],time3=orderDate3.split(' ')[1];%>
+                <div>
+                    <%= date3%>
+                </div>
+                <div>
+                    <%= time3%>
+                </div>
+                <%}%>
+            </span>
+            <span class="order-receive-time">
+                <% if(orderInfo.order.flastreceivedate){%>
+                <%var orderDate4=orderInfo.order.flastreceivedate; var date4=orderDate4.split(' ')[0],time4=orderDate4.split(' ')[1];%>
+                <div>
+                    <%= date4%>
+                </div>
+                <div>
+                    <%= time4%>
+                </div>
+                <%}%>
+            </span>
+            <span class="order-account-time">
+                <% if(orderInfo.order.fsettleCreateDate){%>
+                <%var orderDate5=orderInfo.order.fsettleCreateDate; var date5=orderDate5.split(' ')[0],time5=orderDate5.split(' ')[1];%>
+                <div>
+                    <%= date5%>
+                </div>
+                <div>
+                    <%= time5%>
+                </div>
+                <%}%>
+            </span>
+            <span class="order-success-time">
+                <% if(orderInfo.order.fsettleFinishDate){%>
+                <%var orderDate6=orderInfo.order.fsettleFinishDate; var date6=orderDate6.split(' ')[0],time6=orderDate6.split(' ')[1];%>
+                <div>
+                    <%= date6%>
+                </div>
+                <div>
+                    <%= time6%>
+                </div>
+                <%}%>
+            </span>
+
+        </div>
+        <%}%>
+        <!--状态判断结束-->
+    </div>
+</div>
+<div class="transaction-center">
+    <div class="left transaction-center-left">
+        <p class="transaction-center-title">账号信息</p>
+        <div class="transaction-center-left01">
+            <div>
+                <span class="transaction-center-01">采购方：</span>
+                <span class="transaction-center-02">
+                    <%= orderInfo.order.fusername%>
+                </span>
+            </div>
+            <div>
+                <span class="transaction-center-01">采购组：</span>
+                <span class="transaction-center-02">
+                    <%= orderInfo.order.fbuydepartment%>
+                </span>
+            </div>
+            <div>
+                <span class="transaction-center-01">采购人：</span>
+                <span class="transaction-center-02">
+                    <%= orderInfo.order.fbuyername%>
+                </span>
+            </div>
+            <div>
+                <span class="transaction-center-01">联系电话：</span>
+                <span class="transaction-center-02">
+                    <%= orderInfo.order.contactphone%>
+                </span>
+            </div>
+            <div class="transaction-center-01">收货地址：</div>
+            <div class="transaction-address relative">
+                <div class="transaction-address-inner">
+                    <span class="addr-name">
+                        <%= orderInfo.order.fbuyercontactman%>
+                    </span>
+                    <span class="addr-mobile">
+                        <%= orderInfo.order.fbuyertelephone%>
+                    </span>
+                    <span class="addr-addr">
+                        <%= orderInfo.order.fbiderdeliveryplace%>
+                    </span>
+                </div>
+                <div class="transaction-address-change-btn">
+                    <a class="address-change right" id="address-change" href="javascript:void(0)">修改</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left transaction-center-right">
+        <!--状态判断-->
+        <% var statusFlag=orderInfo.order.status;if(statusFlag==8){%>
+        <p class="transaction-center-title">买家已下单,等待商家确认订单</p>
+        <div class="transaction-center-right02 transaction-clear-border">
+            <p class="transaction-center-right03">
+                1、买家已下单，请尽快确认订单。<br /> 2、如果不能确认订单，请联系买家要求其取消订单。
+            </p>
+        </div>
+        <div>
+            <a class="link-btn sure-link" href="javascript:void(0)" data-flag="order-sure">确认订单</a>
+        </div>
+        <%}else if(statusFlag==3){if(orderInfo.order.fconfirmdate){%>
+        <p class="transaction-center-title">你已同意取消订单</p>
+        <div class="transaction-center-right02 transaction-clear-border">
+            <p class="transaction-center-right03">
+                订单已关闭
+            </p>
+        </div>
+        <%}else{%>
+        <p class="transaction-center-title">买家已取消订单</p>
+        <div class="transaction-center-right02 transaction-clear-border">
+            <p class="transaction-center-right03">
+                订单关闭
+            </p>
+        </div>
+        <%}}else if(statusFlag==4){%>
+        <p class="transaction-center-title">订单已确认,买家等待发货</p>
+        <div class="transaction-center-right02">
+            <p class="transaction-center-right03">
+                1、您已确认订单，请尽快发货。<br /> 2、如果您已发货，请点击确认按钮，填入发货日期、单号等内容
+            </p>
+        </div>
+        <div>
+            <a class="link-btn link-event" href="javascript:void(0)">确认发货</a>
+        </div>
+        <!--订单信息弹窗-->
+        <div class="info-wrap" style="height: 400px;">
+            <div class="info-content">
+                <h4>请填写发货信息</h4>
+                <form id="deliver-form">
+                    <div class="info-content-inner">
+                        <div>
+                            <span class="transaction-info-title">
+                                发货日期：
+                            </span>
+                            <input type="text" id="deliver-date" name="deliverNum" />
+                            <span class="icon-must">*</span>
+                        </div>
+                        <div>
+                            <span class="transaction-info-title">
+                                送货单号：
+                            </span>
+                            <input type="text" name="deliverorder" id="deliver-num" />
+                            <span class="icon-must">*</span>
+                        </div>
+                        <div class="textarea">
+                            <span class="transaction-info-title">
+                                发货说明：
+                            </span>
+                            <textarea id="deliver-decr"></textarea>
+                        </div>
+                        <div class="reason-control" style="width: 100%;height: 40px;">
+                            <span class="transaction-info-title">
+                            </span>
+                            <input type="submit" class="sure-deliver" value="确认" />
+                            <input type="reset" value="取消" class="cancel-address" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <%}else if(statusFlag==5){%>
+        <p class="transaction-center-title">订单已发货,等待买家验收</p>
+        <div class="transaction-center-right02">
+            <p class="transaction-center-right03">
+                1、订单已发货，请等待买家验收<br /> 2、若买家有退货申请，将会在订单的商品信息的状态中显示，请注意处理。
+            </p>
+        </div>
+        <div class="message-board">
+            <div class="return-info-div">发货日期：
+                <span class="return-num">
+                    <!--<% var dedate= orderInfo.order.fdeliverydate.split(' ')[0]; %>-->
+                    <%= orderInfo.order.fdeliverydate %>
+                </span>
+            </div>
+            <div class="return-info-div return-margin-div">送货单号：
+                <span class="return-money">
+                    <% if(orderInfo.order.deliveryNo!=undefined){%>
+                    <%= orderInfo.order.deliveryNo %>
+                    <%} %>
+
+                </span>
+            </div>
+            <div class="return-info-div">发货说明：
+                <span class="return-id">
+                    <% if(orderInfo.order.deliveryInfo!=undefined){%>
+                    <%= orderInfo.order.deliveryInfo %>
+                    <%} %>
+                </span>
+            </div>
+        </div>
+        <%}else if(statusFlag==6||statusFlag==10||statusFlag==12){%>
+        <p class="transaction-center-title">订单已验收,等待买家结算</p>
+        <div class="transaction-center-right02">
+            <p class="transaction-center-right03">
+                1、订单已验收，请等待买家结算。<br /> 2、若买家有退货申请，将会在订单的商品信息的状态中显示，请注意处理。
+            </p>
+        </div>
+        <div class="message-board">
+            <div class="return-info-div">发货日期：
+                <span class="return-num">
+                    <% if(orderInfo.order.hasOwnProperty('fdeliverydate')){%>
+                    <%=  orderInfo.order.fdeliverydate %>
+                    <%} %>
+                </span>
+            </div>
+            <div class="return-info-div return-margin-div">送货单号：
+                <span class="return-money">
+                    <% if(orderInfo.order.deliveryNo!=undefined){%>
+                    <%= orderInfo.order.deliveryNo %>
+                    <%} %>
+
+                </span>
+            </div>
+            <div class="return-info-div">发货说明：
+                <span class="return-id">
+                    <% if(orderInfo.order.deliveryInfo!=undefined){%>
+                    <%= orderInfo.order.deliveryInfo %>
+                    <%} %>
+                </span>
+            </div>
+        </div>
+        <%}else if(statusFlag==9){%>
+        <p class="transaction-center-title">采购人申请取消订单</p>
+        <div class="transaction-center-right02">
+            <p class="transaction-center-right03">
+                1、如果同意，请确认取消。<br /> 2、如果拒绝，请写明拒绝理由。
+            </p>
+        </div>
+        <div>
+            <a class="link-btn left sure-link" href="javascript:void(0)" data-flag="order-cancel">确认取消</a>
+            <div class="right">
+                您还可以：
+                <span class="refuse link-event">拒绝取消</span>
+            </div>
+        </div>
+        <div class="info-wrap">
+            <div class="info-content">
+                <h4>*请填写拒绝理由</h4>
+                <div class="reason">
+                    <textarea id="refuse-textarea" placeholder="拒绝理由必填"></textarea>
+                </div>
+                <div class="reason-control">
+                    <!-- <input type="submit" class="link-btn" value="确认" />-->
+                    <a class="sure-link refuse-link" href="javascript:void(0)" data-flag="order-refuse">确认</a>
+                    <input type="button" value="取消" class="cancel-address" />
+                </div>
+            </div>
+        </div>
+        <%}else if(statusFlag==13){%>
+        <p class="transaction-center-title">买家已确认结算，您是否完成订单</p>
+        <div class="transaction-center-right02">
+            <p class="transaction-center-right03">
+                1、订单结算中，请注意查看货款是否到账
+            </p>
+        </div>
+        <div class="message-board">
+            <div class="return-info-div">发货日期：
+                <span class="return-num">
+                    <!--<% var dedate= orderInfo.order.fdeliverydate.split(' ')[0]; %>-->
+                    <%=  orderInfo.order.fdeliverydate %>
+                </span>
+            </div>
+            <div class="return-info-div return-margin-div">送货单号：
+                <span class="return-money">
+                    <% if(orderInfo.order.deliveryNo!=undefined){%>
+                    <%= orderInfo.order.deliveryNo %>
+                    <%} %>
+
+                </span>
+            </div>
+            <div class="return-info-div">发货说明：
+                <span class="return-id">
+                    <% if(orderInfo.order.deliveryInfo!=undefined){%>
+                    <%= orderInfo.order.deliveryInfo %>
+                    <%} %>
+                </span>
+            </div>
+        </div>
+        <%}else if(statusFlag==11 || statusFlag==7){%>
+        <p class="transaction-center-title">订单已完成</p>
+        <div class="transaction-center-right02">
+            <p class="transaction-center-right03">
+                订单已完成
+            </p>
+        </div>
+        <div class="message-board">
+            <div class="return-info-div">发货日期：
+                <span class="return-num">
+                    <!--<% var dedate= orderInfo.order.fdeliverydate.split(' ')[0]; %>-->
+                    <%=  orderInfo.order.fdeliverydate %>
+                </span>
+            </div>
+            <div class="return-info-div return-margin-div">送货单号：
+                <span class="return-money">
+                    <% if(orderInfo.order.deliveryNo!=undefined){%>
+                    <%= orderInfo.order.deliveryNo %>
+                    <%} %>
+
+                </span>
+            </div>
+            <div class="return-info-div">发货说明：
+                <span class="return-id">
+                    <% if(orderInfo.order.deliveryInfo!=undefined){%>
+                    <%= orderInfo.order.deliveryInfo %>
+                    <%} %>
+                </span>
+            </div>
+        </div>
+        <%}%>
+        <!--状态判断结束-->
+    </div>
+</div>
+
+<div class="transaction-bottom">
+    <div>
+        <span class="color-icons"></span>
+        <span class="color-name">商品信息</span>
+        <span class="color-border"></span>
+    </div>
+    <div class="detail-commodity-info">
+        <table class="transaction-table">
+            <thead>
+                <tr>
+                    <th class="commodity-name">商品</th>
+                    <th class="commodity-goodcode">单位</th>
+                    <th class="commodity-num">数量</th>
+                    <th class="commodity-price">单价</th>
+                    <th class="transaction-state">状态</th>
+                    <th class="commodity-account">金额</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%_.each(orderInfo.orderDetails,function(D){%>
+                <tr>
+                    <td class="commodity-name-01">
+                        <span class="commodity-picture">
+                            <img src="<%= D.fpicpath%>" />
+                        </span>
+                        <span class="comodity-name-detail">
+                            <a class="name-detail-link" href="#productdetails/<%= D.productSn %>" target="_blank">
+                                <%= D.fgoodname%>
+                            </a>
+                            <p class="commodity-desc">货号：
+                                <%=D.fgoodcode%>&nbsp;&nbsp;&nbsp;规格：
+                                <%=D.fspec%>
+                            </p>
+                        </span>
+                    </td>
+                    <td class="commodity-num-01">
+                        <%=D.funit%>
+                    </td>
+                    <td class="commodity-num-01">
+                        <%= D.fquantity%>
+                    </td>
+                    <% var price=D.fprice.toFixed(2)%>
+                    <td class="commodity-price-01">¥
+                        <%= price%>
+                    </td>
+                    <td class="transaction-state-01 color-return">
+                        <% if(D.returnStatus!=undefined){%>
+                        <% var return01 = D.returnStatus;if(return01==0){%> 退货申请
+                        <%}else if(return01==1){%> 退货待发货
+                        <%}else if(return01==2){%> 拒绝退货
+                        <%}else if(return01==3){%> 退货取消
+                        <%}else if(return01==4){%> 退货待验收
+                        <%}else if(return01==5){%> 退货完成
+                        <%}else if(return01==6){%> 退货撤销
+                        <%}%>
+                        <%}%>
+                    </td>
+                    <%if(D.detailId===orderInfo.orderDetails[0].detailId){%>
+                    <% var totalPrice=orderInfo.order.totalPrice.toFixed(2);%>
+                    <td rowspan="<%=orderInfo.orderDetails.length%>" class="commodity-account-01">¥
+                        <%= totalPrice%>
+                    </td>
+                    <%}%>
+                </tr>
+                <%});%>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--修改地址-->
+<div id="address-div">
+
+</div>

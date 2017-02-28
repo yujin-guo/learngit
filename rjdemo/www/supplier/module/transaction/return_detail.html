@@ -1,0 +1,624 @@
+<div class="transaction-top">
+    <div class="transaction-top-header">
+        退货单号：
+        <span class="detail-order-id">
+            <% var len=goodsReturnInfo.goodsReturns.length;  %>
+            <%=goodsReturnInfo.goodsReturns[0].returnNo%>
+        </span>
+    </div>
+    <div class="return-pre-order">
+
+        <!--状态判断-->
+        <% var returnStatus=goodsReturnInfo.orderDetail.returnStatus;var timeStatus=goodsReturnInfo.goodsReturns[0];if(returnStatus==0){%>
+        <div class="pre-order-desc return-width-desc">
+            <span class="order-return-submit">买家申请退货</span>
+            <span class="order-return-sure">卖家确认退货</span>
+            <span class="order-return-deliver">买家发货</span>
+            <span class="order-return-success">卖家验收 退货完成</span>
+        </div>
+        <div class="return-pre-order-pic">
+            <span class="return-pic-01">
+                <span class="return-pic-01-div"></span>
+            </span>
+            <span class="return-pic-02">
+                <span class="return-pic-02-div"></span>
+            </span>
+            <span class="return-pic-04">
+                <span class="return-pic-04-div"></span>
+            </span>
+            <span class="return-pic-05">
+                <span class="return-pic-05-div"></span>
+            </span>
+
+        </div>
+        <div class="pre-order-time">
+            <span class="return-submit-time">
+                <%var orderDate1=timeStatus.creationTime; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1];%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+        </div>
+
+        <%}else if(returnStatus==1){%>
+        <div class="pre-order-desc return-width-desc">
+            <span class="order-return-submit">买家申请退货</span>
+            <span class="order-return-sure">卖家确认退货</span>
+            <span class="order-return-deliver">买家发货</span>
+            <span class="order-return-success">卖家验收 退货完成</span>
+        </div>
+        <div class="return-pre-order-pic">
+            <span class="return-pic-01">
+                <span class="return-pic-01-div"></span>
+            </span>
+            <span class="return-pic-03">
+                <span class="return-pic-03-div"></span>
+            </span>
+            <span class="return-pic-02">
+                <span class="return-pic-02-div"></span>
+            </span>
+            <span class="return-pic-05">
+                <span class="return-pic-05-div"></span>
+            </span>
+
+        </div>
+        <div class="pre-order-time">
+            <span class="return-submit-time">
+                <%var orderDate1=timeStatus.creationTime; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1];%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+            <span class="return-sure-time">
+                <%if(timeStatus.replyTime!=undefined){var orderDate2=timeStatus.replyTime; var date2=orderDate2.split(' ')[0],time2=orderDate2.split(' ')[1];}%>
+                <div>
+                    <%= date2%>
+                </div>
+                <div>
+                    <%= time2%>
+                </div>
+            </span>
+        </div>
+        <%}else if(returnStatus==2){%>
+        <div class="pre-order-desc return-width-desc">
+            <span class="order-return-submit">买家申请退货</span>
+            <span class="order-return-sure">卖家拒绝退货</span>
+        </div>
+        <div class="return-pre-order-pic">
+            <span class="return-pic-01">
+                <span class="return-pic-01-div"></span>
+            </span>
+            <span class="return-pic-06">
+                <span class="return-pic-06-div"></span>
+            </span>
+        </div>
+        <div class="pre-order-time">
+            <span class="return-submit-time">
+                <%var orderDate1=timeStatus.creationTime; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1];%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+            <span class="return-sure-time">
+                <%if(timeStatus.replyTime!=undefined){var orderDate2=timeStatus.replyTime; var date2=orderDate2.split(' ')[0],time2=orderDate2.split(' ')[1];}%>
+                <div>
+                    <%= date2%>
+                </div>
+                <div>
+                    <%= time2%>
+                </div>
+            </span>
+
+        </div>
+        <%}else if(returnStatus==3){%>
+        <div class="pre-order-desc return-width-desc">
+            <span class="order-return-submit">买家申请退货</span>
+            <span class="order-return-sure">买家撤销退货</span>
+        </div>
+        <div class="return-pre-order-pic">
+            <span class="return-pic-01">
+                <span class="return-pic-01-div"></span>
+            </span>
+            <span class="return-pic-06">
+                <span class="return-pic-06-div"></span>
+            </span>
+        </div>
+        <div class="pre-order-time">
+            <span class="return-submit-time">
+                <%var orderDate1=timeStatus.creationTime; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1];%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+            <span class="return-close-time">
+                <%if(timeStatus.cancelTime!=undefined){var orderDate5=timeStatus.cancelTime; var date5=orderDate5.split(' ')[0],time5=orderDate5.split(' ')[1];}%>
+                <div>
+                    <%= date5%>
+                </div>
+                <div>
+                    <%= time5%>
+                </div>
+            </span>
+
+        </div>
+        <%}else if(returnStatus==4){%>
+        <div class="pre-order-desc return-width-desc">
+            <span class="order-return-submit">买家申请退货</span>
+            <span class="order-return-sure">卖家确认退货</span>
+            <span class="order-return-deliver">买家发货</span>
+            <span class="order-return-success">卖家验收 退货完成</span>
+        </div>
+        <div class="return-pre-order-pic">
+            <span class="return-pic-01">
+                <span class="return-pic-01-div"></span>
+            </span>
+            <span class="return-pic-03">
+                <span class="return-pic-03-div"></span>
+            </span>
+            <span class="return-pic-03">
+                <span class="return-pic-03-div"></span>
+            </span>
+            <span class="return-pic-07">
+                <span class="return-pic-05-div"></span>
+            </span>
+
+        </div>
+        <div class="pre-order-time">
+            <span class="return-submit-time">
+                <%var orderDate1=timeStatus.creationTime; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1];%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+            <span class="return-sure-time">
+                <%if(timeStatus.replyTime!=undefined){var orderDate2=timeStatus.replyTime; var date2=orderDate2.split(' ')[0],time2=orderDate2.split(' ')[1];}%>
+                <div>
+                    <%= date2%>
+                </div>
+                <div>
+                    <%= time2%>
+                </div>
+            </span>
+            <span class="return-deliver-time">
+                <%if(timeStatus.returnTime!=undefined){var orderDate3=timeStatus.returnTime; var date3=orderDate3.split(' ')[0],time3=orderDate3.split(' ')[1];}%>
+                <div>
+                    <%= date3%>
+                </div>
+                <div>
+                    <%= time3%>
+                </div>
+            </span>
+
+        </div>
+        <%}else if(returnStatus==6){%>
+        <div class="pre-order-desc return-width-desc">
+            <span class="order-return-submit">买家申请退货</span>
+            <span class="order-return-sure">卖家确认退货</span>
+            <span class="order-return-sure">买家撤销退货</span>
+        </div>
+        <div class="return-pre-order-pic">
+            <span class="return-pic-01">
+                <span class="return-pic-01-div"></span>
+            </span>
+            <span class="return-pic-03">
+                <span class="return-pic-03-div"></span>
+            </span>
+            <span class="return-pic-06">
+                <span class="return-pic-06-div"></span>
+            </span>
+
+        </div>
+        <div class="pre-order-time">
+            <span class="return-submit-time">
+                <%var orderDate1=timeStatus.creationTime; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1];%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+            <span class="return-sure-time">
+                <%if(timeStatus.replyTime!=undefined){var orderDate2=timeStatus.replyTime; var date2=orderDate2.split(' ')[0],time2=orderDate2.split(' ')[1];}%>
+                <div>
+                    <%= date2%>
+                </div>
+                <div>
+                    <%= time2%>
+                </div>
+            </span>
+            <span class="return-deliver-time">
+                <%if(timeStatus.cancelTime!=undefined){var orderDate6=timeStatus.cancelTime; var date6=orderDate6.split(' ')[0],time6=orderDate6.split(' ')[1];}%>
+                <div>
+                    <%= date6%>
+                </div>
+                <div>
+                    <%= time6%>
+                </div>
+            </span>
+        </div>
+        <%}else if(returnStatus==5){%>
+        <div class="pre-order-desc return-width-desc">
+            <span class="order-return-submit">买家申请退货</span>
+            <span class="order-return-sure">卖家确认退货</span>
+            <span class="order-return-deliver">买家发货</span>
+            <span class="order-return-success">卖家验收 退货完成</span>
+        </div>
+        <div class="return-pre-order-pic">
+            <span class="return-pic-01">
+                <span class="return-pic-01-div"></span>
+            </span>
+            <span class="return-pic-03">
+                <span class="return-pic-03-div"></span>
+            </span>
+            <span class="return-pic-03">
+                <span class="return-pic-03-div"></span>
+            </span>
+            <span class="return-pic-06">
+                <span class="return-pic-06-div"></span>
+            </span>
+
+        </div>
+        <div class="pre-order-time">
+            <span class="return-submit-time">
+                <%var orderDate1=timeStatus.creationTime; var date1=orderDate1.split(' ')[0],time1=orderDate1.split(' ')[1];%>
+                <div>
+                    <%= date1%>
+                </div>
+                <div>
+                    <%= time1%>
+                </div>
+            </span>
+            <span class="return-sure-time">
+                <%if(timeStatus.replyTime!=undefined){var orderDate2=timeStatus.replyTime; var date2=orderDate2.split(' ')[0],time2=orderDate2.split(' ')[1];}%>
+                <div>
+                    <%= date2%>
+                </div>
+                <div>
+                    <%= time2%>
+                </div>
+            </span>
+            <span class="return-deliver-time">
+                <%if(timeStatus.returnTime!=undefined){var orderDate3=timeStatus.returnTime; var date3=orderDate3.split(' ')[0],time3=orderDate3.split(' ')[1];}%>
+                <div>
+                    <%= date3%>
+                </div>
+                <div>
+                    <%= time3%>
+                </div>
+            </span>
+            <span class="return-success-time">
+                <%if(timeStatus.receiveTime!=undefined){var orderDate4=timeStatus.receiveTime; var date4=orderDate4.split(' ')[0],time4=orderDate4.split(' ')[1];}%>
+                <div>
+                    <%= date4%>
+                </div>
+                <div>
+                    <%= time4%>
+                </div>
+            </span>
+        </div>
+        <%}%>
+        <!--状态判断结束-->
+    </div>
+</div>
+<div class="transaction-center">
+    <div class="left transaction-center-left">
+        <p class="transaction-center-title">账号信息</p>
+        <div class="transaction-center-left01">
+            <div>
+                <span class="transaction-center-01">采购方：</span>
+                <span class="transaction-center-02">
+                    <%=goodsReturnInfo.order.fusername%>
+                </span>
+            </div>
+            <div>
+                <span class="transaction-center-01">采购组：</span>
+                <span class="transaction-center-02">
+                    <%=goodsReturnInfo.order.fbuydepartment%>
+                </span>
+            </div>
+            <div>
+                <span class="transaction-center-01">采购人：</span>
+                <span class="transaction-center-02">
+                    <%=goodsReturnInfo.order.fbuyername%>
+                </span>
+            </div>
+            <div>
+                <span class="transaction-center-01">联系电话：</span>
+                <span class="transaction-center-02">
+                    <%=goodsReturnInfo.order.contactphone%>
+                </span>
+            </div>
+            <div class="transaction-center-01">收货地址：</div>
+            <div class="transaction-address">
+                <div class="transaction-address-inner">
+                    <!--<%=goodsReturnInfo.order.fbiderdeliveryplace%>-->
+                    <span class="addr-name">
+                        <%= goodsReturnInfo.order.fbuyercontactman%>
+                    </span>
+                    <span class="addr-mobile">
+                        <%= goodsReturnInfo.order.fbuyertelephone%>
+                    </span>
+                    <span class="addr-addr">
+                        <%= goodsReturnInfo.order.fbiderdeliveryplace%>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left transaction-center-right">
+        <!--状态判断-->
+        <%var returnStatus=goodsReturnInfo.orderDetail.returnStatus;if(returnStatus==0){%>
+        <div class="transaction-center-title">
+            <p class="left">请处理退货申请</p>
+            <!--<div class="right" style="font-weight: normal;">
+                倒计时：
+                <span class="time">04</span>天
+                <span class="time">23</span>时
+                <span class="time">38</span>分
+                <span class="time">30</span>秒
+            </div>-->
+        </div>
+        <div class="transaction-center-right02 transaction-clear-border background">
+            <p class="transaction-center-right03 return-padding01">
+                1、如果同意，请把货退给供应商。<br /> 2、如果拒绝，请写明拒绝理由
+                <br /> 3、如果您逾期未响应申请，视作同意采购人申请，系统默认退货成功。
+                <br />
+            </p>
+        </div>
+        <div>
+            <a class="link-btn apply-link-event left event-btn" href="javascript:void(0)" data-flag="agree">同意退货</a>
+            <div class="right">
+                您还可以：
+                <span class="event-btn refuse" data-flag="refuse">拒绝退货</span>
+            </div>
+        </div>
+        <!--同意退货/拒绝退货弹窗-->
+        <div class="info-wrap" style="height: 400px;">
+            <div class="info-content">
+                <h4>请填写拒绝理由</h4>
+                <div class="info-content-inner">
+                    <div class="pic">
+                        <span class="transaction-info-title">
+                            图片说明：
+                        </span>
+                        <span class="refuse-pic-select">
+                            +
+                            <form id="return-form">
+                                <input class="file-upload" name="file" type="file" multiple="multiple" />
+                                <input type="hidden" name="fileType" value="image">
+                                <input type="hidden" name="category" value="NORMAL">
+                            </form>
+                            <div class="pic-select-desc">选择图片</div>
+                        </span>
+                    </div>
+                    <div class="textarea">
+                        <span class="transaction-info-title change-word">
+                            文字说明：
+                        </span>
+                        <textarea id="refuse-textarea" maxlength="100"></textarea>
+                        <div style="color: #999;margin-left: 85px;">(<span id="num">0</span>/100)</div>
+                    </div>
+                    <div class="reason-control" style="width: 100%;height: 40px;">
+                        <span class="transaction-info-title">
+                        </span>
+                        <a href="javascript:void(0)" class="refuse-link sure">确认</a>
+                        <input type="button" value="取消" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%}else if(returnStatus==1){%>
+        <div class="transaction-center-title">
+            <p class="left"> 等待买家发货</p>
+            <!--<div class="right" style="font-weight: normal;">
+                倒计时：
+                <span class="time">04</span>天
+                <span class="time">23</span>时
+                <span class="time">38</span>分
+                <span class="time">30</span>秒
+            </div>-->
+        </div>
+        <div class="transaction-center-right02 transaction-clear-border background">
+            <p class="transaction-center-right03 return-padding01">
+                1、您已同意退货，等待买家发货中。<br /> 2、如果您已收到货，请确认收货。
+            </p>
+        </div>
+        <div>
+            <a class="link-btn event-btn" href="javascript:void(0)" data-flag="recieve">确认收货</a>
+        </div>
+        <%}else if(returnStatus==2){%>
+        <div class="transaction-center-title">
+            您已拒绝退货
+        </div>
+        <div class="transaction-center-right02 transaction-clear-border background">
+            <p class="transaction-center-right03 return-padding01">
+                1、您拒绝了买家的申请退货。
+            </p>
+        </div>
+        <%}else if(returnStatus==4){%>
+        <div class="transaction-center-title">
+            <p class="left">请确认收货</p>
+            <!--<div class="right" style="font-weight: normal;">
+                倒计时：
+                <span class="time">04</span>天
+                <span class="time">23</span>时
+                <span class="time">38</span>分
+                <span class="time">30</span>秒
+            </div>-->
+        </div>
+        <div class="transaction-center-right02 transaction-clear-border background">
+            <p class="transaction-center-right03 return-padding01">
+                1、买家已发货，请注意查收。<br /> 2、如果您已收到货，请确认收货。
+            </p>
+        </div>
+        <div>
+            <a class="link-btn event-btn" href="javascript:void(0)" data-flag="recieve">确认收货</a>
+        </div>
+        <%}else if(returnStatus==5){%>
+        <div class="transaction-center-title">
+            退货完成
+        </div>
+        <div class="transaction-center-right02 transaction-clear-border background">
+            <p class="transaction-center-right03 return-padding01">
+                1、退货完成。
+            </p>
+        </div>
+        <%}else if(returnStatus==3||returnStatus==6){%>
+        <div class="transaction-center-title">
+            请处理退货申请
+        </div>
+        <div class="transaction-center-right02 transaction-clear-border background">
+            <p class="transaction-center-right03 return-padding01">
+                1、买家已撤销退货
+            </p>
+        </div>
+        <%}%>
+        <!--状态判断结束-->
+    </div>
+</div>
+<!--退货商品-->
+<div class="transaction-bottom">
+    <div>
+        <span class="color-icons"></span>
+        <span class="color-name">退货商品</span>
+        <span class="color-border"></span>
+    </div>
+    <div class="return-wrap">
+        <table class="return-table">
+            <tr>
+                <td class="return-commodity-name">
+                    <span class="commodity-picture">
+                        <img src="<%= goodsReturnInfo.orderDetail.fpicpath%>" />
+                    </span>
+                    <span class="return-commodity-detail">
+                        <a class="return-commodity-link" href="#productdetails/<%= goodsReturnInfo.orderDetail.productSn %>">
+                            <%=goodsReturnInfo.orderDetail.fgoodname%>
+                        </a>
+                        <p class="commodity-desc fontsize">
+                            货号：<%=goodsReturnInfo.orderDetail.productSn%>&nbsp;&nbsp;&nbsp;规格： <%=goodsReturnInfo.orderDetail.funit%>
+                            <!--<%=goodsReturnInfo.orderDetail.funit%>
+                            <%=goodsReturnInfo.orderDetail.fspec%>-->
+                        </p>
+                    </span>
+                </td>
+                <td class="return-commodity-info">
+                    <div class="return-info-div">退货数量：
+                        <span class="return-num">
+                            <%=timeStatus.quantity%>
+                        </span>
+                    </div>
+                    <%var price=(goodsReturnInfo.orderDetail.fprice*_.first(goodsReturnInfo.goodsReturns).quantity).toFixed(2);%>
+                    <div class="return-info-div return-margin-div">退货金额：
+                        <span class="return-money">￥
+                            <%=price%>
+                        </span>
+                    </div>
+                    <div class="return-info-div">订单编号：
+                        <span class="return-id">
+                            <%=goodsReturnInfo.order.forderno%>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!--留言板-->
+<div class="transaction-bottom">
+    <div class="return-wrap">
+        <div>
+            <span class="color-icons"></span>
+            <span class="color-name">退货说明</span>
+            <span class="color-border" style="width: 842px;"></span>
+        </div>
+    </div>
+    <div class="message-board-wrap">
+        <%_.each(goodsReturnInfo.goodsReturns,function(G){%>
+        <% if(G.replyTime) {%>
+        <div class="message-board">
+            <div class="message-board-title">
+                <div class="left message-cell">
+                    <%=goodsReturnInfo.order.fsuppname%>
+                </div>
+                <div class="right message-time">
+                    <%=G.replyTime%>
+                </div>
+            </div>
+            <div class="message-board-commodity">
+                <div class="return-info-div">
+                   <% if(G.refuseReason){%>拒绝退货：<%}else{%>同意退货：<%}%>
+                    <span class="return-num board-refuse-desc">
+                        <% if(G.refuseReason){%><%=G.refuseReason%><%}else{if(G.agreeReason){%><%=G.agreeReason%><%}else{%>供应商同意退货。<%}} %>
+                    </span>
+                </div>
+                <div class="return-info-div return-margin-div">退货凭证：
+                    <span class="board-span board-refuse-desc">
+                        <% if(G.picth){%>
+                           <span class="message-img">
+                                <img src="<%= G.picth %>" />
+                           </span> 
+                        <%} %>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <%}%>
+        <div class="message-board">
+            <div class="message-board-title">
+                <div class="left message-cell">
+                    <%= G.applyName %>
+                </div>
+                <div class="right message-time">
+                    <%=G.creationTime%>
+                </div>
+            </div>
+            <div class="message-board-commodity" style="padding-top: 0;padding-bottom: 0;">
+                <div class="message-word">
+                    <div class="return-info-div" style="margin: 10px 0;">
+                        退货原因：
+                        <span class="board-span">
+                            <%=G.returnReason%>
+                        </span>
+                    </div>
+                    <div class="return-info-div" style="margin: 10px 0;">
+                        说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明：
+                        <span class="board-span">
+                            <%=G.remark%>
+                        </span>
+                    </div>
+                    <div class="return-info-div" style="margin: 10px 0;">
+                        退货凭证：
+                        <span class="board-span">
+                            <%if(G.urls.length){ _.each(G.urls,function(U){%>
+                            <span class="message-img">
+                                <img src="<%= U %>" alt="退货图片" />
+                            </span>
+                            <% })} %>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%})%>
+    </div>
+</div>
+
+<div class="pic-big-div">
+    <img src="" />
+</div>

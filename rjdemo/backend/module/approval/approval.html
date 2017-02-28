@@ -1,0 +1,105 @@
+<%= nav %>
+<div class="left content supply">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">供应商管理</span>
+            </div>
+        </div>
+        <div class="infomation">
+            <div class="matures">
+                <div class="search-div">
+                    <span>申请时间：
+                    <input class="supply-date" type="text" placeholder="<%=common.getOneMonthDate()%>" id="startTime" />
+                    <span class="supply-line">-</span>
+                        <input class="supply-date" type="text" placeholder="<%=common.getDate()%>" id="endTime" />
+                    </span>
+                    <input class="search-input" type="text" placeholder="供应商编号/供应商名称/联系人" />
+                    <a class="search-btn" href="javascript:;"></a>
+                </div>
+            </div>
+            <table class="list-table">
+                <thead>
+                    <tr>
+                        <th class="apply-id">供应商编码</th>
+                        <th class="supplier">供应商名称</th>
+                        <th class="date">申请时间</th>
+                        <th class="human">联系人</th>
+                        <th class="phone-number">联系电话</th>
+                        <th class="status-td">
+                            <select>
+                                <option value="-1">状态</option>
+                                <option value="0">未认证</option>
+                                <option value="1">审核中</option>
+                                <option value="2">已认证</option>
+                                <option value="3">已驳回</option>
+                                <option value="4">已过期</option>
+                                <!-- <option value="5">已拉黑</option> -->
+                            </select>
+                        </th>
+                        <th class="control">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="supplierList">
+                    <% if(flag==true){_.each(entities,function(i){%>
+                    <tr>
+                        <td class="apply-id"><%=i.suppcode%></td>
+                        <td class="supplier"><%=i.suppname%></td>
+                        <td class="date"><%=common.getLocalTime(new Date(i.creationTime))%></td>
+                        <td class="human"><%=i.contactman%></td>
+                        <td class="phone-number"><%=i.mobile%></td>
+                        <%if(i.status==0){%>
+                            <td class="status-td">未认证</td>
+                        <%}%>
+                        <%if(i.status==1){%>
+                            <td class="status-td">审核中</td>
+                        <%}%>
+                        <%if(i.status==2){%>
+                            <td class="status-td">已认证</td>
+                        <%}%>
+                        <%if(i.status==3){%>
+                            <td class="status-td">已驳回</td>
+                        <%}%>
+                        <%if(i.status==4){%>
+                            <td class="status-td">已过期</td>
+                        <%}%>
+                        <%if(i.status==5){%>
+                            <td class="status-td">已拉黑</td>
+                        <%}%>
+                        <td class="control">
+                            <a href="#approvaldetails/<%=i.id%>/<%=i.status%>" class="supply-check">查看</a>
+                            <!--<%if(i.status!==5){%>
+                                <a href="javascript:;" data-id="<%=i.id%>" data-status="<%=i.status%>"  class="supply-blacklist control-link-oms">拉到黑名单</a>
+                            <%}%>
+                            <%if(i.status==5){%>
+                                <a href="javascript:;" data-id="<%=i.id%>" data-status="<%=i.status%>" class="supply-remove-blacklist control-link-oms">解除黑名单</a>
+                            <%}%>-->
+                        </td>
+                    </tr>
+                    <%})}else{%>
+                    <tr>
+                        <td class="supply-no-result" colspan="7">
+                            暂无结果。   
+                        </td> 
+                    </tr>
+                    <%}%>
+                </tbody>
+            </table>
+            <div class="matures">
+                <div class="page">
+                    <div class="right"><a class="endpoint" href="javascript:void(0)">尾页</a></div>
+                    <div class="right" id="pagination">   
+                    </div>
+                    <div class="right"><a class="endpoint" href="javascript:void(0)">首页</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

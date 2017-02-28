@@ -1,0 +1,117 @@
+<div class="accessment-detail-commdity-wrap">
+    <div class="left accessment-detail-commdity">
+        <span class="commodity-picture"><img src="<%= collect.picPath %>" /></span>
+        <span class="comodity-name-detail">
+            <a class="name-detail-link" href="#productdetails/<%= collect.productSn %>" target="_blank">
+                <%= collect.name %>
+            </a>
+            <p class="commodity-desc">
+                <%= collect.spec %>
+            </p>
+        </span>
+    </div>
+    <div class="left accessment-detail-num">
+        <div class="left accessment-detail-num-half half-left">
+            共
+            <span class="accessment-detail-tiao">
+                <%= collect.count %>
+            </span>条评论
+        </div>
+        <div class="left accessment-detail-num-half">
+            <div class="accessment-detail-good-div">
+                <span class="accessment-pic-good"></span>
+                <span class="accessment-detail-word">好评</span>
+                <span class="accessment-detail-good-tiao">
+                    <%_.each(collect.comBases,function(c){if(c.level==3){%>
+                    <% c.count %>
+                    <%}});%>
+                </span>
+            </div>
+            <div class="accessment-detail-soso-div">
+                <span class="accessment-pic-soso"></span>
+                <span class="accessment-detail-word">中评</span>
+                <span class="accessment-detail-soso-tiao">
+                    <%_.each(collect.comBases,function(c){if(c.level==1){%>
+                    <% c.count %>
+                    <%}});%>
+                </span>
+            </div>
+            <div class="accessment-detail-bad-div">
+                <span class="accessment-pic-bad"></span>
+                <span class="accessment-detail-word">差评</span>
+                <span class="accessment-detail-bad-tiao">
+                    <%_.each(collect.comBases,function(c){if(c.level==1){%>
+                    <% c.count %>
+                    <%}});%>
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="accessment-list">
+    <% if(flag==true){_.each(proComs,function(A){%>
+    <div class="accessment-list">
+        <div class="list-title">
+            订单编号：
+            <span class="order-id">
+                <%= A.orderNo %>
+            </span>
+            <span class="order-name">
+                <%= A.buyer %>
+            </span>
+            <span class="order-date">
+                <%= A.orderDate %>
+            </span>
+        </div>
+        <div class="accessment-list-inner">
+            <div class="left">
+                <span class="accessment-show">
+                    <% if(A.level==1){%>
+                    <span class="accessment-pic-bad"></span>
+                    <p class="accessment">差评</p>
+                    <%}else if(A.level==2){%>
+                    <span class="accessment-pic-soso"></span>
+                    <p class="accessment">中评</p>
+                    <%}else if(A.level==3){%>
+                    <span class="accessment-pic-good"></span>
+                    <p class="accessment">好评</p>
+                    <%} %>
+
+                </span>
+                <span class="accessment-detail-simple">
+                    <p class="accessment-detail-sentence">
+                        <%= A.comment %>
+                    </p>
+                </span>
+            </div>
+        </div>
+    </div>
+    <%})}else{%>
+    <p class="empty" style="margin: 20px 0;">
+        暂无评论！
+    </p>
+    <%} %>
+
+    <!--页码-->
+    <div class="page-wrap" <% if(flag==false){%>style="display:none"
+        <%} %>>
+        <div class="right page-total">
+            共
+            <span class="total-page-num">
+                <% if(flag==true){%>
+                <%= totalPages %>
+                <%}else{%>0
+                <%}%>
+            </span>页
+        </div>
+        <div class="right">
+            <a class="endpoint end" data-flag="end" href="javascript:void(0)">&nbsp;&nbsp;</a>
+        </div>
+        <div class="page right" id="pagination">
+        </div>
+        <div class="right">
+            <a class="endpoint head" data-flag="head" href="javascript:void(0)">&nbsp;&nbsp;</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="commodity-list-pic">
+    <% if(flag==true){_.each(products,function(P){if(P!==null){%>
+    <span class="interes-commodity-cell">
+        <img src="<%= P.photo %>" />
+        <span class="interest-commodity-span">
+            <div class="commodity-pic-description">
+                <a class="commodity-link" href="../purchaser/index.html#details/<%= P.sn %>/<%=P.suppId%>" target="_blank">
+                    <%= P.name %>
+                </a>
+            </div>
+            <span class="cancel-interest-link">取消关注</span>
+            <input type="hidden" class="sn" value="<%= P.sn %>" />
+        </span>
+    </span>
+    <% }});}else{%>
+    <div class="empty-interest">
+        暂时没有关注内容！
+    </div>
+
+    <%}%>
+</div>

@@ -1,0 +1,142 @@
+<div class="purchase-list">
+    <div class="purchase-list-wrap">
+        <div class="list-header" style="font-size: 0;">
+            <div class="list-header-left left"><span class="list-header-all list-active">全部</span>
+                <span class="list-header-carring">审批中</span>
+                <span class="list-header-done">审批通过</span>
+                <span class="list-header-done">审批驳回</span>
+            </div>
+            <div class="list-header-right left">
+                <div class="list-header-search right">
+                    <input type="text" placeholder="请输入采购人/申请编号/采购部门" /><input type="button" id="search" value="搜索" />
+                    <a href="javascript:void(0)" class="more-search">更多 </a>
+                    <span class="direction-icon"></span>
+                </div>
+            </div>
+        </div>
+        <!--更多搜索开始-->
+        <div class="more-content border-style">
+            <form>
+                <div class="more-content-inner">
+                    <div class="left"><span>采购编号：</span>
+                        <input type="text" id="order-number" />
+                    </div>
+                    <div class="left more-content-choose status-relative"><span>采购部门：</span>
+                        <input type="text" class="search-cell"  id="order-per" readonly />
+                        <span class="status-change-icon"></span>
+                        <dl class="status-absolute">
+                            <% _.each(departments,function(De){%>
+                                <dt><%= De.name %></dt>
+                            <%}); %>
+                        </dl>
+                    </div>
+                    <div class="left more-content-choose status-relative"><span>采购状态：</span>
+                        <input type="text" class="search-cell" id="order-cell-text" readonly />
+                        <input type="hidden" id="order-recon" />
+                        <span class="status-change-icon"></span>
+                        <dl class="status-absolute">
+                            <dt data-value="">全部</dt>
+                            <dt data-value="1">审批中</dt>
+                            <dt data-value="3">审批驳回</dt>
+                            <dt data-value="4">审批通过</dt>
+                        </dl>
+                    </div>
+                </div>
+                <div class="more-content-inner">
+                    <div class="left">
+                        <span>起始时间：</span>
+                        <input type="text" id="begin-time" />
+                    </div>
+                    <div class="left more-content-choose">
+                        <span>结束时间：</span>
+                        <input type="text" id="over-time" />
+                    </div>
+
+                </div>
+                <div class="more-content-control">
+                    <input type="button" id="detail-search" value="搜索" />
+                    <input type="reset" value="重置" />
+                </div>
+            </form>
+        </div>
+        <!--更多搜索结束-->
+        <!--content-->
+        <div class="list-content" id="list-content">
+            <table class="table-all">
+                <thead>
+                    <tr>
+                        <th class="table-th-01">采购申请编号</th>
+                        <th class="table-th-02 single-dep single-flag">采购部门
+                        <dl class="single-status-absolute dep">
+                            <% _.each(departments,function(De){%>
+                                <dt><%= De.name %></dt>
+                            <%}); %>
+                        </dl> 
+                       </th>
+                        <th class="table-th-03">采购申请金额</th>
+                        <th class="table-th-04">申请日期</th>
+                        <th class="table-th-05">采购申请状态
+                            <!-- single-staus single-flag-->
+                        <!--<dl class="single-status-absolute stu">
+                            <dt data-value="">全部</dt>
+                            <dt data-value="1">审批中</dt>
+                            <dt data-value="3">审批驳回</dt>
+                            <dt data-value="4">审批通过</dt>
+                        </dl>-->
+                        </th>
+                        <th class="table-th-06">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="list-tbody">
+                    <% if(purchaseApplys.length>=1){_.each(purchaseApplys,function(L){%>
+                    <% var amount=L.fprevbudgetamount; var amounts=amount.toFixed(2)%>
+                    <tr>
+                        <td>
+                            <%= L.fbuyapplicationno %>
+                        </td>
+                        <td>
+                            <%= L.fbuydepartment %>
+                        </td>
+                        <td>￥
+                            <%= amounts %>
+                        </td>
+                        <td>
+                            <%= L.fbuyapplicationdate %>
+                        </td>
+                        <td>
+                            <% if(L.status==1){%>
+                                   审批中
+                                <%}else if(L.status==3){%>
+                                    审批驳回
+                                <%}else if(L.status==4){%>
+                                    审批通过
+                                <%}%>
+                        </td>
+                        <td>
+                            <a href="#purcharsedetail?id=<%= L.id %>">查看</a>
+                        </td>
+                    </tr>
+                    <%});%>
+                    <!--页码-->
+                    <tr class="list-page">
+                        <td colspan="6" class="page-td">
+                            <span id="pagination"></span>
+                            <span class="total-page-show">
+                                共<span class="total-page-num">
+                                    <% if(purchaseApplys.length<1){var totalPages=0;} %>                                    
+                                    <%= totalPages%></span>页
+                            </span>
+                        </td>
+                    </tr>
+                    <%}else{%>
+                    <tr>
+                        <td colspan="6" class="empty-td">暂时没有申请单！</td>
+                    </tr>
+                    <%}%>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

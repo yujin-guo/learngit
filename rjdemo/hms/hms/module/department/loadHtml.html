@@ -1,0 +1,29 @@
+<%if(flag==true){_.each(departmentItems,function(D){%>
+<tr>
+    <td class="department-td-name">
+        <%= D.name %>
+    </td>
+    <td class="department-td-status">
+        <% if(D.type==1){%> 管理部门
+        <%}else{%> 采购部门
+        <%} %>
+    </td>
+    <td class="department-td-main">
+        <% if(D.managerName){%>
+        <%= D.managerName %>
+        <%}else{%> --
+        <%}%>
+    </td>
+    <!--<td class="department-td-num">
+        <%= D.countMembers %>
+    </td>-->
+    <td class="department-td-control">
+        <a href="#dDetail?id=<%= D.id %>" class="control-link">查看</a>
+        <a href="javascript:void(0);" data-id="<%= D.id %>" class="control-link delete-department">删除</a>
+    </td>
+</tr>
+<%})}else{%>
+<tr>
+    <td class="empty-td" colspan="5">暂无数据!</td>
+</tr>
+<%}%>

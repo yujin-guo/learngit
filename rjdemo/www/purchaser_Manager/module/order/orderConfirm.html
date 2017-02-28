@@ -1,0 +1,25 @@
+<!--修改供应商经费卡弹窗-->
+<div class="purchase-card-wrap"></div>
+<div class="order-confirm-receive">
+    <div class="order-confirm">
+        <div class="order-confirm-title">
+            <div class="card-head left">确认验收</div>
+            <div class="card-head-icon right"></div>
+        </div>
+        <div class="photos-upload">
+            <p class="photos-upload-title">请上传发货单照和货品全照</p>
+            <a class="photos-upload-click" href="javascript:;">本地上传</a>
+            <form id="orderConfirm">
+                <input type="file" name="file" style="display:none" id="fileUpload">
+                <input type='hidden' name="fileType" value="image">
+                <input type="hidden" name="category" value="NORMAL">
+            </form>
+            <ul class="gallery">
+                <li class="no-photo">暂无图片。</li>
+            </ul>
+        </div>
+        <div class="clear card-chose-div">
+            <a class="card-sure-link" href="javascript:void(0)">确认</a>
+        </div>
+    </div>   
+</div>

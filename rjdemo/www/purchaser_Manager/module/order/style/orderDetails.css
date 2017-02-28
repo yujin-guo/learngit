@@ -1,0 +1,61 @@
+.o-details-flow{border:solid #ccc 1px;padding:20px 30px;margin-bottom:20px}
+.o-details-flow .o-details-flow-txt{height:32px;line-height:32px;background-color:#f2f2f2;color:#999;padding-left:18px;font-weight:600;}
+.o-details-flow .o-details-flow-num{color:#333;font-weight:normal;padding-left:10px}
+.o-details-flow .o-details-flow-condition{margin:20px 0 0 50px;}
+.o-details-flow-condition .o-details-flow-steps{color:#999;}
+.o-details-flow-condition .o-details-flow-one{float:left;width:150px;text-align:left;}
+.o-details-flow-condition .o-details-flow-finish{margin-right:-95px}
+.o-details-flow-condition .o-details-flow-done{color:#32ab94;}
+.o-details-flow-condition .o-details-flow-img{height:50px;background:url(images/flow.png) no-repeat;}
+.o-details-flow-condition .o-details-flow-pos1{background-position:25px 15px;}
+.o-details-flow-condition .o-details-flow-pos2{background-position:25px -27px;}
+.o-details-flow-condition .o-details-flow-pos3{background-position:25px -68px;}
+.o-details-flow-condition .o-details-flow-pos4{background-position:25px -111px;}
+.o-details-flow-condition .o-details-flow-pos5{background-position:25px -152px;}
+.o-details-flow-condition .o-details-flow-pos6{background-position:25px -194px;}
+.o-details-flow-condition .o-details-flow-time{text-indent:12px}
+
+.o-details-flow-condition .o-details-order-status{margin-left:-50px;margin-bottom:10px;font-size:16px;font-weight:bold;}
+.o-details-flow-condition .o-details-order-cancel{margin-left:-50px;margin-bottom:5px}
+.o-details-flow-condition .o-details-returned{color:#298d79;margin-left:-50px}
+
+.o-details-state{height:140px;border:solid 1px #b7ecdd;background-color:#f0fbf8;margin-bottom:20px;padding:30px;line-height:22px;color:#333}
+.o-details-state .o-details-current{color:#666;font-size:16px;font-weight:bold; padding-bottom:20px;margin-bottom:15px;border-bottom:dotted 1px #b7ecdd}
+.o-details-state .o-details-state-name{font-size:16px}
+.o-details-state .o-details-state-tip{font-size:12px;color:#666}
+.o-details-state .o-details-state-cancel{color:#298d79;padding-left:4px;font-size:12px}
+
+.o-details-info{border:solid #e4e4e4 1px;padding:20px 10px 20px 40px}
+.o-details-info .o-details-address{width:260px;height:145px;border:solid #e4e4e4 1px;padding:10px 20px;background-color:#fafafa;line-height:22px;margin-right:35px}
+.o-details-info .o-details-address-title{background:url(images/address.png) no-repeat 0 5px;font-size:16px;color:#298d79;line-height:25px;border-bottom:solid 1px #e4e4e4;margin-bottom:10px;text-indent:32px}
+.o-details-info .o-details-one-side{width:583px;margin-bottom:15px;border-bottom:solid 1px #e4e4e4;padding-bottom:10px;line-height:22px}
+.o-details-info .o-details-one-side h3{font-size:16px;line-height:21px;margin-bottom:10px;}
+.o-details-one-side dl dt{float:left;width:70px;color:#999}
+.o-details-one-side dl dd{float:left;width:180px;height:22px}
+.o-details-one-side dl .o-details-dd{width:260px;height:22px}
+
+.o-details-product-title{font-weight:bold;line-height:40px;font-size:16px}
+.o-details-product .o-details-product-title-list{height:36px;background-color:#f0fbf8;}
+
+.o-details-product .o-details-width-a{width:390px}
+.o-details-product .o-details-width-b{width:120px;}
+.o-details-product .o-details-width-c{width:100px;}
+.o-details-product .o-details-width-d{width:90px;}
+.o-details-product .o-details-width-e{border-right:none;}
+.o-details-product table{border:solid #b7ecdd 1px;}
+.o-details-product table th{font-weight:normal;}
+.o-details-product table td{border-right:solid #b7ecdd 1px;border-top:solid #b7ecdd 1px;text-align:center}
+.o-details-product .o-details-product-last{border-bottom:none;}
+.o-details-product .o-details-product-img{height:50px;width:50px;margin:10px;margin-right:0;vertical-align:top}
+.o-details-product .o-details-product-text{margin:10px;width:300px;display:inline-block;text-align:left;color:#666}
+.o-details-product .o-details-product-text a{color:#666}
+.o-details-product .o-details-product-text a:hover{color:#32ab94;text-decoration:underline}
+.o-details-product .o-details-product-size{color:#999;line-height:22px}
+
+.o-details-table{margin-bottom:10px}
+.o-details-product .o-details-product-footer{text-align:right;line-height:28px;margin-top:20px}
+.o-details-product .o-details-product-price{text-align:right;font-size:28px;color:#298d79;vertical-align:-5px}
+/* 孙逸仙验收照片 */
+.o-details .o-details-photos{margin-top:20px;padding-top: 20px;border-top:solid 1px #e4e4e4;}
+.o-details .o-details-photos img{width:90px;height: 90px;margin-right:20px;}
+.o-details .o-details-photos .o-details-photos-title{font-size:16px;margin-bottom:10px;}

@@ -1,0 +1,88 @@
+<!--引入搜索模块-->
+<%= search %>
+<!--引入导航模块-->
+<div id="navModule"><%= nav%></div>
+<div class="commodity-wrap">
+    <div class="cm-main">
+        <div class="commodity-header">
+            <div class="commodity-header-bread">
+                <div class="left breads-all">全部
+                </div>
+                <div class="commodity-total">共<span class="commodity-total-number" id="total-com"><%= total %></span>个商品</div>
+            </div>
+        </div>
+        <div class="commodity-section">
+            <div class="commodity-sort">
+                <span class="commodity-sort-left commodity-active clear-border-half price-sort-flag" data-flag="sale">销量</span>
+                <!--<span class="commodity-sort-left clear-border-half">价格</span>-->
+                <span class="commodity-sort-left price-sort-flag" data-flag="price">价格</span>
+                <span class="right find-active  margin04">
+                    <span class="commodity-sort-right commodity-active" data-flag="pic">图片模式<span class="pic-icon"></span></span>
+                <span class="commodity-sort-right" data-flag="list">列表模式<span class="list-icon"></span></span>
+                </span>
+            </div>
+        </div>
+        <!--商品列表strat-->
+        <div class="commodity-list" id="commodity-list">
+            <!--图片模式-->
+            <div class="commodity-list-pic">
+                <%if(flag==true){ _.each(products,function(p){%>
+                <% var prices=p.price.toFixed(2)%>
+                <a class="commodity-pic-cell" href="#/details/<%= p.sn %>/<%=p.suppId%>" target="_blank">
+                    <img src="<%= p.photo%>" />
+                    <span class="commodity-pic-price"><span class="pic-price">￥<%= prices %></span><span class="deal-numbers">成交量：<span><%= p.saleAmount %></span></span>
+                    </span>
+                    <span class="commodity-pic-description"><span class="commodity-link"><%= p.name%></span>
+                    </span>
+                </a>
+                <% });}else{%>
+                <div class="commodity-empty">
+                    <div class="commodity-empty-inner">
+                        <div class="commodity-empty-p01">抱歉，沒有找到相关的宝贝</div>
+                        <p class="commodity-empty-p02">建议您：</p>
+                        <p class="commodity-empty-p02">1. 看看输入文字是否有误</p>
+                        <p class="commodity-empty-p02">2. 调整关键词</p>
+                    </div>
+                </div>
+                <%} %>
+            </div>
+            <!--列表模式-->
+            <div class="commodity-list-lists">
+                <%if(flag==true){%>
+                <ul class="commodity-lists-cell">
+                    <% _.each(products,function(p){%>
+                    <% var prices=p.price.toFixed(2)%>
+                    <li>
+                        <a class="list-cell-link" href="#/details/<%= p.sn %>/<%=p.suppId%>" target="_blank">
+                            <div class="lists-img"><img src="<%= p.photo %>" /></div>
+                            <div class="lists-description"><span><%= p.name%></span></div>
+                            <div class="lists-price"><span>￥<%= prices%></span></div>
+                            <div class="lists-deal">成交量：<span><%= p.saleAmount %></span></div>
+                        </a>
+
+                    </li>
+                </ul>
+                <% });} else{%>
+                <div class="commodity-empty">
+                    <div class="commodity-empty-inner">
+                        <div class="commodity-empty-p01">抱歉，沒有找到相关的宝贝</div>
+                        <p class="commodity-empty-p02">建议您：</p>
+                        <p class="commodity-empty-p02">1. 看看输入文字是否有误</p>
+                        <p class="commodity-empty-p02">2. 调整关键词</p>
+                    </div>
+                </div>
+                <%} %>
+            </div>
+            <!--商品列表end-->
+            <!--页码-->
+            <div class="page">
+                <div class="right total-page-show">
+                    共<span class="total-page-num"><%= totalPages %></span>页
+                </div>
+                <div class="commodity-page" id="pagination">
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>

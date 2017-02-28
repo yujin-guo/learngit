@@ -1,0 +1,261 @@
+<%= nav %>
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">角色管理</span>
+            </div>
+        </div>
+        <div class="common-wrap-div">
+            <form id="role-form">
+                <div class="person-info-wrap">
+                    <span class="role-info-title">*角色名称：</span>
+                    <input type="text" name="roles" class="roles-name" placeholder="请输入角色名称" value="<%= name %>" />
+                </div>
+                <div class="person-info-wrap">
+                    <span class="role-info-title">角色描述：</span>
+                    <input type="text" class="roles-desc" placeholder="请输入角色描述" value="<%= description %>" />
+                </div>
+                <div class="person-info-wrap">
+                    <span class="role-info-title">角色权限：</span>
+                    <span class="table-span-wrap">
+                        <table class="roles-ctrl-table">
+                            <thead>
+                                <tr>
+                                    <th class="roles-ctrl-module">模块</th>
+                                    <th colspan="6" class="roles-ctrl-fun">功能</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%_.each(groupList,function(G,index){%>
+                                <tr <%if(index%2!=0){%>class="even-tr"<%}%>>
+                                    <td class="roles-ctr-td01">
+                                        <%= G.gruop %>
+                                    </td>
+                                    <td class="roles-ctr-td02">
+                                        <div class="role-table-div">
+                                            <%_.each(G.accessList,function(A){%>
+                                            <span class="role-table-span">
+                                                <input type="checkbox" value="<%= A.id %>" />
+                                                <%= A.name %>
+                                            </span>
+                                            <%})%>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <%})%>
+                                <!--<tr>
+                                <td class="roles-ctrl-module">采购管理
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="1" />采购单查看
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" class="purchase" value="2" />一级审批
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" class="purchase" value="3" />二级审批
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" class="purchase" value="4" />三级审批
+                                </td>
+                                <td colspan="2" class="roles-ctrl-fun">
+                                    <input type="checkbox" class="purchase" value="5" />四级审批
+                                </td>
+                            </tr>
+                            <tr class="even-tr">
+                                <td rowspan="2" class="roles-ctrl-module">竞价管理
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="6" />竞价查看
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" class="bidstart" value="7" />一级初审
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" class="bidstart" value="8" />二级初审
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" class="bidend" value="9" />一级终审
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" class="bidend" value="10" />二级终审
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" class="bidend" value="11" />三级终审
+                                </td>
+                            </tr>
+                            <tr class="even-tr">
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="12" />竞价延期
+                                </td>
+                                <td colspan="5" class="roles-ctrl-fun">
+                                    <input type="checkbox" value="13" />竞价取消
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="roles-ctrl-module">订单管理
+                                </td>
+                                <td colspan="6" class="roles-ctrl-fun">
+                                    <input type="checkbox" value="14" />订单查看
+                                </td>
+                            </tr>
+                            <tr class="even-tr">
+                                <td class="roles-ctrl-module">结算管理
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="15" />结算单查看
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="16" />接收材料
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="17" />提交财务
+                                </td>
+                                <td colspan="4" class="roles-ctrl-fun">
+                                    <input type="checkbox" value="18" />生成结算单
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="roles-ctrl-module">供应商管理
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="19" />供应商查看
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="20" />供应商平台审批
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="40" />供应商医院审批
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="21" />加入黑名单
+                                </td>
+                                <td colspan="3" class="roles-ctrl-fun">
+                                    <input type="checkbox" value="22" />解除黑名单
+                                </td>
+                            </tr>
+                            <tr class="even-tr">
+                                <td rowspan="2" class="roles-ctrl-module">组织管理
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="23" />部门查看
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="24" />部门新增
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="25" />部门编辑
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="26" />人员查看
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="27" />人员新增
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="28" />人员编辑
+                                </td>
+                            </tr>
+                            <tr class="even-tr">
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="29" />权限查看
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="30" />权限编辑
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="31" />权限新增
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="32" />经费卡新增
+                                </td>
+                                <td colspan="2" class="roles-ctrl-fun">
+                                    <input type="checkbox" value="33" />经费卡编辑
+                                </td>
+                            </tr>                       
+                            <tr>
+                                <td class="roles-ctrl-module">统计管理
+                                </td>
+                                <td colspan="6" class="roles-ctrl-fun">
+                                    <input type="checkbox" value="34" />统计查看
+                                </td>
+                            </tr>
+                            <tr class="even-tr">
+                                <td class="roles-ctrl-module">经费卡管理
+                                </td>
+                                <td colspan="6" class="roles-ctrl-fun">
+                                    <input type="checkbox" value="35" />经费卡查看
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="roles-ctrl-module">配置管理
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="36" />竞价配置查看
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="37" />竞价配置编辑
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox"value="38"  />采购配置查看
+                                </td>
+                                <td colspan="3" class="roles-ctrl-fun">
+                                    <input type="checkbox" value="39" />采购配置编辑
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="roles-ctrl-module">平台品牌管理
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="41" />品牌列表
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="42" />品牌详情
+                                </td>
+                                <td colspan="4" class="roles-ctrl-fun">
+                                    <input type="checkbox" value="43" />品牌平台审核
+                                </td>
+                            </tr>
+                            <tr class="even-tr">
+                                <td rowspan="3" class="roles-ctrl-module">门户系统
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="44" />商品频道首页
+                                </td>
+                                <td colspan="5" class="roles-ctrl-fun">
+                                    <input type="checkbox" value="45" />商品下单
+                                </td>
+                            </tr>
+                            <tr class="even-tr">
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="49" />竞价频道
+                                </td>
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="50" />竞价供应商报价
+                                </td>
+                                <td colspan="4" class="roles-ctrl-fun">
+                                    <input type="checkbox" value="46" />竞价采购人发布
+                                </td>
+                            </tr> 
+                            <tr class="even-tr">
+                                <td class="roles-ctrl-fun">
+                                    <input type="checkbox" value="47" />采购人中心
+                                </td>
+                                <td colspan="5" class="roles-ctrl-fun">
+                                    <input type="checkbox" value="48" />订单验收
+                                </td>
+                            </tr>-->
+                            </tbody>
+                        </table>
+                    </span>
+                </div>
+                <div class="person-info-wrap add-margin-top">
+                    <span class="role-info-title"></span>
+                    <input type="submit" class="save-value" value="保 存" />
+                    <a class="back-link" href="javascript:window.history.back();">返&nbsp;回</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

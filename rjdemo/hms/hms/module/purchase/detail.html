@@ -1,0 +1,206 @@
+<%= nav %>
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">审核审批</span>
+                <span class="symbol-return-icon"></span>
+                <!--<a class="link-btn" href="#purcharseManger">返回上级</a>-->
+            </div>
+        </div>
+        <div class="matures">
+            <div class="matures-next">
+                <div class="matures-min">
+                    <span class="min-title">申请编号：</span>
+                    <span class="min-info">
+                        <%= purchaseApply.fbuyapplicationno%>
+                    </span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">申请日期：</span>
+                    <span class="min-info">
+                        <%= purchaseApply.fbuyapplicationdate%>
+                    </span>
+                </div>
+                <% if($.cookie("orgId")==6){%>
+                <div class="matures-min">
+                    <span class="min-title">项目名称：</span>
+                    <span class="min-info">
+                        <%if(hasOwnProperty('projectMsg')){%>    
+                        <%= projectMsg.hasOwnProperty("project")?projectMsg.project:"无"%>
+                        <%}else{%>无<%}%>
+                    </span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">科目：</span>
+                    <span class="min-info">
+                        <%if(hasOwnProperty('projectMsg')){%>    
+                        <%= projectMsg.hasOwnProperty("subject")?projectMsg.subject:"无"%>
+                        <%}else{%>无<%}%>
+                    </span>
+                </div>
+                <!-- <div class="matures-min">
+                    <span class="min-title"></span>
+                    <span class="min-info">
+                        子项目：
+                        <%if(_.hasOwnProperty('projectMsg')){%>
+                        <%= projectMsg.hasOwnProperty("subProject")?projectMsg.subProject:"无"%>
+                        <%}%>
+                    </span>
+                </div> -->
+                <%} %>
+                <div class="matures-min">
+                    <span class="min-title">采购组：</span>
+                    <span class="min-info">
+                        <%= purchaseApply.fbuydepartment%>
+                    </span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">采购人：</span>
+                    <span class="min-info">
+                        <%= purchaseApply.name%>
+                    </span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">联系电话：</span>
+                    <span class="min-info">
+                        <%= purchaseApply.mobile%>
+                    </span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">经费卡号：</span>
+                    <span class="min-info">
+                        <%= purchaseApply.projectnumber%>
+                    </span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">收货信息：</span>
+                    <span class="min-info">
+                         <% if(purchaseApply.hasOwnProperty("fbuyercontactman")){%>
+                             <%= purchaseApply.fbuyercontactman%>&nbsp;&nbsp;&nbsp;
+                         <%}%>
+                         <% if(purchaseApply.hasOwnProperty("fbuyertelephone")){%>
+                             <%= purchaseApply.fbuyertelephone%>&nbsp;&nbsp;&nbsp;
+                         <%}%>
+                        <%= purchaseApply.fdeliveryplace%>
+                    </span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">采购说明：</span>
+                    <span class="min-info">
+                        <%= (purchaseApply.hasOwnProperty('info')&&purchaseApply.info.length)?purchaseApply.info:"无"%>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="infomation">
+            <table class="detail-table">
+                <tr>
+                    <th class="commdity-name">商品名称</th>
+                    <th class="brand">品牌</th>
+                    <th class="sizes">规格</th>
+                    <th class="provider">供应商</th>
+                    <th class="price">单价</th>
+                    <th class="numbers">数量</th>
+                </tr>
+                <%_.each(purchaseApplyDetails,function(D){%>
+                <tr>
+                    <td class="commdity-name">
+                        <%= D.name%>
+                    </td>
+                    <td class="brand">
+                        <%= D.brand%>
+                    </td>
+                    <td class="sizes">
+                        <%= D.fspec%>
+                    </td>
+                    <td class="provider">
+                        <%= D.fsuppname%>
+                    </td>
+                    <%var simpleMoney=D.fprice.toFixed(2)%>
+                    <td class="price">￥
+                        <%= simpleMoney %>
+                    </td>
+                    <td class="numbers">
+                        <%= D.fquantity%>
+                    </td>
+                </tr>
+                <%});%>
+                <tr>
+                    <%var totalMoney=purchaseApply.fprevbudgetamount.toFixed(2)%>
+                    <td class="apply-money" colspan="6">
+                        <% if($.cookie("orgId")==6){%>
+                            <span class="detail-enclosure">
+                                可用余额：
+                                <span class="detail-enclosure-money">
+                                ¥<%if(hasOwnProperty('projectMsg')){%>  
+                                <%= projectMsg.hasOwnProperty("available")?projectMsg.available:0.00%>
+                                <%}else{%>0.00<%}%> 
+                                </span>
+                            </span>
+                            <span class="detail-enclosure">
+                                已冻结金额：
+                                <span class="detail-enclosure-money">
+                                ¥<%if(hasOwnProperty('projectMsg')){%>  
+                                <%= projectMsg.hasOwnProperty("frozenAmount")?projectMsg.frozenAmount:0.00%>
+                                <%}else{%>0.00<%}%>
+                                </span>
+                            </span>
+                        <%} %>
+                        <span class="detail-enclosure">
+                            采购申请金额：¥
+                            <span class="detail-enclosure-money">
+                                <%= totalMoney %>
+                            </span> 元</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="matures">
+            <div class="matures-next">
+                <% _.each(purchaseApply.applyInfo,function(A){%>
+                <div class="apply-info-div">
+                    <span class="apply-info-span">
+                        <%= A.approveTime %>
+                    </span>
+                    <span class="apply-info-span">
+                        <%= A.approver %>
+                    </span>
+                    <span class="apply-info-span">
+                        <%= A.result %>
+                    </span>
+                    <span class="apply-info-span">
+                        <%= A.comment %>
+                    </span>
+                </div>
+                <%}) %>
+
+            </div>
+        </div>
+        <%if(purchaseApply.canApply==1){%>
+        <div class="matures">
+            <form id="app-form">
+                <div class="matures-min-next">
+                    <div class="statu-div">
+                        <span>
+                            <input type="radio" name="status" id="pass" value="true" checked />
+                            <label for="pass">审批通过</label>
+                        </span>
+                        <span>
+                            <input type="radio" name="status" id="refuse" value="false"/>
+                            <label for="refuse">审批驳回</label>
+                        </span>
+                        <span class="error-span"></span>
+                    </div>
+                    <div class="suggestion">
+                        <textarea id="reason"></textarea>
+                    </div>
+                    <div class="btn-div">
+                        <input class="btn-link" type="submit" value="提交审核" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <%}%>
+    </div>
+</div>

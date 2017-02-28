@@ -1,0 +1,42 @@
+<% if(flag==true){_.each(entities,function(U){%>
+<tr>
+    <td class="member-td-id">
+        <%= U.id %>
+    </td>
+    <td class="member-td-email">
+        <%= U.name %>
+    </td>
+    <td class="member-td-mobile">
+        <% if(U.hasOwnProperty('alias')) {%>
+        <%= U.alias %>
+        <%}%>
+    </td>
+    <td class="member-td-name">
+        <% if(U.enterDate){%>
+        <%= common.getLocalTime(U.enterDate) %>
+        <%} %>
+
+    </td>
+    <td class="member-td-status">
+        <% if(U.status==1){%> 未发布
+        <%}else if(U.status==10){%> 已上线
+        <%}else if(U.status==20){%> 已下线
+        <%} else if(U.status==30){%> 已冻结
+        <%} %>
+    </td>
+    <td class="member-td-control">
+        <a href="#editHospital/<%= U.id %>" class="control-link">查看</a>
+        <a href="#editHospital/<%= U.id %>" class="control-link">修改</a>
+        <% if(U.status==1){%>
+        <a href="javascript:void(0)" class="control-link status-link-event" data-id="<%= U.id %>">发布</a>
+        <%}%>
+    </td>
+</tr>
+<%})}else{%>
+<tr>
+    <td class="empty-td" colspan="6">
+        暂无数据!
+    </td>
+</tr>
+
+<%} %>

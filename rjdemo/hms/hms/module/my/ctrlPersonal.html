@@ -1,0 +1,45 @@
+<div class="common-wrap-div">
+    <form id="my-form">
+        <%if(keyWords=='editMobile'){%>
+        <div class="person-info-wrap">
+            <span class="person-info-title">手机号码：</span>
+            <input type="text" class="common" placeholder="请输入新手机号码" name="mobile" id="mobile"  maxlength="11" />
+            <span class="error-span"></span>
+        </div>
+        <div class="person-info-wrap">
+            <span class="person-info-title">验证码：</span>
+            <span class="person-info-code">
+                <input type="text" class="code left common" placeholder="6位数字验证码" name="code" id="code" />
+                <a class="code-link right" id="code-link" href="javascript:void(0);">点击免费获取</a>
+            </span>
+             <span class="error-span"></span>
+        </div>
+        <%}else if(keyWords=='editEmail'){%>
+        <div class="person-info-wrap">
+            <span class="person-info-title">新邮箱：</span>
+            <input type="text" class="common" placeholder="请输入新邮箱" name="email" id="email" />
+             <span class="error-span"></span>
+        </div>
+        <%}else if(keyWords=='editPass'){%>
+        <div class="person-info-wrap">
+            <span class="person-info-title">旧密码：</span>
+            <input type="password" class="common" placeholder="请输入旧密码" name="pass" id="old-pass" />
+             <span class="error-span"></span>
+        </div>
+        <div class="person-info-wrap">
+            <span class="person-info-title">新密码：</span>
+            <input type="password" class="common" placeholder="请输入新密码" name="newp"  id="pass" />
+             <span class="error-span"></span>
+        </div>
+        <div class="person-info-wrap">
+            <span class="person-info-title">确认密码：</span>
+            <input type="password" class="common" placeholder="请输入确认密码" name="again" />
+             <span class="error-span"></span>
+        </div>
+        <%}%>
+        <div class="person-info-wrap add-margin-top">
+            <span class="person-info-title"></span>
+            <input type="submit" class="save-value" value="保 存" />
+        </div>
+    </form>
+</div>

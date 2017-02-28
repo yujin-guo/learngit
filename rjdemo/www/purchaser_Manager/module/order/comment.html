@@ -1,0 +1,30 @@
+<div class="comment cm-main">
+    <div class="comment-header">
+        <h3 class="left comment-title">商品评价</h3>
+        <span class="right comment-supplier" >供应商：<a  class="comment-supplier-name" href="javascript:;"><%=order.fsuppname%></a></span>
+    </div>
+    <div class="comment-content">
+        <%_.each(orderDetails,function(i,index){%>
+        <div class="comment-item">
+            <input type="hidden" class="comment-detail-id" value="<%=i.id%>">
+            <div class="comment-item-info left">
+                <img class="comment-item-pic" src="<%=i.fpicpath%>" />
+                <p><%=i.fgoodname%></p>
+                <p class="comment-item-spec">规格：<%=i.fspec%></p>
+            </div>
+            <div class="comment-item-point left">
+                <div class="comment-item-star">
+                    <label id="good"><input type="radio" name="star<%=index%>" value="3" id="good"><span class="comment-star-good comment-star-pic"></span></label>
+                    <label id="normal"><input type="radio" name="star<%=index%>" value="2" id="noraml"><span class="comment-star-normal comment-star-pic"></span></label>
+                    <label id="bad"><input type="radio" name="star<%=index%>" value="1" id="bad"><span class="comment-star-bad comment-star-pic"></span></label>
+                </div>
+                <textarea class="comment-item-input"></textarea>
+                <p>(<span class="comment-words">0</span>/200字)</p>
+            </div>
+        </div>
+        <%})%>
+        <div class="comment-btn">
+            <a href="javascript:;" class="comment-submit">发表评论</a>
+        </div>
+    </div>
+</div>

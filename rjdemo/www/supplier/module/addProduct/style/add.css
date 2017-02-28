@@ -1,0 +1,54 @@
+.add{border:solid #ccc 1px;padding-top:35px;}
+.add-column{margin-bottom:14px}
+.add-column .add-column-title{color:#999;width:115px;text-align:right;display:inline-block;margin-right:15px;}
+.add-column .add-column-box{width:246px;height:32px;line-height:32px;border:solid #ccc 1px;display:inline-block;margin-right:15px;padding-left:5px}
+.add-column .add-column-box:focus{border:solid 1px #008cd0}
+.add-column .add-column-set{border:solid #ccc 1px;position:relative;background:url(images/arrow-down.png) no-repeat 235px center;}
+.add-column .add-column-set-clicked{background-image:url(images/arrow-right.png);}
+.add-column .add-column-set:hover{border-color:#008cd0}
+.add-column .add-ie{z-index:2;zoom:1}
+.add-column .add-column-set ul{display:none;position:absolute;left:-1px;top:33px;width:251px;border:solid #008cd0 1px;line-height:25px;background-color:#fff;z-index:10}
+.add-column .add-column-set ul li{padding-left:5px}
+.add-column .add-column-set ul li:hover{background-color:#f2f2f2}
+.add-column .add-column-set ul li:active{background-color:#008cd0;color:#fff}
+.add-column .add-asterisk{color:red;}
+.add-column em{color:#999;margin-right:5px}
+.add-column .add-column-txt{color:#999;font-size:12px}
+.add-column .add-column-txt-b{color:#999;padding-left:13px;width:174px;display:inline-block;font-size:12px}
+.add-column .add-hospital-differ{display:inline-block;width:380px;padding:20px;border:solid #ccc 1px;vertical-align:top}
+.add-column .add-hospital-item{margin-bottom:20px}
+.add-column .add-checkbox{float:left;width:18px;height:18px;background-color:#c7cfd1;margin:7px 0 0 0;cursor:pointer;margin-right:15px}
+.add-column .add-checkbox-checkd{background:url(images/tick.png) no-repeat;}
+.add-column .add-hospital-name{float:left;color:#333;line-height:32px}
+.add-column .add-hospital-price{float:right;width:130px;height:30px;line-height:30px;border:solid #ccc 1px;display:none;padding-left:5px}
+.add-column .add-hospital-price:focus{border:solid #008cd0 1px}
+.add-column .add-column-img{display:inline-block;width:100px;height:100px;border:solid #ccc 1px; text-align:center;color:#999;vertical-align:top}
+.add-column .add-column-img-spec{display:inline-block;width:130px;margin-left:10px;color:#999;vertical-align:top;font-size:12px}
+.add-column .add-column-img-spec2{display:inline-block;width:240px;margin-left:10px;color:#999;vertical-align:top;font-size:12px}
+.add-column .add-plus{font-size:48px}
+.add-column .add-vertical-top{vertical-align:top}
+.add #cke_add-editor{display:inline-block;width:750px}
+.add .add-save{margin:60px 0 60px 130px}
+.add-save-push,.add-save-btn{background-image: url(../../../style/images/icon02.png);background-repeat: no-repeat;}
+.add-save-push{background-position: -465px -50px;}
+.add-save-btn{background-position: -669px -50px;}
+.add .add-save .add-save-push{ cursor:pointer;border:none;width:150px;height:38px;line-height:38px;text-align:center;display:inline-block;color:#fff;margin-right:40px}
+.add .add-save .add-save-btn{width:150px;height:38px;line-height:38px;text-align:center;display:inline-block;color:#05aaf9;vertical-align: top;}
+/*提交结果*/
+.add-result{border:solid #ccc 1px;padding:30px 0 80px;}
+.add-result .add-result-icon{width:16px;height:16px;background-color:#008cd0;margin-right:15px;margin-top:3px}
+.add-result .add-result-title{font-size:16px;margin-right:20px;color:#008cd0}
+.add-result .add-result-line{border-top:solid 1px #008cd0;width:841px;margin-top:10px}
+/*提交成功页面*/
+.add-result .add-success{margin-top:80px;text-align:center}
+.add-result .add-success-img{width:140px;height:140px;margin:0 auto;background:url(images/success.png) no-repeat}
+.add-result .add-result-text{color:#999;margin:20px 0 85px}
+.add-result .add-result-btn{display:inline-block;width:150px;height:38px;line-height:38px;background-color:#05aaf9;color:#fff;border-radius:4px}
+.add-result .add-success-btn{display:inline-block;width:148px;height:36px;line-height:36px;border:solid #05aaf9 1px; margin-left:40px;box-shadow:0 0 1px;color:#05aaf9;border-radius:4px}
+/*提交失败页面*/
+.add-result .add-failed{margin-top:80px;text-align:center}
+.add-result .add-failed-img{width:140px;height:140px;margin:0 auto;background:url(images/failed.png) no-repeat}
+/*图片删除*/
+.close-photo{border:solid 1px ;display:inline-block;width:20px;height:20px;position:absolute;top:0;right:10px;background-color:#fff;color:#008cd0;text-align:center;line-height:20px}
+.close-photo:hover{background-color:#008cd0;color:#fff}
+#cke_33{display:none}

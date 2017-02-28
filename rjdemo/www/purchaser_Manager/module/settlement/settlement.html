@@ -1,0 +1,189 @@
+<!--全部结算单-->
+<div class="settle-all">
+    <div class="settle-more">
+        <span class="settle-more-item">
+            <span class="settle-item-title">状态：</span><input class="settle-more-status" type="text" readonly>
+            <%if($.cookie("organization")=="中山大学附属第二医院"||$.cookie("organization")=="中山大学孙逸仙纪念医院"){%>
+            <ul class="settle-status-choices">
+                <li>全部</li>
+                <li>待开票</li>
+                <li>待填发票</li>
+                <li>待递送</li>
+                <li>待审核</li>
+                <li>待付款</li>
+                <li>已完成</li>
+            </ul>
+            <%}else{%>
+            <ul class="settle-status-choices">
+                <li>全部</li>
+                <li>待提交验收单</li>
+                <li>待提交供应商</li>
+                <li>待开票</li>
+                <li>待填发票</li>
+                <li>待递送</li>
+                <li>待审核</li>
+                <li>待付款</li>
+                <li>已完成</li>
+            </ul>   
+            <%}%>
+        </span>
+        <span class="settle-more-item"><span class="settle-item-title">时间：</span><input type="text" class="settle-more-start-date" id="startTime" placeholder="起始时间"><em class="settle-time-line">-</em><input type="text" class="settle-more-end-date" id="endTime" placeholder="结束时间"></span>
+        <div class="settle-more-btn">
+            <input type="text" class="settle-more-search-input" placeholder="请输入结算单号、提交人、发票号">
+            <span class="settle-more-btn-search">搜索</span>
+        </div>
+    </div>
+    <!--孙逸仙医院和其他医院页面显示区分-->
+    <%if($.cookie("organization")=="中山大学附属第二医院"||$.cookie("organization")=="中山大学孙逸仙纪念医院"){%>
+    <ul class="settle-title">
+        <li class="settle-title-b ">结算号</li>
+        <li class="settle-title-c">供应商|提交人</li>
+        <li class="settle-title-d">结算日期</li>
+        <li class="settle-title-d">实验耗材费</li>
+        <li class="settle-title-d">测试分析费</li>
+        <li class="settle-title-d">发票</li>
+        <li class="settle-title-f">状态</li>
+        <li class="settle-title-e">操作</li>
+    </ul>
+    <div class="settle-header-btn">
+        <span class="settle-checkbox"></span>全选
+        <a class="settle-header-submit settle-sunyixian-receive" href="javascript:;">接收发票清单</a>
+        <a class="settle-header-submit settle-sunyixian-print" href="javascript:;">打印出入库单</a>
+        <a class="settle-header-submit settle-sunyixian-submit" href="javascript:;">批量提交财务</a>
+    </div>
+    <table cellspacing=0 class="settle-content">
+        <%if(statement.length>0){_.each(statement,function(i){%>
+        <tr class="settle-content-item">
+            <td class="settle-title-b settlement-number"><span class="settle-checkbox"></span><span class="settle-balance-number"><%=i.no%></span></td>
+            <td class="settle-title-c "><%=i.supplier%> | <%_.each(i.commiters,function(j){%><%=j%>&nbsp;<%})%></td>
+            <td class="settle-title-d"><%=i.banlanceDate%></td>
+            <td class="settle-title-d"><%=parseFloat(i.laboratoryConsumableCost).toFixed(2)%></td>
+            <td class="settle-title-d"><%=parseFloat(i.testAnalysisCost).toFixed(2)%></td>
+            <td class="settle-title-d">
+                <%if(i.invoices.length>0){%>
+                <%_.each(i.invoices,function(j){%>
+                <p><%=j%></p>
+                <%})%>
+                <%}else{%>
+                <p>-</p> 
+                <%}%>
+            </td>
+            <%if(i.status==4){%>
+            <td class="settle-title-f">待提交验收单</td>
+            <%}%>
+            <%if(i.status==5){%>
+            <td class="settle-title-f">待提交供应商</td>
+            <%}%>
+            <%if(i.status==0){%>
+            <td class="settle-title-f">待开票</td>
+            <%}%>
+            <%if(i.status==6){%>
+            <td class="settle-title-f">待填发票</td>
+            <%}%>
+            <%if(i.status==7){%>
+            <td class="settle-title-f">待递送</td>
+            <%}%>
+            <%if(i.status==1){%>
+            <td class="settle-title-f">待审核</td>
+            <%}%>
+            <%if(i.status==2){%>
+            <td class="settle-title-f">待付款</td>
+            <%}%>
+            <%if(i.status==3){%>
+            <td class="settle-title-f">已完成</td>
+            <%}%>
+            <td class="settle-title-e">
+                <p><a href="javascript:;" class="settle-content-check ">查看</a><input type="hidden" value="<%=i.id%>" data-status="<%=i.status%>" class="settle-statement-id"></p>
+                <%if(i.status==7){%>
+                <p><a href="javascript:;" class="settle-content-print settle-content-receive-syx">接收发票清单</a></p>
+                <%}%>
+                <%if(i.status==1||i.status==2||i.status==3){%>
+                <p><a href="javascript:;" class="settle-content-print settle-content-print-syx">打印出入库单</a><a href="javascript:;" download><span class="settle-download"></span></a></p>
+                <%}%>
+                <%if(i.status==1){%>
+                <p><a href="javascript:;" class="settle-content-submit-syx">提交财务</a></p>
+                <%}%>
+            </td>
+        </tr>
+        <%})}else{%>
+        <tr><td class="settle-no-padding" colspan=8>暂无数据。</td></tr>
+        <%}%>
+    </table>
+    <%}else{%>
+    <ul class="settle-title">
+        <li class="settle-title-b ">结算单号</li>
+        <li class="settle-title-c">供应商</li>
+        <li class="settle-title-d">提交人</li>
+        <li class="settle-title-d">结算日期</li>
+        <li class="settle-title-d">结算金额(元)</li>
+        <li class="settle-title-d">发票</li>
+        <li class="settle-title-f">状态</li>
+        <li class="settle-title-e">操作</li>
+    </ul>
+    <div class="settle-header-btn">
+        <span class="settle-checkbox"></span>全选
+        <a class="settle-header-submit settle-header-submit-other" href="javascript:;">下载验收单</a><a href="javascript" target="_blank" download><span class="settle-download"></span></a>
+    </div>
+    <table cellspacing=0 class="settle-content">
+        <%if(statement.length>0){_.each(statement,function(i){%>
+        <tr class="settle-content-item">
+            <td class="settle-title-b settlement-number"><span class="settle-checkbox"></span><span class="settle-balance-number"><%=i.banlanceNumber%></span></td>
+            <td class="settle-title-c "><%=i.supplierName%></td>
+            <td class="settle-title-d"><%=i.commiter%></td>
+            <td class="settle-title-d"><%=i.banlanceDate%></td>
+            <td class="settle-title-d"><%=i.banlanceMoney.toFixed(2)%></td>
+            <td class="settle-title-d">
+                <%if(i.invoices.length>0){%>
+                <%_.each(i.invoices,function(j){%>
+                <p><%=j%></p>
+                <%})%>
+                <%}else{%>
+                <p>-</p> 
+                <%}%>
+            </td>
+            <%if(i.status==4){%>
+            <td class="settle-title-f">待提交验收单</td>
+            <%}%>
+            <%if(i.status==5){%>
+            <td class="settle-title-f">待提交供应商</td>
+            <%}%>
+            <%if(i.status==0){%>
+            <td class="settle-title-f">待开票</td>
+            <%}%>
+            <%if(i.status==6){%>
+            <td class="settle-title-f">待填发票</td>
+            <%}%>
+            <%if(i.status==7){%>
+            <td class="settle-title-f">待递送</td>
+            <%}%>
+            <%if(i.status==1){%>
+            <td class="settle-title-f">待审核</td>
+            <%}%>
+            <%if(i.status==2){%>
+            <td class="settle-title-f">待付款</td>
+            <%}%>
+            <%if(i.status==3){%>
+            <td class="settle-title-f">已完成</td>
+            <%}%>
+            <td class="settle-title-e">
+                <p><a href="javascript:;" class="settle-content-check">查看</a><input type="hidden" class="settle-statement-id" value="<%=i.id%>" data-status="<%=i.status%>"></p>
+                <p>
+                    <a href="javascript:;" class="settle-content-print settle-content-print-other">下载</a>
+                    <a href="javascript" target="_blank" download><span class="settle-download"></span></a>
+                </p>
+            </td>
+        </tr>
+        <%})}else{%>
+        <tr><td class="settle-no-padding" colspan=8>暂无数据。</td></tr>
+        <%}%>
+    </table>
+    <%}%>
+    <div class="list-page">
+        <div class="page-td">
+            <span id="pagination"></span>
+            <span class="total-page-show">
+                共<span class="total-page-num"></span>页
+            </span>
+        </div>
+    </div>
+</div>

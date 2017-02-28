@@ -1,0 +1,111 @@
+<%=nav%>
+<div class="left content statistic">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">业务量概述</span>
+            </div>
+        </div>
+
+        <div class="infomation">
+            <div class="matures">
+                <div class="search-div">
+                    <span>查询时间：
+                        <input class="statistic-date" type="text" id="summaryStartTime"/>
+                        <span class="statistic-line">-</span>
+                        <input class="statistic-date" type="text" id="summaryEndTime"/>
+                    </span>
+                    <input class="search-input" type="text" placeholder="课题组" /><a class="search-btn" href="javascript:;"></a>
+                </div>
+            </div>
+        </div>
+        <div id="wrap-div">
+            <div class="common-wrap-div statistic-limit-width">
+                <div class="statistic-info">
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-title">申请汇总</span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">申请数：</span>
+                        <span class="statistic-info-info"><%=application.applicationNumber%></span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">实验室：</span>
+                        <span class="statistic-info-info"><%=application.departmentNumber%></span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">供应商：</span>
+                        <span class="statistic-info-info"><%=application.supplierNumber%></span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">申请金额：</span>
+                        <span class="statistic-info-info"><%=application.amount.toFixed(2)%></span>
+                    </div>
+                </div>
+                <div class="statistic-info">
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-title">审批汇总</span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">审批数：</span>
+                        <span class="statistic-info-info"><%=check.approvalNumber%></span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">实验室：</span>
+                        <span class="statistic-info-info"><%=check.departmentNumber%></span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">供应商：</span>
+                        <span class="statistic-info-info"><%=check.supplierNumber%></span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">申请金额：</span>
+                        <span class="statistic-info-info"><%=check.amount.toFixed(2)%></span>
+                    </div>
+                </div>
+                <div class="statistic-info">
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-title">订单汇总</span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">订单数：</span>
+                        <span class="statistic-info-info"><%=order.orderNumber%></span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">实验室：</span>
+                        <span class="statistic-info-info"><%=order.departmentNumber%></span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">供应商：</span>
+                        <span class="statistic-info-info"><%=order.supplierNumber%></span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">订单金额：</span>
+                        <span class="statistic-info-info"><%=order.amount.toFixed(2)%></span>
+                    </div>
+                </div>
+                <div class="statistic-info">
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-title">结算汇总</span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">结算单数：</span>
+                        <span class="statistic-info-info"><%=statement.statementNumber%></span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">实验室：</span>
+                        <span class="statistic-info-info"><%=statement.departmentNumber%></span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">供应商：</span>
+                        <span class="statistic-info-info"><%=statement.supplierNumber%></span>
+                    </div>
+                    <div class="statistic-info-wrap">
+                        <span class="statistic-info-title">结算金额：</span>
+                        <span class="statistic-info-info"><%=statement.amount.toFixed(2)%></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

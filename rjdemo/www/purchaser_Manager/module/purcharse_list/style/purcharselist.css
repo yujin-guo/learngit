@@ -1,0 +1,118 @@
+/*全部采购申请清单*/
+.purchase-list{width: 100%;}
+.purchase-list-wrap{border: 1px #e4e4e4 solid;}
+.list-header{height: 50px;}
+.list-header-left{font-size: 0;}
+.list-header-all,.list-header-carring,.list-header-done{display: inline-block;height: 49px;width: 99px;text-align:center;line-height:49px;background-color: #fafafa;border-bottom: 1px #e4e4e4 solid;border-right:1px #e4e4e4 solid;font-size: 16px;color: #666;cursor: pointer;}
+.list-active{border-bottom: medium none;background-color: #fff;color: #333;}
+.list-header-right{width: 571px;height: 49px;background-color:#fafafa;line-height: 49px;border-bottom: 1px #e4e4e4 solid;}
+.list-header-search{height: 49px;line-height: 49px;margin-right: 24px;}
+.list-header-search input[type='text']{width: 250px;height:33px;line-height:33px;border: 1px #e4e4e4 solid;border-right: medium none;padding-left: 6px;color: #666;margin-top: 6px;font-size: 14px;vertical-align: top;}
+.list-header-search input[type='button']{width: 72px;height: 35px;line-height:35px;text-align:center;color: #fff;background-color: #32ab94;border: medium none;/*vertical-align: -1px;*/cursor: pointer;}
+.list-header-search input[type='button']:hover{background-color: #298d79;}
+.list-header-search a{color: #333;font-size:12px;margin-left: 9px;margin-top: -14px;}
+.list-header-search a:hover{color: #008cd0;}
+.list-content{padding: 20px 24px 10px 29px;background-color: #fff;}
+.table-all{width: 100%;border-collapse: collapse;text-align: left;}
+.table-all thead tr{height: 36px;}
+.table-all tbody tr{height: 91px;border-bottom: 1px #e4e4e4 dotted;} 
+.table-all tbody tr:hover{background-color: #f7f7f7;}
+.table-all th{background-color: #f2f2f2;color: #666;border: medium none;padding-left: 10px;font-weight: normal;}
+.table-all td{color: #333;padding-left: 10px;word-wrap:break-word;word-break: break-all;}
+.table-all .purchase-detail-a{color: #333;}
+.table-all .purchase-detail-a:hover{color: #298d79;text-decoration: underline;}
+.detail-th-01,.detail-th-03{width: 150px;}
+.detail-th-02,.detail-th-04,.detail-th-06{width: 100px;}
+.detail-th-05{width: 70px;}
+.detail-th-07{width: 74px;}
+.detail-th-08{width: 99px;}
+.table-all a{color: #32ab94;}
+.table-th-01{width: 186px;}
+.table-th-02,.table-th-03,.table-th-05{width: 145px;}
+.table-th-04{width: 183px;}
+.table-th-06{width: 53px;}
+.status-relative{position: relative;}
+.status-absolute,.status-change-icon{position: absolute;}
+.more-content-inner .status-change-icon{top: 0px;right: 0px;width: 28px;height: 25px;cursor: pointer;background-image: url(../../../style/images/icons.png);background-position: -340px -22px;background-repeat: no-repeat;z-index: 999;}
+.status-absolute{width: 198px;border: 1px solid #ccc;top: 30px;right: 0px;display: none;}
+.status-absolute dt{color:#333;height: 30px;background-color: #fff;padding-left: 5px;line-height: 30px;}
+.status-absolute dt:hover{background-color: #e4e4e4;}
+.single-status-absolute,.single-dep-absolute{position: absolute;left: 10px;right: 10px;display: none;top: 36px;}
+.single-status-absolute dt,.single-dep-absolute dt{color:#333;height: 30px;background-color: #fff;padding-left: 5px;line-height: 30px;font-weight: normal;}
+.single-status-absolute dt:hover,.single-dep-absolute dt:hover{background-color: #e4e4e4;}
+/*更多搜索*/
+.direction-icon{background-image: url(../../../style/images/icons.png);background-position: -300px -29px;background-repeat: no-repeat;vertical-align:middle;width: 15px;height: 15px;}
+.more-content{padding: 20px 0 30px;height: 146px;margin:0px 18px 10px;}
+.more-content-inner{padding-bottom: 16px;height: 30px;}
+.more-content-inner span{color: #333;text-align: right;width: 70px;}
+.more-content-inner input{border: 1px solid #ccc;height: 28px;line-height: 28px;margin-left:5px;padding-left:3px;width: 195px;vertical-align: middle;}
+.more-content-inner input:focus{border-color: #32ab94;}
+.more-content-choose{margin-left: 42px;}
+.border-style{border-bottom: 1px dotted #ccc;}
+.more-content-control{margin:20px auto;width: 200px;}
+.more-content-control input{border: 1px solid #32ab94;border-radius:3px;height:28px;line-height:24px;width: 91px;text-align: center;cursor: pointer;}
+.more-content-control input[type='submit'],.more-content-control input[type='button']{background-color: #32ab94;color: #fff;}
+.more-content-control input[type='reset']{background-color: #fff;color: #32ab94;margin-left: 10px;}
+/*更多搜索结束*/
+/*申请中*/
+.list-carring-head{border: 1px #b7ecdd solid;background-color: #f0fbf8;padding: 32px 30px 29px;}
+.list-carring-title{font-size: 14px;color: #333;padding-bottom: 22px;border-bottom: 1px #b7ecdd solid;font-weight: bold;}
+.list-carring-info{margin-top: 14px;line-height: 23px;}
+.info-01{height: 25px;}
+.list01{color: #333;}
+.list02{color: #333;}
+.list03{color: #666;width: 71px;text-align: right;}
+.card-div{color: #666;width: 90px;/*text-overflow: ellipsis;*/max-height: 65px;word-wrap: break-word;word-break: break-all;overflow-y: auto;white-space: nowrap;}
+.list-carring-detail{margin-top: 21px;}
+.list-carring-content{padding: 19px 24px 30px;border: 1px solid #e4e4e4;}
+.list-address{width: 298px;height: 120px;border: 1px #e4e4e4 dotted;padding: 10px 20px 8px;background-color: #fafafa;border-radius: 5px;}
+.list-address-01{border-bottom: 1px #e4e4e4 dotted;font-size: 14px;color: #298d79;padding-bottom: 5px;}
+.address-icon{display: inline-block;width: 20px;height: 15px;background-image: url(images/addicon.png);background-repeat: no-repeat;margin-right: 11px;}
+.list-address-02{margin-top: 5px;color: #666;}
+.lister-info{width: 514px;height: 139px;border-bottom: 1px #e4e4e4 solid;padding-right: 22px;margin-left: 24px;}
+.info-title{font-size: 14px;font-weight: bold;padding: 10px 0 19px;}
+.list01 a{margin-left: 20px;}
+.change-link{color: #298d79}
+.list-detail-title-wrap{padding: 34px 0 16px;overflow: hidden;}
+.list-detail-title{font-size: 14px;font-weight: bold;}
+.list-detail-addcard{width: 120px;height: 25px;background-color: #32ab94;color: #fff;text-align: center;line-height: 25px;}
+.list-detail-addcard em{font-style: normal;font-weight: bold;font-size: 16px;vertical-align: top;}
+.list-carring-account{text-align: right;color: #666;margin-top: 30px;}
+.list-all-account{font-size: 20px;color: #298d79;}
+.list-page{margin-top: 30px;}
+.list-page-inner{text-align:center;color: #666;font-size: 12px;}
+.list-page-a{display: inline-block;width: 25px;height: 25px;text-align: center;line-height: 25px;border:1px #e4e4e4 solid;background-color: #fff;color: #333;margin-left: 4px;}
+.list-page-active{background-color: #298d79;color: #fff;}
+.total-page{margin-left: 5px;margin-right: 5px;}
+.card-ellipsis{white-wrap: nowrap;overflow: hidden; text-overflow: ellipsis;}
+/*修改经费卡*/
+.purchase-card-wrap{top: 0px;left: 0px;bottom:0;right:0;z-index: 1;background-color: #000;opacity: 0.2;filter: alpha(opacity=0.2);position: fixed;display: none;}
+.card-wrap{position: fixed;min-height: 255px;width: 550px;border-radius:5px ;left: 0;right:0;margin:0 auto;top: 30%;box-shadow: 0 0 3px 5px rgba(0,0,0,.2);background-color: #fafafa;display: none;z-index: 999;border-radius: 10px;}
+.card-edit-title{background-color: #fff;text-align: center;border-bottom: 1px solid #e4e4e4;height: 45px;border-radius: 10px 10px 0 0;}
+.card-head{height: 45px;line-height: 45px;font-size: 16px;color: #333;margin-left:40px ;width: 470px;text-align: center;}
+.card-head-icon{background-image: url(../../../style/images/close.png);background-position:center;background-repeat: no-repeat;height: 45px;cursor: pointer;width: 40px;}
+.card-edit-inner{margin: auto;position: relative;}
+.card-has{min-height: 30px;margin: 11px 22px 0 22px;line-height: 23px;border-bottom: 1px solid #ccc;}
+.card-span{font-size:16px ;height: 35px;line-height: 35px;}
+.selected-card{min-height: 35px;line-height: 35px;padding: 22px 0 22px 22px;}
+.card-cell{height: 30px;margin-right: 18px;border-radius: 5px;min-width: 110px;background-color: #f2f2f2;}
+.class-card-icon{color: #32ab94;width: 26px;text-align: center;height: 30px;line-height: 26px;font-size: 25px;cursor: pointer;padding-right: 5px;}
+.card-num{color: #333;height: 30;line-height: 30px;vertical-align: top;}
+.choose{color: #999;}
+.has-choose-card{margin-right: 22px;}
+.card-list-ul{display: none;list-style: none;border: 1px solid #e4e4e4;border-top:none ;width: 310px;background-color: #fff;}
+.li-choose{cursor: pointer;height: 35px;line-height: 35px;padding-left: 10px;padding-right: 10px;}
+.li-choose:hover{background-color: #32ab94;color: #fff;}
+.card-choose-icon{background-image: url(../../../style/images/icons.png);background-position: -342px -20px;background-repeat: no-repeat;width: 16px;height: 35px;padding-right: 10px;cursor: pointer;}
+.card-chose-div{width: 150px;margin: auto;height: 80px;line-height: 80px;}
+.card-sure-link,.card-sure-cancel{width: 118px;height: 33px;text-align: center;line-height: 33px;border-radius: 3px;}
+.card-sure-link{background-color: #32ab94;border: 1px solid #32ab94;color: #fff;}
+.card-sure-cancel{background-color: #f2f2f2;border: 1px solid #ccc;color: #666;margin-left:34px;}
+.single-staus,.single-dep{background-image: url(../../../style/images/duble-solid.png);background-repeat: no-repeat;cursor: pointer;position: relative;}
+.single-staus{background-position: 95px -122px;}
+.single-dep{background-position: 65px -122px;}
+.show{display: block;}
+.color{border-color: #32ab94;}
+.desc01{margin: 5px 0;font-size: 0;}
+.desc01 span{width: 70px;text-align: right;vertical-align: top;/*font-size: 14px;*/}
+.desc01 .desc-inner{width: 225px;word-wrap: break-word;word-break: break-all;text-align: left;font-size: 14px;}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登出成功</title>
+</head>
+<script src="js/libs/jquery.js"></script>
+<body>
+<script>
+    $.when(
+        $.get("/store/sso/logout?local=true"),
+        $.get("/supp/sso/logout?local=true"),
+        $.get("/bid/sso/logout?local=true"))
+        .always(function() {
+            window.location.href = "index.html";
+        });
+</script>
+</body>
+</html>

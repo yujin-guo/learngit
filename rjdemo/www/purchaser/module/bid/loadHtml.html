@@ -1,0 +1,44 @@
+<% if(flag==true){_.each(entities,function(E){%>
+<ul class="bid-list-table <% if(E.id==entities[entities.length-1].id){%>clear-margin-bottom<%} %>">
+    <li class="th-li">
+        <span class="list-td-01">
+            <span class="hospital-span">
+                <%= E.unit %>&nbsp;-&nbsp;
+                <%= E.sn %>
+            </span>
+            <span class="over-time-span">结束时间：
+                <%= E.endTime %>
+            </span>
+        </span>
+        <span class="list-td-02"></span>
+        <span class="list-td-03 right">
+            <div class="list-detail-div right">
+                <a href="#listdetail?id=<%= E.id %>" class="list-detail-link">查看</a>
+            </div>
+        </span>
+    </li>
+    <%_.each(E.items,function(I){%>
+    <li class="td-li">
+        <span class="list-td-001">
+            <%= I.itemName %>
+        </span>
+        <span class="list-td-02">
+            <%= I.brand %>
+            <% if(I.brand==undefined || !I.brand){%> -
+            <%}%>
+        </span>
+        <span class="list-td-003">
+            <%= I.itemNo %>
+            <% if(I.itemNo==undefined || !I.itemNo){%> -
+            <%}%>
+        </span>
+    </li>
+    <%})%>
+</ul>
+<%})}else{%>
+<div class="bid-none-wrap">
+    <div class="bid-none-inner">
+        <p class="bid-none-p">暂时没有竞价消息！</p>
+    </div>
+</div>
+<%} %>

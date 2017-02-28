@@ -1,0 +1,72 @@
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">部门管理</span>
+            </div>
+        </div>
+        <div class="matures">
+            <div class="department-btn-div left">
+                <p class="department-p1 left">
+                    <%= department %>
+                </p>
+                <% if(flag==0){%>
+                <p class="department-p2 left">
+                    (采购部门)
+                </p>
+                <a href="#inviteMember?departmentId=<%= departmentId %>" class="member-btn-link">邮件邀请</a>
+                <%}else{%>
+                <p class="department-p2 left">
+                    (管理部门)
+                </p>
+                <%}%>
+
+            </div>
+            <div class="search-div right">
+                <input class="search-input" id="search-value" type="text" placeholder="搜索成员" />
+                <a class="search-btn" id="search-btn" href="javascript:void(0)"></a>
+            </div>
+        </div>
+        <form id="add-member-form">
+            <div class="common-wrap-div">
+                <div class="add-member-info-wrap" id="add-member-info-wrap">
+                    <% _.each(memberData.userList,function(U){ %>
+                    <span class="add-member-span">
+                    <input type="checkbox" class="member-checkbox" value="<%= U.id%>" name="member" /><%= U.name%>
+                </span>
+                    <%}) %>
+                </div>
+            </div>
+            <div class="member-error-div"></div>
+            <div class="matures role-addMember">
+                <div class="person-info-wrap">
+                    <span class="add-title">*角色：</span>
+                    <span class="role-span">
+                <% _.each(roles,function(R){%>
+                <span class="add-member-role-span">
+                        <input type="checkbox" class="roles-checkbox" value="<%= R.roleId %>" name="roles" /><%= R.roleName %>
+                    </span>
+                    <%})%>
+                    </span>
+                </div>
+            </div>
+            <div class="roles-error-div"></div>
+            <div class="matures add-margin-bottom">
+                <div class="person-info-wrap">
+                    <input type="submit" class="save-value" id="save-value" value="保 存" />
+                    <a class="back-link" href="javascript:window.history.back()">返&nbsp;回</a>
+                </div>
+            </div>
+        </form>
+        <!--<% if(flag==0){%>
+        <div class="matures">
+            <div class="common-wrap-div">
+                <div class="none-member">
+                    如果没有找到成员，可以通过
+                    <a href="#inviteMember?departmentId=<%= departmentId %>" class="control-link-edit" style="font-size: 14px;">邮件邀请</a>加入！
+                </div>
+            </div>
+        </div>
+        <%}%>-->
+    </div>
+</div>

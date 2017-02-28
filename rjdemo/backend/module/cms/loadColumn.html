@@ -1,0 +1,36 @@
+<% if(flag==true){_.each(list,function(i){%>
+<tr>
+    <%if(i.tag==0){%>     
+    <td>
+        <%=i.columnName%>
+    </td>
+    <%}%>
+    <%if(i.tag==1){%>     
+    <td>
+        &nbsp;&nbsp;&nbsp;&nbsp;<%=i.columnName%>
+    </td>
+    <%}%>
+    <%if(i.tag==2){%>     
+    <td>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=i.columnName%>
+    </td>
+    <%}%>
+    <td class="sorted-td">
+        <%=i.sort%>
+    </td>
+    <%if(i.parentId!=null){%>
+    <td class="control">
+        <a class="detail-link" href="#newcolumn?key=<%=i.id%>" data-id="<%=i.id%>">编辑</a>
+        <a class="detail-link del" href="javascript:void(0)" data-id="<%=i.id%>">删除</a>
+    </td>
+    <%}else{%>
+    <td class="control"></td>
+    <%}%>
+</tr>
+<%})}else{%>
+<tr>
+    <td class="account-no-result" colspan="8" style="text-align:center;">
+        暂无结果。   
+    </td> 
+</tr>
+<%}%>     

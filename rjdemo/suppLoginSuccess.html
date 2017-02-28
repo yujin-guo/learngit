@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>供应商登录成功回调页面</title>
+</head>
+<body>
+供应商登录成功
+<a href="/store/sso/logout?redirect=%2fsso-demo.html">登出</a>
+<script src="www/purchaser/js/libs/jquery.js">
+</script>
+<script>
+    $(document).ready(function() {
+        $.get("/supp/api/identity")
+                .success(function(data) {
+                    $(window.parent.document).find("#suppUsername").text(data.user.falias);
+                });
+    });
+</script>
+</body>
+</html>

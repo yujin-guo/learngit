@@ -1,0 +1,10 @@
+.card-wrap-div01{border: 1px solid #d7d7d7;}
+.card-wrap-inner{padding: 32px 27px 200px;}
+.card-h2{font-size: 16px;color: #666;height: 35px;line-height: 35px;}
+.card-table{width: 100%;border-collapse: collapse;}
+.card-table tr{border: 1px solid #d7d7d7;}
+.card-table th,.card-table td {text-align: center;vertical-align: middle;border: 1px solid #d7d7d7;}
+.card-table th{height: 36px;color: #666;background-color: #f2f2f2;font-weight: normal;}
+.card-table td{color: #333;padding: 10px;}
+.card-th-01{width: 35%;}
+.card-th-02{width: 60%;}

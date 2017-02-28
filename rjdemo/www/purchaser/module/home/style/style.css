@@ -1,0 +1,39 @@
+.home-main{ background-color:#eff2f5;padding-bottom:50px}
+.home-header{ position: relative; width: 100%; height: 360px; overflow: hidden; background-color: #fff;}
+.home-right{ position: absolute; top:0; right:0; width: 198px; height: 360px;}
+.home-header-inner{ padding: 20px; font-size:12px;}
+.home-header-title{ color: #333; height: 30px;}
+.home-header-more{color: #333;}
+.home-header-img{ width: 800px; height: 360px; margin-left:200px; float: left; overflow: hidden;}
+.home-header-box img{ width: 800px; height: 362px;}
+.home-header-link{ color:#666; display: block; height: 22px; line-height: 22px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.home-header-line{ border-bottom: 1px solid #ccc;}
+.home-section-f01{ height:306px; border-left:1px solid #eff2f5; border-top:1px solid #eff2f5; }
+.home-section-f01-li{ background-color: #fff; width: 198.5px; height: 100px; border-right: 1px solid #eff2f5; border-bottom: 1px solid #eff2f5; float: left; text-align: center; line-height: 100px;}
+.home-section-f01-img{ display: block; width: 100%; height: 100px;}
+.home-section-f01-img img{ width: 180px; height: 82px;}
+.home-section-f01-img:hover img{ width: 196px; height: 96px;}
+
+.home-section-title{ height: 35px; margin-top:40px; font-size: 18px; color: #008cd0; font-weight: normal;}
+.home-decoration{ margin-top:3px; display: block; width: 11px; height: 11px; background-color: #64a727; float: left;}
+.home-title-sub{ padding:0 16px 0 12px; color: #64a727;}
+
+.home-section-f02{ height: 415px; background-color: #fff; overflow: hidden;}
+.home-section-f02-link{ width: 130px; padding:25px 0 0 30px;  height: 100%;}
+.home-section-f02-link a{ display:block; height: 30px; color:#666; overflow: hidden; white-space: nowrap;}
+.home-section-f02-link a:hover{color:#008cd0;}
+.home-section-list{ margin-left:160px;}
+.home-section-cell{ float:left; width: 206px; height: 206px; border-left: 1px solid #eff2f5; border-bottom: 1px solid #eff2f5; text-align:center;}
+.home-section-cell:hover{border:solid 1px #008cd0;height:205px;width:205px}
+.home-section-cell .home-section-cell-inner{ padding: 10px;}
+
+.home-section-cell img{ width: 146px; height: 146px;}
+.home-section-cell a{ width:100%; height:100%;}
+.home-section-cell-title{ color: #666; height: 45px; line-height: 45px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+.home-footer{ background-color: #fff; text-align: center; height: 40px; padding:15px 0;  color: #666; line-height:20px;}
+
+.home-banner{ position: fixed; right: 0; top:188px; width: 40px;}
+
+.home-banner .home-banner-cell,.home-banner .home-banner-last{ /*border:1px solid #eff2f5;*/ margin-bottom:2px;  display: block; background-color: #fff;  text-align: center; color: #008cd0; font-size:12px; padding:5px;}
+.home-banner .home-banner-cell:hover{background-color: #008cd0;color:#fff;}

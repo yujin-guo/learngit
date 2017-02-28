@@ -1,0 +1,51 @@
+<div class="brand">
+    <div class="brand-header overflow">
+        <span class="brand-header-title left"></span>
+        <span class="brand-header-text left">品牌列表</span>
+        <span class="brand-header-line left"></span>
+    </div>
+    <div class="brand-text overflow">
+        <span class="brand-text-left left">介绍：</span>
+        <span class="brand-text-right left">更安全、更严格的品牌真实性认证、是为了更好的保护企业及用户的合法权益。品牌认证通过后，您具备售卖该品牌商品、提供该品牌服务的高级能力</span>
+    </div>
+    <div class="brand-text overflow">
+        <span class="brand-text-left left">认证有效期：</span>
+        <span class="brand-text-right left">默认为一年，如果代理的品牌授权时间距离审核通过的时间小于一年，则以代理品牌的有效期为准。</span>
+    </div>
+    <div class="brand-list ">
+        <div class="brand-list-title overflow">
+            <span class="brand-title-width">品牌标志</span><span class="brand-title-width">品牌名称</span><span class="brand-title-width">品牌归属</span><span class="brand-title-width">品牌状态</span>
+        </div>
+        <%_.each(list,function(i){%>
+        <div class="brand-list-item overflow">
+            <a href="#agentbrand/<%=i.authId%>">
+                <span class="brand-title-width"><img class="brand-item-pic" src="<%=i.logoPath%>"></span>
+                <span class="brand-title-width"><%=i.cName||i.eName%></span>
+                <span class="brand-title-width"><%if(i.level==0){%>自有品牌<%}else{%>代理品牌<%}%></span>
+                <span class="brand-title-width">
+                    <%if(i.status==1){%>
+                    <span class="brand-review brand-review-one"></span>审核中
+                    <%}%>
+                    <%if(i.status==2){%>
+                    <span class="brand-review brand-review-two"></span>已通过
+                    <%}%>
+                    <%if(i.status==3){%>
+                    <span class="brand-review brand-review-three"></span>未通过
+                    <%}%>
+                    <%if(i.status==4){%>
+                    <span class="brand-review brand-review-four"></span>已过期
+                    <%}%>
+                    <%if(i.status==5){%>
+                    <span class="brand-review brand-review-four"></span>已撤回
+                    <%}%>
+                </span>
+            </a>
+        </div>
+        <%})%>
+        <a class="brand-list-item" href="#certification">添加品牌</a>
+    </div>  
+    <div class="brand-none">
+        <p class="brand-none-text">还未添加任何品牌</p>
+        <a href="#certification" class="brand-add-btn">添加品牌</a>
+    </div>
+</div>

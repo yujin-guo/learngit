@@ -1,0 +1,62 @@
+<%if(entities.length){%>
+<%_.each(entities,function(i){%>
+<div class="bidlist-main-item">
+    <div class="bidlist-main-item-top">
+        <span class="bidlist-main-item-num">竞价编号：<%=i.sn%></span>
+        <span class="bidlist-main-item-num">开始时间：<%=i.startDate%></span>
+        <span class="bidlist-main-item-num">截止时间：<%=i.endDate%></span>
+        <span class="bidlist-main-item-num"><%=i.deptName%></span>
+        <span><%=i.userName%></span>
+    </div>
+    <table cellspacing=0>
+        <%var first=_.first(i.itemList)%>
+        <tr class="bidlist-main-item-list">
+            <%if(first!=undefined){%>
+            <td class="bidlist-main-product-name"><%=first.name%></td>  
+            <td class="bidlist-main-product-number"><%=first.itemNo%></td>
+            <td class="bidlist-main-brand"><%=first.brand%></td>
+            <td class="bidlist-main-quantity"><%=first.count%></td>
+            <%}else{%>
+            <td class="bidlist-main-product-name"></td>  
+            <td class="bidlist-main-product-number"></td>
+            <td class="bidlist-main-brand"></td>
+            <td class="bidlist-main-quantity"></td>    
+            <%}%>
+            <td class="bidlist-main-status" rowspan=1111><%=i.statusDesc%></td>
+            <td class="bidlist-main-operate" rowspan=1111>
+                <input type="hidden" value="<%=i.id%>" class="bidlist-item-id">
+                <%if(i.status==30||i.status==49){%>
+                <a class="bidlist-main-item-btn" href="#biddetails/<%=i.id%>">选择供应商</a>
+                <%}%>
+                <%if(i.status==19){%>
+                <p class="bidlist-main-item-btn bidlist-submit">提交初审</p>
+                <p class="bidlist-main-item-btn bidlist-amend">修改</p>
+                <%}%>
+                <%if(i.status==0){%>
+                <p class="bidlist-main-item-btn bidlist-submit">提交初审</p>
+                <p class="bidlist-main-item-btn2 bidlist-amend">修改</p>
+                <%}%>
+                <%if(i.status>=10&&i.status<19){%>
+                <p class="bidlist-main-item-btn bidlist-item-revoke">撤回申请</p>
+                <%}%>
+                <a class="bidlist-main-item-btn2" href="#biddetails/<%=i.id%>">竞价详情</a>
+                <%if(i.status==0||i.status==19){%>
+                <p class="bidlist-main-item-btn2 bidlist-item-delete">删除</p>
+                <%}%>
+                
+            </td>
+        </tr>
+        <%_.each(_.rest(i.itemList),function(j){%>
+        <tr class="bidlist-main-item-list">
+            <td class="bidlist-main-product-name"><%=j.name%></td>  
+            <td class="bidlist-main-product-number"><%=j.itemNo%></td>
+            <td class="bidlist-main-brand"><%=j.brand%></td>
+            <td class="bidlist-main-quantity"><%=j.count%></td>
+        </tr>
+        <%})%>
+    </table>
+</div>
+<%})%>
+<%}else{%>
+<div class="bidlist-no-data">暂无数据。</div>    
+<%}%>

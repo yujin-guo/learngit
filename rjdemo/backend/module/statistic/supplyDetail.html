@@ -1,0 +1,164 @@
+<%= nav %>
+<div class="left content content-height">
+    <div class="content-wrap">
+        <div id="purchase-div">
+            <div class="content-nav">
+                <div class="symbol-icon01">
+                    <span class="symbol-title">供应商交易明细</span>
+                </div>
+            </div>
+            <div class="infomation">
+                <div class="matures">
+                    <div class="statistic-hospital-top">
+                        <ul class="statistic-hospital-ul">
+                            <li class="statistic-hospital-li01">
+                                <h2 class="statistic-supply-name left"><%= d.dto.name %></h2>
+                                <span class="statistic-hospital-tatol">商品总数：
+                                    <span class="statistic-color">
+                                        <%= d.dto.goodsCount %>
+                                    </span>
+                                </span>
+                            </li>
+                            <li class="statistic-hospital-li02">
+                                <span class="statistic-hospital-content">
+                                    <div>
+                                        <span class="statistic-hospital-title">采购单总金额：</span>
+                                        <span class="statistic-hospital-title-next">￥
+                                            <%= d.dto.purchaseAmount.toFixed(2) %>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="statistic-hospital-title">采购单总量：</span>
+                                        <span class="statistic-hospital-title-next">
+                                            <%= d.dto.purchaseCount %>
+                                        </span>
+                                    </div>
+                                </span>
+                                <span class="statistic-hospital-content">
+                                    <div>
+                                        <span class="statistic-hospital-title">竞价单总金额：</span>
+                                        <span class="statistic-hospital-title-next">￥
+                                            <%= d.dto.bidAmount.toFixed(2) %>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="statistic-hospital-title">竞价单总量：</span>
+                                        <span class="statistic-hospital-title-next">
+                                            <%= d.dto.bidCount %>
+                                        </span>
+                                    </div>
+                                </span>
+                                <span class="statistic-hospital-content">
+                                    <div>
+                                        <span class="statistic-hospital-title">订单总金额：</span>
+                                        <span class="statistic-hospital-title-next">￥
+                                            <%= d.dto.orderAmount.toFixed(2) %>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="statistic-hospital-title">订单总量：</span>
+                                        <span class="statistic-hospital-title-next">
+                                            <%= d.dto.orderCount %>
+                                        </span>
+                                    </div>
+                                </span>
+                                <span class="statistic-hospital-content" style="border: none;">
+                                    <div>
+                                        <span class="statistic-hospital-title">结算单总金额：</span>
+                                        <span class="statistic-hospital-title-next">￥
+                                            <%= d.dto.settlementAmount.toFixed(2) %>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="statistic-hospital-title">结算单总量：</span>
+                                        <span class="statistic-hospital-title-next">
+                                            <%= d.dto.settleCount %>
+                                        </span>
+                                    </div>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="matures" style="line-height: 30px;">
+                    <div class="statistic-supp-date left">
+                        <span>医院：</span>
+                        <select class="statistic-hos-select">
+                            <option value="null">医院</option>
+                        </select>
+                    </div>
+                    <div class="search-div right">
+                        <span class="apply-time-span">
+                            <span class="apply-time-title">查询时间：</span>
+                            <input class="statistic-date" type="text" placeholder="<%=common.getWeekDate()%>" id="startTimeSu" value="<%=common.getWeekDate()%>" />
+                            <span class="statistic-line">-</span>
+                            <input class="statistic-date statistic-end-date" type="text" placeholder="<%=common.getDate()%>" id="endTimeSu" value="<%=common.getDate()%>"/>
+                        </span>
+                        <!--<input class="search-input" id="search-value" type="text" placeholder="供应商编码/供应商名称/联系人" /><a class="search-btn" id="search-btn" href="javascript:void(0)"></a>-->
+                    </div>
+                    <div class="right" style="margin-right: 40px;">
+                        <span class="date-cycle">时间周期：</span>
+                        <a href="javascript:void(0);" class="date-cycle-day date-cycle-day-active" data-id="0">日</a>
+                        <a href="javascript:void(0);" class="date-cycle-7day" data-id="1">周</a>
+                        <a href="javascript:void(0);" class="date-cycle-30day" data-id="2">月</a>
+                    </div>
+                </div>
+                <div class="matures" style="margin-bottom: 40px;">
+                    <div class="statictis-supp-chart">
+                        
+                    </div>
+                </div>
+                <div class="matures" style="overflow: visible;">
+                    <table class="list-table statistic-detail-table">
+                        <thead>
+                            <tr>
+                                <th class="width-one">日期</th>
+                                <th class="width-two">订单数量</th>
+                                <th class="width-three">新增订单金额</th>
+                                <th class="width-four">新增结算金额</th>
+                                <th class="width-five">采购单数量</th>
+                                <th class="width-six">新增采购单金额</th>
+                                <th class="width-seven">新增竞价单数</th>
+                                <th class="width-eight">新增竞价金额</th>
+                                <th class="width-night">新增商品</th>
+                            </tr>
+                        </thead>
+                        <tbody id="list">
+                            <% if(flag==true){_.each(entities,function(E){%>
+                            <tr>
+                                <td class="width-one"><%= E.strDate %></td>
+                                <td class="width-two"><%= E.orderNumber %></td>
+                                <td class="width-three">￥<%= E.increasedOrderAmount.toFixed(2) %></td>
+                                <td class="width-four">￥<%= E.increasedSettlementAmount.toFixed(2) %></td>
+                                <td class="width-five"><%= E.purchaseNumber %></td>
+                                <td class="width-six">￥<%= E.increasedPurchaseAmount.toFixed(2) %></td>
+                                <td class="width-seven"><%= E.bidNumber %></td>
+                                <td class="width-eight">￥<%= E.increasedBidAmount.toFixed(2) %></td>
+                                <td class="width-night"><%= E.goodsNumber %></td>
+                            </tr>
+                            <%});}else {%>
+                            <tr>
+                                <td class="empty-td" colspan="9">暂无数据！</td>
+                            </tr>
+                            <%} %>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="matures">
+                    <div class="page">
+                        <div class="right">
+                            <a class="endpoint" href="javascript:void(0)">尾页</a>
+                        </div>
+                        <div class="right" id="pagination">
+
+                        </div>
+                        <div class="right">
+                            <a class="endpoint" href="javascript:void(0)">首页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

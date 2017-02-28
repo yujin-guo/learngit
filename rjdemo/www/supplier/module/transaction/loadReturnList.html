@@ -1,0 +1,95 @@
+<%if(flag==true){_.each(orderList,function(O){%>
+    <table class="transaction-table">
+        <thead>
+            <tr>
+                <th colspan="7">
+                    <% var forderdate= O.forderdate.split(" ")[0];%>
+                    订单编号：<span class="order-id"><%=O.forderno%></span><span class="order-name"><%=O.fbuyer%></span><span class="order-date"><%=forderdate%></span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <%_.each(O.goodReturns,function(G){%>
+            <tr>
+                <td class="commodity-name-01">
+                    <span class="commodity-picture">
+                        <img src="<%= G.picpath %>" />
+                    </span>
+                    <span class="comodity-name-detail">
+                        <a class="name-detail-link" href="#productdetails/<%= G.productSn %>" target="_blank"><%=G.goodname%></a>
+                        <p class="commodity-desc">货号：<%=G.fgoodcode%>&nbsp;&nbsp;&nbsp;规格： <%=G.spec%></p>
+                    </span>
+                </td>
+                <% var fprice=G.price.toFixed(2);%>
+                <% var totalPrice=O.totalPrice.toFixed(2); %>
+                <td class="commodity-price-01">¥
+                    <%= fprice %>
+                </td>
+                <td class="commodity-num-01">
+                    <%= G.quantity %>
+                </td>
+                <td class="commodity-state-01">
+                    <%if(G.status==0){%>
+                    <a class="order-return-status" href="#returndetail?id=<%=G.id%>&detailId=<%=G.detailId%>">退货申请</a>
+                    <%}else if(G.status==1){%>
+                    <a class="order-return-status" href="#returndetail?id=<%=G.id%>&detailId=<%=G.detailId%>">退货待发货</a>
+                    <%}else if(G.status==2){%>
+                    <a class="order-return-status" href="#returndetail?id=<%=G.id%>&detailId=<%=G.detailId%>">拒绝退货</a>
+                    <%}else if(G.status==3){%>
+                    <a class="order-return-status" href="#returndetail?id=<%=G.id%>&detailId=<%=G.detailId%>">退货取消</a>
+                    <%}else if(G.status==4){%>
+                    <a class="order-return-status" href="#returndetail?id=<%=G.id%>&detailId=<%=G.detailId%>">退货待验收</a>
+                    <%}else if(G.status==5){%>
+                    <a class="order-return-status" href="#returndetail?id=<%=G.id%>&detailId=<%=G.detailId%>">退货完成</a>
+                    <%}else if(G.status==6){%>
+                    <a class="order-return-status" href="#returndetail?id=<%=G.id%>&detailId=<%=G.detailId%>">退货撤销</a>
+                    <%}%>
+                </td>
+                <%if(O.goodReturns[0].id===G.id){%>
+                <td rowspan="<%=O.goodReturns.length%>" class="commodity-account-01">¥
+                    <%= totalPrice %>
+                </td>
+                <td rowspan="<%=O.goodReturns.length%>" class="transaction-state-01">
+                    <%if(O.orderStatus==3){%>订单关闭
+                    <%}else if(O.orderStatus==4 || O.orderStatus==9 ){%>待发货
+                    <%}else if(O.orderStatus==5){%>待收货
+                    <%}else if(O.orderStatus==6 || O.orderStatus==15){%>待结算
+                    <%}else if(O.orderStatus==8){%>待确认
+                    <%}else if(O.orderStatus==10||O.orderStatus==12||O.orderStatus==13){%>结算中
+                    <%}else if(O.orderStatus==11 || O.orderStatus==7 ){%>订单完成
+                    <%}%><br/>
+                    <a class="order-detail" href="#transactiondetail?id=<%= O.orderId %>">订单详情</a>
+                </td>
+                <%}%>
+                <td class="commodity-control-01">
+                    <%if(G.status==0){%>
+                    <a href="javascript:void(0)" class="list-agree-link event-btn" data-flag="agree" data-id="<%= G.id %>">同意退货</a>
+                    <a href="javascript:void(0)" class="list-refuse-link event-btn" data-flag="refuse" data-id="<%= G.id %>">拒绝退货</a>
+                    <%}else if(G.status==4 || G.status==1){%>
+                    <a href="javascript:void(0)" class="list-agree-link event-btn" data-flag="recieve" data-id="<%= G.id %>">确认收货</a>
+                    <%}%>
+                </td>
+            </tr>
+            <%});%>
+        </tbody>
+    </table>
+    <%});}else{%>
+    <p class="empty">
+        暂无数据!
+    </p>
+    <%}%>
+
+    <!--页码-->
+    <div class="page-wrap" <% if(flag==false){%>style="display:none;"<%} %>>
+        <div class="right page-total">
+            共<span class="total-page-num"><%if(flag==true){%><%= totalPages %><%}else{%>0<%}%></span>页
+        </div>
+        <div class="right">
+            <a class="endpoint end" data-flag="end" href="javascript:void(0)">&nbsp;&nbsp;</a>
+        </div>
+        <div class="page right" id="pagination">
+        </div>
+        <div class="right">
+            <a class="endpoint head" data-flag="head" href="javascript:void(0)">&nbsp;&nbsp;</a>
+        </div>
+    </div>

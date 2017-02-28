@@ -1,0 +1,184 @@
+<%= nav %>
+<div class="left content brand-detail">
+    <div class="content-wrap" id="pic-list">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">品牌管理</span>
+                <span class="symbol-return-icon"></span>
+                <a class="link-btn" href="javascript:window.history.back()">返回上级</a>
+            </div>
+        </div>
+        <%if(dto.status==1){%>
+        <div class="matures">
+            <div class="matures-min-next">
+                <p class="status-p">
+                    <%if(typeof(dto.creationTime)!="undefined" && dto.creationTime){%>
+                    <%=common.getLocalTime(new Date(dto.creationTime))%>
+                    <%}%>供应商提交品牌申请，请审核。
+                </p>
+            </div>
+        </div>
+        <%}%>
+        <%if(dto.status==2){%>
+        <div class="matures">
+            <div class="matures-min-next">
+                <p class="status-p">
+                    <%if(typeof(dto.creationTime)!="undefined" && dto.creationTime){%>
+                    <%=common.getLocalTime(new Date(dto.creationTime))%>
+                    <%}%> 供应商提交品牌申请，请审核。
+                </p>
+                <p class="status-p">
+                    <%if(typeof(dto.creationTime)!="undefined" && dto.creationTime){%>
+                    <%=common.getLocalTime(new Date(dto.creationTime))%>
+                    <%}%> 品牌正式进驻。
+                </p>
+            </div>
+        </div>
+        <%}%>
+        <%if(dto.status==3){%>
+        <div class="matures">
+            <div class="matures-min-next">
+                <p class="status-p">
+                    <%if(typeof(dto.creationTime)!="undefined" && dto.creationTime){%>
+                    <%=common.getLocalTime(new Date(dto.creationTime))%>
+                    <%}%> 供应商提交品牌申请，请审核。
+                </p>
+                <p class="status-p">
+                    <%if(typeof(dto.approvalTime)!="undefined" && dto.approvalTime !=null){%>
+                    <%=common.getLocalTime(new Date(dto.approvalTime))%>
+                    <%}%> 驳回，原因：
+                    <%=dto.approvalComment%>
+                </p>
+            </div>
+        </div>
+        <%}%>
+        <%if(status==4){%>
+        <div class="matures">
+            <div class="matures-min-next">
+                <p class="status-p">
+                    <%if(typeof(dto.creationTime)!="undefined" && !dto.creationTime){%>
+                    <%=common.getLocalTime(new Date(dto.creationTime))%>
+                    <%}%> 供应商提交品牌申请，请审核。
+                </p>
+                <p class="status-p">
+                    已过期
+                </p>
+            </div>
+        </div>
+        <%}%>
+        <div class="matures">
+            <div class="matures-next">
+                <div class="matures-min">
+                    <span class="min-title">中文名：</span>
+                    <span class="min-info">
+                        <%=dto.cname%>
+                    </span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">英文名：</span>
+                    <span class="min-info">
+                        <%=dto.ename%>
+                    </span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">品牌制造商：</span>
+                    <span class="min-info">
+                        <%=dto.manufacture%>
+                    </span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">品牌LOGO：</span>
+                    <span class="min-info">
+                        <a href="<%=dto.logo%>" target="_blank">
+                            <img src="<%=dto.logo%>" class="brand-detail-logo" />
+                        </a>
+                    </span>
+                </div>
+                <%if(dto.level==0){%>
+                <div class="matures-min">
+                    <span class="min-title">品牌商标证明：</span>
+                    <span class="min-info">
+                        <%if(dto.authPic!=null && dto.authPic!="undefined" &&  dto.authPic!=''){%>
+                        <%_.each(dto.authPic.split(","),function(i){%>
+                        <a href="<%=i%>" target="_blank">
+                            <img src="<%=i%>" class="brand-detail-certification" />
+                        </a>
+                        <%})%>
+                        <%}%>
+                    </span>
+                </div>
+                <%}%>
+            </div>
+        </div>
+        <%if(dto.level!==0){%>
+        <div class="matures">
+            <div class="matures-next">
+                <div class="matures-min">
+                    <span class="min-title">代理级别：</span>
+                    <span class="min-info">
+                        <%=common.NoToChinese(dto.level)%>级代理</span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">到期时间：</span>
+                    <span class="min-info">
+                        <%if(dto.longAuth==false || dto.longAuth==null){%>
+                        <%if(typeof(dto.endDate)!="undefined" && dto.hasOwnProperty('endDate') && dto.endDate){%>
+                        <%=common.getLocalTime(new Date(dto.endDate))%>
+                        <%}%>
+                        <%}%>
+                        <%if(dto.longAuth==true){%> 长期
+                        <%}%>
+                    </span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">授权资料：</span>
+                    <span class="min-info">
+                        <%if(dto.authPic!=null && dto.authPic!="undefined" &&  dto.authPic!=''){%>
+                        <%_.each(dto.authPic.split(","),function(i){%>
+                        <a href="<%=i%>" target="_blank">
+                            <img src="<%=i%>" class="brand-detail-certification" />
+                        </a>
+                        <%})%>
+                        <%}%>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <%}%>
+        <%if(dto.status==1){%>
+        <div class="matures">
+            <form id="app-form">
+                <div class="matures-min-next">
+                    <div class="statu-div">
+                        <span>
+                            <input type="radio" name="status" id="pass" value="1" checked />
+                            <label for="pass">审批通过</label>
+                        </span>
+                        <span>
+                            <input type="radio" name="status" id="refuse" value="2" />
+                            <label for="refuse">审批驳回</label>
+                        </span>
+                        <span class="error-span"></span>
+                    </div>
+                    <div class="suggestion">
+                        <textarea id="reason" maxlength="500"></textarea>
+                        <span>(<span class="brand-num">0</span>/500)</span>
+                    </div>
+                    <div class="btn-div">
+                        <input class="btn-link" type="submit" value="提交审核" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <%}%>
+    </div>
+</div>
+<!-- <script>
+    function LimitTextArea(field){
+        maxlimit=500; 
+        if (field.value.length > maxlimit){
+            field.value = field.value.substring(0, maxlimit);   
+        } 
+        $('.brand-num').text(field.value.length);    
+    }
+</script> -->

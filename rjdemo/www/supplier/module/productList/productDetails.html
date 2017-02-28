@@ -1,0 +1,66 @@
+<div class="product-details">
+    <div class="product-details-column">
+        <span class="product-details-title"><em class="product-details-asterisk">*</em>分类：</span>
+        <span class="product-details-box">
+            <% var first=_.first(p.category)%>
+            <% var category=p.category%>
+            <% if(first==null){category=_.rest(p.category)}%>
+            <%_.each(category,function(i,num){%>
+            <a href="javascirpt:;"><%=i.name%></a><%if(category.length>num+1){%>&nbsp;&gt;&nbsp;<%}%>
+            <%})%>
+        </span>
+    </div>
+    <div class="product-details-column">
+        <span class="product-details-title"><em>*</em>名称：</span>
+        <span class="product-details-box"><%=p.name%></span>
+    </div>
+    <div class="product-details-column">
+        <span class="product-details-title"><em>*</em>规格：</span>
+        <span class="product-details-box"><%=p.specification%></span>
+    </div>
+    <div class="product-details-column">
+        <span class="product-details-title"><em>*</em>库存：</span>
+        <span class="product-details-box"><%=p.sku%></span>
+    </div>
+    <div class="product-details-column">
+        <span class="product-details-title"><em>*</em>单位：</span>
+        <span class="product-details-box"><%=p.unit%></span>
+    </div>
+    <div class="product-details-column">
+        <span class="product-details-title">品牌：</span>
+        <%if(p.brand){%>
+        <span class="product-details-box"><%=p.brand.name%></span>
+        <%}%>
+    </div>
+    <div class="product-details-column">
+        <span class="product-details-title">货号：</span>
+        <span class="product-details-box"><%=p.productNum%></span>
+    </div>
+    <div class="product-details-column">
+        <span class="product-details-title"><em>*</em>统一售货价：</span>
+        <span class="product-details-box"><%=p.price%>元</span>
+    </div>
+    <div class="product-details-column">
+        <span class="product-details-title">差异销售价：</span>
+        <span class="product-details-box product-details-vertical-top">
+            <%_.each(p.priceDifferents,function(item){%>
+            <p><%=item.org.name%>  &nbsp; <%=item.price.toFixed(2)%>元</p>
+            <%})%>
+        </span>
+    </div>
+    <div class="product-details-column">
+        <span class="product-details-title product-details-vertical-top"><em>*</em>头像图：</span>
+        <img class="product-details-img" src="<%=p.photo%>">
+    </div>
+    <div class="product-details-column">
+        <span class="product-details-title product-details-vertical-top"><em>*</em>详情图：</span>
+        <%_.each(p.photos,function(i){%>
+        <img class="product-details-img" src="<%=i.photo%>">
+        <%})%>
+    </div>
+    <div class="product-details-column">
+        <span class="product-details-title product-details-vertical-top"><em>*</em>描述：</span>
+        <span class="product-details-desc"><%=p.desc%></span>
+    </div>
+    <a href="#add/<%=p.sn%>" class="product-details-amend">修改</a>
+</div>

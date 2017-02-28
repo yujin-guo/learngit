@@ -1,0 +1,30 @@
+<% if(flag==true){_.each(entities,function(E){%>
+<tr>
+    <td class="width-one">
+        <a href="#sDetail/<%= E.id %>">
+            <%= E.name %>
+        </a>
+    </td>
+    <td class="width-two">
+        <%= E.orderCount %>
+    </td>
+    <td class="width-three">￥
+        <%= E.orderAmount.toFixed(2) %>
+    </td>
+    <td class="width-four">
+        <%= (E.proportion*100).toFixed(2) %>%</td>
+    <td class="width-five">￥
+        <%= E.settleAmount.toFixed(2) %>
+    </td>
+    <td class="width-six">￥
+        <%= E.purchaseAmount.toFixed(2) %>
+    </td>
+    <td class="width-nine">￥
+        <%= E.bidAmount.toFixed(2) %>
+    </td>
+</tr>
+<%});}else {%>
+<tr>
+    <td class="empty-td" colspan="7">暂无数据！</td>
+</tr>
+<%} %>

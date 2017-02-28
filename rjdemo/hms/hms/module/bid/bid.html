@@ -1,0 +1,92 @@
+<%= nav %>
+<div class="left content bid">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">竞价管理</span>
+            </div>
+        </div>
+
+        <div class="infomation">
+            <div class="matures">
+                <div class="search-div">
+                    <span >采购部门：
+                        <select class="bid-deptname">
+                            <option>全部部门</option>
+                            <%_.each(depts,function(i){%>
+                            <option><%=i.name%></option>   
+                            <%})%>
+                        </select>
+                    </span>
+                    <input class="search-input" type="text" placeholder="竞价编号/采购组" /><a class="search-btn" href="javascript:;"></a>
+                </div>
+            </div>
+            <table class="list-table">
+                <thead>
+                    <tr>
+                        <th class="apply-id">竞价编号</th>
+                        <th class="group">采购组</th>
+                        <th class="human">采购人</th>
+                        <th class="date">创建时间</th>
+                        <th class="date">截标时间</th>
+                        <th class="status-td">
+                            <select class="bid-status">
+                                <option >状态</option>
+                                <option value="10">初审中</option>
+                                <option value="19">初审驳回</option>
+                                <option value="20">竞价中</option>
+                                <option value="30">初选中</option>
+                                <option value="40">终审中</option>
+                                <option value="49">终审驳回</option>
+                                <option value="50">已完成</option>
+                                <option value="29">已流标</option>
+                                <option value="99">已取消</option>
+                            </select>
+                        </th>
+                        <th class="control">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="bidList">
+                    <%if(typeof(entities)!="undefined"&&entities.length>0){%>
+                    <%_.each(entities,function(i){%>
+                    <tr>
+                        <td class="apply-id"><%=i.sn%></td>
+                        <td class="group"><%=i.deptname%></th>
+                        <td class="human"><%=i.buyname%></td>
+                        <td class="date"><%=i.startTime%></td>
+                        <td class="date"><%=i.endTime%></td>
+                        <td class="status-td"><%=i.statusDesc%><input type="hidden" class="bid-list-status" value="<%=i.status%>" ></td>
+                        <td class="control">
+                            <a href="#biddetails/<%=i.id%>" class="bid-check">查看</a>
+                            <%if(i.status!=50&&i.status!=99&&i.canCancle){%>
+                            <a href="javascript:;" class="bid-cancel">取消</a>
+                            <%}%>
+                            <%if(((i.status>=10&&i.status<19)||(i.status>=40&&i.status<49))&&i.canApply){%>
+                            <a href="javascript:;" class="bid-submit">审批通过</a>
+                            <%}%>
+                            <input type="hidden" class="bid-item-id" value="<%=i.id%>">
+                        </td>
+                    </tr>
+                    <%})%>
+                    <%}else{%>
+                    <tr>
+                        <td class="bid-no-result" colspan=7>暂无结果。</td> 
+                    </tr>
+                    <%}%>
+                </tbody>
+            </table>
+            <div class="matures">
+                <div class="page">
+                    <div class="right"><a class="endpoint" href="javascript:void(0)">尾页</a></div>
+                    <div class="right" id="pagination">   
+                    </div>
+                    <div class="right"><a class="endpoint" href="javascript:void(0)">首页</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

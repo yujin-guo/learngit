@@ -1,0 +1,279 @@
+<!--引入搜索模块-->
+<%= search %>
+<!--引入导航模块-->
+<div id="navModule">
+    <%= nav%>
+</div>
+<div class="commodity-wrap">
+    <div class="cm-main">
+        <div class="commodity-header">
+            <div class="commodity-header-bread">
+                <div class="left breads-all">全部
+                </div>
+                <div class="commodity-total">共
+                    <span class="commodity-total-number" id="total-com">
+                        <%= total %>
+                    </span>个商品</div>
+            </div>
+        </div>
+        <div class="commodity-catalog-section" id="commodity-catalog-section">
+            <div class="commodity-border-bottom">
+                <div class="commodity-catalog brand-flag">
+                    <div class="commodity-catalog-inner brand-01">
+                        <div class="catalog catalog01" data-flag="brand">品牌</div>
+                        <div class="catalog-brand screen" id="brands">
+                            <%if(brands!=undefined){_.each(brands,function(b){%>
+                            <span class="commodity-icon">
+                                <span class="brand-logo breads">
+                                    <label class="brand-label"></label>
+                                    <input type="checkbox" class="checkbox-value" value="<%= b.name%>" />
+                                    <input type="hidden" class="brands-value" value="<%= b.id %>" />
+                                    <%= b.name%>
+                                </span>
+                                <!--<% if(b.logo==undefined || b.logo=='' || b.logo=="upload/upBrandLOGO/DEFAULT_LOGO.png"){%>
+                                <span class="brand-logo breads">
+                                    <%= b.name%>
+                                </span>
+                                <%} else{%>
+                                <img class="breads" src="<%= b.logo %>" />
+                                <%}%>-->
+                            </span>
+                            <% });}%>
+                        </div>
+                        <div class="catalog-control">
+                             <a class="more common-event" href="javascript:void(0)">更多&gt;</a>
+                            <a class="multichoose common-event" href="javascript:void(0)" data-flag="choose">多选</a>
+                        </div>
+                        <div class="brand-submit">
+                            <span class="catalog-null"></span>
+                            <span class="catalog-btn">
+                                <a class="catalog-btn-link01 brand-more-choose" href="javascript:void(0)">确定</a>
+                                <a class="catalog-btn-link02" href="javascript:void(0)">取消</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="commodity-catalog-next supplier-more-div supplier-flag">
+                    <span class="catalog01 catalog01-self supplier-more-span" data-flag="supplier">供应商</span>
+                    <span id="suppliers" class="screen catalog02">
+                        <%if(suppliers!=undefined){_.each(suppliers,function(s){%>
+                        <span class="supplier-icon-span">
+                            <a class="breads" href="javascript:void(0)">
+                                <label class="supplier-label"></label>
+                                <input type="checkbox" class="checkbox-value" value="<%= s.name%>" />
+                                <input type="hidden" value="<%= s.id%>" class="supplies-value" />
+                                <%= s.name%>
+                            </a>
+
+                        </span>
+                        <%});}%>
+                    </span>
+                    <span class="supplier-control">
+                        <span class="supplier-more-event flag">多选</span>
+                    </span>
+                    
+                    <div class="supplier-submit">
+                        <span class="catalog-null"></span>
+                        <span class="supplie-catalog-btn">
+                            <a class="catalog-btn-link01 supplier-more-choose" href="javascript:void(0)">确定</a>
+                            <a class="catalog-btn-link02" href="javascript:void(0)">取消</a>
+                        </span>
+                    </div>
+                </div>
+                <!-- <ul class="commodity-catalog-next">
+                <li class="catalog01 catalog01-self">规格</li>
+                <li>
+                     <%_.each(specifications,function(sp){%>
+                        <a class="breads" href="javascript:void(0)"><%= sp %>1ml</a>
+                     <%});%>
+                </li>
+            </ul>-->
+                <ul class="commodity-catalog-next">
+                    <li class="catalog01 catalog01-self" data-flag="price">商品价格</li>
+                    <li class="catalog02">
+                        <span class="screen" style="margin-left: 25px;">
+                            <a class="breads" href="javascript:void(0)">0-499</a>
+                        </span>
+                        <span class="screen">
+                            <a class="breads" href="javascript:void(0)">500-999</a>
+                        </span>
+                        <span class="screen">
+                            <a class="breads" href="javascript:void(0)">1000-4999</a>
+                        </span>
+                        <span class="screen">
+                            <a class="breads" href="javascript:void(0)">5000-</a>
+                        </span>
+                    </li>
+                </ul>
+                <!--<ul class="commodity-catalog-next hide">
+                    <li class="catalog01 catalog01-self">待定待定</li>
+                    <li class="catalog02">
+                        <a class="breads" href="javascript:void(0)">0-499</a>
+                        <a class="breads" href="javascript:void(0)">500-999</a>
+                        <a class="breads" href="javascript:void(0)">1000-4999</a>
+                        <a class="breads" href="javascript:void(0)">5000-</a>
+                    </li>
+                </ul>-->
+            </div>
+            <!--<div class="pull-down">更多选项</div>-->
+        </div>
+        <div class="commodity-section">
+            <div class="commodity-sort">
+                <span class="commodity-sort-left commodity-active clear-border-half" data-flag="sale">销量
+                    <span class="com-sale-triangle">
+                        <span class="up-triangle"></span>
+                        <span class="down-triangle"></span>
+                    </span>
+                </span>
+                <!--<span class="commodity-sort-left clear-border-half">价格</span>-->
+                <span class="commodity-sort-left price-sort-flag" data-flag="price">价格
+                    <span class="com-price-triangle">
+                        <span class="up-triangle"></span>
+                        <span class="down-triangle"></span>
+                    </span>
+                </span>
+                <span class="right find-active  margin04">
+                    <span class="commodity-sort-right commodity-active" data-flag="list">列表模式
+                        <span class="list-icon"></span>
+                    </span>
+                    <span class="commodity-sort-right" data-flag="pic">图片模式
+                        <span class="pic-icon"></span>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <!--商品列表strat-->
+        <div class="commodity-list" id="commodity-list">
+            <!--图片模式-->
+            <div class="commodity-list-pic">
+                <%if(flag==true){ _.each(products,function(p){%>
+                <% var prices=p.price.toFixed(2)%>
+                <a class="commodity-pic-cell" href="#details/<%= p.sn %>/<%=p.suppId%>" target="_blank">
+                    <span class="commodity-pic-wrap"><img src="<%= p.photo%>" /></span>
+                    <span class="commodity-pic-price">
+                        <span class="pic-price">￥
+                            <%= prices %>
+                        </span>
+                        <!-- <span class="deal-numbers">成交量：
+                            <span>
+                                <%= p.saleAmount %>
+                            </span>
+                        </span>-->
+                    </span>
+                    <span class="commodity-pic-description">
+                        <span class="commodity-link">
+                            <%= p.name%>
+                        </span>
+                    </span>
+                </a>
+                <% });}else{%>
+                <div class="commodity-empty">
+                    <div class="commodity-empty-inner">
+                        <div class="commodity-empty-p01">抱歉，沒有找到相关的宝贝</div>
+                        <p class="commodity-empty-p02">建议您：</p>
+                        <p class="commodity-empty-p02">1. 看看输入文字是否有误</p>
+                        <p class="commodity-empty-p02">2. 调整关键词</p>
+                    </div>
+                </div>
+                <%} %>
+            </div>
+            <!--列表模式-->
+            <div class="commodity-list-lists">
+                <div class="commodity-list-v2">
+                    <span class="list-v2-name">名称</span>
+                    <span class="list-v2-unit">规格</span>
+                    <span class="list-v2-sn">货号</span>
+                    <span class="list-v2-brand">品牌</span>
+                    <span class="list-v2-price">价格</span>
+                </div>
+                <%if(flag==true){%>
+                <ul class="commodity-lists-cell">
+                    <% _.each(products,function(p){%>
+                    <% var prices=p.price.toFixed(2)%>
+                    <li>
+                        <a class="list-cell-link" href="#details/<%= p.sn %>/<%=p.suppId%>" target="_blank">
+                            <!--<div class="lists-img"><img src="<%= p.photo %>" /></div>-->
+                            <span class="list-v2-name">
+                                <span class="list-v2-01">
+                                    <%= p.name%>
+                                </span>
+                            </span>
+                            <span class="list-v2-unit">
+                                <span class="list-v2-02">
+                                    <%=p.specification?p.specification:"无"%>
+                                </span>
+                            </span>
+                            <span class="list-v2-sn">
+                                <span class="list-v2-03">
+                                    <%=p.productNum%>
+                                </span>
+                            </span>
+                            <span class="list-v2-brand">
+                                <span class="list-v2-04">
+                                    <% if(p.brandName==undefined || p.brandName=='null' || p.brandName==''){%>
+                                        无
+                                    <%}else{%>
+                                        <%=p.brandName%>
+                                    <%} %>
+                                </span>
+                            </span>
+                            <span class="list-v2-price">
+                                <span class="list-v2-05">￥
+                                    <%= prices%>
+                                </span>
+                            </span>
+                            <!-- <div class="lists-deal">成交量：
+                                <span>
+                                    <%= p.saleAmount %>
+                                </span>
+                            </div>-->
+                        </a>
+
+                    </li>
+                </ul>
+                <% });} else{%>
+                <div class="commodity-empty">
+                    <div class="commodity-empty-inner">
+                        <div class="commodity-empty-p01">抱歉，沒有找到相关的宝贝</div>
+                        <p class="commodity-empty-p02">建议您：</p>
+                        <p class="commodity-empty-p02">1. 看看输入文字是否有误</p>
+                        <p class="commodity-empty-p02">2. 调整关键词</p>
+                    </div>
+                </div>
+                <%} %>
+            </div>
+            <!--商品列表end-->
+            <!--页码-->
+            <div class="page">
+                <div class="right total-page-show">
+                    共
+                    <span class="total-page-num">
+                        <% if(flag==true){%>
+                        <%= totalPages %>
+                        <%}else{%>0
+                        <%} %>
+                    </span>页
+                </div>
+                <div class="commodity-page" id="pagination">
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="home-footer">
+    <p>
+        <a style="color:#666" href="index.html#help">帮助中心</a> | 客服QQ：2448328732 服务时间：周一至周五(节假日除外)9：00-18：00
+        <span class="footer-logo">
+            <a href="tencent://message/?uin=2448328732&Site=在线QQ&amp;Menu=yes">
+                <img src="images/QQ.png" />
+                <span>QQ交谈</span>
+            </a>
+        </span>
+    </p>
+    <p>版权所有 @2014-2016 网站备案/许可证号：
+        <a target="_blank" style="color:#666;" href="http://www.miitbeian.gov.cn/">粤ICP备16055118号-2
+        </a>
+    </p>
+</div>

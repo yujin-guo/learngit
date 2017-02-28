@@ -1,0 +1,22 @@
+<div class="hospital-wrap">
+    <div class="hospital-wrap-top">
+        <span class="icons-color"></span>
+        <span class="icons-title">申请进驻</span>
+        <span class="icons-hr"></span>
+    </div>
+    <div class="apply-content">
+        <span class="apply-title">公司介绍及优势</span>
+        <textarea class="content" id="myarea" onKeyDown="LimitTextArea(this)" onKeyUp="LimitTextArea(this)" onkeypress="LimitTextArea(this)" onblur="LimitTextArea(this)"></textarea>
+        <p class="limit-words">0/1000</p>
+        <div class="submit-wrap"><a class="submit-link" href="javascript:void(0);">提交申请</a></div>
+    </div>
+</div>
+<script type="text/javascript">
+    function LimitTextArea(field){
+        maxlimit=1000; 
+        if (field.value.length > maxlimit){
+            field.value = field.value.substring(0, maxlimit);   
+        } 
+        $('.limit-words').text(field.value.length+"/1000");    
+    }
+</script>

@@ -1,0 +1,31 @@
+.a-brand{border:solid #ccc 1px;padding-bottom:50px;position:relative}
+.a-brand .a-brand-header{color:#008cd0 ;margin-top:15px;margin-bottom:40px;}
+.a-brand-header .a-brand-header-title{width:16px;height:16px;background-color:#008cd0;margin-right:15px;margin-top:3px}
+.a-brand-header .a-brand-header-text{font-size:16px}
+.a-brand-header .a-brand-header-line{border-top:solid 1px #008cd0;width:846px;margin-left:15px;margin-top:10px}
+.a-brand .a-brand-revise{position:absolute;top:750px;right:30px;width:80px;height:30px;border:solid 1px #008cd0;line-height:30px;text-align:center;color:#008cd0;border-radius:5px;cursor:pointer}
+
+.a-brand-state{color:#999}
+.a-brand-state .a-brand-state-left{margin:0 55px 0 140px;display:inline-block;vertical-align:top}
+.a-brand-state .a-brand-state-right{display:inline-block}
+.a-brand-state .a-brand-state-img{width:180px;height:100px;border:solid #ccc 1px;border-radius:10px;margin-bottom:25px;text-align:center}
+.a-brand-state .a-brand-state-img img{max-height:100px;max-width:180px}
+.a-brand-state .a-brand-state-operate{width:446px;height:100px;border:solid 1px #ccc;border-radius:10px;margin-bottom:25px;}
+.a-brand-state .a-brand-state-desc{margin-left:32px;padding-top:32px;}
+.a-brand-state .a-brand-state-icon{display:inline-block;width:36px;height:36px;background:url(images/big-pending.png) no-repeat;margin-right:20px;vertical-align:middle}
+.a-brand-pass .a-brand-state-icon{background-image:url(images/big-pass.png)}
+.a-brand-failed .a-brand-state-icon{background-image:url(images/big-failed.png)}
+.a-brand-withdrawn .a-brand-state-icon{background-image:url(images/big-expired.png)}
+.a-brand-expired .a-brand-state-icon{background-image:url(images/big-expired.png)}
+
+.a-brand-state .a-brand-state-text{margin-top:32px;line-height:36px;color:#333}
+.a-brand-state .a-brand-state-btn{margin-right:40px;}
+.a-brand-state .a-brand-state-cancel{display:inline-block;width:100px;height:30px;line-height:30px;text-align:center;background-color:#008cd0;color:#fff;border-radius:5px;cursor:pointer;margin-top:35px}
+.a-brand-state .a-brand-state-cancel-b{display:block;width:100px;height:30px;line-height:30px;text-align:center;background-color:#008cd0;color:#fff;border-radius:5px;cursor:pointer;margin-top:14px}
+
+.a-brand-item{padding-bottom:30px}
+.a-brand-info{line-height:36px;}
+.a-brand-info .a-brand-info-left{display:inline-block;width:120px;text-align:right;color:#999;margin-right:12px}
+.a-brand-info .a-brand-info-right{color:#333}
+.a-brand-info .a-brand-info-logo{display:inline-block;height:140px;width:140px;margin-top:20px;margin-left:15px;vertical-align:middle;width:800px}
+.a-brand-info .a-brand-info-logo img{width:140px;height:140px}

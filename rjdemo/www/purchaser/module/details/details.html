@@ -1,0 +1,200 @@
+<!--引入搜索模块-->
+<%= search %>
+
+<!--引入导航模块-->
+<div id="navModule"></div>
+
+<%if(code=="0000"){%>
+<div class="details">
+    <div class="details-first">
+        <span class="details-first-location">当前位置</span>&nbsp;&nbsp;
+        <% _.each(details.category,function(c,index){%>
+        <%if(c!=null){%>
+        <% var _key = encodeURIComponent(c.name,'utf8');%>
+        <span><a href="#/commoditylist?key=<%= _key %>&id=<%=c.id%> "><%= c.name %></a></span><% if(index+1!= details.category.length ){ %>&gt;<% }%>
+        <%}%>
+        <%  });%>
+    </div>
+    <!-- 第一栏结束 -->
+    <div class="details-second">
+        <div class="details-second-left">
+            <div class="details-second-picture">
+                <%if(details.photos.length!=0){%>
+                <span class="details-big-wrap"><img class="details-second-big" src="<%=details.photos[0].photo%>" alt=""></span>
+                <%}else{%>
+                <span class="details-big-wrap"><img class="details-second-big" src="<%=details.photo%>" alt=""></span>   
+                <%}%>
+                <div class="details-second-gallery">
+                    <ul>
+                        <%if(details.photos.length!=0){%>
+                        <%_.each(details.photos,function(i){%>
+                        <li><img src="<%=i.photo%>" alt=""/></li>
+                        <%})%>
+                        <%}else{%>
+                        <li><img src="<%=details.photo%>" alt=""/></li>
+                        <%}%>
+                    </ul>
+                </div>
+            </div>
+            <div class="details-second-info">
+                <h3><%= details.name %></h3>
+                <input type="hidden" id="cartBrandId" value="<%=details.brandId%>">
+                <div class="details-second-price">
+                    <p>价格&nbsp;:<span class="details-second-oprice">￥<%=details.price.toFixed(2)%></span></p>
+                    <!--<p><span class="details-second-sales">近三十天销量<i class="details-second-num"><%= details.saleAmount %></i></span></p>-->
+                </div>
+                <ul class="details-second-list">
+                    <li>品牌&nbsp;:<span><%= details.brandName %></span></li>
+                    <input type="hidden" id="detailsBrandId" value="<%=details.sn%>">
+                    <li>规格&nbsp;:<span><%= details.specification %></span></li>
+                    <li>编码&nbsp;:<span id="sn"><%= details.sn %></span></li>
+                    <li>货号&nbsp;:<span><%= details.productNum %></span></li>
+                    <li>库存&nbsp;:<span id="productSku"><%= details.sku %></span></li>
+                </ul>
+                <div class="details-second-collect">
+                    <% if(details.sku > 0){%>
+                    <div class="details-second-collect-num">
+                        <input class="details-second-collect-input" value="1">
+                        <span class="details-second-collect-cal">
+                            <p class="details-second-collect-cal-plus">+</p>
+                            <p>-</p>
+                        </span>
+                    </div>
+                    <% } %>
+                    <span class="details-second-car">加入购物车
+                        <div class="details-animation">
+                            <span></span>
+                        </div>
+                    </span>
+                    <span class="details-second-attention" >加入关注</span>
+                </div>
+            </div>
+        </div>
+        <div class="details-second-right">
+            <h3 class="details-second-right-title"><%=supplier.name%></h3>
+            <input id="details-shop-id" type="hidden" value="<%=supplier.id%>">
+            <ul class="details-second-right-list">
+                <li >服务电话：<span><%=supplier.mobile%></span></li>
+                <!--<li >在线交易：<span><%=supplier.saleAmount%> 笔</span></li>-->
+                <li >所&nbsp;在&nbsp;地&nbsp;：<span class="details-second-right-location"><%=supplier.address%></span></li>
+            </ul>
+            <div class="details-second-right-button">
+                <a class="details-second-right-enter" href="javascript:;">进入店铺</a>
+                <a class="details-second-right-attention" href="javascript:;">关注商家</a>
+            </div>
+            <div class="details-second-qq">
+                <a  class="details-second-right-qq" href="tencent://message/?uin=<%=supplier.qq%>&Site=在线QQ&amp;Menu=yes">
+                    QQ交谈
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 第二栏结束 -->
+    <div class="details-third">
+
+    </div>
+
+    <!-- 第三栏结束 -->
+    <div class="details-fourth">
+        <div class="details-fourth-left">
+            <div class="details-fourth-top">
+                <h3>本店商品搜索</h3>
+                <div class="details-fourth-search">
+                    <input type="text" value="关键字" id="keyWord">
+                    <span class="details-fourth-search-btn">搜索</span>
+                </div>
+            </div>
+            <div class="details-fourth-bottom">
+                <h3>本店商品分类</h3>
+                <ul class="details-fourth-category">
+                    <%_.each(categorys,function(i){%>
+                    <li>
+                        <p><%=i.name%></p>
+                        <input type="hidden" value="<%=i.id%>">
+                    </li>
+                   <%})%>
+                </ul>
+            </div>
+        </div>
+        <div class="details-fourth-right">
+            <ul class="details-fourth-tab">
+                <li  class="details-product-intro"><span>商品介绍</span></li>
+                <li><span>商品评价(<em><%=r.total%></em>)</span></li>
+                <li><span>价格走势</span></li>
+            </ul>
+            <ul class="details-fourth-content">
+                <%if(details.desc){%>
+                <li class="details-product-info">
+                    <%=details.desc%>
+                </li>
+                <%}else{%>
+                <li class="details-no-comments">暂无商品介绍。</li>    
+                <%}%>
+                <li>
+                    <ul class="details-fourth-comment">
+                        <% _.each(r.comments,function(c){%>
+                        <li>
+                            <%if(c.level==3){%>
+                            <span>
+                                <span class="details-comment-level details-comment-level3"></span>
+                                <p class="details-rate">好评</p>
+                            </span>
+                            <%}%>
+                            <%if(c.level==2){%>
+                            <span>
+                                <span class="details-comment-level details-comment-level2"></span>
+                                <p class="details-rate">中评</p>
+                            </span>
+                            <%}%>
+                            <%if(c.level==1){%>
+                            <span>
+                                <span class="details-comment-level details-comment-level1"></span>
+                                <p class="details-rate">差评</p>
+                            </span>
+                            <%}%>
+                            <span class="details-fourth-comment-text"><%= c.comment %></span>
+                            <span class="details-fourth-comment-size"><%=details.specification%></span>
+                            <span class="details-fourth-comment-name"><%= c.buyer %></span>
+                            <span class="details-fourth-comment-time"><%=c.creationTime%></span>
+                        </li>
+                        <%})%>
+                    </ul>
+                 
+                    <div id="pagination"></div>
+                    <div class="details-no-comments">暂无评论。</div>
+                </li>
+                <li >
+                    <div id="detailsChart" style="width:870px;height:300px"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<%}%>
+<%if(code=="0002"){%>
+<div class="cm-main">
+    <div class="details-no">
+        <h3 class="details-no-title">很抱歉，您查看的商品已经下架</h3>
+        <div class="details-no-text">
+            <p>您可以</p>
+            <p>1、访问供应商的店铺进行查看</p>
+            <p>2、在顶部搜索栏中搜索您想要的商品</p>
+        </div>
+    </div>
+</div>
+<%}%>
+<div class="home-footer">
+    <p>
+        <a style="color:#666;margin-right:10px;" href="index.html#help">帮助中心</a>|&nbsp;&nbsp;&nbsp;&nbsp;客服QQ：2448328732&nbsp;&nbsp;&nbsp;&nbsp;服务时间：周一至周五(节假日除外)&nbsp;&nbsp;&nbsp;&nbsp;9：00-18：00 
+        <span class="footer-logo">
+            <a href="tencent://message/?uin=2448328732&Site=在线QQ&amp;Menu=yes">
+                <img src="images/QQ.png" />
+                <span>QQ交谈</span>
+            </a>
+        </span>
+    </p>
+    <p>版权所有 @2014-2016 &nbsp;&nbsp;&nbsp;&nbsp;网站备案/许可证号：
+       <a target="_blank" style="color:#666;" href="http://www.miitbeian.gov.cn/">粤ICP备16055118号-2
+       </a>
+    </p>
+</div>

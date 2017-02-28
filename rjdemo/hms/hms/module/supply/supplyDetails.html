@@ -1,0 +1,113 @@
+<%= nav %>
+<div class="left content supply-details">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">供应商管理</span><a class="supply-details-back" href="javascript:;">&lt;返回上级</a>
+            </div>
+        </div>
+        
+        <div class="supply-details-status-info">
+            <p><span class="supply-details-date"><%=data.appDate%></span>供应商提交审核</p>
+            <%if(data.examineDate){%>
+            <p>
+                <span class="supply-details-date">
+                    <%=data.examineDate%>       
+                </span><%=data.opinion%> 
+            </p>
+            <%}%> 
+        </div>
+
+        <div class="supply-details-info">
+            <p><span class="supply-details-info-item">企业全称：</span><span><%=data.enterpriseName%></span></p>
+            <p><span class="supply-details-info-item">法定代表人：</span><span><%=data.legalRepresentative%></span></p>
+            <%if(data.unify==false){%>
+                <p><span class="supply-details-info-item">工商执照：</span><span><%=data.license%></span></p>
+                <p><span class="supply-details-info-item">机构代码：</span><span><%=data.organizationCode%></span></p>
+            <%}else{%>  
+                <p><span class="supply-details-info-item">社会信用代码：</span><span><%=data.unifyCode%></span></p>
+            <%}%> 
+            <p><span class="supply-details-info-item">服务电话：</span><span><%=data.telephone%></span></p>
+            <p><span class="supply-details-info-item">公司地址：</span><span><%=data.enterpriseAddress%></span></p>
+            <p><span class="supply-details-info-item">注册邮箱：</span><span><%=data.email%></span></p>
+            <p><span class="supply-details-info-item">联系人：</span><span><%=data.contactPerson%></span></p>
+            <p><span class="supply-details-info-item">手机号码：</span><span><%=data.mobile%></span></p>
+            <p><span class="supply-details-info-item">供应商优势：</span><span><%=data.advantage%></span></p>
+            <div class="supply-details-license">
+                <%if(data.hasOwnProperty('logoPic')){%>
+                <span class="supply-details-license-pic">
+                    <span class="supply-details-pic-wrap">
+                        <a href="<%=data.logoPic.replace(/\"/g,"").replace(/\)/g,"")%>" target="_blank">
+                            <img src="<%=data.logoPic.replace(/\"/g,"").replace(/\)/g,"")%>" />
+                        </a>
+                    </span>
+                    <p class="supply-details-license-text">企业logo</p>
+                </span>  
+                <%}%>                
+                <%if(data.hasOwnProperty('licensePictureUrl')){%>                
+                <span class="supply-details-license-pic">
+                    <span class="supply-details-pic-wrap">
+                        <a href="<%=data.licensePictureUrl.replace(/\"/g,"").replace(/\)/g,"")%>" target="_blank">
+                            <img src="<%=data.licensePictureUrl.replace(/\"/g,"").replace(/\)/g,"")%>" />
+                        </a>
+                    </span>
+                    <p class="supply-details-license-text">工商营业执照</p>
+                </span>
+                <%}%>
+                <%if(data.unify==false&&data.hasOwnProperty('organizationCodePictureUrl')){%>
+                <span class="supply-details-license-pic">
+                    <span class="supply-details-pic-wrap">
+                        <a href="<%=data.organizationCodePictureUrl.replace(/\"/g,"").replace(/\)/g,"")%>" target="_blank">
+                            <img src="<%=data.organizationCodePictureUrl.replace(/\"/g,"").replace(/\)/g,"")%>" />
+                        </a>
+                    </span>
+                    <p class="supply-details-license-text">组织机构代码证</p>
+                </span>
+                 <%}%>
+            </div>
+        </div>
+        <table cellspacing=0>
+            <thead>
+                <tr>
+                    <td class="td-width-one">品牌LOGO</td>
+                    <td class="td-width-two">品牌名</td>
+                    <td class="td-width-three">品牌制造商</td>
+                    <td class="td-width-four">代理级别</td>
+                </tr>
+            </thead>
+            <tbody>
+                <%_.each(data.brandList,function(i){%>
+                <tr>
+                    <td class="supply-details-statement-num">
+                    <img src="<%=i.logoPic%>" style="width:50px;height:50px;text-align:center;padding:5px " />
+                    </td>
+                    <%if(i.cBrandName!=""&&i.eBrandName!=""){%>
+                        <td><%=i.cBrandName%>(<%=i.eBrandName%>)</td>
+                    <%}else{%>
+                    
+                        <td><%=i.cBrandName||i.eBrandName%></td>
+                    <%}%>
+                    <td><%=i.manufacture%></td>
+                    <td><%=i.level%></td>
+                </tr>
+                <%})%>
+            </tbody>
+        </table>
+        <%if(status==1){%>
+        <div class="supply-details-examine">
+            <div>
+                <label for="supplyPass">
+                    <input type="radio" name="status" id="supplyPass" value="1" checked />审批通过
+                </label>
+                <label for="supplyRejected">
+                    <input type="radio" name="status" id="supplyRejected" value="0" />审批驳回
+                </label>
+            </div>    
+            <textarea placeholder="审批意见" id="myopion"></textarea>
+            <div>
+                <a  class="supply-details-submit" href="javascript:;">提交审核</a>
+            </div>
+        </div>
+        <%}%>
+    </div>
+</div>

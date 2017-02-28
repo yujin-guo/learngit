@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>登录成功</title>
+    </head>
+    <body>
+        <script src="../../js/libs/jquery.js"></script>
+<script src="../../js/libs/jquery.cookie.js"></script>
+<script>
+    $(document).ready(function() {
+        $.get("/store/api/identity").success(function(datas) {
+
+            var cond = encodeURIComponent(datas.user.username);
+            $.when(
+                $.get("/store/sso/logout?local=true&cond=" + cond),
+                $.get("/supp/sso/logout?local=true&cond=" + cond),
+                $.get("/bid/sso/logout?local=true&cond=" + cond)
+            ).always(function() {
+                $.cookie('id', datas.user.id, {
+                    path: '/'
+                });
+                $.cookie('username', datas.user.realName, {
+                    path: '/'
+                });
+                $.cookie('organization', datas.user.organization.name, {
+                    path: '/'
+                });
+                $.cookie("departments", datas.user.departments, {
+                    path: '/'
+                });
+                $.cookie("orgId", datas.user.organization.id, {
+                    path: '/'
+                });
+                $.cookie('userEmail', datas.user.email, {
+                    path: '/'
+                });
+                var permission_list = datas.user.permissions;
+                var new_arr = [];
+                for (var i = 0; i < permission_list.length; i++) {
+                    var items = permission_list[i].name;
+                    if ($.inArray(items, new_arr) == -1) {
+                        new_arr.push(items);
+                    }
+                }
+                window.userPermissions = new_arr;
+
+                var a = JSON.stringify(new_arr);
+
+                $.cookie("permissions", a, {expires: 1, path: "/"});
+
+                window.parent.location.reload();
+            });
+        });
+    });
+</script>
+    </body>
+</html>

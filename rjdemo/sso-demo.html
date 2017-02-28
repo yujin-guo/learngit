@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSO Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+</head>
+<body>
+<p style="color: red;">本demo页仅供开发参考。请在demo完成它的历史使命后及时删除。</p>
+<section>
+    <a href="/store/sso/login?type=wechat&cb_target=%2fsso-demo.html&cb_fail_target=2fstore%2fsso-cb-fail.jsp">微信登录</a>
+</section>
+<section>
+    <p>用户名/密码登录</p>
+    <div>当前登录采购商：<span id="storeUsername">未登录</span></div>
+    <div>当前登录供应商：<span id="suppUsername">未登录</span></div>
+    <div>
+        <a href="#" id="storeLogin" style="display: none;">切换至采购人员登录</a>
+        <a href="#" id="supplierLogin">切换至供应商登录</a>
+    </div>
+    <div style="width: 300px; height: 200px;">
+        <iframe id="loginFrame" src="/store/sso/login?cb_target=%2fstoreLoginSuccess.html" style="width: 100%; height: 100%; border: 0px;"></iframe>
+    </div>
+</section>
+<script src="www/purchaser/js/libs/jquery.js">
+</script>
+<script src="www/purchaser/js/libs/jquery.validate.min.js">
+</script>
+<script>
+    $(document).ready(function() {
+        $("#supplierLogin").click(function() {
+            $("#supplierLogin").css({display:'none'});
+            $("#storeLogin").css({display:''});
+            $("#loginFrame").prop("src", "/supp/sso/login?cb_target=%2frjdemo%2fsuppLoginSuccess.html");
+        });
+
+        $("#storeLogin").click(function() {
+            $("#supplierLogin").css({display:''});
+            $("#storeLogin").css({display:'none'});
+            $("#loginFrame").prop("src", "/store/sso/login?cb_target=%2frjdemo%2fstoreLoginSuccess.html");
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<%= nav %>
+<div class="left content bid">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">配置管理</span>
+            </div>
+        </div>
+        <div class="content-body">
+            <form class="hms-config-form" id="hms-config-form">
+                <div class="hms-config-div-com">
+                    <p class="hms-config-p-com">采购审批配置</p>
+                    <div class="content-line">
+                        <span class="content-title">
+                            采购方式
+                        </span>
+                        <span class="hms-config-purchase">
+                            <select class="hms-config-select">
+                                <option value="0">手动审批</option>
+                                <option value="10">自动审批</option>
+                                <option value="20">总额审批</option>
+                                <option value="30">单价审批</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="hms-chose-option">
+                        <div class="content-line">
+                            <span class="content-title">
+                                额&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度
+                            </span>
+                            <span class="hms-config-purchase">
+                                <input type="text" class="hms-config-chose-input hms-config-flag" id="hms-pur-money" placeholder="请输入采购总额" value="<%if(r.approvalConfModel.status==20){%><%= r.approvalConfModel.amount %><%}else if(r.approvalConfModel.status==30){%><%= r.approvalConfModel.price %><%}%>" />
+                                <span>大于等于指定额度时通知负责人，小于指定额度时自动审批</span>
+                            </span>
+                        </div>
+                        <!--<div class="content-line">
+                            <span class="content-title">授权邮箱 </span>
+                            <span class="hms-config-purchase">
+                                <input type="text" class="hms-config-chose-input" placeholder="请输入助手邮箱" />
+                            </span>
+                        </div>-->
+                    </div>
+                    <div class="content-line">
+                        <span class="content-title">
+                        </span>
+                        <input type="button" value="保存" class="content-save" id="content-save" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

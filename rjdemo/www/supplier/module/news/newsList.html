@@ -1,0 +1,29 @@
+<div class="news-wrap">
+    <div class="news-wrap-inner">
+        <ul class="news-list">
+            <%if(messageList.length!=0){%>
+            <%_.each(messageList,function(i){%>
+            <%if(i.status==false){%>
+            <li>
+                <div class="left">
+                    <span class="icon-list-active icon-list"></span>
+                    <a  class="none-read-link"  href="#newsdetails/<%=i.id%>"><%=i.title%></a>
+                </div>
+                <p class="right"><%=i.creationTime%></p>
+            </li>
+            <%}else{%>
+            <li>
+                <div class="left">
+                    <span class="icon-list"></span>
+                    <a  class="had-read-link"  href="#newsdetails/<%=i.id%>"><%=i.title%></a>
+                </div>
+                <p class="right"><%=i.creationTime%></p>
+            </li>  
+            <%}%>
+            <%})%>
+            <%}else{%>
+            <li class="news-none">暂无消息</li>   
+            <%}%>
+        </ul>
+    </div>
+</div>

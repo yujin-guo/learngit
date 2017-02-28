@@ -1,0 +1,5 @@
+config:配置
+supply:供应商医院审核
+approval:供应商资质审核
+control: 控制台
+cms:内容管理

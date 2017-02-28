@@ -1,0 +1,43 @@
+<% if(purchaseApplys.length>=1){_.each(purchaseApplys,function(L){%>
+<% var amount=L.fprevbudgetamount; var amounts=amount.toFixed(2)%>
+<tr>
+    <td>
+        <%= L.fbuyapplicationno %>
+    </td>
+    <td>
+        <%= L.fbuydepartment %>
+    </td>
+    <td>￥
+        <%= amounts %>
+    </td>
+    <td>
+        <%= L.fbuyapplicationdate %>
+    </td>
+    <td>
+        <% if(L.status==1){%> 审批中
+        <%}else if(L.status==3){%> 审批驳回
+        <%}else if(L.status==4){%> 审批通过
+        <%}%>
+    </td>
+    <td>
+        <a href="#purcharsedetail?id=<%= L.id %>">查看</a>
+    </td>
+</tr>
+<%});%>
+<!--页码-->
+<tr class="list-page">
+    <td colspan="6" class="page-td">
+        <span id="pagination"></span>
+                            <span class="total-page-show">
+                                共<span class="total-page-num">
+                                    <% if(purchaseApplys.length<1){var totalPages=0;} %>                                    
+                                    <%= totalPages %></span>页
+                            </span>
+
+    </td>
+</tr>
+<%}else{%>
+<tr>
+    <td colspan="6" class="empty-td">暂时没有申请单！</td>
+</tr>
+<%}%>

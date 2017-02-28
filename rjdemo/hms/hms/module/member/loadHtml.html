@@ -1,0 +1,55 @@
+<% if(flag==true){_.each(userList,function(U){%>
+<tr>
+    <% if(U.status==false){%>
+    <td class="member-td-id dis">
+        <%= U.id %>
+    </td>
+    <td class="member-td-name dis">
+        <%= U.name %>
+    </td>
+    <td class="member-td-mobile dis">
+        <%= U.mobile %>
+    </td>
+    <td class="member-td-email dis">
+        <%= U.email %>
+    </td>
+    <td class="member-td-department">
+        <% if(U.hasOwnProperty("depts") && U.depts.length){var depStr=null,depLen=U.depts.length;_.each(U.depts,function(D,index){depStr==null?depStr=D:depStr+=('，'+D);})%><%= depStr %><%} %>
+    </td>
+    <td class="member-td-status dis">禁用</td>
+    <td class="member-td-control dis">
+        <a href="javascript:void(0)" class="control-link status-link-event" data-id="<%= U.id %>" data-flag="1">启用</a>
+        <a href="#editMember?id=<%= U.id %>" class="control-link">查看</a>
+    </td>
+
+    <%}else{%>
+    <td class="member-td-id">
+        <%= U.id %>
+    </td>
+    <td class="member-td-name">
+        <%= U.name %>
+    </td>
+    <td class="member-td-mobile">
+        <%= U.mobile %>
+    </td>
+    <td class="member-td-email">
+        <%= U.email %>
+    </td>
+    <td class="member-td-department">
+        <% if(U.hasOwnProperty("depts") && U.depts.length){var depStr=null,depLen=U.depts.length;_.each(U.depts,function(D,index){depStr==null?depStr=D:depStr+=('，'+D);})%><%= depStr %><%} %>
+    </td>
+    <td class="member-td-status">正常</td>
+    <td class="member-td-control">
+        <a href="javascript:void(0)" class="control-link status-link-event" data-id="<%= U.id %>" data-flag="0">禁用</a>
+        <a href="#editMember?id=<%= U.id %>" class="control-link">查看</a>
+    </td>
+    <%}%>
+</tr>
+<%})}else{%>
+<tr>
+    <td class="empty-td" colspan="6">
+        暂无数据!
+    </td>
+</tr>
+
+<%} %>

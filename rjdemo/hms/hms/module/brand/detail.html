@@ -1,0 +1,198 @@
+<%= nav %>
+<div class="left content brand-detail">
+    <div class="content-wrap" id="pic-list">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">品牌管理</span>
+                <span class="symbol-return-icon"></span>
+                <a class="link-btn" href="javascript:window.history.back()">返回上级</a>
+            </div>
+        </div>
+        <%if(status==1){%>
+        <div class="matures">
+            <div class="matures-min-next">
+                <p class="status-p">
+                    <%if(typeof(creationTime)!="undefined"){%><%=creationTime%><%}%>供应商提交品牌申请，请审核。
+                </p>
+            </div>
+        </div>
+        <%}%>
+        <%if(status==2){%>
+        <div class="matures">
+            <div class="matures-min-next">
+                <p class="status-p">
+                    <%if(typeof(creationTime)!="undefined"){%><%=creationTime%><%}%>  品牌正式进驻。
+                </p>
+            </div>
+        </div>
+        <%}%>
+        <%if(status==3){%>
+        <div class="matures">
+            <div class="matures-min-next">
+                <p class="status-p">
+                    <%if(typeof(creationTime)!="undefined"){%><%=creationTime%><%}%> 驳回，原因：<%=approvalComment%>
+                </p>
+            </div>
+        </div>
+        <%}%>
+        <%if(status==4){%>
+        <div class="matures">
+            <div class="matures-min-next">
+                <p class="status-p">
+                    <%if(typeof(creationTime)!="undefined"){%><%=creationTime%><%}%> 供应商提交品牌申请，请审核。
+                </p>
+            </div>
+        </div>
+        <%}%>
+        <div class="matures">
+            <div class="matures-next">
+                <div class="matures-min">
+                    <span class="min-title">中文名：</span>
+                    <span class="min-info"><%=cName%></span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">英文名：</span>
+                    <span class="min-info"><%=eName%></span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">品牌制造商：</span>
+                    <span class="min-info"><%=manufacturer%></span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">品牌LOGO：</span>
+                    <span class="min-info">
+                        <a href="<%=logo%>" target="_blank">            
+                            <img src="<%=logo%>" class="brand-detail-logo" />
+                        </a>      
+                    </span>
+                </div>
+                <%if(level==0){%>
+                <div class="matures-min">
+                    <span class="min-title">品牌商标证明：</span>
+                    <span class="min-info">
+                    <%if(typeof(authPic)!="undefined"){%>
+                    <%_.each(authPic.split(","),function(i){%>
+                        <a href="<%=i%>" target="_blank">     
+                            <img src="<%=i%>" class="brand-detail-logo" />
+                        </a>     
+                    <%})%>
+                    <%}%>
+                    </span>
+                </div>
+                <%}%>
+            </div>
+        </div>
+        <%if(level!==0){%>
+        <div class="matures">
+            <div class="matures-next">
+                <div class="matures-min">
+                    <span class="min-title">代理级别：</span>
+                    <span class="min-info"><%=common.NoToChinese(level)%>级代理</span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">到期时间：</span>
+                    <span class="min-info"><%if(isLongAuth==false){%>
+                    <%=endDate%>  
+                    <%}%>
+                    <%if(isLongAuth==true){%>
+                      长期
+                    <%}%>  
+                    </span>
+                </div>
+                <div class="matures-min">
+                    <span class="min-title">授权资料：</span>
+                    <span class="min-info">
+                    <%_.each(authPic.split(","),function(i){%>
+                        <a href="<%=i%>" target="_blank">          
+                            <img src="<%=i%>" class="brand-detail-certification" />
+                        </a>
+                    <%})%>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <%}%>
+        <%if(status==1){%>        
+        <div class="matures">
+            <form id="app-form">
+                <div class="matures-min-next">
+                    <div class="statu-div">
+                        <span>
+                            <input type="radio" name="status" id="pass" value="1" checked />                      
+                            <label for="pass">审批通过</label>
+                        </span>
+                        <span>
+                            <input type="radio" name="status" id="refuse" value="0" />
+                            <label for="refuse">审批驳回</label>
+                        </span>
+                        <span class="error-span"></span>
+                    </div>
+                    <div class="suggestion">
+                        <textarea id="reason"></textarea>
+                    </div>
+                    <div class="btn-div">
+                        <input class="btn-link" type="submit" value="提交审核" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <%}%>
+    </div>
+</div>
+<!-- <script>
+(function(){
+    var d = document.getElementById("pic-list"),
+        c = d.getElementsByTagName("span"),
+        l = c.length,
+        scale = 2;
+    function stopEvent(e){
+        if(e && e.stopPropagation){
+            e.stopPropagation();                
+        }else{
+            e.cancelBubble = true;
+        }
+    }
+    for(var i = 0; i < l; i++){
+        c[i].left = c[i].getBoundingClientRect().left;
+        c[i].top = c[i].getBoundingClientRect().top;
+        (function(i){
+            c[i].onmouseover = function(e){
+                var e = e || window.event;
+                var img = this.getElementsByTagName("img")[0];
+                img.style.width = img.offsetWidth * scale + "px";
+                img.style.height = img.offsetHeight * scale + "px";
+                img.style.left = (this.offsetWidth - img.offsetWidth) / 2 + "px";
+                img.style.top = (this.offsetHeight - img.offsetHeight) / 2 + "px";
+                this.dsx = Math.abs(parseInt(img.style.left));
+                this.dsy = Math.abs(parseInt(img.style.top));
+                this.cdx = this.offsetWidth / 2;
+                this.cdy = this.offsetHeight / 2;
+                this.left = (this.offsetWidth - img.offsetWidth) / 2
+                this.top = (this.offsetHeight - img.offsetHeight) / 2
+                stopEvent(e);
+            };
+            c[i].onmouseout = function(e){
+                var e = e || window.event;
+                var img = this.getElementsByTagName("img")[0];
+                img.style.width = img.offsetWidth / scale + "px";
+                img.style.height = img.offsetHeight / scale + "px";
+                img.style.left = Math.floor((this.offsetWidth - img.offsetWidth) / 2) + "px";
+                img.style.top = Math.floor((this.offsetHeight - img.offsetHeight) / 2) + "px";
+                stopEvent(e);
+            };
+            c[i].onmousemove = function(e){
+                var e = e || window.event;
+                var img = this.getElementsByTagName("img")[0];
+                var center = {"x":this.getBoundingClientRect().left + this.offsetWidth / 2,"y":this.getBoundingClientRect().top + this.offsetHeight / 2};
+                var mPos = {"x":e.clientX,"y":e.clientY};
+                var deltax = center.x - mPos.x,deltay = center.y - mPos.y;
+                var dleft = deltax / this.cdx * this.dsx;
+                var dtop = deltay / this.cdy * this.dsy;
+                img.style.left = Math.floor(this.left + dleft) + "px";
+                img.style.top = Math.floor(this.top + dtop) + "px";
+                stopEvent(e);
+            }
+        })(i);
+    }
+})();
+</script> -->

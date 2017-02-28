@@ -1,0 +1,117 @@
+<div class="bidlist">
+    <div class="bidlist-title">
+        <ul class="bidlist-title-list overflow">
+            <li class="bidlist-title-list-highlight">全部</li>
+            <li>草稿</li>
+            <li>初选</li>
+            <li>驳回</li>
+        </ul>
+        <div class="right">
+            <div class="bidlist-title-search">
+                <input class="bidlist-title-search-txt" type="text" placeholder="请输入竞价编号">
+                <a href="javascript:;" class="bidlist-title-search-btn">搜索</a>
+            </div>
+            <a href="javascript:;" class="bidlist-title-more">更多</a>&gt;
+        </div>
+    </div>
+    <div class="bidlist-main">
+        <div class="bidlist-main-more">
+            <span><span class="bidlist-more-search-title">竞价编号</span>：<input type="text" class="bidlist-more-input bidlist-more-number"></span>
+            <span class="bidlist-dept-choose"><span class="bidlist-more-search-title">采购部门</span>：<input type="text" class="bidlist-more-input bidlist-more-department">
+                <ul class="bidlist-dept-choices"></ul>
+            </span>
+            <span class="bidlist-status-choose"><span class="bidlist-more-search-title">状态</span>：<input type="text" class="bidlist-more-input bidlist-more-status">
+                <ul class="bidlist-status-choices">
+                    <li>草稿</li>
+                    <li>初审中</li>
+                    <li>初审驳回</li>
+                    <li>竞价中</li>
+                    <li>初选中</li>
+                    <li>终审中</li>
+                    <li>终审驳回</li>
+                    <li>竞价完成</li>
+                    <li>已流标</li>
+                </ul>
+            </span>
+            <span><span class="bidlist-more-search-title">开始时间</span>：<input type="text" class="bidlist-more-input" id="startTime" readonly="readonly"></span>
+            <span><span class="bidlist-more-search-title">结束时间</span>：<input type="text" class="bidlist-more-input" id="endTime" readonly></span>
+            <div class="bidlist-more-btn">
+                <span class="bidlist-more-btn-search">搜索</span><span class="bidlist-more-btn-reset">重置</span>
+            </div>
+        </div>
+        <ul class="bidlist-main-top overflow">
+            <li class="bidlist-main-product-name">商品名称</li>
+            <li class="bidlist-main-product-number">货号</li>
+            <li class="bidlist-main-brand">品牌</li>
+            <li class="bidlist-main-quantity">数量</li>
+            <li class="bidlist-main-status">状态</li>
+            <li class="bidlist-main-operate">操作</li>
+        </ul>
+        <div id="bidItemWrap">
+            <%if(entities.length){%>
+            <%_.each(entities,function(i){%>
+            <div class="bidlist-main-item">
+                <div class="bidlist-main-item-top">
+                    <span class="bidlist-main-item-num">竞价编号：<%=i.sn%></span>
+                    <span class="bidlist-main-item-num">开始时间：<%=i.startDate%></span>
+                    <span class="bidlist-main-item-num">截止时间：<%=i.endDate%></span>
+                    <span class="bidlist-main-item-num"><%=i.deptName%></span>
+                    <span><%=i.userName%></span>
+                </div>
+                <table cellspacing=0>
+                    <%var first=_.first(i.itemList)%>
+                    <tr class="bidlist-main-item-list">
+                        <%if(first!=undefined){%>
+                        <td class="bidlist-main-product-name"><%=first.name%></td>  
+                        <td class="bidlist-main-product-number"><%=first.itemNo%></td>
+                        <td class="bidlist-main-brand"><%=first.brand%></td>
+                        <td class="bidlist-main-quantity"><%=first.count%></td>
+                        <%}else{%>
+                        <td class="bidlist-main-product-name"></td>  
+                        <td class="bidlist-main-product-number"></td>
+                        <td class="bidlist-main-brand"></td>
+                        <td class="bidlist-main-quantity"></td>    
+                        <%}%>
+                        <td class="bidlist-main-status" rowspan=1111><%=i.statusDesc%></td>
+                        <td class="bidlist-main-operate" rowspan=1111>
+                            <input type="hidden" value="<%=i.id%>" class="bidlist-item-id">
+                            <input type="hidden" value="<%=i.deptId%>" class="bidlist-item-deptid">
+                            <%if(i.status==30||i.status==49){%>
+                            <a class="bidlist-main-item-btn" href="#biddetails/<%=i.id%>">选择供应商</a>
+                            <%}%>
+                            <%if(i.status==19){%>
+                            <p class="bidlist-main-item-btn bidlist-submit">提交初审</p>
+                            <p class="bidlist-main-item-btn bidlist-amend">修改</p>
+                            <%}%>
+                            <%if(i.status==0){%>
+                            <p class="bidlist-main-item-btn bidlist-submit">提交初审</p>
+                            <p class="bidlist-main-item-btn2 bidlist-amend">修改</p>
+                            <%}%>
+                            <%if(i.status>=10&&i.status<19){%>
+                            <p class="bidlist-main-item-btn bidlist-item-revoke">撤回申请</p>
+                            <%}%>
+                            <a class="bidlist-main-item-btn2" href="#biddetails/<%=i.id%>">竞价详情</a>
+                            <%if(i.status==0||i.status==19){%>
+                            <p class="bidlist-main-item-btn2 bidlist-item-delete">删除</p>
+                            <%}%>
+                            
+                        </td>
+                    </tr>
+                    <%_.each(_.rest(i.itemList),function(j){%>
+                    <tr class="bidlist-main-item-list">
+                        <td class="bidlist-main-product-name"><%=j.name%></td>  
+                        <td class="bidlist-main-product-number"><%=j.itemNo%></td>
+                        <td class="bidlist-main-brand"><%=j.brand%></td>
+                        <td class="bidlist-main-quantity"><%=j.count%></td>
+                    </tr>
+                    <%})%>
+                </table>
+            </div>
+            <%})%>
+            <%}else{%>
+            <div class="bidlist-no-data">暂无数据。</div>    
+            <%}%>
+        </div>
+        <div id="pagination"></div>
+    </div>
+</div>

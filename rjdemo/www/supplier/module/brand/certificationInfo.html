@@ -1,0 +1,175 @@
+<!--认证第二步 自有品牌-->
+<div class="c-brand c-brand-private">
+    <div class="c-brand-flow">
+        <span class="c-brand-flow-01 c-brand-flow-white">选择类型</span>
+        <span class="c-brand-flow-white">填写资料</span>
+        <span>提交成功</span>
+    </div>
+    <div class="c-brand-item">
+        <div class="c-brand-header overflow">
+            <span class="c-brand-icon left"></span>
+            <span class="c-brand-title left">品牌信息</span>
+            <span class="c-brand-line left"></span>
+        </div>
+        <div class="c-brand-info overflow">
+            <span class="c-brand-info-left">品牌中文名称</span>
+            <span class='c-brand-info-right'>
+                <input type="text" class="c-brand-cname">
+                <p>请填写品牌中文名称，品牌中文名称和品牌英文名称，至少填写一个。</p>
+            </span>
+        </div>
+        <div class="c-brand-info overflow">
+            <span class="c-brand-info-left">品牌英文名称</span>
+            <span class='c-brand-info-right'>
+                <input type="text" class="c-brand-ename">
+                <p>请填写品牌中文名称，品牌中文名称和品牌英文名称，至少填写一个。</p>
+            </span>
+        </div>
+        <div class="c-brand-info overflow">
+            <span class="c-brand-info-left">*&nbsp;品牌制造商</span>
+            <span class='c-brand-info-right'>
+                <input type="text" class="c-brand-manufacture">
+                <p>请输入品牌的制造商名称。</p>
+            </span>
+        </div>
+        <div class="c-brand-info overflow">
+            <span class="c-brand-info-left">*&nbsp;品牌LOGO</span>
+            <span class='c-brand-info-right c-brand-select'>
+                <span class="c-brand-img-container c-brand-logo" id="selfLogo"></span>
+                <a href="javascript:;" class="c-brand-file-select" id="selfLogoSelect">
+                    <p class="c-brand-plus">+</p>
+                    <p>选择文件</p>
+                </a>
+                <form id="form1">
+                    <input  type="file" name="file" style="display:none">
+                    <input  type="hidden" name="fileType" value="image">
+                    <input  type="hidden" name="category" value="NORMAL">
+                </form>
+                <p>请上传品牌LOGO图片</p>
+                <p>131＊69像素，仅支持PNG格式，大小不超过300KB。</p>
+            </span>
+        </div>
+        <div class="c-brand-info overflow">
+            <span class="c-brand-info-left">*&nbsp;品牌商标证书</span>
+            <span class='c-brand-info-right c-brand-select'>
+                <span class="c-brand-img-container c-brand-auth-pic" id="selfCertifications"></span>
+                <a href="javascript:;" class="c-brand-file-select" id="selfCertificationsSelect">
+                    <p class="c-brand-plus">+</p>
+                    <p >选择文件</p>
+                </a>
+                <form id="form2">
+                    <input  type="file" name="file" style="display:none">
+                    <input  type="hidden" name="fileType" value="image">
+                    <input  type="hidden" name="category" value="NORMAL">
+                </form>
+                <p>请上传品牌商标证书</p>
+                <p>格式要求：原件照片、扫描件或者复印件加盖企业公章后的扫描件，</p>
+                <p>支持.jpg .jpeg .bmp .gif .png格式照片，大小不超过2M。</p>
+            </span>
+        </div>
+    </div>
+    <div>
+        <a class="c-brand-submit" href="javascript:;">提交审核</a>
+        <a class="c-brand-pre-step" href="javascript:history.back()">上一步</a>
+    </div>
+</div>
+<!--认证第二步 代理品牌-->
+<div class="c-brand c-brand-agent">
+    <div class="c-brand-flow">
+        <span class="c-brand-flow-01 c-brand-flow-white">选择类型</span>
+        <span class="c-brand-flow-white">填写资料</span>
+        <span>提交成功</span>
+    </div>
+    <div class="c-brand-item">
+        <div class="c-brand-header overflow">
+            <span class="c-brand-icon left"></span>
+            <span class="c-brand-title left">品牌信息</span>
+            <span class="c-brand-line left"></span>
+        </div>
+        <div class="c-brand-info overflow">
+            <span class="c-brand-info-left">*&nbsp;品牌中文名称</span>
+            <span class='c-brand-info-right'>
+                <input type="text" class="c-brand-cname">
+                <p>请填写品牌中文名称，品牌中文名称和品牌英文名称，至少填写一个。</p>
+            </span>
+        </div>
+        <div class="c-brand-info overflow">
+            <span class="c-brand-info-left">*&nbsp;品牌英文名称</span>
+            <span class='c-brand-info-right'>
+                <input type="text" class="c-brand-ename">
+                <p>请填写品牌中文名称，品牌中文名称和品牌英文名称，至少填写一个。</p>
+            </span>
+        </div>
+        <div class="c-brand-info overflow">
+            <span class="c-brand-info-left">*&nbsp;品牌制造商</span>
+            <span class='c-brand-info-right'>
+                <input type="text" class="c-brand-manufacture">
+                <p>请输入品牌的制造商名称。</p>
+            </span>
+        </div>
+        <div class="c-brand-info overflow">
+            <span class="c-brand-info-left">*&nbsp;品牌LOGO</span>
+            <span class='c-brand-info-right c-brand-select'>
+                <span class="c-brand-img-container c-brand-logo" id="agentLogo"></span>
+                <a href="javascript:;" class="c-brand-file-select" id="agentLogoSelect">
+                    <p class="c-brand-plus">+</p>
+                    <p>选择文件</p>
+                </a>
+                <form id="form3">
+                    <input  type="file" name="file" style="display:none">
+                    <input  type="hidden" name="fileType" value="image">
+                    <input  type="hidden" name="category" value="NORMAL">
+                </form>
+                <p>请上传品牌LOGO图片</p>
+                <p>131＊69像素，仅支持PNG格式，大小不超过300KB。</p>
+            </span>
+        </div>
+    </div>
+    <div class="c-brand-item">
+        <div class="c-brand-header overflow">
+            <span class="c-brand-icon left"></span>
+            <span class="c-brand-title left">授权信息</span>
+            <span class="c-brand-line left"></span>
+        </div>
+        <div class="c-brand-info clearfix">
+            <span class="c-brand-info-left">代理级别</span>
+            <span class='c-brand-info-right clearfix'>
+                <p class="c-brand-info-authorize">一级代理</p>
+                <ul>
+                    <li>一级代理</li>
+                    <li>二级代理</li>
+                    <li>三级代理</li>
+                </ul>
+            </span>
+        </div>
+        <div class="c-brand-info overflow">
+            <span class="c-brand-info-left">授权到期时间</span>
+            <span class='c-brand-info-right'>
+                <input type="text"id="startTime" placeholder="请选择日期"><span class="c-brand-long-term">长期授权</span>
+                <p>请填写品牌授权到期时间，如果属于长期授权的，请选择长期授权。</p>
+            </span>
+        </div>
+        <div class="c-brand-info overflow">
+            <span class="c-brand-info-left">*&nbsp;品牌授权资料</span>
+            <span class='c-brand-info-right c-brand-select'>
+                <span class="c-brand-img-container c-brand-auth-pic" id="agentCertifications"></span>
+                <a href="javascript:;" class="c-brand-file-select" id="agentCertificationsSelect">
+                    <p class="c-brand-plus">+</p>
+                    <p>选择文件</p>
+                </a>
+                <form id="form4">
+                    <input  type="file" name="file" style="display:none">
+                    <input  type="hidden" name="fileType" value="image">
+                    <input  type="hidden" name="category" value="NORMAL">
+                </form>
+                <p>请上传品牌授权证书</p>
+                <p>格式要求：原件照片、扫描件或者复印件加盖企业公章后的扫描件，</p>
+                <p>支持.jpg .jpeg .bmp .gif .png格式照片，大小不超过2M。</p>
+            </span>
+        </div>
+    </div>
+    <div>
+        <a class="c-brand-submit" href="javascript:;">提交审核</a>
+        <a class="c-brand-pre-step" href="javascript:history.back()">上一步</a>
+    </div>
+</div>

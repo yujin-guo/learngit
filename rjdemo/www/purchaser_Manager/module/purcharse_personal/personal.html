@@ -1,0 +1,169 @@
+<div class="personal-wrap">
+    <div class="personal-header-wrap">
+        <span class="personal-icon01"></span>
+        <span class="personal-header-title">基本信息</span>
+        <div class="borderbottom"></div>
+    </div>
+    
+    <div class="clear personal-info-wrap color-border-bottom">
+        <div class="personal02">
+            <span class="personal-title-01">真实姓名：</span>
+            <span class="personal-info"><%= name %></span>
+        </div>
+        <div class="personal02">
+            <span class="personal-title-01">工作部门：</span>
+            <span class="personal-info">
+                <% var departStrings=''; for(var i=0;i<departmentList.length;i++){if(i==0){departStrings+=departmentList[i]}else{departStrings=departStrings+'；'+departmentList[i]}} %>
+                <%= departStrings %>
+            </span>
+        </div>
+        <div class="personal02">
+            <span class="personal-title-01">注册时间：</span>
+            <span class="personal-info"><%= creationTime %></span>
+        </div>
+    </div>
+    <div class="personal-info-wrap-01">
+        <div class="personal01">
+            <div class="personal-left-title left">
+                <span class="personal-title-01">手机号码：</span>
+                <span class="personal-info">
+                您已绑定了手机 
+                <span class="desc-info"><% var prevThree = mobile.slice(0,3);var backForth=mobile.slice(-4); %><%= prevThree %>****<%= backForth %></span>。
+                <span class="desc-info-span">[您的手机号可以直接用于登录、找回密码等]</span>
+                </span>
+            </div>
+            <div class="right">
+                <a href="javascript:void(0)" class="edit-link" data-flag="mobile">修改</a>
+            </div>
+        </div>
+        <div class="personal01 border-both">
+            <div class="personal-left-title left">
+                <span class="personal-title-01">固定电话：</span>
+                <span class="personal-info">
+                <% if(telephone){%>
+                    您已绑定了固话
+                    <span class="desc-info"><%= telephone %></span>
+                    <%}else{%>
+                    您尚未绑定固话。
+                    <%} %>
+                
+                </span>
+            </div>
+            <div class="right">
+                <a href="javascript:void(0)" class="edit-link" data-flag="phone">修改</a>
+            </div>
+        </div>
+        <div class="personal01">
+            <div class="personal-left-title left">
+                <span class="personal-title-01">电子邮箱：</span>
+                <span class="personal-info">
+                <%if(email){%>    
+                    您已绑定了邮箱 
+                    <span class="desc-info"><%= email %></span>。
+                    <span class="desc-info-span">[您的邮箱号可以直接用于登录、找回密码等]</span>
+                <%}else{%>
+                    您尚未绑定邮箱。
+                <%}%>
+                </span>
+            </div>
+            <div class="right">
+                <a href="javascript:void(0)" class="edit-link" data-flag="email">修改</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="personal-edit-background"></div>
+<form id="purcharse-form">
+    <div class="alert-personal-edit phone">
+        <div class="close">
+            <span class="left close-title">修改固定电话号码</span>
+            <span class="right close-event-icon"></span>
+        </div>
+            
+        <div class="form-div">
+            <div class="personal03 personal-padding01">
+                <span class="personal-title-02">固定电话</span>
+                <span class="personal-info">
+                    <input class="common" name="phone" id="phone" maxlength="13" type="text" placeholder="请输入固定电话" />
+                    <div class="edit-error-wrap error-wrap"></div>
+                </span>
+            </div>
+            <!--<div class="personal03">
+                <span class="personal-title-02">登录密码</span>
+                <span class="personal-info">
+                    <input class="common phone-email" name="password" type="password" placeholder="请输入登录密码"  />
+                   <div class="edit-error-wrap error-wrap"></div>
+                </span>
+            </div>-->
+            <div class="personal03">
+                <span class="personal-info">
+                    <input class="personal-button personal-edit " type="submit"  value="保存" data-flag="telphone" />
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="alert-personal-edit mobile">
+        <div class="close">
+            <span class="left close-title">修改手机号码</span>
+            <span class="right close-event-icon"></span>
+        </div>
+        <div class="form-div">
+            <div class='personal03'>
+                <span class='personal-title-02'>手机号码</span>
+                <span class='personal-info'>
+                    <input class="common" name="mobilephone" id="mobilephone"  maxlength=11 type="text" placeholder="请输入手机号码" />
+                    <div class="edit-error-wrap error-wrap"></div>
+                </span>
+            </div>
+            <div class="personal03">
+                <span class="personal-title-02">验证码</span>
+                <span class="personal-info">
+                    <span class="personal-mobile">
+                       <input class='common left' name='code' id='code' type='text' placeholder='请输入验证码' />
+                       <a href="javascript:void(0);" id="personal-code" class="personal-code right">获取手机验证码</a>
+                    </span>
+                <div class="edit-error-wrap error-wrap"></div>
+                </span>
+            </div>
+            <!--<div class="personal03">
+                <span class="personal-title-02">登录密码</span>
+                <span class="personal-info">
+                    <input class="common mobile-pass" name="password" type="password"  placeholder="请输入登录密码" />
+                    <div class="edit-error-wrap error-wrap"></div>
+                </span>
+            </div>-->
+            <div class="personal03">
+                <span class="personal-info middle">
+                    <input class="personal-button personal-edit " type="submit"  value="保存" data-flag="mobile" />
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="alert-personal-edit email">
+        <div class="close">
+             <span class="left close-title">修改电子邮箱</span>
+            <span class="right close-event-icon"></span>
+        </div>
+        <div class="form-div">
+            <div class="personal03 personal-padding01">
+                <span class="personal-title-02">电子邮箱</span>
+                <span class="personal-info">
+                    <input class="common" name="email" id="email" type="text" placeholder="请输入电子邮箱" />
+                    <div class="edit-error-wrap error-wrap"></div>
+                </span>
+            </div>
+           <!-- <div class="personal03">
+                <span class="personal-title-02">登录密码</span>
+                <span class="personal-info">
+                    <input class="common email-pass" name="password" type="password" placeholder="请输入登录密码"  />
+                    <div class="edit-error-wrap error-wrap"></div>
+                </span>
+            </div>-->
+            <div class="personal03">
+                <span class="personal-info">
+                    <input class="personal-button personal-edit " type="submit"  value="保存" data-flag="email" />
+                </span>
+            </div>
+        </div>
+    </div>
+</form>

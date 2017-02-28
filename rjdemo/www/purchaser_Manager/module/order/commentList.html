@@ -1,0 +1,49 @@
+<div class="c-list">
+    <div class="c-list-title overflow">
+        <span class="left c-list-rate">评价</span>
+        <span class="left c-list-comment">评论</span>
+        <span class="left c-list-supplier">被评价人</span>
+        <span class="left c-list-product">商品信息</span>
+    </div>
+    <div id="commentWrapper">
+        <%if(typeof(comments)!="undefined"&&comments.length!=0){%>
+        <%_.each(comments,function(i){%>
+        <div class="c-list-item overflow">
+            <span class="left c-list-rate">
+                <%if(i.level==1){%>
+                <span class="c-list-item-star c-list-item-star1"></span>
+                <%}else if(i.level==2){%>
+                <span class="c-list-item-star c-list-item-star2"></span>
+                <%}else if(i.level==3){%>
+                <span class="c-list-item-star c-list-item-star3"></span>
+                <%}%>
+            </span>
+            <span class="left c-list-comment">
+                <p><%=i.comment||"-"%></p>
+                <p class="c-list-item-time"><%=i.time%></p>
+            </span>
+            <span class="left c-list-supplier"><%=i.supp%></span>
+            <span class="left c-list-product">
+                <img src="<%=i.picpath%>" class="c-list-item-img">
+                <span class="c-list-product-info">
+                    <a class="c-list-item-name"><%=i.name%></a>
+                    <p class="c-list-item-spec">规格 ：<%=i.spec%></p>
+                </span>
+            </span>
+        </div>
+        <%})%>
+        <%}else{%>
+           <div class="c-list-no-data">暂无数据。</div> 
+        <%}%>
+    </div>
+    <!--<div id="pagination"></div>-->
+    <div class="list-page">
+        <div class="page-td">
+            <span id="pagination"></span>
+            <span class="total-page-show">
+                共<span class="total-page-num">                            
+                    <%= totalPages%></span>页
+            </span>
+        </div>
+    </div>
+</div>

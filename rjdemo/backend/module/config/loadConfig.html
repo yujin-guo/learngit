@@ -1,0 +1,38 @@
+<% if(flag==true){_.each(statements,function(i){%>
+<tr>
+    <td class="apply-id"><%=i.banlanceNo%></td>
+    <td class="supplier"><%=i.supplierName%></th>
+    <td class="group"><%=i.department%></td>
+    <td class="human"><%=i.commiter%></td>
+    <td class="date"><%=i.banlanceDate%></td>
+    <td class="money"><%=i.banlanceMoney%></td>
+    <%if(i.status==0){%>
+    <td class="status-td">准备中</td>
+    <%}%>
+    <%if(i.status==1){%>
+    <td class="status-td">审批中</td>
+    <%}%>
+    <%if(i.status==2){%>
+    <td class="status-td">付款中</td>
+    <%}%>
+    <%if(i.status==3){%>
+    <td class="status-td">已完成</td>
+    
+    <%}%>
+    <td class="control">
+        <a href="#accountdetails/<%=i.banlanceNo%>/<%=i.status%>" class="account-check">查看</a>
+        <%if(i.status==0){%>
+        <a href="javascript:;" class="account-receive">接受资料</a>
+        <%}%>
+        <%if(i.status==1){%>
+        <a href="javascript:;" class="account-submit">提交财务</a>
+        <%}%>
+    </td>
+</tr>
+<%})}else{%>
+<tr>
+    <td class="account-no-result" colspan=8>
+                                        暂无结果。   
+    </td> 
+</tr>
+<%}%>

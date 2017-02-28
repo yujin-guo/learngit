@@ -1,0 +1,15 @@
+<%if(entities==null){%>
+    <li class="help-none">暂无内容。</li>
+<%}else{%>
+    <%_.each(entities,function(i){%>
+        <li class="overflow">
+            <a href="#helpdetails/<%=i.id%>/<%=convert(i.publishTime)%>">
+                <span class="left help-item-text">
+                    [<%=i.columnName%>]&nbsp;<%=i.title%></span>
+                <span class="right help-item-time">
+                    <%=convert(i.publishTime)%>
+                </span>
+            </a>
+        </li>
+    <%})%>
+<%}%>

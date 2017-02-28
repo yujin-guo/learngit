@@ -1,0 +1,51 @@
+<div class="hospital-wrap">
+    <div class="hospital-wrap-top">
+        <span class="icons-color"></span>
+        <span class="icons-title">医院列表</span>
+        <span class="icons-hr"></span>
+    </div>
+    <div class="hospital-content left">
+        <% _.each(hospital,function(h){%>
+        <div class="hospital-cell left">
+            <div class="hospital-icon">
+            <img src="http://www.rjmart.cn/cms/file/downLoad?type=image&category=ORG_LOGO&about=<%=h.orgId%>&serial=0" />
+            </div>
+            <p class="hospital-name"><%=h.name%></p>
+            <div class="status">
+                <%if(h.status==1){ %>
+                    <span class="status-icon doing"></span>审核中
+                <%}%>
+                <%if(h.status==2){ %>
+                    <span class="status-icon pass"></span>已进驻
+                <%}%>
+                <%if(h.status==3){ %>
+                    <span class="status-icon unpass"></span>未通过
+                <%}%>
+                <%if(h.status==4){ %>
+                    <span class="status-icon unexit"></span>已撤回
+                <%}%>
+                <%if(h.status==5){ %>
+                    <span class="status-icon unexit"></span>未进驻
+                <%}%>
+            </div>
+            <div class="control-btn">
+                <%if(h.status==1){ %>
+                    <a href="#hospitaldoing?id=<%=h.authId%>">查看</a>
+                <%}%>
+                <%if(h.status==2){ %>
+                    <a href="#hospitalpass?id=<%=h.authId%>">查看</a>
+                <%}%>
+                <%if(h.status==3){ %>
+                    <a href="#hospitalunpass?id=<%=h.authId%>&orgId=<%=h.orgId%>">查看</a>
+                <%}%>
+                <%if(h.status==4){ %>
+                    <a href="#hospitalunexit?id=<%=h.authId%>&orgId=<%=h.orgId%>">查看</a>
+                <%}%>
+                <%if(h.status==5){ %>
+                    <a href="#hospitalapply?id=<%=h.authId%>&orgId=<%=h.orgId%>">申请进驻</a>
+                <%}%>
+            </div>
+        </div>
+        <% })%>
+    </div>
+</div>

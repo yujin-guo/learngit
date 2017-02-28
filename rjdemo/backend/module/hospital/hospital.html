@@ -1,0 +1,96 @@
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">医院信息管理</span>
+            </div>
+        </div>
+        <div class="infomation" id="infomation">
+            <div class="matures">
+                <div class="member-btn-div left">
+                    <a href="#addHospital" class="member-btn-link relative">新增医院</a>
+                </div>
+                <div class="search-div right">
+                    <select class="status-select" id="status-select">
+                        <option value="">所有</option>
+                        <option value=1>未发布</option>
+                        <option value=10>已上线</option>
+                        <option value=20>已下线</option>
+                    </select>
+                    <input class="search-input" id="search-value" type="text" placeholder="请输入医院名称" />
+                    <a class="search-btn" id="search-btn" href="javascript:void(0)"></a>
+                </div>
+            </div>
+            <table class="member-list-table">
+                <thead>
+                    <tr>
+                        <th class="member-td-id">医院</th>
+                        <th class="member-td-email">医院全称</th>
+                        <th class="member-td-mobile">医院简称</th>
+                        <th class="member-td-name">入驻日期</th>
+                        <th class="member-td-status">状态</th>
+                        <th class="member-td-control">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="list">
+                    <% if(flag==true){_.each(entities,function(U){%>
+                    <tr>
+                        <td class="member-td-id">
+                            <%= U.id %>
+                        </td>
+                        <td class="member-td-email">
+                            <%= U.name %>
+                        </td>
+                        <td class="member-td-mobile">
+                            <% if(U.hasOwnProperty('alias')) {%>
+                            <%= U.alias %>
+                            <%}%>
+                        </td>
+                        <td class="member-td-name">
+                            <% if(U.enterDate){%>
+                                <%= common.getLocalTime(U.enterDate).split(" ")[0] %>
+                            <%} %>
+                            
+                        </td>
+                        <td class="member-td-status">
+                            <% if(U.status==1){%> 未发布
+                            <%}else if(U.status==10){%> 已上线
+                            <%}else if(U.status==20){%> 已下线
+                            <%} else if(U.status==30){%> 已冻结
+                            <%} %>
+                        </td>
+                        <td class="member-td-control">
+                            <a href="#editHospital/<%= U.id %>" class="control-link">查看</a>
+                            <a href="#editHospital/<%= U.id %>" class="control-link">修改</a>
+                            <% if(U.status==1){%> 
+                                <a href="javascript:void(0)" class="control-link status-link-event" data-id="<%= U.id %>">发布</a>
+                            <%}%>
+                        </td>
+                    </tr>
+                    <%})}else{%>
+                    <tr>
+                        <td class="empty-td" colspan="6">
+                            暂无数据!
+                        </td>
+                    </tr>
+
+                    <%} %>
+
+                </tbody>
+            </table>
+            <div class="matures">
+                <div class="page">
+                    <div class="right">
+                        <a class="endpoint" href="javascript:void(0)">尾页</a>
+                    </div>
+                    <div class="right" id="pagination">
+
+                    </div>
+                    <div class="right">
+                        <a class="endpoint" href="javascript:void(0)">首页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

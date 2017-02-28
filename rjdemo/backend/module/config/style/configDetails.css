@@ -1,0 +1,37 @@
+.content-wrap{margin-left: 20px;margin-top: 40px;}
+.content-nav{padding-bottom: 10px;border-bottom: 1px solid #d7d7d7;}
+.symbol-icon01{border-left: 3px solid #13b5bd;}
+.symbol-title{margin-left: 10px;color: #666;font-size: 16px;}
+
+.bid-details-back{margin-left:20px;color:#008cd0;}
+.bid-details-flow{margin:20px 0;overflow:hidden}
+.bid-details-flow-item{float:left;width:14%;overflow:hidden;height:30px;line-height:30px;text-align:center;color:#fff}
+.bid-details-flow-last{float:left;width:16%;height:30px;line-height:30px;text-align:center;color:#fff}
+.bid-details-arrow{float:right;width:13px;;height:30px;background:url(images/arrow.png) #fff}
+.bid-details .color-one{background-color:#13b5bd}
+.bid-details .color-two{background-color:#ccc}
+.bid-details .bc-one{background-position:0 0;}
+.bid-details .bc-two{background-position:-35px 0;}
+.bid-details .bc-three{background-position:-70px 0;}
+.bid-details-info{border:solid #ccc 1px;line-height:30px;font-size:12px;padding:10px;color:#333;margin:20px 0}
+.bid-details-info-item{width:70px;color:#666}
+.bid-details table{border:solid 1px #ccc;width:100%;font-size:12px;border-collapse:collapse}
+.bid-details table thead{background-color:#f9fafc;color:#999}
+.bid-details table td{border:solid 1px #ccc;height:40px;text-align:center;border-collapse:collapse;padding:5px 0} 
+.bid-details .bid-details-statement-num{padding-left:10px}
+.bid-details .bid-details-total-price{border-bottom:none;text-align:right;padding-right:20px;font-size:12px;color:#666}
+.bid-details .td-width-one{width:22%}
+.bid-details .td-width-two{width:7%}
+.bid-details .td-width-three{width:26%}
+
+.bid-details-check{color:#008cd0}
+.bid-details-examine{background-color:#fcf8e2;padding:20px 0 30px 10px;margin:20px 0}
+.bid-details-examine label{margin-right:20px}
+.bid-details-examine textarea{height:90px;width:50%;resize:none;margin:15px 0 20px}
+.bid-details-submit{width:150px;height:40px;background-color:#13b5bd;font-size:16px;color:#fff;line-height:40px;text-align:center}
+/*竞价商品及报价详情表格*/
+.bid-details .bid-width-one{width:19px;padding:0 5px;background-color:#f0fbf8}
+.bid-details .bid-winner{text-align:left;text-indent:10px;background-color:#fcf8e2}
+.bid-details .bid-winner-company{color:#333;margin-right:15px}
+.bid-details .bid-winner-reason{color:#298d79}
+.bid-details .bid-lowest-price td{background-color:#13b5bd;color:#fff}

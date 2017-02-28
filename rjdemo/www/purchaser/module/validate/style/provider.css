@@ -1,0 +1,134 @@
+.protocol-wrap-01{display: none;overflow: hidden;}
+.provider-schdule-wrap{height: 146px;background-color: #fff;border-bottom: 1px #e4e4e4 solid;}
+.provider-wrap{margin: 42px 0;box-shadow: 0 0 3px 3px rgba(0,0,0,.1);background-color: #f9f9f9;padding-bottom: 30px;}
+.validate-mobile-p{color: #333;font-size: 14px;font-weight: bold;margin: 20px;padding-left: 40px;}
+.provider-register-01{
+	width: 476px;
+	margin: 0 auto;
+	padding: 40px 0;
+}
+.provider-first-icon,.provider-second-icon,.provider-third-icon,.provider-forth-icon{
+	height: 41px;
+	background-image: url(images/menhu-icon.png);
+	background-repeat: no-repeat;
+}
+.provider-first-icon{
+	background-position: 1% 54.5%;
+}
+.provider-second-icon{
+	background-position: 1% 66.5%;
+}
+.provider-third-icon{
+	background-position: 1% 78%;
+}
+.provider-forth-icon{
+	background-position: 1% 90%;
+}
+.provider-schedule{
+	margin-top: 6px;
+	/*margin-bottom: 78px;*/
+}
+.step-first,.step-second,.step-third,.step-fourth{
+	color: #999;
+}
+.step-first{margin-left: 8px;}
+.step-second{
+	margin-left: 70px;
+	}
+.step-third{
+	margin-left:85px;
+}
+.step-fourth{
+	margin-left: 82px;
+}
+.schedule-active{
+	color: #008cd0;
+}
+.provider-register-content{
+	widows: 400px;
+	margin: 0 auto;
+}
+.provider-reginster-second{
+	padding: 0 30px 0 37px;
+	width: 633px;
+	height: 120px;
+	margin: 60px auto 40px;
+	background-color: #fff;
+}
+.provider-second-email{vertical-align: top;margin-top: 23px;}
+.provider-second-word{
+	margin-left: 20px;vertical-align: top;height: 120px;
+}
+.p1{
+	padding: 30px 0 10px;font-size:16px ;color: #333;
+}
+.p2,.email{
+	font-size: 12px;
+	color: #999;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.login-email a{
+	display: inline-block;
+	width: 100px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	background-color: #008cd0;
+	color: #fff;
+	font-family: "微软雅黑";
+	font-size: 16px;
+	/*margin-top: 20px;*/
+	margin-left: 90px;
+	}
+.login-email a:hover{
+	text-decoration: none;
+}
+.provider-second-p1{font-size: 16px;}
+.provider-second-no{
+	width: 900px;
+	background-color: #eafaff;
+	margin: 20px auto;
+	padding: 20px 30px;
+	
+}
+.provider-second-no div{color: #999;margin: 10px 0;}
+.provider-second-no a{
+	color: #008cd0;
+}
+.provider-second-no a:hover{
+	text-decoration: none;
+}
+/*协议书*/
+.protocol-wrap{position: fixed;top: 0px;left: 0px;bottom:0;right:0;z-index: 1;background-color: #ccc;opacity: 0.3;filter: alpha(opacity=0.3);display: none;cursor: pointer;}
+.protocol{
+	border: 4px solid rgba(0,0,0,.1);
+	background-color: #fff;
+	width: 1198px;
+	position: fixed;top: 0;
+	z-index: 555;
+	bottom: 0;
+}
+.close{background-color: #f2f2f2;background-image: url(images/X.png);background-position: left -12px;background-repeat: no-repeat;height: 30px;cursor: pointer;margin-bottom: 30px;}
+.protocol-content{padding: 0 40px 46px 59px;position: fixed;top: 50px;width: 1080px;bottom: 5px;overflow-y: auto;z-index: 999;}
+.show{display: block;}
+h3{
+	font-size: 20px;
+	color: #000;
+	font-weight: normal;
+	text-align: center;
+}
+.text,.last-line{
+	font-size:12px ;
+	color: #333;
+	margin: 30px auto 44px;
+	line-height: 30px;word-wrap: break-word;word-break: break-all;
+}
+.last-line{
+	text-align: right;
+	padding-right: 10px;
+}
+.clear-padding{padding: 0;}
+.add-padding-top{padding-top: 30px;}
+.add-margin-bottom{margin-bottom: 64px;}
+

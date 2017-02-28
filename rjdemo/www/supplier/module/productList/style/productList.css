@@ -1,0 +1,83 @@
+.product-header ul li{float:left;width:100px;height:34px;line-height:34px;background-color:#e4e4e4;text-align:center;margin-right:4px;cursor:pointer}
+.product-header ul li:hover{background-color:#ccc}
+.product-header ul li:active{background-color:#008cd0}
+.product-header .product-header-selected{background-color:#008cd0;color:#fff}
+.product-header .product-search{line-height:34px}
+.product-header .product-search-box{width:295px;padding-left:5px;height:32px;line-height:32px;border:solid 1px #008cd0;}
+.product-header .product-search-text{width:64px;height:34px;line-height:34px;text-align:center;background-color:#008cd0;color:#fff;}
+.product-header .product-search-more{color:#333;font-size:12px;line-height:34px;padding:0 5px}
+.product-header .product-search-more:hover{color:#008cd0}
+
+.product-more{border:solid #ccc 1px;margin-top:20px;padding:20px;display:none}
+.product-more .product-more-search{color:#333;font-size:12px;padding-bottom:20px;border-bottom:dotted #ccc 1px}
+.product-more .product-more-search input{height:30px;width:200px;line-height:30px;}
+.product-more .product-more-name{margin-right:50px}
+.product-more .product-more-number{margin-right:50px}
+.product-more .product-more-btn{text-align:center;padding-top:15px}
+.product-more .product-more-submit{width:92px;height:30px;line-height:30px;display:inline-block;color:#fff;background-color:#008cd0;text-align:center;border-radius:5px;margin-right:10px}
+.product-more .product-more-reset{width:90px;height:28px;line-height:28px;display:inline-block;color:#008cd0;text-align:center;border-radius:5px;border:solid 1px #008cd0}
+
+.product-list{border:solid #ccc 1px;margin:20px 0 40px;padding:30px 25px 20px}
+.product-list table{color:#333}
+.product-list table th{height:36px;background-color:#f2f2f2;font-weight:bold;color:#999}
+.product-list table td{border-bottom:dotted 1px #e4e4e4;padding:15px 0; vertical-align:top;text-align:center;font-size:12px}
+
+.product-list .product-name{width:280px}
+.product-list .product-brand{width:100px}
+.product-list .product-number{width:110px}
+.product-list .product-unit{width:60px}
+.product-list .product-sku{width:60px}
+.product-list .product-price{width:70px}
+.product-list .product-status{width:75px}
+.product-list .product-operate{width:150px;}
+
+.product-list .product-price p{font-size:12px}
+.product-list .product-price-b{color:#64a727}
+.product-list .product-item-status{color:#666;font-size:12px;cursor:text}
+.product-list .product-checkbox{width:18px;height:18px;background-color:#f2f2f2;display:inline-block;margin:0 20px 0 10px;vertical-align:25px;cursor:pointer}
+.product-list .product-checkbox-selected{background:url(images/tick.png) no-repeat}
+.product-list .product-img{display:inline-block;width:64px;height:64px;background-color:#ccc}
+.product-list .product-size{color:#999;font-size:12px}
+.product-list .product-name-desc{display:inline-block;width:160px;vertical-align:top;text-align:left;line-height:23px;}
+.product-list .product-name-words{color:#333;display:block;font-size:12px;}
+.product-list .product-name-words:hover{text-decoration:underline;color:#008cd0}
+
+.product-list .product-check-all{padding-bottom:20px}
+.product-list .product-check-all-text{display:inline-block;margin:0 10px}
+.product-list .product-check-all .product-checkbox{vertical-align:middle;margin:0 15px 0 15px;}
+.product-list .product-shelve{
+	cursor:pointer;
+	color:#fff;
+	width:77px;
+	height:30px;
+	display:inline-block;
+	line-height:30px;
+	margin-left:12px;
+	font-size:12px;
+	text-align:center;
+	border-radius:2px;box-shadow:0 0 0 1px #039de8;
+	background:linear-gradient(#06ABFC ,#0091D7);
+	background:-webkit-linear-gradient(top ,#06ABFC ,#0091D7);
+	background:-o-linear-gradient(top ,#06ABFC ,#0091D7);
+	background:-moz-linear-gradient(top ,#06ABFC ,#0091D7);
+	filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#06ABFC',endColorStr='#0091D7',gradientType='0');
+}
+.product-list .product-particular{
+	display:inline-block;
+	width:44px;
+	height:22px;
+	line-height:22px;
+	border:solid #d7d7d7 1px;
+	color:#999;font-size:12px;
+	background:linear-gradient(#fff ,#e5e5e5);
+	background:-webkit-linear-gradient(top ,#fff ,#e5e5e5);
+	background:-o-linear-gradient(top ,#fff ,#e5e5e5);
+	background:-moz-linear-gradient(top ,#fff ,#e5e5e5);
+	filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#ffffff',endColorStr='#e5e5e5',gradientType='0');
+}
+.product-list table .product-no-data{border:none;line-height:100px}
+.product .product-hide{display:none;}
+/*分页设置*/
+.page-wrap{margin-top: 50px;height: 50px;}
+.page{float: right;}
+#pagination span{display:inline-block}

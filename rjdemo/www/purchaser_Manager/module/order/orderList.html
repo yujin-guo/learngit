@@ -1,0 +1,121 @@
+<%if(typeof(list)=="undefined"||list.length==0){%>
+<p class="order-no-data">暂时没有订单</p>    
+<%}else{%>
+<% _.each(list,function(i){%>
+<% if(i.order.status==3 || i.order.status==11){%>    
+<div class="order-main-item  order-main-item-shut">
+<%}else{%>
+<div class="order-main-item">    
+<%}%> 
+    <div class="order-main-item-top">
+        <span class="order-main-item-date"><%=i.order.forderdate%></span>
+        <span class="order-main-item-num">订单号：<em class="order-item-num"><%=i.order.forderno%></em></span>
+        <span class="order-main-item-num"><%=i.order.fsuppname%></span>
+        <input type="hidden" class="order-main-id" value="<%=i.order.id%>">
+        <span class="order-main-item-num"><%=i.order.fbuydepartment%></span>
+        <span><%=i.order.fbuyername%></span>
+    </div>
+    <table cellspacing=0>
+        <% var first=_.first(i.orderDetails);%>
+        <tr class="order-main-item-list">
+            <td >
+                <img  class="order-main-item-img"src="<%=first.fpicpath%>" >
+                <span class="order-main-item-name">
+                    <a class="order-main-product-name" href="../purchaser/index.html#details/<%=first.productSn%>/<%=i.order.suppId%>" target="_blank"><%=first.fgoodname%></a>
+                    <p class="order-main-item-size">规格：<%=first.fspec%></p>
+                </span>
+            </td>    
+            <td class="order-main-item-c" ><%=first.fprice.toFixed(2)%></td>
+            <td class="order-main-item-c" ><%=first.fquantity%></td>
+            <td class="order-main-item-c" >
+                <%if((first.returnStatus||first.returnStatus==0)&&first.returnStatus!=3&&first.returnStatus!=6&&first.returnStatus!=5&&first.returnStatus!=2){%>
+                <a class="order-main-item-returning" href="#returnsteptwo?id=<%=first.id%>" target="_blank">退货中</a>         
+                <%}else if(first.returnStatus==5){%>
+                <a class="order-main-item-returned" href="#returnsteptwo?id=<%=first.id%>" target="_blank">已退货</a> 
+                <%}else if(first.returnStatus==2){%>
+                <a class="order-main-item-returned" href="#returnsteptwo?id=<%=first.id%>" target="_blank">拒绝退货</a> 
+                <%}else{%>
+                    <%if(i.order.status==5||i.order.status==6){%>
+                <a class="order-return" href="javascript:;">退货</a>
+                <input type="hidden" value="<%=first.id%>">  
+                    <%}%>
+                <%}%>
+            </td>
+            <td class="order-main-item-a" rowspan=1111 ><%=i.order.totalPrice.toFixed(2)%></td>
+            <td class="order-main-item-a order-main-item-state" rowspan=1111 >
+                <%if(i.order.status==8){%>
+                <p>待卖家确认</p>
+                <%}%>
+                <%if(i.order.status==3){%>
+                <p>订单关闭</p>
+                <%}%>
+                <%if(i.order.status==4){%>
+                <p>待发货</p>
+                <%}%>
+                <%if(i.order.status==9){%>
+                <p>申请取消</p>
+                <%}%>
+                <%if(i.order.status==5){%>
+                <p>待收货</p>
+                <%}%>
+                <%if(i.order.status==6||i.order.status==15){%>
+                <p>待结算</p>
+                <%}%>
+                <%if(i.order.status==7){%>
+                <p>订单完成</p>
+                <%}%>
+                <%if(i.order.status==10||i.order.status==12||i.order.status==13){%>
+                <p>结算中</p>
+                <%}%>
+                <%if(i.order.status==11){%>
+                <p>订单完成</p>
+                <a class="order-main-item-rate" href="#comment/<%=i.order.forderno%>" target="_blank">立即评价</a>
+                <%}%>
+            </td>
+            <td class="order-main-item-a order-main-item-spec" rowspan=1111>
+                <% if(i.order.status==5&&i.order.acceptance==0){%>
+                <span class="order-main-item-confirm-take confirm-take">确认收货</span>
+                <%}%>
+                <a class="order-main-item-details" href="javascript:;">订单详情</a>
+                <% if((i.order.status==8||i.order.status==4)&&i.order.canCancle==0){%>
+                <a class="order-main-item-cancel" href="javascript:;">取消订单</a>
+                <%}%>
+                <% if(i.order.status==5&&i.order.acceptance==1){%>
+                <span class="order-main-item-take" >*请验收人确认收货</span>
+                <%}%>
+            </td>
+        </tr>
+        <% var length=i.orderDetails.length;%>
+        <% if(length>1){%>
+            <% _.each(_.rest(i.orderDetails),function(item){%>
+        <tr class="order-main-item-list">                   
+            <td>
+                <img  class="order-main-item-img"src="<%=item.fpicpath%>" >
+                <span class="order-main-item-name">
+                    <a class="order-main-product-name" href="../purchaser/index.html#details/<%=item.productSn%>/<%=i.order.suppId%>" target="_blank"><%=item.fgoodname%></a>
+                    <p class="order-main-item-size">规格：<%=item.fspec%></p>
+                </span>
+            </td>    
+            <td class="order-main-item-c"><%=item.fprice.toFixed(2)%></td>
+            <td class="order-main-item-c"><%=item.fquantity%></td>
+            <td class="order-main-item-c">
+                <%if((item.returnStatus||item.returnStatus==0)&&item.returnStatus!=3&&item.returnStatus!=6&&item.returnStatus!=5&&item.returnStatus!=2){%>
+                <a class="order-main-item-returning" href="#returnsteptwo?id=<%=item.id%>" target="_blank">退货中</a>
+                <%}else if(item.returnStatus==5){%>
+                <a class="order-main-item-returned" href="#returnstepfour?itemId=<%=item.id%>" target="_blank">已退货</a>       
+                <%}else if(item.returnStatus==2){%>
+                <a class="order-main-item-returned" href="#returnsteptwo?id=<%=item.id%>" target="_blank">拒绝退货</a>       
+                <%}else{%>
+                    <%if(i.order.status==5||i.order.status==6){%>
+                <a class="order-return" href="javascript:;">退货</a>
+                <input type="hidden" value="<%=item.id%>">   
+                    <%}%>
+                <%}%>
+            </td>
+        </tr> 
+            <%})%>
+        <%}%>
+    </table>
+</div>
+<%})%>
+<%}%>

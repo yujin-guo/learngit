@@ -1,0 +1,78 @@
+<div class="personal-wrap personal-edit-height">
+    <div class="left personal-header-wrap">
+        <span class="personal-icon01"></span>
+        <span class="personal-header-title">修改信息</span>
+    </div>
+    <div class="left borderbottom" style="width: 847px;"></div>
+    <div class="clear personal-content">
+        <form id="personal-form">
+            <div class="personal">
+                <span class="personal-title">注册邮箱：</span>
+                <span class="personal-info">
+                    <input class="readonly" type="text" name="email" value="<%= email %>" readonly="readonly" />
+                </span>
+            </div>
+            <div class="personal">
+                <span class="personal-title">真实姓名：</span>
+                <span class="personal-info">
+                    <input class="common" name="realname" id="realname" type="text" value="<%= name %>" />
+                    <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class="personal">
+                <span class="personal-title">手机号码：</span>
+                <span class="personal-info">
+                    <span class="edit-code">
+                        <input class="common left" id="mobile" name="mobilephone" type="text" value="<%= mobile %>"  maxlength="11" />
+                        <a class="edit-code-a right" id="edit-code-a" href="javascript:void(0);">获取验证码</a>
+                    </span>
+                    <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class="personal flag">
+                <span class="personal-title">验证码：</span>
+                <span class="personal-info">
+                    <input class="common" name="code" type="text" id="code-value" />
+                    <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class="personal">
+                <span class="personal-title">服务电话：</span>
+                <span class="personal-info">
+                    <input class="common" id="tel" name="tel" type="text" value="<%= telephone %>" />
+                    <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class="personal">
+                <span class="personal-title">QQ号码：</span>
+                <span class="personal-info">
+                    <input class="common" id="QQ" name="qq" type="text" value="<%= qq %>" />
+                    <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class="personal">
+                <span class="personal-title">所在地区：</span>
+                <span class="personal-info">
+                    <select class="person-area common" id="s_province" name="addrpro"></select>
+                    <select class="person-area common" style="margin: 0 11px;" id="s_city" name="addrcity"></select>
+                    <select class="person-area common" id="s_county" name="addrarea"></select>
+                    <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class="personal personal-edit-height01">
+                <span class="personal-title">联系地址：</span>
+                <span class="personal-info ">
+                    <textarea id="address" class="common" name="address"><%= address %></textarea>
+                    <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class="personal">
+                <span class="personal-title"></span>
+                <span class="personal-edit">
+                    <input type="submit" value="保 存" />
+                    <a class="back-link" href="javascript:void(0)">取 消</a>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>

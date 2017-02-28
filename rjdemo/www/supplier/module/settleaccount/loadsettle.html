@@ -1,0 +1,88 @@
+<%if(flag==true){_.each(s,function(o){_.each(o.summaries,function(i){%>
+<tr>
+    <td class='balance-name'>
+        <%=i.summaryNo%>
+    </td>
+    <td class='balance-number'><%=i.organization%></td>
+    <td class='balance-unit'><%=i.departments%></td>
+    <td class='balance-price'>
+        ￥<%=i.laboratoryConsumableCost%>/￥<%=i.testAnalysisCost%>
+    </td>
+    <td class='balance-time'>
+        <%=i.fillInTime%>
+    </td>
+    <td class='balance-fapiao'><%=i.invoiceNo%></td>
+    <td class='balance-status'>
+        <%if(i.status==6){%>
+            待填发票
+        <%}else if(i.status==7){%>
+            待递送
+        <%}else if(i.status==1){%>
+            待审核
+        <%}else if(i.status==2){%>
+            待付款
+        <%}else if(i.status==3){%>
+            已完成
+        <%}%>    
+    </td>
+    <td style="border-right:1px solid #e4e4e4;">
+        <%if(i.status==6){%>
+            <a href="#settleDetail?id=<%=i.id%>" class="balance-particular">
+                查看
+            </a>   
+            <a href="#modifyInvoice?id=<%=i.id%>" class="balance-particular">
+                填发票号
+            </a>
+            <%if(i.organization!=="浙江省肿瘤医院"){%>
+            <a href="javascript:void(0);" class="balance-particular removeReceipt" data-id="<%=i.id%>">
+                移除
+            </a>
+            <%}%>
+        <%}else if(i.status==7){%>
+            <a href="#settleDetail?id=<%=i.id%>" class="balance-particular">
+                查看
+            </a>
+            <a href="#modifyInvoice?id=<%=i.id%>" class="balance-particular updateInvoice">
+                改发票号
+            </a>
+            <a href="javascript:void(0);" class="balance-particular printInvoice" data-id="<%=i.summaryNo%>">
+                打印
+            </a>
+            <%if(i.organization!=="浙江省肿瘤医院"){%>
+            <a href="javascript:void(0);" class="balance-particular removeReceipt" data-id="<%=i.id%>">
+                移除
+            </a>
+            <%}%>
+        <%}else if(i.status==1){%>
+            <a href="#settleDetail?id=<%=i.id%>" class="balance-particular">
+                查看
+            </a>
+            <a href="#modifyInvoice?id=<%=i.id%>" class="balance-particular updateInvoice">
+                改发票号
+            </a>
+            <a href="javascript:void(0);" class="balance-particular printInvoice" data-id="<%=i.summaryNo%>">
+                打印
+            </a> 
+        <%}else if(i.status==2){%>
+            <a href="#settleDetail?id=<%=i.id%>" class="balance-particular">
+                查看
+            </a>
+            <a href="javascript:void(0);" class="balance-particular sureNo" data-id="<%=i.id%>">
+                确认收款
+            </a>
+        <%}else if(i.status==3){%>
+            <a href="#settleDetail?id=<%=i.id%>" class="balance-particular">
+                查看
+            </a>
+        <%}%>            
+    </td>        
+</tr>
+<%})})}else{%>
+    <tr>
+        <td colspan="8"  style="border: none;">
+            <p class="empty">
+                暂无数据!
+            </p>
+        </td>
+    </tr>
+<%}%>

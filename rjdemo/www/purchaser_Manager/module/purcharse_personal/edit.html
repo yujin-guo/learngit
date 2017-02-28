@@ -1,0 +1,61 @@
+<div class="personal-wrap">
+    <div class="left personal-header-wrap">
+        <span class="personal-icon01"></span>
+        <span class="personal-header-title">修改个人信息</span>
+    </div>
+    <div class="left borderbottom" style="width: 815px;"></div>
+    <div class="clear personal-content">
+        <form id="purcharse-form">
+            <div class="personal">
+                <span class="personal-title">登录账号：</span>
+                <span class="personal-info"></span>
+            </div>
+            <div class="personal">
+                <span class="personal-title">真实姓名：</span>
+                <span class="personal-info"></span>
+            </div>
+            <div class="personal">
+                <span class="personal-title">工作部门：</span>
+                <span class="personal-info"></span>
+            </div>
+            <div class="personal">
+                <span class="personal-title">移动电话：</span>
+                <span class="personal-info">
+                    <span class="personal-mobile">
+                        <input class="common" name="mobilephone" id="mobilephone" type="text" value="<%= mobile %>" />
+                        <a href="javascript:void(0);" id="personal-code" class="personal-code">获取验证码</a>
+                    </span>
+                <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class='personal flag'>
+                <span class='personal-title'>验证码：</span>
+                <span class='personal-info'>
+                    <input class='common' name='code' id='code' type='text' placeholder='请输入验证码' />
+                    <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class="personal">
+                <span class="personal-title">固定电话：</span>
+                <span class="personal-info">
+                    <input class="common" name="phone" id="phone" type="text" value="" />
+                    <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class="personal">
+                <span class="personal-title">联系地址：</span>
+                <span class="personal-info">
+                    <input class="common" name="address" type="text" id="address" value="" />
+                    <span class="error-wrap"></span>
+                </span>
+            </div>
+            <div class="personal">
+                <span class="personal-title"></span>
+                <span class="personal-info">
+                    <input class="personal-button personal-edit " type="submit"  value="保存" />
+                    <a href="javascript:void(0)" onclick="window.history.back()" class="personal-button personal-back">返回</a>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,110 @@
+<!--图片模式-->
+<div class="commodity-list-pic">
+    <%if(flag==true){ _.each(products,function(p){%>
+    <% var prices=p.price.toFixed(2)%>
+    <a class="commodity-pic-cell" href="#details/<%= p.sn %>/<%=p.suppId%>" target="_blank">
+        <span class="commodity-pic-wrap"><img src="<%= p.photo%>" /></span>
+        <span class="commodity-pic-price">
+            <span class="pic-price">￥
+                <%= prices %>
+            </span>
+            <!--<span class="deal-numbers">成交量：<span><%= p.saleAmount %></span></span>-->
+        </span>
+        <span class="commodity-pic-description">
+            <span class="commodity-link">
+                <%= p.name%>
+            </span>
+        </span>
+    </a>
+    <% });}else{%>
+    <div class="commodity-empty">
+        <div class="commodity-empty-inner">
+            <div class="commodity-empty-p01">抱歉，沒有找到相关的宝贝</div>
+            <p class="commodity-empty-p02">建议您：</p>
+            <p class="commodity-empty-p02">1. 看看输入文字是否有误</p>
+            <p class="commodity-empty-p02">2. 调整关键词</p>
+        </div>
+    </div>
+    <%} %>
+
+</div>
+<!--列表模式-->
+<div class="commodity-list-lists">
+    <div class="commodity-list-v2">
+        <span class="list-v2-name">名称</span>
+        <span class="list-v2-unit">规格</span>
+        <span class="list-v2-sn">货号</span>
+        <span class="list-v2-brand">品牌</span>
+        <span class="list-v2-price">价格</span>
+    </div>
+    <%if(flag==true){%>
+    <ul class="commodity-lists-cell">
+        <% _.each(products,function(p){%>
+        <% var prices=p.price.toFixed(2)%>
+        <li>
+            <a class="list-cell-link" href="#details/<%= p.sn %>/<%=p.suppId%>" target="_blank">
+                <!--<div class="lists-img"><img src="<%= p.photo %>" /></div>-->
+                <span class="list-v2-name">
+                    <span class="list-v2-01">
+                        <%= p.name%>
+                    </span>
+                </span>
+                <span class="list-v2-unit">
+                    <span class="list-v2-02">
+                        <%=p.specification%>
+                    </span>
+                </span>
+                <span class="list-v2-sn">
+                    <span class="list-v2-03">
+                        <%=p.productNum%>
+                    </span>
+                </span>
+                <span class="list-v2-brand">
+                    <span class="list-v2-04">
+                        <% if(p.brandName==undefined || p.brandName=='null' || p.brandName==''){%> 无
+                        <%}else{%>
+                        <%=p.brandName%>
+                        <%} %>
+                    </span>
+                </span>
+                <span class="list-v2-price">
+                    <span class="list-v2-05">￥
+                        <%= prices%>
+                    </span>
+                </span>
+                <!-- <div class="lists-deal">成交量：
+                                <span>
+                                    <%= p.saleAmount %>
+                                </span>
+                            </div>-->
+            </a>
+
+        </li>
+    </ul>
+    <% });} else{%>
+    <div class="commodity-empty">
+        <div class="commodity-empty-inner">
+            <div class="commodity-empty-p01">抱歉，沒有找到相关的宝贝</div>
+            <p class="commodity-empty-p02">建议您：</p>
+            <p class="commodity-empty-p02">1. 看看输入文字是否有误</p>
+            <p class="commodity-empty-p02">2. 调整关键词</p>
+        </div>
+    </div>
+    <%} %>
+</div>
+<!--商品列表end-->
+<!--页码-->
+<div class="page">
+    <div class="right total-page-show">
+        共
+        <span class="total-page-num">
+            <% if(flag==true){%>
+            <%= totalPages %>
+            <%}else{%>0
+            <%} %>
+        </span>页
+    </div>
+    <div class="commodity-page" id="pagination">
+    </div>
+    <div></div>
+</div>

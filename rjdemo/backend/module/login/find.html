@@ -1,0 +1,38 @@
+<%= header %>
+<div class="find-wrap">
+    <form id="find-form">
+        <div class="find-inner">
+            <div class="find-inner-div height">
+                <span class="find-inner-desc"></span>
+                <span class="find-title">找回密码</span>
+            </div>
+            <div class="find-inner-div">
+                <span class="find-inner-desc">手机号码</span>
+                <input type="text" name="mobile" class="common" placeholder="请输入手机号码" id="mobile"  maxlength="11" />
+                <div class="find-error"></div>
+            </div>
+            <div class="find-inner-div">
+                <span class="find-inner-desc vertical">短信验证码</span>
+                <span class="code-span">
+                    <input type="text" name="code" class="code-input left common" placeholder="请输入验证码" />
+                    <a href="javascript:void(0)" class="code-send right">下发短信验证码</a>
+                </span>
+                <div class="find-error"></div>
+            </div>
+            <div class="find-inner-div">
+                <span class="find-inner-desc">新密码</span>
+                <input class="common" name="password" id="pass" type="password" placeholder="字母、数字或者下划线，大于6位，区分大小写" />
+                <div class="find-error"></div>
+            </div>
+            <div class="find-inner-div">
+                <span class="find-inner-desc">再次输入密码</span>
+                <input class="common" name="again" type="password" placeholder="请再次输入密码" />
+                <div class="find-error"></div>
+            </div>
+            <div class="find-inner-div">
+                <span class="find-inner-desc"></span>
+                <input class="common confirm" type="submit" value="确定" />
+            </div>
+        </div>
+    </form>
+</div>

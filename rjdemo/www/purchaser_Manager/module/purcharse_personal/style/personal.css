@@ -1,0 +1,52 @@
+.flag{display: none;}
+label[class='error']{background-image: url(images/error-icon.png);background-repeat: no-repeat;color: #ff5555;margin-left: 5px;padding-left:25px ;display:inline-block;height: 21px;}
+.personal-wrap{width: 956px;height:484px;border: 1px #d7d7d7 solid;margin-left:15px;}
+.personal-info-wrap{padding: 20px;}
+.personal-info-wrap-01{padding:0 20px 20px 20px;}
+.color-border-bottom{border-bottom: 1px solid #b7ecdd;}
+.personal-header-wrap{margin: 12px 18px;}
+.personal-header-wrap span{display: inline-block;}
+.personal-icon01{width: 5px;height: 16px;background-color: #32ab94;}
+.personal-header-title{margin: 0 8px;color: #298d79;font-size: 16px;vertical-align: 2px;}
+.borderbottom{border-bottom:1px #298d79 solid;margin-top: 5px;}
+.personal-content{padding: 30px 18px;color: #333;}
+.personal{margin-bottom: 14px;height: 35px;}
+.personal02{margin-bottom: 14px;}
+.personal01{height: 54px;line-height: 54px;}
+.personal01 .personal-left-title,.personal02 .personal-info{color: #333;}
+.border-both{border-top: 1px dotted #ccc;border-bottom: 1px dotted #ccc;;}
+.personal-title,.personal-title-01{text-align: right;margin-right: 10px;color: #666;}
+.personal-title{width: 108px;}
+.personal-title-01{width: 90px;}
+.personal-title-02{width:85px;height: 33px;line-height: 33px;vertical-align: top;color: #666;text-align: right;margin-right: 20px;}
+.personal-button{display: inline-block;width: 120px;height: 35px;text-align: center;line-height: 35px;}
+.personal-edit{background-color: #32ab94;color: #fff;}
+.personal-edit:hover{background-color: #298d79;}
+.edit-link{color: #32ab94;margin-right: 10px;}
+.personal03{text-align: center;}
+/*修改资料*/
+.personal-mobile{display: inline-block;}
+.desc-info{color: #ff0000;}
+.desc-info-span{color: #666;}
+.middle{width: 280px;text-align: center;}
+.personal-info > input[type='text'],.personal-info > input[type='password'],.personal-mobile{width: 286px;height: 33px;line-height:33px;border: 1px #ccc solid;color: #333;padding-left: 12px;background-color: #fff;}
+.personal-info > input[type='submit']{border: medium none;}
+.personal-mobile > input{width: 148px;height: 31px;border: medium none;line-height:31px;}
+.personal-code{display: inline-block;width: 120px;height:33px;text-align:center;line-height:33px;color:#999 ;background-color: #e5e5e5;vertical-align: top;margin-left: 13px;}
+.personal-back{background-color: #f2f2f2;color: #666;margin-left: 33px;border: 1px #f2f2f2 solid;height: 33px;vertical-align: top;}
+.personal-back:hover{border: 1px #e5e5e5 solid;}
+.marginbottom{margin-bottom: 30px;}
+.alert-personal-edit,.personal-edit-background{display: none;position: fixed;}
+.show{display: block;}
+.personal-edit-background{top: 0px;left: 0px;bottom:0;right:0;z-index: 1;background-color: #000;opacity: 0.2;filter: alpha(opacity=0.2);}
+.alert-personal-edit{top: 30%;left: 0;right:0;margin:0 auto;width: 550px;background-color: #fff;z-index: 999;box-shadow: 0 0 3px 3px rgba(0,0,0,.3);height: 269px;background-color: #fafafa;border-radius: 10px;}
+.close{background-color: #e4e4e4;padding-left: 10px;height: 45px;line-height: 45px;text-align: center;background-color: #fff;border-bottom: 1px solid #e4e4e4;border-radius: 10px 10px 0 0;}
+.close-title{font-size: 16px;color: #333;width: 500px;}
+.close-event-icon{background-image: url(../../../style/images/close.png);background-position:center;background-repeat: no-repeat;height: 45px;cursor: pointer;width: 40px;}
+.form-div{padding: 30px 0;width: 410px;margin: auto;}
+.edit-error-wrap{height: 25px;padding-top: 2px;text-align: left;}
+.personal-padding01{padding: 30px 0;}
+/*修改成功*/
+.success{width: 181px;margin: auto;text-align: center;}
+.success-icons{width:150px;height:150px;background-image: url(../../../style/images/icons.png);background-repeat: no-repeat;background-position: -20px -10px;margin: auto;}
+.success-desc{color: #298d79;margin: 34px auto;font-size: 18px;}

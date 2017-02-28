@@ -1,0 +1,12 @@
+<%if(flag){%>
+<%_.each(statisticsInfoFDList,function(i){%>
+<tr>
+    <td class="width-one"><%=i.num%></td>
+    <td class="width-two"><%=i.name%></td>
+    <td class="width-three"><%=i.quantity%></td>
+    <td class="width-four">￥<%=i.totalPrice.toFixed(2)%></td>
+</tr>
+<%})%>
+<%}else{%>
+<tr><td colspan=4>暂无数据。</td></tr>
+<%}%>

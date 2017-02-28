@@ -1,0 +1,99 @@
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">经费卡管理</span>
+            </div>
+        </div>
+        <div class="infomation">
+            <div class="matures">
+                <div class="member-btn-div left">
+                    <a href="#addCard?key=addCard&id=<%= departmentId %>" class="member-btn-link">新增经费卡</a>
+                </div>
+                <div class="search-div right">
+                    <select class="status-select" id="status-select">
+                        <option value="">经费卡状态</option>
+                        <option value="1">正常</option>
+                        <option value="0">禁用</option>
+                    </select>
+                    <input class="search-input" id="search-value" type="text" placeholder="负责人/经费卡号" />
+                    <a class="search-btn" id="search-btn" href="javascript:void(0)"></a>
+                </div>
+            </div>
+            <table class="card-list-table">
+                <thead>
+                    <tr>
+                        <th class="card-td-id">经费卡号</th>
+                        <th class="card-td-name">经费卡名称</th>
+                        <th class="card-td-time">创建时间</th>
+                        <th class="card-td-status">经费卡状态</th>
+                        <th class="card-td-control">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="list">
+                    <% if(fundCards.length){_.each(fundCards,function(F){if(F.status=="禁用"){%>
+                    <tr>
+                        <td class="card-td-id dis">
+                            <%= F.cardNo %>
+                        </td>
+                        <td class="card-td-name dis">
+                            <%= F.cardName %>
+                        </td>
+                        <td class="card-td-time dis">
+                            <%= F.time %>
+                        </td>
+                        <td class="card-td-status dis">
+                            <%= F.status %>
+                        </td>
+                        <td class="card-td-control dis">
+                            <a href="javascript:void(0)" class="control-link status-link-event" data-id="<%= F.id %>">启用</a>
+                            <a href="#addCard?id=<%= F.id %>&key=editCard" class="control-link">编辑</a>
+                            <a href="javascript:void(0)" class="control-link delete-link" data-id="<%= F.id %>">删除</a>
+                        </td>
+                    </tr>
+                    <%}else{%>
+                    <tr>
+                        <td class="card-td-id">
+                            <%= F.cardNo %>
+                        </td>
+                        <td class="card-td-name">
+                            <%= F.cardName %>
+                        </td>
+                        <td class="card-td-time">
+                            <%= F.time %>
+                        </td>
+                        <td class="card-td-status">
+                            <%= F.status %>
+                        </td>
+                        <td class="card-td-control">
+                            <a href="javascript:void(0)" class="control-link status-link-event" data-id="<%= F.id %>">禁用</a>
+                            <a href="#addCard?id=<%= F.id %>&key=editCard" class="control-link">编辑</a>
+                            <a href="javascript:void(0)" class="control-link delete-link" data-id="<%= F.id %>">删除</a>
+                        </td>
+                    </tr>
+                    <%}});}else{%>
+                    <tr>
+                        <td class="empty-td" colspan="5">
+                            没有经费卡！
+                        </td>
+                    </tr>
+                    <%}%>
+
+                </tbody>
+            </table>
+            <div class="matures">
+                <div class="page">
+                    <div class="right">
+                        <a class="endpoint" href="javascript:void(0)">尾页</a>
+                    </div>
+                    <div class="right" id="pagination">
+
+                    </div>
+                    <div class="right">
+                        <a class="endpoint" href="javascript:void(0)">首页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

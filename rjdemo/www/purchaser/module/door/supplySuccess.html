@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>供应商登录成功回调页面</title>
+    </head>
+    <body>
+        <script src="../../js/libs/jquery.js"></script>
+        <script src="../../js/libs/jquery.cookie.js"></script>
+        <script>
+            $(document).ready(function() {
+                $.get("/supp/api/identity").success(function(datas) {
+
+                    // 登出各个系统（如果单点登出生效，这步没什么意义。所以这步是用来保证单点登出的）
+                    var cond = encodeURIComponent(datas.user.username);
+                    $.when(
+                        $.get("/store/sso/logout?local=true&cond=" + cond),
+                        $.get("/supp/sso/logout?local=true&cond=" + cond),
+                        $.get("/bid/sso/logout?local=true&cond=" + cond)
+                    ).always(function() {
+                        $.cookie('id1', datas.user.id, {
+                            path: '/'
+                        });
+                        $.cookie('username1', datas.user.fsuppname || datas.user.femail, {
+                            path: '/'
+                        });
+                        $.cookie('userEmail1', datas.user.femail, {
+                            path: '/'
+                        });
+                        $.cookie('userReal', datas.user.fcontactman, {
+                            path: '/'
+                        });
+
+                        var smh = null;
+                        if(datas.user.fmobile == undefined) {
+                            datas.user.fmobile = null;
+                        }
+                        if(datas.user.fmobile != null && datas.user.fmobile != '') {
+                            $.cookie("svm", datas.user.fmobile, {
+                                path: "/"
+                            });
+                            smh = datas.user.fmobile.length;
+                        }
+
+                        if(smh != 11 && datas.user.fmobile == undefined && datas.user.fmobile == null && datas.user.fmobile == '') {
+                            window.parent.location.href = "../../index.html#suppValidateMobile";
+                        } else if($.cookie("saveSuppLoginUrl")) {
+                            window.parent.location.href = $.cookie("saveSuppLoginUrl");
+                        } else {
+                            window.parent.location.href = "../../../supplier/index.html";
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

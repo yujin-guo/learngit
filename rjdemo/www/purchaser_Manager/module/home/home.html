@@ -1,0 +1,111 @@
+<div class="home-content">
+    <div class="home-head">
+        <div class="home-head-inner">
+            <!--<img src="module/home/style/images/image01.png" />-->
+            <span class="purchaser-info left">
+                <a href="#personal" class="purchaser-name"></a>
+                <p class="purchaser-desc"></p>
+            </span>
+            <span class="purchaser-add right">
+                <a class="news-list-link" href="#newsList">我的消息</a>
+                <a class="address-list-link" href="#list">我的收货地址</a>
+                <a class="card-list-link" href="#cardlist">我的经费卡</a>
+            </span>
+        </div>
+    </div>
+    <div class="my my-order">
+        <p class="my-title">我的订单</p>
+        <div class="my-order-content">
+            <div class="left my-order-01">
+                <span class="icon011"><span class="cicle"></span></span>
+                <a href="#order/4" class="order-deliver">
+                    <div>
+                        <%= H.notDeliverOrderCount %>
+                    </div>待发货
+                </a>
+            </div>
+            <div class="left my-order-02">
+                <span class="icon011"><span class="cicle"></span></span>
+                <a href="#order/5" class="order-deliver">
+                    <div>
+                        <%= H.notTakeOrderCount %>
+                    </div>待收货
+                </a>
+            </div>
+            <div class="left my-order-03">
+                <span class="icon011"><span class="cicle"></span></span>
+                <a href="#presettle" class="order-deliver">
+                    <div>
+                        <%= H.notBanlanceOrderCount %>
+                    </div>待结算
+                </a>
+            </div>
+            <div class="left my-order-04">
+                <span class="icon011"><span class="cicle"></span></span>
+                <a href="#settlement" class="order-deliver">
+                    <div>
+                        <%= H.settlingOrderCount %>
+                    </div>结算中
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="my my-price">
+        <div class="left my-price-inner">
+            <div class="my-title">我的竞价
+            </div>
+            <div class="my-price-content">
+                <div class="left my-price-content01">
+                    <a href="#bidlist/20" class="price-number"></a>
+                    <p class="price-desc">竞价中</p>
+                </div>
+                <div class="left my-price-content02">
+                    <a href="#bidlist/30" class="price-number"></a>
+                    <p class="price-desc">待初选</p>
+                </div>
+            </div>
+        </div>
+        <div class="left price-news-wrap">
+            <div class="some-news">
+                <div class="news-title">
+                    竞价消息
+                    <a class="news-a02 right" href="#bidlist">更多&gt;</a>
+                </div>
+                <div class="news-content">
+                    <% _.each(H.messages,function(M){%>
+                    <a href="#" <% if(M.status==false){%>class='has-read'
+                        <%}%>>
+                        <%= M.title %>
+                    </a>
+                    <%});%>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="my my-interest">
+        <div class="my-title">
+            <!--<span class="com-icon"></span>-->我的关注
+            <a class="news-a02 right" href="#interest">更多&gt;</a>
+        </div>
+        <div class="my-interest-content">
+            <div class="commodity-section clear-margin">
+                <!--商品列表strat-->
+                <div class="commodity-list" id="commodity-list">
+                    <div class="commodity-list-pic">
+                        <% _.each(products,function(P){if(P!==null){%>
+                        <a class="commodity-pic-cell" href="../purchaser/index.html#details/<%= P.sn %>/<%=P.suppId%>" target="_blank">
+                            <img src="<%= P.photo %>" />
+                            <% var price=P.price.toFixed(2) %>
+                            <span class="commodity-pic-price"><span class="pic-price left">￥<%= price %></span><!--<span class="deal-numbers right">成交量：<span><%= P.saleAmount %></span></span>-->
+                            </span>
+                            <span class="commodity-pic-description"><span class="commodity-link"><%= P.name %></span>
+                            </span>
+                        </a>
+                        <% }})%>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+</div>

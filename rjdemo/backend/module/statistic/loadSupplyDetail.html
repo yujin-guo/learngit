@@ -1,0 +1,35 @@
+<% if(flag==true){_.each(entities,function(E){%>
+<tr>
+    <td class="width-one">
+        <%= E.strDate %>
+    </td>
+    <td class="width-two">
+        <%= E.orderNumber %>
+    </td>
+    <td class="width-three">￥
+        <%= E.increasedOrderAmount.toFixed(2) %>
+    </td>
+    <td class="width-four">￥
+        <%= E.increasedSettlementAmount.toFixed(2) %>
+    </td>
+    <td class="width-five">
+        <%= E.purchaseNumber %>
+    </td>
+    <td class="width-six">￥
+        <%= E.increasedPurchaseAmount.toFixed(2) %>
+    </td>
+    <td class="width-seven">
+        <%= E.bidNumber %>
+    </td>
+    <td class="width-eight">￥
+        <%= E.increasedBidAmount.toFixed(2) %>
+    </td>
+    <td class="width-night">
+        <%= E.goodsNumber %>
+    </td>
+</tr>
+<%});}else {%>
+<tr>
+    <td class="empty-td" colspan="9">暂无数据！</td>
+</tr>
+<%} %>

@@ -1,0 +1,30 @@
+<% if(flag==true){_.each(entities,function(E){%>
+<tr>
+    <td class="member-td-configcode">
+        <%= E.code %>
+    </td>
+    <td class="member-td-configName">
+        <%= E.name %>
+    </td>
+    <td class="member-td-configValue">
+        <%= E.value %>
+    </td>
+    <td class="member-td-hospitalFullName">
+        <%= E.orgName %>
+    </td>
+    <td class="member-td-addTime">
+        <%= common.getLocalTime(new Date(E.time)).split(" ")[0] %>
+    </td>
+    <td class="member-td-control">
+        <a href="#ctrHosConfig/<%= E.id %>" class="control-link">修改配置</a>
+        <a href="javascript:void(0);" class="hospital-config-enabled" data-id="<%= E.id %>" data-flag="<%=E.enabled%>"><% var a='禁用',b='启用' %><%= E.enabled===true?a:b%></a>
+    </td>
+</tr>
+
+<%})}else{%>
+<tr>
+    <td class="empty-td" colspan="5">
+        暂无数据!
+    </td>
+</tr>
+<%} %>

@@ -1,0 +1,56 @@
+<div class="home-content">
+    <div class="my-interest" id="list-inters">
+        <div class="interest-header-wrap">
+            <div class="left tab">
+                <span class="interest-commodity-tab tab-active" data-flag="goods">关注的商品</span>
+                <span class="interest-store-tab" data-flag="store">关注的店铺</span>
+            </div>
+            <div class="right tab-search">
+                <div class="right">
+                    <div class="interest-search-wrap">
+                        <input type="text" class="interest-search-input" placeholder="请输入商品名" />
+                        <a href="javascript:void(0);" class="interest-search-link">搜索</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-interest-content">
+            <div class="commodity-section clear-margin">
+                <!--商品列表strat-->
+                <div class="commodity-list" id="commodity-list">
+                    <div class="commodity-list-pic">
+                        <% if(flag==true){_.each(products,function(P){if(P!==null){%>
+                        <span class="interes-commodity-cell">
+                            <img src="<%= P.photo %>" />
+                            <span class="interest-commodity-span">
+                                <div class="commodity-pic-description">
+                                    <a class="commodity-link" href="../purchaser/index.html#details/<%= P.sn %>/<%=P.suppId%>" target="_blank">
+                                        <%= P.name %>
+                                    </a>
+                                </div>
+                                <span class="cancel-interest-link">取消关注</span>
+                                <input type="hidden" class="sn" value="<%= P.sn %>" />
+                            </span>
+                        </span>
+                        <% }});}else{%>
+                        <div class="empty-interest">
+                            暂时没有关注内容！
+                        </div>
+
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page <% if(flag==false){%> hide<%} %>" style="text-align: center;">
+    <!--页码-->
+    <span id="pagination"></span>
+    <span class="total-page-show">
+        共
+        <span class="total-page-num">
+            <% if(flag==true){%><%= totalPages %><%}else{%>0<%} %>
+        </span>页
+    </span>
+</div>

@@ -1,0 +1,32 @@
+<% if(flag==true){_.each(entities,function(E){%>
+<tr>
+    <td class="width-one">
+        <a href="#hDetail/<%= E.id %>"><%= E.orgname %></a>
+    </td>
+    <td class="width-two">
+        <%= E.orderCount %>
+    </td>
+    <td class="width-three">￥
+        <%= E.purchaseAmount.toFixed(2) %>
+    </td>
+    <td class="width-four">￥
+        <%= E.bidAmount.toFixed(2) %>
+    </td>
+    <td class="width-five">￥
+        <%= E.orderAmount.toFixed(2) %>
+    </td>
+    <td class="width-six">
+        <%= (E.orderProportion*100).toFixed(2) %>%
+    </td>
+    <td class="width-seven">￥
+        <%= E.settleAmount.toFixed(2) %>
+    </td>
+    <td class="width-eight">
+        <%= (E.settleProportion*100).toFixed(2) %>%
+    </td>
+</tr>
+<%});}else {%>
+<tr>
+    <td class="empty-td" colspan="8">暂无数据！</td>
+</tr>
+<%} %>

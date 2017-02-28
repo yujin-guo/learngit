@@ -1,0 +1,143 @@
+/* 登录页面 */
+.login_panel {width:90%;background-color:#fff;border-radius:5px;margin:25px auto;}
+.login_title {text-align:center;color:#13b5bd;font-size:18px;padding:30px 0 20px 0;}
+.login_input {line-height:40px;width:100%;padding:0 5%;}
+.login_input .login_left {width:50%;height:40px;float:left;}
+.login_input .login_left .login_mobile {height:40px;border-radius:5px;padding-left:10px;width:100%;border:1px solid #f2f2f2;}
+.login_input .login_right {height:40px;margin-left:51%;background-color:#13b5bd;color:#ffffff;text-align:center;font-size:16px;border-radius:5px;left:10%;}
+.login_code_panel {width:90%;height:40px;margin:15px 0 0 5%;}
+.login_code {height:40px;border-radius:5px;border:1px solid #f2f2f2;padding-left:5px;width:100%;}
+.login_btn {background-color:#13b5bd;width:90%;margin-left:5%;text-align:center;color:#ffffff;height:60px;line-height:60px;border-radius:5px;font-size:16px;cursor:pointer;}
+
+/* 审批人首页 */
+.main_logo{width:90%;margin:0 auto;background-color:#fff;border-radius:5px;margin-top:30px;}
+.main_logo img{text-align:center;width:80%;margin:20px 10%;}
+.main_check{width:90%;margin:30px auto 20px auto;}
+.main_purchase,.main_xuqiu{ float:left;width:45%;border-radius:5px;background-color:#fff;} 
+.main_xuqiu{margin-left:10%;}
+.main_check img{text-align:center;width:50px;position:relative;left:50%;margin:20px 0 20px -25px;}
+.main_check_num{font-size:16px;text-align:center;}
+.main_check_title{text-align:center;font-size:16px;color:#aaa;}
+.main_person_info{background-color:#fff;border-radius:5px;width:90%;height:50px;line-height:50px;margin:0px auto;clear:both;position:relative;top:20px;padding-left:10px;}
+.main_person_info:hover,.main_purchase:hover,.main_xuqiu:hover{cursor: pointer;}
+.main_person_info img{width:30px;}
+.main_person_title{display:inline-block;color:#aaa;}
+
+
+/* 审批列表 */
+#menu{width:100%; overflow:hidden; }
+#menu #nav {display:block;width:100%;padding:0;margin:0;list-style:none;position:fixed;bottom:0;}
+#menu #nav li {float:left;width:33.3%;border-right:1px solid #aaa;border-top:1px solid #aaa;background-color:#f6f5f4}
+#menu #nav li a {display:block;line-height:40px;text-decoration:none;text-align:center; color:#333;}
+#menu #nav li a:hover {cursor: pointer;}
+#menu_con{ width:100%;  border-top:none}
+.tag{ overflow:hidden;}
+.selected{border-top:1px solid #13b5bd; }
+.tag ul{list-style:none;background-color:#fff;}
+.tag ul li{border-bottom:1px solid #aaa;height:100px;}
+.tag ul li:hover{cursor: pointer;}
+.list_title,.list_num,.list_content{width:100%;clear:both;line-height:30px;}
+.list_title_name{float:left;font-weight:700;padding-left:15px;font-size:16px;width:200px;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;-webkit-text-overflow:ellipsis;-moz-text-overflow:ellipsis;white-space:nowrap;}
+.list_title_date{float:right;font-size:14px;padding-right:15px;}
+.list_num_name{font-size:16px;line-height:30px;padding-left:15px;}
+.list_content{padding-left:15px;}
+.list_content_status_reject,.list_content_status,.list_content_status_pass{font-size: 14px;color:#fff;width:60px;height:20px;line-height:20px;border-radius:5px;display:inline-block;text-align:center;float: left;margin-right: 15px;margin-top: 5px;}
+.list_content_status_reject{background-color:#FF621E;}
+.list_content_status_pass{background-color:#00d145;}
+.list_content_status{background-color:#13B5BD;}
+.list_content_descrition{display:inline-block;}
+.list_search{background-color:#c6c2c2;width:100%;height:44px;}
+.haven_search_input{border-radius:5px;height:35px;padding-left:5px;margin-top:4px;width:80%;border:1px solid #f2f2f2;margin-left:15px;}
+.search_icon{margin-left:15px;}
+.data_tips{height: 50px;text-align: center; padding-top: 15px;}
+
+/* 个人中心 */
+.my_info{background-color:#ffffff;width:100%;}
+.my_info li{height:44px;border-bottom:1px solid #ccc;}
+.my_name,.my_mobile,.my_email,.my_hospital,.my_dept{width:100%;clear:both;line-height:44px;}
+.my_name_title,.my_mobile_title,.my_email_title,.my_hospital_title,.my_dept_title{float:left;padding-left:15px;font-size:16px;}
+.my_name_content,.my_mobile_content,.my_email_content,.my_hospital_content,.my_dept_content{float:right;font-size:14px;padding-right:15px;}
+#my_dept{height:132px;}
+
+/* 审批详情 */
+.detail_header{height:44px;width:100%;background-color:#00ac8f;line-height:44px;color:#fff;}
+.detail_header_title{font-size:18px;float:left;width:79%;padding-left:15%;font-weight:500;}
+.detail_header_back{padding-left:15px;width:80px;float:left;width:20%;}
+.detail_header_back img{height:15px;}
+.detail_main{background-color:#fff;}
+.detail_info,.detail_personal{width:100%;clear:both;line-height:44px;height:44px;border-bottom:1px solid #f2f2f2;}
+.detail_personal{height:90px;padding-left: 15px;}
+.detail_info_num{float:left;padding-left:15px;font-size:16px;}
+.detail_info_personal{font-size:16px;}
+.detail_info_date{float:right;font-size:14px;padding-right:15px;}
+.detail_info_phone{clear: both;overflow: auto;}
+.detail_info_phone_left{float: left;font-size:16px;}
+.detail_mobile_btn{float:right;padding-right:15px;height:44px;width:90px;color:#00ac8f;}
+.detail_mobile_btn a{border-radius:5px;border:1px solid #008caf;display:inline-block;line-height:25px;width:75px;text-align:center;}
+.detail_purchase{width:100%;background-color:#fff;margin-top:10px;padding-bottom:30px;}
+.detail_purchase_list{margin-left:2%;background-color:#f3f2f0;width:96%;border-radius:5px;position:relative;top:10px;}
+.detail_purchase_content{padding:10px;font-size:14px;}
+.detail_purchase_seller,.detail_purchase_brand,.detail_purchase_size{padding-left:10px;font-size:12px;color:#aaa;}
+.detail_purchase_num{display:inline-block;position:absolute;right:0;right:10px;}
+.detail_purchase_size{padding-bottom:10px;}
+.detail_unit_price{width:100%;padding-top:30px;font-size:12px;}
+.detail_unit_price .title,.detail_total_price .title{float:left;padding-left:10px;}
+.detail_unit_price .price,.detail_total_price .price{float:right;padding-right:10px;}
+.detail_total_price{width:100%;font-size:14px;color:#00ac8f;}
+.detail_purchase_record{width:100%;background-color:#fff;margin-top:10px;margin-bottom:50px;}
+.detail_purchase_record .title{padding-left:15px;font-size:16px;height:44px;line-height:44px;border-bottom:1px solid #f2f2f2;}
+.detail_purchase_record .record_list{width:100%;min-height:60px;line-height:30px;border-bottom:1px solid #f2f2f2;clear:both;padding-left: 15px;overflow: auto;}
+.record_list .record_top{clear: both;height: 30px;}
+.record_list .record_name{float:left;}
+.record_list .record_name img{width:30px;padding-right:10px;}
+.record_list .record_time{float:right;padding-right:10px;}
+.record_list .record_content{padding-right: 10px;word-break: break-word;}
+.detail_footer{position:fixed;bottom:0;height:44px;width:100%;background-color:#ffffff;    box-shadow: 0px -1px 10px #999999;}
+.detail_footer .footer_info{line-height:44px;font-size:14px;padding-left:15px;}
+.footer_info{clear: both;overflow: auto;}
+.footer_info_left{line-height: 22px; float: left;}
+.footer_info_middle{height: 44px;float: left;margin-left: 5px;}
+.footer_info_right{height: 44px;float: right;}
+.footer_price_title{letter-spacing: 5px;}
+.footer_num_div{font-size:13px;}
+.footer_price,.footer_num{color:#00ac8f;}
+.footer_num{padding:0px 2px;}
+.agree_btn,.tui_btn{float:right;display:inline-block;width:66px;height:44px;text-align:center;color:#ffffff;}
+.agree_btn{background-color:#00ac8f;}
+.tui_btn{background-color:#ff5300;}
+.agree_font{float:right;padding-right:10px;color:#00ac8f;font-size:larger;}
+.tui_font{float:right;padding-right:10px;color:#ff5300;font-size:larger;}
+/* 审批详情 */
+.detail_header{height:44px;width:100%;background-color:#00ac8f;line-height:44px;color:#fff;}
+.detail_header_title{font-size:18px;position:absolute;text-align:center;width:100%;font-weight:500;}
+.detail_header_back{padding-left:15px;width:80px;float:left;width:20%;}
+.detail_header_back img{height:15px;}
+.detail_main{background-color:#fff;}
+.detail_product_info{padding:15px;}
+.detail_product_status{display:inline-block;background-color:#00ac8f;color:#fff;padding:3px;border-radius:5px;}
+.detail_info{width:100%;clear:both;line-height:44px;height:44px;}
+.detail_info_title{float:left;padding-left:15px;font-size:16px;}
+.detail_info_content{float:right;font-size:14px;padding-right:15px;}
+.detail_yaoqiu{width:100%;clear:both;line-height:24px;height:auto;}
+.detail_yaoqiu_title{float:left;padding-left:15px;font-size:16px;padding-right:15px;}
+.detail_yaoqiu_content{font-size:14px;padding:0 15px;}
+.detail_purchase{width:100%;background-color:#fff;margin-top:10px;padding-bottom:30px;}
+.detail_purchase_list{margin-left:2%;background-color:#f3f2f0;width:96%;border-radius:5px;position:relative;top:10px;border:1px solid #f3f2f0;}
+.detail_purchase .active{background-color:#edfdfe;}
+.detail_purchase_seller,.detail_purchase_brand,.detail_purchase_size{padding:0 10px;font-size:12px;color:#aaa;}
+.detail_purchase_seller{padding-top:10px;}
+.detail_purchase_size{padding-bottom:10px;}
+.detail_purchase_record{width:100%;background-color:#fff;margin-top:10px;margin-bottom:50px;}
+.detail_purchase_record .title{padding-left:15px;font-size:16px;height:44px;line-height:44px;border-bottom:1px solid #f2f2f2;}
+.detail_purchase_record .record_list{width:100%;height:60px;line-height:30px;border-bottom:1px solid #f2f2f2;clear:both;}
+.record_list .record_name{float:left;padding-left:15px;padding-bottom:20px;}
+.record_list .record_name img{width:30px;padding-right:10px;}
+.record_list .record_time{float:right;padding-right:10px;}
+
+
+/* 针对小屏幕 */
+@media screen and (min-width:319px) and (max-width:345px){
+    .detail_info_personal{font-size:14px;}
+    .detail_footer .footer_info{font-size:12px;}
+    .footer_num_div{font-size: 11px;}
+}

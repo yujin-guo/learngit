@@ -1,0 +1,14 @@
+<%if(flag==true){%>
+<%_.each(logs,function(i,index){%>
+<tr>
+    <td class="width-one"><%=i.createTime%></td>
+    <td class="width-two"><%=i.operatorId%></td>
+    <td class="width-three"><%=i.operator%></td>
+    <td class="width-four"><%=i.operatorIp%></td>
+</tr>
+<%})%>
+<%}else{%>
+<tr>
+    <td colspan=4>暂无数据</td>
+</tr>  
+<%}%>

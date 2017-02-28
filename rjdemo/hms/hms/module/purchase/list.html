@@ -1,0 +1,90 @@
+<%= nav %>
+<div class="left content">
+    <div class="content-wrap">
+        <div id="purchase-div">
+            <div class="content-nav">
+                <div class="symbol-icon01">
+                    <span class="symbol-title">采购申请</span>
+                </div>
+            </div>
+            <div class="infomation">
+                <div class="matures">
+                    <div class="search-div">
+                        <input class="search-input" id="search-value" type="text" placeholder="采购申请编号/采购组/采购人" />
+                        <a class="search-btn" id="search-btn" href="javascript:void(0)"></a>
+                    </div>
+                </div>
+                <table class="list-table">
+                    <thead>
+                        <tr>
+                            <th class="apply-id">采购申请编号</th>
+                            <th class="date">采购日期</th>
+                            <th class="group">采购组</th>
+                            <th class="human">采购人</th>
+                            <th class="money">采购申请金额</th>
+                            <th class="status-td">
+                                <select class="purchase-select">
+                                    <option value="all">状态</option>
+                                    <option value="1">待审批</option>
+                                    <option value="3">审批驳回</option>
+                                    <option value="4">审批通过</option>
+                                </select>
+                            </th>
+                            <th class="control">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="list">
+                        <%if(flag==true){_.each(purchaseApplys,function(P){%>
+                        <tr>
+                            <td class="apply-id">
+                                <%= P.fbuyapplicationno%>
+                            </td>
+                            <td class="date">
+                                <%= P.fbuyapplicationdate%>
+                            </td>
+                            <td class="group">
+                                <%= P.fbuydepartment%>
+                            </td>
+                            <td class="human">
+                                <%= P.name%>
+                            </td>
+                            <%var account=P.fprevbudgetamount.toFixed(2);%>
+                            <td class="money">￥
+                                <%= account%>
+                            </td>
+                            <td class="status-td">
+                                <% if(P.status==1){%> 待审批
+                                <%}else if(P.status==3){%> 审批驳回
+                                <%}else if(P.status==4){%> 审批通过
+                                <%}%>
+                            </td>
+                            <td class="control">
+                                <a class="detail-link" href="#purcharseDetail?id=<%= P.id%>" data-id="<%= P.id%>" target="_blank">查看</a>
+                            </td>
+                        </tr>
+                        <%});}else{%>
+                        <tr>
+                            <td colspan="7" class="empty-td">
+                                暂无数据！
+                            </td>
+                        </tr>
+                        <%}%>
+                    </tbody>
+                </table>
+                <div class="matures">
+                    <div class="page">
+                        <div class="right">
+                            <a class="endpoint" href="javascript:void(0)">尾页</a>
+                        </div>
+                        <div class="right" id="pagination">
+
+                        </div>
+                        <div class="right">
+                            <a class="endpoint" href="javascript:void(0)">首页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

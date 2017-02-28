@@ -1,0 +1,57 @@
+.secondary-nav{list-style: none;}
+.header-title,.secondary-title{color:#333;}
+.header-title{height: 70px;line-height: 70px;padding-left: 15px;width: 156px;}
+.secondary-title{height: 40px;line-height: 40px;cursor: pointer;padding-left: 30px;}
+.secondary-active{background-color: #fff;}
+.secondary-title:hover{background-color: #f2f2f2;}
+/*采购列表*/
+.list-table{width: 100%;}
+.search-div{text-align: right;font-size: 0;}
+.search-input{border: 1px solid #ccc;border-right:medium none;padding-left: 10px;padding-right: 10px;height: 28px;line-height: 28px;width: 251px;color: #999;font-size: 14px;}
+.search-btn{width: 34px;height: 30px;background-color: #13b5be;vertical-align: top;}
+.apply-id,.date,.group,.human,.money,.status-td,.control{padding-right: 10px;}
+.apply-id{width: 12%;padding-left: 7px;}
+.date{width: 14%;}
+.group{width: 31%;}
+.human{width: 8%;}
+.money{width: 11%;}
+.status-td{width: 11%;}
+.status-td select{width: 80px;height: 22px;color: #999;}
+.control{width: 6%;}
+.control a{color: #008cd0;}
+.page{text-align: right;font-size: 0;}
+.page a{color: #999;font-size:12px ;height: 28px;line-height: 28px;text-align: center;}
+.endpoint{width: 52px;border:1px #ccc solid ;}
+.direction-pre{border: 1px solid #ccc;border-left: medium none;width: 65px;}
+.direction-next{border-top:1px solid #ccc ;border-bottom: 1px solid #ccc;width: 66px;}
+.index{border: 1px solid #ccc;border-left: medium none;width: 27px;}
+.page .index-active{background-color: #13b5bd;color: #fff;}
+/*采购申请详情（待申请）*/
+.content-wrap{margin-left: 20px;margin-top: 40px;}
+.content-nav{padding-bottom: 10px;border-bottom: 1px solid #d7d7d7;}
+.symbol-icon01{border-left: 3px solid #13b5bd;}
+.symbol-title{margin-left: 10px;color: #666;font-size: 16px;}
+.symbol-return-icon{margin: 0 7px;width: 20px;height: 20px;vertical-align: top;}
+.link-btn{font-size: 12px;color: #008cd0;}
+.matures{margin: 20px 0;}
+.matures-next{padding: 12px;border: 1px solid #ccc;}
+.matures-min{padding-bottom: 18px;font-size: 12px;}
+.min-title{width: 65px;text-align: right;color: #999;}
+.min-info{color: #333;margin-left: 20px;}
+.min-info span{margin-right: 10px;}
+.infomation table{border-collapse: collapse;font-size: 12px;}
+.infomation table th{color: #999;text-align: left;background-color: #f9fafc;}
+.infomation table td{color: #333;text-align: left;}
+.infomation table tr{border: 1px solid #ccc;height: 40px;}
+.commdity-name{width: 253px;padding-right: 40px;padding-left: 7px;}
+.brand{width: 220px;padding-right: 30px;}
+.sizes{width: 120px;padding-right: 30px;}
+.provider{width: 210px;padding-right: 30px;}
+.price{width: 60px;padding-right: 30px;}
+.numbers{width:38px;padding-right: 10px;}
+.infomation .apply-money{text-align: right;padding-right: 14px;font-size: 14px;color: #666;}
+.matures-min-next{height: 230px;padding: 22px 10px;background-color: #fcf8e2;border: 1px solid #ccc;}
+.statu-div span{margin-right: 22px;font-size: 12px;color: #333;}
+.suggestion{margin: 14px 0 22px;}
+.suggestion textarea{width: 464px;height: 84px;overflow-y: auto;border: 1px solid #ccc;padding: 3px;}
+.btn-link{color: #fff;font-size: 16px;height: 40px;line-height: 40px;width: 150px;text-align: center;background-color: #13b5bd;border-radius: 3px;}

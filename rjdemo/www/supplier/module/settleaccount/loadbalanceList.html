@@ -1,0 +1,57 @@
+<%if(flag==true){_.each(s,function(i,index){%>
+<tr class="balance-gap">
+    <td colspan="8">
+    </td>
+</tr>
+<tr class="balance-listgroup">
+    <td>
+        <span class="supplier-account-check"></span>
+    </td>
+    <td colspan="7">
+        <div class="balance-listgroup-collect-btn">
+            生成汇总单
+        </div>
+        <div class="balance-forbilling-money">
+            待开票金额：
+            <span class="forbilling-money-amount">￥111.00</span>
+        </div>
+    </td>
+</tr>
+<%_.each(i.statements,function(j,trIndex){%>
+<tr class="balance-item<%=index%>">
+    <td style="border-left:1px solid #e4e4e4;">
+        <span class="supplier-account-check"></span>
+    </td>
+    <td class='balance-name' data-id="<%=j.id%>">
+        <%=j.banlanceNumber%>
+    </td>
+    <td class='balance-number'>
+        <%=j.purchaser%>
+    </td>
+    <td class='balance-unit'>
+        <%=j.department%>
+    </td>
+    <td class='balance-price'>
+        <%=j.banlanceDate%>
+    </td>
+    <td class='balance-price balance-kaipiao'>
+        ￥<%=j.banlanceMoney%>
+    </td>
+    <td class='balance-operate'>
+        待开票
+    </td>
+    <td style="border-right:1px solid #e4e4e4;">
+        <a href="#accountDetail?balanceId=<%=j.banlanceNumber%>" class="balance-particular">
+            查看
+        </a>
+    </td>
+</tr>
+<%})})}else{%>
+<tr>
+    <td colspan="8" style="border: none;">
+        <p class="empty">
+            暂无数据!
+        </p>
+    </td>
+</tr>
+<%}%>

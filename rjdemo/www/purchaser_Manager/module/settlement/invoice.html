@@ -1,0 +1,73 @@
+<div class="invoice">
+    <div class="invoice-header">
+        <div class="invoice-search left">
+            <input type="text" class="invoice-search-box left" placeholder="请填写发票清单号码或结算汇总单号">
+            <a href="javascript:;" class="invoice-search-btn left">添加</a>
+            <ul class="invoice-search-match"></ul>
+        </div>
+        <div class="invoice-total right">
+            <span class="invoice-total-money">总金额：<span class="invoice-total-color " id="invoiceTotalMoney">￥<%=parseFloat(amount).toFixed(2)%></span></span>
+            <span>订单数量：<span class="invoice-total-color" id="invoiceTotalOrder"><%=count%></span></span>
+        </div>
+    </div>
+    <ul class="invoice-title">
+        <li class="invoice-balance-number">结算单号</li>
+        <li class="invoice-balance-supplier">供应商|提交人</li>
+        <li class="invoice-balance-date">结算日期</li>
+        <li class="invoice-balance-money">结算金额</li>
+        <li class="invoice-balance-money">实验耗材费</li>
+        <li class="invoice-balance-money">测试分析费</li>
+        <li class="invoice-balance-status">状态</li>
+    </ul>
+    <%_.each(summaryInvoiceInfos,function(i){%>
+    <ul class="invoice-title-info">
+        <li class="invoice-balance-number"><%=i.summaryNo%><input type="hidden" class="invoice-balance-id" value="<%=i.id%>" ></li>
+        <li class="invoice-balance-supplier"><%=i.suppName%> | <%=i.person%></li>
+        <li class="invoice-balance-date"><%=i.date%></li>
+        <li class="invoice-balance-money invoice-balance-total-money">￥<%=parseFloat(i.statementAmount).toFixed(2)%></li>
+        <li class="invoice-balance-money">￥<%=parseFloat(i.consumablesAmount).toFixed(2)%></li>
+        <li class="invoice-balance-money">￥<%=parseFloat(i.analysisAmount).toFixed(2)%></li>
+        <li class="invoice-balance-status">待提交</li>
+        <li class="invoice-balance-remove">移除<input type="hidden" class="invoice-order-num" value="<%=i.orderCount%>"></li>
+    </ul>
+    <table>
+        <tr>
+            <th class="invoice-table-width-a">订单号</th>
+            <th class="invoice-table-width-b">采购人</th>
+            <th class="invoice-table-width-b">验收人</th>
+            <th class="invoice-table-width-a">货号</th> 
+            <th class="invoice-table-width-c">名称</th>
+            <th class="invoice-table-width-d">规格</th>
+            <th class="invoice-table-width-e">单位</th>
+            <th class="invoice-table-width-f">数量</th>
+            <th class="invoice-table-width-d">单价(元)</th>
+            <th class="invoice-table-width-d">金额(元)</th>
+        </tr>
+        <%_.each(i.orderInfos,function(j){%>
+        <tr>
+            <td><%=j.orderNo%></td>
+            <td><%=j.buyer%></td>
+            <td><%=j.acceptor%></td>
+            <td><%=j.productCode%></td> 
+            <td><%=j.productName%></td>
+            <td><%=j.productSpec%></td>
+            <td><%=j.productUnit%></td>
+            <td><%=parseInt(j.productCount)%></td>
+            <td><%=parseFloat(j.price).toFixed(2)%></td>
+            <td><%=parseFloat(j.totalPrice).toFixed(2)%></td>
+        </tr>
+        <%})%>
+        <tr>
+            <td colspan=7>合计</td>
+            <td><%=parseInt(i.count)%></td>
+            <td></td>
+            <td><%=parseFloat(i.amount).toFixed(2)%></td>
+        </tr>
+    </table>
+    <%})%>
+    <div class="invoice-no-content">暂时没有信息！</div>
+    <div class="invoice-btn">
+        <a href="javascript:;" class="invoice-btn-one invoice-receive-print">接收并打印出入库单</a>
+        <a href="javascript:;" class="invoice-btn-one invoice-receive">确认接收</a>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="left nav-inner-left">
+    <ul class="secondary-nav">
+        <li class="header-title">成员管理</li>
+        <li class="secondary-title secondary-active">
+            <a href="#member">人员管理</a>
+        </li>
+        <% for(var i in userPermissions){%>
+        <%if(userPermissions[i]=='权限查看' ||userPermissions[i]=='权限编辑' ||userPermissions[i]=='权限新增'){%>
+        <li class="secondary-title">
+            <a href="#roles">角色管理</a>
+        </li>
+        <%break;}}%>
+        <li class="secondary-title">
+            <a href="#department">部门管理</a>
+        </li>
+    </ul>
+</div>

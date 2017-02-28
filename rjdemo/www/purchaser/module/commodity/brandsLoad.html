@@ -1,0 +1,17 @@
+<%if(brands!=undefined){_.each(brands,function(b){%>
+<span class="commodity-icon">
+    <span class="brand-logo breads">
+        <label class="brand-label"></label>
+        <input type="checkbox" class="checkbox-value" value="<%= b.name%>" />
+        <input type="hidden" class="brands-value" value="<%= b.id %>" />
+        <%= b.name%>
+    </span>
+    <!--<% if(b.logo==undefined || b.logo=='' || b.logo=="upload/upBrandLOGO/DEFAULT_LOGO.png"){%>
+                                <span class="brand-logo breads">
+                                    <%= b.name%>
+                                </span>
+                                <%} else{%>
+                                <img class="breads" src="<%= b.logo %>" />
+                                <%}%>-->
+</span>
+<% });}%>

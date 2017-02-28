@@ -1,0 +1,94 @@
+<div class="left content">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">个人信息</span>
+            </div>
+        </div>
+        <div id="wrap-div">
+            <div class="common-wrap-div person-limit-width">
+                <div class="person-info">
+                    <div class="person-info-wrap">
+                        <span class="person-info-title">账号ID：</span>
+                        <span class="person-info-info">
+                            <%=id  %>
+                        </span>
+                    </div>
+                    <div class="person-info-wrap">
+                        <span class="person-info-title">真实姓名：</span>
+                        <span class="person-info-info">
+                            <%= name %>
+                        </span>
+                    </div>
+                    <div class="person-info-wrap">
+                        <span class="person-info-title">工作部门：</span>
+                        <span class="person-info-info">
+                            <%= department %>
+                        </span>
+                    </div>
+                    <div class="person-info-wrap">
+                        <span class="person-info-title">注册时间：</span>
+                        <span class="person-info-info">
+                            <%= creationTime %>
+                        </span>
+                    </div>
+                </div>
+                <div class="person-config">
+                    <span class="person-config-title">
+                        登录密码
+                    </span>
+                    <span class="person-config-info">
+                        安全性高的密码可以使帐号更安全。建议您定期更换密码，设置一个包含字母，符号或数字中至少两项且长度超过6位的密码
+                    </span>
+                    <span class="person-config-config">
+                        <span class="icon">已设置</span>
+                        <em>|</em>
+                        <a href="javascript:void(0)" data-flag="editPass" class="edit-config my-common-event">修改</a>
+                    </span>
+                </div>
+                <div class="person-config">
+                    <span class="person-config-title">
+                        手机号码
+                    </span>
+                    <span class="person-config-info">
+                        <% if(mobile){%> 您已绑定了手机
+                        <em class="communication"><% var begin = mobile.slice(0,3);var end= mobile.slice(-4)%><%= begin %>****<%= end %></em>。[您的手机号可以直接用于登录、找回密码等]
+                        <%}else{%> 您还未绑定手机号码
+                        <%} %>
+
+                    </span>
+                    <span class="person-config-config">
+                        <% if(mobile){%>
+                        <span class="icon">已设置</span>
+                        <em>|</em>
+                        <a href="javascript:void(0)" data-flag="editMobile" class="edit-config my-common-event">修改</a>
+                        <%}else{%>
+                        <a href="javascript:void(0)" data-flag="editMobile" class="edit-config my-common-event">绑定手机</a>
+                        <%} %>
+
+                    </span>
+                </div>
+                <div class="person-config">
+                    <span class="person-config-title">
+                        电子邮箱
+                    </span>
+                    <span class="person-config-info">
+                        <% if(email){%> 您已绑定了邮箱<em class="communication"><%= email %></em>。[您的邮箱号可以直接用于登录、找回密码等]
+                        <%}else{%> 您还未绑定电子邮箱
+                        <%} %>
+                    </span>
+                    <span class="person-config-config">
+                        <% if(email){%>
+                        <span class="icon">已设置</span>
+                        <em>|</em>
+                        <a href="javascript:void(0)" data-flag="editEmail" class="edit-config my-common-event">修改</a>
+                        <%}else{%> 
+                        <a href="javascript:void(0)" data-flag="editEmail" class="edit-config my-common-event">绑定邮箱</a>
+                        <%} %>
+
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

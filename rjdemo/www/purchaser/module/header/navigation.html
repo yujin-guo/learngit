@@ -1,0 +1,23 @@
+<div class="header-nav">
+    <div class="cm-main">
+        <div class="header-main-nav-cell header-main-nav-cell-01">
+            商品分类
+            <div class="header-main-nav-sub">
+                <%_.each(data,function(i){%>       
+                <a href="javascript:;" class="header-main-sub-name"><%=i.name%></a>
+                <ul class="header-main-nav-types">
+                    <%_.each(i.subList,function(l){%>
+                    <li class="header-main-nav-name">
+                        <a href="#commoditylist?key=<%=encodeURIComponent(l.name)%>&id=<%=l.id%>"><%=l.name%></a>
+                    </li>
+                    <%})%>
+                </ul>
+                <%})%>
+            </div>
+        </div>
+        <a href="index.html" class="header-main-nav-cell">采购首页</a>
+        <a href="#bidlist" class="header-main-nav-cell">在线竞价</a> 
+        <a href="#information" class="header-main-nav-cell">信息公告</a>
+        <a href="#help" class="header-main-nav-cell">帮助中心</a>
+    </div>
+</div>

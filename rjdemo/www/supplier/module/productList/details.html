@@ -1,0 +1,178 @@
+<!--搜索模块-->
+<div class="header-search-main">
+    <div class="cm-main">
+        <a href="javascript:;" class="header-car-btn" >
+            <img style="padding-top:-3px;padding-right:5px;vertical-align:middle;" src="style/images/cart.svg" />
+            我的购物车
+            <span id="basketNum"></span>
+        </a>
+        <a href="javascript:;" class="left header-icon"></a>
+        <div class="header-center">
+            <ul class="header-search-ul ac-key-search">
+                <li>
+                    <a href="javascript:;" data-flag="goods" class="ac-key-a-active">商品</a>
+                </li>
+                <li>
+                    <a href="javascript:;" data-flag="supplie" class="ac-key-hover">供应商</a>
+                </li>
+            </ul>
+            <div class="left header-search">
+                <a class="right header-search-btn ac-search" href="javascript:;">搜索</a>
+                <div class="header-search-left">
+                </div>
+                <input type="text" class="header-search-box" placeholder="请输入商品名称、商品编码、货号、品牌名称进行搜索 " id="searchKey" readonly />
+            </div>
+            <a href="javascript:;" class="right header-search-text">高级搜索</a>
+        </div>
+    </div>
+</div>
+
+<!--导航模块-->
+<div class="header-nav">
+    <div class="cm-main">
+        <div class="header-main-nav-cell header-main-nav-cell-01">
+            商品分类
+        </div>
+        <a href="javascript:;" class="header-main-nav-cell">采购首页</a>
+        <a href="javascript:;" class="header-main-nav-cell">在线竞价</a> 
+        <a href="javascript:;" class="header-main-nav-cell">信息公告</a>
+        <a href="javascript:;" class="header-main-nav-cell">帮助中心</a>
+    </div>
+</div>
+
+<div class="details">
+    <div class="details-first">
+        <span class="details-first-location">当前位置</span>&nbsp;&nbsp;
+        <% _.each(details.category,function(c,index){%>
+        <%if(c!=null){%>
+        <span><a href="javascript:;"><%= c.name %></a></span><% if(index+1!= details.category.length ){ %>&gt;<% }%>
+        <%}%>
+        <%});%>
+    </div>
+    <!-- 第一栏结束 -->
+    <div class="details-second">
+        <div class="details-second-left">
+            <div class="details-second-picture">
+                <%if(details.photos.length!=0){%>
+                <span class="details-big-wrap"><img class="details-second-big" src="<%=details.photos[0].photo%>" alt=""></span>
+                <%}else{%>
+                <span class="details-big-wrap"><img class="details-second-big" src="<%=details.photo%>" alt=""></span>   
+                <%}%>
+                <div class="details-second-gallery">
+                    <ul>
+                        <%if(details.photos.length!=0){%>
+                        <%_.each(details.photos,function(i){%>
+                        <li><img src="<%=i.photo%>" alt=""/></li>
+                        <%})%>
+                        <%}else{%>
+                        <li><img src="<%=details.photo%>" alt=""/></li>
+                        <%}%>
+                    </ul>
+                </div>
+            </div>
+            <div class="details-second-info">
+                <h3><%= details.name %></h3>
+                <input type="hidden" id="cartBrandId" value="<%=details.brandId%>">
+                <div class="details-second-price">
+                    <p>价格&nbsp;:<span class="details-second-oprice">￥<%=details.price.toFixed(2)%></span></p>
+                </div>
+                <ul class="details-second-list">
+                    <li>品牌&nbsp;:<span><%if(details.brand){%><%= details.brand.name %><%}%></span></li>
+                    <input type="hidden" id="detailsBrandId" value="<%=details.sn%>">
+                    <li>规格&nbsp;:<span><%= details.specification %></span></li>
+                    <li>编码&nbsp;:<span id="sn"><%= details.sn %></span></li>
+                    <li>货号&nbsp;:<span><%= details.productNum %></span></li>
+                    <li>库存&nbsp;:<span id="productSku"><%= details.sku %></span></li>
+                </ul>
+                <div class="details-second-collect">
+                    <% if(details.sku > 0){%>
+                    <div class="details-second-collect-num">
+                        <input class="details-second-collect-input" value="1" readonly>
+                        <span class="details-second-collect-cal">
+                            <p class="details-second-collect-cal-plus">+</p>
+                            <p>-</p>
+                        </span>
+                    </div>
+                    <% } %>
+                    <span class="details-second-car">加入购物车
+                        <div class="details-animation">
+                            <span></span>
+                        </div>
+                    </span>
+                    <span class="details-second-attention" >加入关注</span>
+                </div>
+            </div>
+        </div>
+        <div class="details-second-right">
+            <h3 class="details-second-right-title"><%=decodeURIComponent($.cookie("username1"))%></h3>
+            <ul class="details-second-right-list">
+                <li >服务电话：<span><%=supp.mobile%></span></li>
+                <li >所&nbsp;在&nbsp;地&nbsp;：<span class="details-second-right-location"><%=supp.address%></span></li>
+            </ul>
+            <div class="details-second-right-button">
+                <a class="details-second-right-enter" href="javascript:;">进入店铺</a>
+                <a class="details-second-right-attention" href="javascript:;">关注商家</a>
+            </div>
+            <div class="details-second-qq">
+                <a  class="details-second-right-qq" href="javascript:;">
+                    QQ交谈
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 第二栏结束 -->
+    <div class="details-third">
+
+    </div>
+    <!-- 第三栏结束 -->
+    <div class="details-fourth">
+        <div class="details-fourth-left">
+            <div class="details-fourth-top">
+                <h3>本店商品搜索</h3>
+                <div class="details-fourth-search">
+                    <input type="text" value="关键字" id="keyWord">
+                    <span class="details-fourth-search-btn">搜索</span>
+                </div>
+            </div>
+            <div class="details-fourth-bottom">
+                <h3>本店商品分类</h3>
+                <ul class="details-fourth-category">
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="details-fourth-right">
+            <ul class="details-fourth-tab">
+                <li  class="details-product-intro details-fourth-highlight"><span>商品介绍</span></li>
+                <li><span>商品评价</span></li>
+                <li><span>价格走势</span></li>
+            </ul>
+            <ul class="details-fourth-content">
+                <%if(details.desc){%>
+                <li class="details-product-info">
+                    <%=details.desc%>
+                </li>
+                <%}else{%>
+                <li class="details-no-comments">暂无商品介绍。</li>    
+                <%}%>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="home-footer">
+    <p>
+         <a style="color:#666" href="index.html#help">帮助中心</a> | 客服QQ：2448328732 服务时间：周一至周五(节假日除外)9：00-18：00 
+        <span class="footer-logo">
+            <a href="tencent://message/?uin=2448328732&Site=在线QQ&amp;Menu=yes">
+                <img src="style/images/QQ.png" />
+                <span>QQ交谈</span>
+            </a>
+        </span>
+    </p>
+    <p>版权所有 @2014-2016 网站备案/许可证号：
+       <a target="_blank" style="color:#666;" href="http://www.miitbeian.gov.cn/">粤ICP备16055118号-2
+       </a>
+    </p>
+</div>

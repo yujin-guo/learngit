@@ -1,0 +1,57 @@
+<div class="settle-submit">
+    <div class="settle-header overflow">
+        <a class="settle-header-submit left" href="javascript:;">导出验收单</a><a href="javascript:;" download><span class="settle-download"></span></a>
+    </div>
+    <ul class="settle-title">
+        <li class="settle-title-b">结算单号</li>
+        <li class="settle-title-c">供应商</li>
+        <li class="settle-title-d">提交人</li>
+        <li class="settle-title-d">课题组</li>
+        <li class="settle-title-d">结算日期</li>
+        <li class="settle-title-d">结算金额</li>
+        <li class="settle-title-f">状态</li>
+        <li class="settle-title-e">操作</li>
+    </ul>
+    <table cellspacing=0 class="settle-content">
+        <%_.each(list,function(i){%>
+        <tr class="settle-content-item">
+            <td class="settle-title-b settle-statement-number"><%=i.statamentNo%></td>
+            <td class="settle-title-c"><%=i.supplierName%></td>
+            <td class="settle-title-d"><%=i.committer%></td>
+            <td class="settle-title-d"><%=i.department%></td>
+            <td class="settle-title-d"><%=i.balanceDate%></td>
+            <td class="settle-title-d"><%=parseFloat(i.balanceMoney).toFixed(2)%></td>
+            <%if(i.status==4){%>
+            <td class="settle-title-f">待提交验收单</td>
+            <%}%>
+            <%if(i.status==5){%>
+            <td class="settle-title-f">待提交供应商</td>
+            <%}%>
+            <%if(i.status==0){%>
+            <td class="settle-title-f">待开票</td>
+            <%}%>
+            <%if(i.status==6){%>
+            <td class="settle-title-f">待填发票</td>
+            <%}%>
+            <%if(i.status==7){%>
+            <td class="settle-title-f">待递送</td>
+            <%}%>
+            <%if(i.status==1){%>
+            <td class="settle-title-f">待审核</td>
+            <%}%>
+            <%if(i.status==2){%>
+            <td class="settle-title-f">待付款</td>
+            <%}%>
+            <%if(i.status==3){%>
+            <td class="settle-title-f">已完成</td>
+            <%}%>
+            <td class="settle-title-e">
+                <a href="javascript:;" class="settle-content-check">查看</a>
+                <input type="hidden" value="<%=i.status%>" class="settle-statement-number">
+                <input type="hidden" value="<%=i.statementId%>" class="settle-statement-id">
+                <span  class="settle-content-print">下载</span><a href="javascript:;" download><span class="settle-download"></span></a>
+            </td>
+        </tr>
+        <%})%>
+    </table>
+</div>

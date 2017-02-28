@@ -1,0 +1,35 @@
+<div class="matures">
+    <h2 class="batch-h2">导入结果</h2>
+</div>
+<div class="matures">
+    <div class="batch-desc">
+        您好，共有人员数据<%= total %>条，成功导入<%= success %>条，失败<%= fail %>条，具体失败的数据如下
+    </div>
+</div>
+<table class="member-list-table">
+    <thead>
+        <tr>
+            <th class="member-td-name">真实姓名</th>
+            <th class="member-td-mobile">手机号码</th>
+            <th class="member-td-email">电子邮箱</th>
+            <th class="member-td-status">失败原因</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%if(fail!=0){_.each(models,function(M){%>
+        <tr>
+            <td><%= M.name %></td>
+            <td><%= M.mobile %></td>
+            <td><%= M.email %></td>
+            <td><%= M.message %></td>
+        </tr>    
+        <%});}else{%>
+        <tr>
+            <td colspan="4"style="text-align: center;">没有失败数据！</td>
+        </tr> 
+        <%}%>
+    </tbody>
+</table>
+<div class="matures">
+    <a class="save-value" href="javascript:window.location.reload();">确定</a>
+</div>

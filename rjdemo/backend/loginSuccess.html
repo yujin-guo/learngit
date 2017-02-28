@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>登录成功</title>
+    </head>
+    <body>
+        登录成功，正在进入平台管理系统。
+        <script src="js/libs/jquery.js">
+        </script>
+        <script src="js/libs/jquery.cookie.js">
+        </script>
+        <script>
+            $(document).ready(function() {
+                window.parent.location = "index.html#control";
+                $.get("/oms/identity")
+                    .success(function(data) {
+                        // 登出各个系统（如果单点登出生效，这步没什么意义。所以这步是用来保证单点登出的）
+                        var cond = encodeURIComponent(data.user.userName);
+                        $.when(
+                            $.get("/cms/sso/logout?local=true&cond=" + cond),
+                            $.get("/oms/sso/logout?local=true&cond=" + cond)
+                        ).always(function() {
+                            $.cookie('idOms', data.user.id, {
+                                path: '/'
+                            });
+                            $.cookie('usernameOms', data.user.userName, {
+                                path: '/'
+                            });
+                            window.parent.location = "index.html#control";
+                        });
+                    });
+            });
+        </script>
+    </body>
+</html>

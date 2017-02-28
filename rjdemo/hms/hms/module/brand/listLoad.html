@@ -1,0 +1,29 @@
+<%if(flag==true){%>
+<%_.each(brandAppList,function(i,index){%>                 
+<tr>
+    <td class="apply-id"><%=i.authId%></td>
+    <td class="provider-name"><%=i.suppName%></td>
+    <td class="brand-name"><%if(i.name&&i.name!=""){%><%=i.name%><%}else{%>无名称<%}%></td>
+    <td class="apply-time"><%=i.creationTime%></td>
+    <%if(i.status==1){%>
+    <td class="status-td">审核中</td>
+    <%}%>
+    <%if(i.status==2){%>
+    <td class="status-td">已通过</td>
+    <%}%>
+    <%if(i.status==3){%>
+    <td class="status-td">未通过</td>
+    <%}%>
+    <%if(i.status==4){%>
+    <td class="status-td">已过期</td>
+    <%}%>
+    <td class="control">
+        <a href="#branddetail?id=<%=i.authId%>">查看</a>
+    </td>
+</tr>
+<%})%>
+<%}else{%>
+<tr>
+    <td colspan="7" style="text-align:center;">暂无数据</td>
+</tr>  
+<%}%>

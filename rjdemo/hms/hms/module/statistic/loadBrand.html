@@ -1,0 +1,16 @@
+<%if(flag==true){%>
+<%_.each(brandList,function(i,index){%>
+<tr>
+    <td class="width-one"><%= (params.pageNo-1)*params.pageSize+(index+1)%></td>
+    <td class="width-two">
+         <%if(i.cbandName || i.ebrandName){var brand= i.cbandName && i.ebrandName ? i.cbandName+'('+i.ebrandName+')' : (i.cbandName || i.ebrandName)%><%=brand%><%}else{%>无名称<%}%>
+    </td>
+    <td class="width-three"><%=i.salesTimes%></td>
+    <td class="width-four">￥<%=i.amount.toFixed(2)%></td>
+</tr>
+<%})%>
+<%}else{%>
+<tr>
+    <td colspan=4>暂无数据</td>
+</tr>  
+<%}%>

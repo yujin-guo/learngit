@@ -1,0 +1,561 @@
+<div class="left content account-details">
+    <div class="content-wrap">
+        <div class="content-nav">
+            <div class="symbol-icon01">
+                <span class="symbol-title">结算单详情</span>
+                <a class="account-details-back" href="javascript:history.back()">&lt;返回上级</a>
+            </div>
+        </div>
+        <% if($.cookie('orgId')==2){%>
+        <%if(status=="0" || status=="6"){%>
+        <div class="account-details-flow">
+            <span class="account-details-flow-last color-one">待提交验收单
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待提交供应商
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待开票
+                <span class="account-details-arrow bc-two"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待递送
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待审核
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待付款
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待确认
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-last color-two">完成</span>
+        </div>
+        <div class="account-details-status-info">
+            <p>1、等待供应商填写发票。</p>
+        </div>
+        <%}%>
+        <%if(status=="1"){%>
+        <div class="account-details-flow">
+            <span class="account-details-flow-last color-one">待提交验收单
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待提交供应商
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待开票
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待递送
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待审核
+                <span class="account-details-arrow bc-two"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待付款
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待确认
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-last color-two">完成</span>
+        </div>
+        <div class="account-details-status-info">
+            <!-- <p>1、如果已经审核完成结算资料，请点击“提交财务”按钮</p>-->
+            <p>1、接下来，您需要把结算资料提交给财务人员。</p>
+            <!--<%_.each(userPermissions,function(i){%>
+            <%if(i=="提交财务"){%>
+            <a href="javascript:;" class="account-details-operation account-details-submit">提交财务</a>
+            <%}%>
+            <%})%>-->
+        </div>
+        <%}%>
+        <%if(status=="2"){%>
+        <div class="account-details-flow">
+            <span class="account-details-flow-last color-one">待提交验收单
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待提交供应商
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待开票
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待递送
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待审核
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待付款
+                <span class="account-details-arrow bc-two"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待确认
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-last color-two">完成</span>
+        </div>
+        <div class="account-details-status-info">
+            <p>1、资料已经提交给财务，请等待财务审核通过后，付款给供应商。</p>
+        </div>
+        <%}%>
+        <%if(status=="3"){%>
+        <div class="account-details-flow">
+            <span class="account-details-flow-last color-one">待提交验收单
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待提交供应商
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待开票
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待递送
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待审核
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待付款
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待确认
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-last color-one">完成</span>
+        </div>
+        <div class="account-details-status-info">
+            <p>1、供应商已经收到结算款，结算完成。</p>
+        </div>
+        <%}%>
+        <%if(status=="4"){%>
+        <div class="account-details-flow">
+            <span class="account-details-flow-last color-one">待提交验收单
+                <span class="account-details-arrow bc-two"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待提交供应商
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待开票
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待递送
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待审核
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待付款
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待确认
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-last color-two">完成</span>
+        </div>
+        <div class="account-details-status-info">
+            <p>1、需要亲自审核您接收到的结算资料并添加验收单。</p>
+        </div>
+        <%}%>
+        <%if(status=="5"){%>
+        <div class="account-details-flow">
+            <span class="account-details-flow-last color-one">待提交验收单
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待提交供应商
+                <span class="account-details-arrow bc-two"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待开票
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待递送
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待审核
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待付款
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待确认
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-last color-two">完成</span>
+        </div>
+        <div class="account-details-status-info">
+            <p>1、需要亲自审核您接收到的结算资料并添加验收单。</p>
+        </div>
+        <%}%>
+        <%if(status=="7"){%>
+        <div class="account-details-flow">
+            <span class="account-details-flow-last color-one">待提交验收单
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待提交供应商
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待开票
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item color-one">待递送
+                <span class="account-details-arrow bc-two"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待审核
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待付款
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item color-two">待确认
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-last color-two">完成</span>
+        </div>
+        <div class="account-details-status-info">
+            <p>1、发票清单等待递送到财务。</p>
+        </div>
+        <%}%>
+        <%}else{if(status=="0" || status=="6"){%>
+        <div class="account-details-flow">
+            <span class="account-details-flow-last01 color-one">待开票
+                <span class="account-details-arrow bc-two"></span>
+            </span>
+            <span class="account-details-flow-item01 color-two">待递送
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item01 color-two">待审核
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item01 color-two">待付款
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item01 color-two">待确认
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-last01 color-two">完成</span>
+        </div>
+        <div class="account-details-status-info">
+            <p>1、等待供应商填写发票。</p>
+        </div>
+        <%}%>
+        <%if(status=="1"){%>
+        <div class="account-details-flow">
+            <span class="account-details-flow-last01 color-one">待开票
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item01 color-one">待递送
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item01 color-one">待审核
+                <span class="account-details-arrow bc-two"></span>
+            </span>
+            <span class="account-details-flow-item01 color-two">待付款
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item01 color-two">待确认
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-last01 color-two">完成</span>
+        </div>
+        <div class="account-details-status-info">
+            <!-- <p>1、如果已经审核完成结算资料，请点击“提交财务”按钮</p>-->
+            <p>1、接下来，您需要把结算资料提交给财务人员。</p>
+            <!--<%_.each(userPermissions,function(i){%>
+            <%if(i=="提交财务"){%>
+            <a href="javascript:;" class="account-details-operation account-details-submit">提交财务</a>
+            <%}%>
+            <%})%>-->
+        </div>
+        <%}%>
+        <%if(status=="2"){%>
+        <div class="account-details-flow">
+            <span class="account-details-flow-last01 color-one">待开票
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item01 color-one">待递送
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item01 color-one">待审核
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item01 color-one">待付款
+                <span class="account-details-arrow bc-two"></span>
+            </span>
+            <span class="account-details-flow-item01 color-two">待确认
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-last01 color-two">完成</span>
+        </div>
+        <div class="account-details-status-info">
+            <p>1、资料已经提交给财务，请等待财务审核通过后，付款给供应商。</p>
+        </div>
+        <%}%>
+        <%if(status=="3"){%>
+        <div class="account-details-flow">
+            <span class="account-details-flow-last01 color-one">待开票
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item01 color-one">待递送
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item01 color-one">待审核
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item01 color-one">待付款
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item01 color-one">待确认
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-last01 color-one">完成</span>
+        </div>
+        <div class="account-details-status-info">
+            <p>1、供应商已经收到结算款，结算完成。</p>
+        </div>
+        <%}%>
+        <%if(status=="7"){%>
+        <div class="account-details-flow">
+            <span class="account-details-flow-last01 color-one">待开票
+                <span class="account-details-arrow bc-one"></span>
+            </span>
+            <span class="account-details-flow-item01 color-one">待递送
+                <span class="account-details-arrow bc-two"></span>
+            </span>
+            <span class="account-details-flow-item01 color-two">待审核
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item01 color-two">待付款
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-item01 color-two">待确认
+                <span class="account-details-arrow bc-three"></span>
+            </span>
+            <span class="account-details-flow-last01 color-two">完成</span>
+        </div>
+        <div class="account-details-status-info">
+            <p>1、发票清单等待递送到财务。</p>
+        </div>
+        <%}%>
+        <%}%>
+
+        <div class="account-details-info">
+            <p>
+                <div>
+                    <span class="account-details-info-item">结算单号：</span>
+                    <span>
+                        <%=data.banlanceNo%>
+                    </span>
+                </div>
+            </p>
+            <p>
+                <div>
+                    <span class="account-details-info-item">申请日期：</span>
+                    <span>
+                        <%=data.banlanceDate%>
+                    </span>
+                </div>
+            </p>
+            <% if($.cookie('orgId')==6){%>
+            <p>
+                <div>
+                    <span class="account-details-info-item">课题组：</span>
+                    <span>
+                        <% if(data.hasOwnProperty("commiter")){%>
+                        <%=data.commiter%>
+                        <%}else{%>无
+                        <%}%>
+                    </span>
+                </div>
+            </p>
+            <p>
+                <div>
+                    <span class="account-details-info-item">项目：</span>
+                    <span>
+                        <% if(data.hasOwnProperty("project")){%>
+                        <%=data.project%>
+                        <%}else{%>无
+                        <%}%>
+                    </span>
+                </div>
+            </p>
+            <p>
+                <div>
+                    <span class="account-details-info-item">科目：</span>
+                    <span>
+                        <% if(data.hasOwnProperty("subject")){%>
+                        <%=data.subject%>
+                        <%}else{%>无
+                        <%}%>
+                    </span>
+                </div>
+            </p>
+            <%}%>
+            <p>
+                <div>
+                    <span class="account-details-info-item">供应商：</span>
+                    <span>
+                        <%=data.supplierName%>
+                    </span>
+                </div>
+            </p>
+            <p>
+                <div>
+                    <span class="account-details-info-item">采购组：</span>
+                    <span>
+                        <%=data.department%>
+                    </span>
+                </div>
+            </p>
+            <p>
+                <div>
+                    <span class="account-details-info-item">提交人：</span>
+                    <span>
+                        <%=data.commiter%>
+                    </span>
+                </div>
+            </p>
+        </div>
+        <p class="account-detail-title">发票信息</p>
+        <div style="overflow: hidden;">
+            <%if(data.hasOwnProperty('invoiceInfos')){_.each(data.invoiceInfos,function(I){%>
+            <div class="left account-detail-invoice-wrap">
+                <div class="left">
+                    <p>
+                        <div>
+                            <span class="account-details-info-item">发票号：</span>
+                            <span>
+                                <%=I.no%>
+                            </span>
+                        </div>
+                    </p>
+                    <p>
+                        <div>
+                            <span class="account-details-info-item">发票金额：</span>
+                            <span>
+                                ￥
+                                <%= parseFloat(I.amount).toFixed(2) %>
+                            </span>
+                        </div>
+                    </p>
+                    <p>
+                        <div>
+                            <span class="account-details-info-item">开票名称：</span>
+                            <span>
+                                <%=I.operTime%>
+                            </span>
+                        </div>
+                    </p>
+                    <p>
+                        <div>
+                            <span class="account-details-info-item">摘要内容：</span>
+                            <span>
+                                <%=I.context%>
+                            </span>
+                        </div>
+                    </p>
+                    <p>
+                        <div>
+                            <span class="account-details-info-item">开票单位：</span>
+                            <span>
+                                <%=I.supp%>
+                            </span>
+                        </div>
+                    </p>
+                </div>
+                <div class="right">
+                    <% if(I.hasOwnProperty('pic')){_.each(I.pic,function(P){%>
+                        <div class="account-detail-invoice-img">
+                        <img src="<%= P %>" />
+                    </div>
+                    <%});} %>
+                </div>
+            </div>
+            <%})}else{%>无
+            <%}%>
+        </div>
+        <div class="matures">
+            <p class="account-detail-title">订单信息</p>
+        </div>
+        <table cellspacing=0>
+            <thead>
+                <tr>
+                    <td class="td-width-two account-details-statement-num">订单号</td>
+                    <td class="td-width-one">订单日期</td>
+                    <td class="td-width-one">采购人</td>
+                    <td class="td-width-one">验收人</td>
+                    <td class="td-width-one">经费卡号</td>
+                    <td class="td-width-one">订单金额(元)</td>
+                    <td class="td-width-one">验收日期</td>
+                    <td class="td-width-one">验收金额(元)</td>
+                    <td class="td-width-three">操作</td>
+                </tr>
+            </thead>
+            <tbody>
+                <%var totalMoney=0;%>
+                <%_.each(data.orders,function(i){%>
+                <tr>
+                    <td class="td-width-two account-details-statement-num">
+                        <%=i.orderNo%>
+                    </td>
+                    <td class="td-width-one">
+                        <%=i.orderDate%>
+                    </td>
+                    <td class="td-width-one">
+                        <%=i.buyer%>
+                    </td>
+                    <td class="td-width-one">
+                        <%=i.accepter%>
+                    </td>
+                    <td class="td-width-one">
+                        <%=i.fundCardNo%>
+                    </td>
+                    <td class="td-width-one">￥
+                        <%=i.orderMoney.toFixed(2)%>
+                    </td>
+                    <td class="td-width-one">
+                        <%=i.acceptDate%>
+                    </td>
+                    <td class="td-width-one">￥
+                        <%=i.acceptMoney.toFixed(2)%>
+                    </td>
+                    <td class="td-width-three">
+                        <a href="#orderdetails/<%=i.orderId%>" class="account-details-check">查看</a>
+                    </td>
+                </tr>
+                <%totalMoney+=i.acceptMoney%>
+                <%})%>
+                <tr>
+                    <td colspan=9 class="account-details-total-price">结算总额:￥
+                        <%=totalMoney.toFixed(2)%>元</td>
+                </tr>
+            </tbody>
+        </table>
+        <%if(data.hasOwnProperty("statementLogs")&&data.statementLogs.length){%>
+        <div class="matures">
+            <table cellspacing="0" style="box-sizing: border-box;">
+                <thead>
+                    <td class="account-record-one">操作日期</td>
+                    <td class="account-record-two">操作人</td>
+                    <td class="account-record-three">操作内容</td>
+                </thead>
+                <tbody>
+                    <%_.each(data.statementLogs,function(s){%>
+                    <tr>
+                        <td class="account-record-one">
+                            <%= s.creationTime %>
+                        </td>
+                        <td class="account-record-two">
+                            <%= s.operatorName %>
+                        </td>
+                        <td class="account-record-three">
+                            <%= s.desc %>
+                        </td>
+                    </tr>
+                    <%})%>
+                </tbody>
+            </table>
+        </div>
+        <%}%>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+.add-margin-top{margin-top: 30px;}
+.add-margin-bottom{margin-bottom: 50px;}
+.department-list-table{border-collapse: collapse;width: 100%;}
+.department-list-table tr{border: 1px solid #d7d7d7;}
+.department-list-table th{background-color: #f9fafc;color: #999;}
+.department-list-table td{color: #333;}
+.department-list-table td,.department-list-table th{font-size:12px;text-align: left;vertical-align: middle;padding: 12px 0 12px 10px;word-wrap: break-word;word-break: break-all;}
+.department-td-name{width: 25%;}
+.department-td-status{width: 20%;}
+.department-td-main{width: 37%;}
+/*.department-td-num{width: 17%;}*/
+.department-td-control{width: 13%;}
+.control-link{color: #008cd0;margin-right: 15px;}
+.hospital-deparment{border: 1px solid #d7d7d7;width: 18px;height: 18px;line-height: 18px;text-align: center;}
+.hospital-root{margin-left: 10%;}
+.hospital-children01{margin-left: 25%;}
+.hospital-children02{margin-left: 35%;}
+.hospital-children03{margin-left: 45%;}
+.hospital-children04{margin-left: 55%;}
+.hospital-children05{margin-left: 65%;}
+.hospital-children06{margin-left: 75%;}
+.font-size-space{font-size: 0;margin: 10px 0;}
+.control-link-edit{color: #008cd0;font-size: 12px;}
+.matures-em{margin-left: 5px;margin-right: 5px;font-size: 12px;}
+.radio-input{vertical-align: -2px;margin-right: 5px;}
+.radio-status{margin-right: 30px;height: 28px;line-height: 28px;vertical-align: middle;}
+.checkbox-span,.label-choose{font-size: 12px;color: #333;}
+.pass-hide{display: none;}
+.link-pass{font-size: 12px;}
+.edit-department-type,.department-select{font-size: 12px;height: 28px;padding-left: 5px;padding-right: 5px;vertical-align: middle;}
+.edit-department-type{width: 388px;}
+.department-select{border: 1px solid #ccc;width: 288px;}
+/*详情*/
+.detail-td-id{width: 10%;}
+.detail-td-name{width: 15%;}
+.detail-td-mobile{width: 15%;}
+.detail-td-email{width: 25%;}
+.detail-td-role{width: 15%;}
+.detail-td-control{width: 15%;}
+.department-p1,.department-p2{height: 30px;line-height: 30px;}
+.department-p2{font-size: 12px;margin-left: 10px;margin-right: 30px;}
+.add-member-span{margin: 0 15px 15px 0;font-size: 12px;color: #333;width: 105px;}
+.add-member-role-span{margin: 0 10px 15px 0;font-size: 12px;color: #333;width: 15%;}
+.add-member-span input[type='checkbox'],.add-member-span input[type='radio'],.add-member-role-span input[type='checkbox']{margin-right: 3px;vertical-align: middle;}
+.member-error-div,.roles-error-div{height: 30px;line-height: 30px;}
+.none-member{width: 50%;margin: auto;font-size: 12px;height: 200px;line-height: 200px;text-align: center;}
+.invite-textarea{width: 409px;height: 193px;padding: 5px;border: 1px #999 solid;vertical-align: top;color: #999;margin-right: 5px;font-size: 12px;}
+.invite-desc{font-size: 12px;color: #999;}
+.invite-success-div{height: 102px;width: 250px;padding-left: 130px;background-image: url(images/hmssuccess.png);background-repeat: no-repeat;background-position: -8px -11px;margin: 40px auto;}
+h2{font-size: 24px;font-weight: normal;color: #666;margin-bottom: 40px;}
+.add-title{font-size: 12px;color: #333;width: 8%;}
+.role-span{width: 90%;vertical-align: top;}
+.none-div{width: 200px;margin: 100px auto;text-align: center;}
+.none-p{margin-bottom: 30px;}
+.edit-error-place{height: 22px;}
+label.error{background-image: url("../../../style/images/error-icon.png");background-repeat: no-repeat;background-position:left center;font-size: 12px;padding-left: 25px;height: 22px;vertical-align: middle;color: #ff0000;display: inline-block;line-height: 22px;}
+.add-member-info-wrap{max-height: 400px;overflow-y: auto;}

@@ -1,0 +1,99 @@
+<div class="balance-details">
+    <div class="settleDetail-header overflow" style="margin-bottom:20px;">
+        <span class="settleDetail-header-icon left"></span>
+        <span class="settleDetail-header-text left">结算汇总单信息</span>
+        <span class="settleDetail-header-line left" style="width:790px;"></span>
+    </div>
+    <div class="settle-details-column">
+        <span class="settle-details-title">结算汇总单号：</span>
+        <span class="settle-details-box">
+            <%=summaryNo%>
+        </span>
+    </div>
+    <div class="settle-details-column">
+        <div class="settle-details-amount">
+           <span class="settle-details-title">结算金额：</span>
+           <span class="settle-details-box">
+               ￥<%=totalAmount%>
+           </span>
+        </div>
+        <div class="settle-details-cost">
+            <span>实验耗材费：￥<%=laboratoryConsumablesCost%><br />测试分析费：￥<%=testAnalysisCost%></span>
+        </div>
+    </div>
+    <table class="settle-details-accountList">
+        <thead>
+            <tr>
+                <th class="jiesuan-number">结算单号</th>
+                <th class="jiesuan-purchaser">采购方</th>
+                <th class="jiesuan-dept">采购部门</th>
+                <th class="jiesuan-date">结算日期</th>
+                <th class="jiesuan-money">结算金额</th>
+                <th class="jiesuan-status">状态</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%_.each(statements,function(i){%>
+            <tr>
+                <td><%=i.statementNo%></td>
+                <td><%=i.buyers%></td>
+                <td><%=i.department%></td>
+                <td><%=i.banlanceDate%></td>
+                <td><%=i.amount%></td>
+                <td><%=i.statementStatus%></td>
+            </tr>
+            <%})%>
+        </tbody>
+    </table>
+</div>
+<div class="settleDetail-header overflow" style="margin-bottom:20px;">
+    <span class="settleDetail-header-icon left"></span>
+    <span class="settleDetail-header-text left">发票详情</span>
+    <span class="settleDetail-header-line left" style="width: 843px;"></span>
+</div>
+<div class="settle-details-invoice" id="settle-details-invoice" style="border:none;">
+    <%if(invoices.length>0){_.each(invoices,function(j){%>
+    <div class="settle-details-addInvoice">
+        <div class="settle-details-addInvoice-info">
+            <span>
+                <span class="invoice-title">*发票号：</span><input type="text" class="invoice-num-input invoiceNum" value="<%=j.invoiceNo%>" /><span class='invoiceNumErrTip'>输入的发票格式不正确</span>
+            </span><br />
+            <span>
+                <span class="invoice-title">*发票金额：</span><input type="text" class="invoice-num-input invoiceAmount" value="<%=j.amount%>" />
+            </span><br />
+            <span>
+                <span class="invoice-title">*开票日期：</span><input type="text" class="invoice-num-input invoiceName" value="<%=j.operTime%>" />
+            </span><br />
+            <span>
+                <span class="invoice-title">*摘要内容：</span><input type="text" class="invoice-num-input invoiceAbstract" value="<%=j.remark%>" />
+            </span><br />
+            <span>
+                <span class="invoice-title">*开票单位：</span><input type="text" class="invoice-num-input invoiceCompany" value="<%=j.drawer%>" />
+            </span><br />
+            <span>
+                <span class="invoice-title">开户行名称：</span><select class='invoice-num-input invoiceBank'></select><span class='invoiceAccount-add-btn'>添加新账号</span>
+            </span><br />
+            <span>
+                <span class="invoice-title">银行账号：</span><span class='invoice-accountNum'></span>
+            </span><br />
+        </div>
+        <div class="invoice-tab">
+            <span class="invoice-tab-info">发票</span>
+            <span class="invoice-tab-close">&nbsp;</span>
+        </div>
+    </div>
+    <%})}%>
+    <div class="settle-details-addInvoice-block">
+        <div class="settle-details-addInvoice-btn">
+            添加
+        </div>
+    </div>
+    <div class="settle-details-save-btn">
+        保存
+    </div>
+    <div class="settle-details-cancel-btn">
+        取消
+    </div>
+</div>
+<div style="height:80px;">
+</div>

@@ -1,0 +1,98 @@
+<div class="product">
+    <div class="product-header overflow">
+        <ul class="left overflow product-header-search">
+            <li class="product-header-selected">全部</li>
+            <li>已上架</li>
+            <li>已下架</li>
+            <li>未上架</li>
+        </ul>
+        <div class="product-search right overflow">
+            <input class="product-search-box left" type="text" placeholder="输入名称、货号、品牌">
+            <a href="javascript:;" class="product-search-text left">搜索</a>
+            <a href="javascript:;" class="product-search-more left">更多</a>&gt;
+        </div>
+    </div>
+    <div class="product-more">
+        <div class="product-more-search">
+            <span>商品名称</span> : <input class="product-more-name"><span>商品货号</span> : <input class="product-more-number"><span>品牌</span> : <input class="product-more-brand">
+        </div>
+        <div class="product-more-btn">
+            <a href="javascript:;" class="product-more-submit">搜索</a><a href="javascript:;" class="product-more-reset">重置</a>
+        </div>
+    </div>
+    <div class="product-list">
+        <div class="product-check-all">
+            <span class="product-checkbox"></span><span class="product-check-all-text">全选</span><span class="product-shelve product-on">上架</span><span class="product-shelve product-off">下架</span>
+        </div>
+        <table cellspacing=0 id="productList">
+            <tr>
+                <th class='product-name'>商品名称</th>
+                <th class='product-brand'>品牌</th>
+                <th class='product-number'>货号</th>
+                <th class='product-unit'>单位</th>
+                <th class='product-sku'>库存</th>
+                <th class='product-price'>价格(元)</th>
+                <th class="product-status">状态</th>
+                <th class='product-operate'>操作</th>
+            </tr>
+            <%if(typeof(p)!="undefined"&&p.length!=0){%>
+            <%_.each(p,function(i){%>
+            <tr>
+                <td class='product-name'>
+                    <span class="product-checkbox"></span>
+                    <img class="product-img" src="<%=i.photo%>">
+                    <span class="product-name-desc">
+                        <a href="#productdetails/<%=i.sn%>" class="product-name-words"><%=i.name%></a>
+                        <p class="product-size"><%=i.specification%></p>
+                    </span>
+                </td>
+                <td class='product-brand'><%if(i.hasOwnProperty("brand")){%><%=i.brand.name%><%}%></td>
+                <td class='product-number'><%=i.productNum%></td>
+                <td class='product-unit'><%=i.unit%></td>
+                <td class='product-sku'><%=i.sku%></td>
+                <td class='product-price'>
+                    <p><%=i.price%></p>
+                </td>
+                <td class='product-status'>
+                    <%if(i.status==2){%>
+                    <a href="javascript:;" class="product-item-status">未上架</a>
+                    <%}else if(i.status==3){%>
+                    <a href="javascript:;" class="product-item-status">已上架</a> 
+                    <%}else if(i.status==4){%>
+                    <a href="javascript:;" class="product-item-status">已下架</a> 
+                    <%}%>
+                </td>
+                <td class='product-operate'>
+                    <a href="#productdetails/<%=i.sn%>" class="product-particular" target="_blank">详情</a>
+                    <%if(i.status==3||i.status==2||i.status==0){%>
+                    <a href="#details/<%=i.sn%>" class="product-particular" target="_blank">预览</a>
+                    <%}else{%>
+                    <a href="#details/<%=i.sn%>" class="product-particular product-preview product-hide" target="_blank">预览</a>   
+                    <%}%>
+                    <a href="#add/<%=i.sn%>" class="product-particular" target="_blank">修改</a>
+                    <input type="hidden" class="product-sn" value="<%=i.sn%>">
+                </td>
+            </tr>
+            <%})%>
+            <%}else{%>
+                <tr><td colspan=9 class="product-no-data"><p class="empty">暂时没有数据</p></td></tr>
+            <%}%>
+        </table>
+        <div class="page-wrap">
+            <div class="product-check-all left overflow">
+                <span class="product-checkbox"></span><span class="product-check-all-text">全选</span><span class="product-shelve product-on">上架</span><span class="product-shelve product-off">下架</span>
+            </div>
+            <div class="right page-total">
+                                     共<span class="total-page-num"><%=data.totalPages %></span>页
+            </div>
+            <div class="right">
+                <a class="endpoint end" data-flag="end" href="javascript:void(0)">&nbsp;&nbsp;</a>
+            </div>
+            <div class="page right" id="pagination">
+            </div>
+            <div class="right">
+                <a class="endpoint head" data-flag="head" href="javascript:void(0)">&nbsp;&nbsp;</a>
+            </div>
+        </div>
+    </div>
+</div>

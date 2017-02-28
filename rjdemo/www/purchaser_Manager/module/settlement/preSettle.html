@@ -1,0 +1,88 @@
+<div class="settle">
+    <div class="settle-more">
+       <span class="settle-more-item"><span class="settle-item-title">时间：</span><input type="text" class="settle-more-start-date" id="startTime" placeholder="起始时间"><em class="settle-time-line">-</em><input type="text" class="settle-more-end-date" id="endTime" placeholder="结束时间"></span>
+       <span class="settle-more-item">
+           <span class="settle-item-title">采购部门：</span><input type="text" class="settle-more-department">
+           <ul class="settle-department-choices">
+               <%_.each(depts,function(i){%>
+                <li><%=i.name%></li>
+                <%})%>
+            </ul>
+       </span>
+       <span class="settle-more-item settle-more-margin"><span class="settle-item-title">订单号：</span><input type="text" class="settle-more-num"></span>
+       <span class="settle-more-item"><span class="settle-item-title">采购人：</span><input class="settle-more-margin settle-more-buyer" type="text"></span>
+       <div class="settle-more-btn">
+            <span class="settle-more-btn-search">搜索</span><span class="settle-more-btn-reset">重置</span>
+        </div>
+    </div>
+    <ul class="settle-title">
+        <li class="settle-title-f">订单号</li>
+        <li class="settle-title-c">采购人</li>
+        <li class="settle-title-d">订单日期</li>
+        <li class="settle-title-d">订单金额（元）</li>
+        <li class="settle-title-d">验收金额（元）</li>
+        <li class="settle-title-e">经费卡号</li>
+    </ul>
+    <div class="overflow settle-submit-wrap">
+        <a class="settle-header-submit left" href="javascript:;">发起结算</a>
+    </div>
+    <div id="settleContent">
+        <%if(list.length!=0){%>
+        <%_.each(list,function(i){%>
+        <table cellspacing=0 class="settle-content">
+             <tr class="settle-content-title ">
+                 <td colspan=7 class="no-padding ">
+                    <span class="settle-checkbox left"></span><span class="left settle-supplier"><%=i.supplierName%></span><span class="left">( <em class="settle-department-name"><%=i.departmentName%><%if(i.subjectName){%> - <%=i.projectName%> - <%=i.subjectName%><%}%></em> )<input type="hidden" class="settle-department-id" value="<%=i.departmentId%>"></span>
+                    <span class="settle-money right">结算金额：<span class="settle-money-num">0.00</span>元</span>
+                </td>
+            </tr>
+            <%_.each(i.orderModel,function(item){%>
+            <tr class="settle-content-item">
+                <td class="settle-title-a">
+                    <span class="settle-checkbox"></span>
+                    <input type="hidden" class="settle-order-submit-id" value="<%=item.orderId%>">
+                </td>
+                <td class="settle-title-b"><%=item.orderNo%></td>
+                <td class="settle-title-c"><%=item.buyer%></td>
+                <td class="settle-title-d"><%=item.orderDate%></td>
+                <td class="settle-title-d"><%=item.orderMoney.toFixed(2)%></td>
+                <td class="settle-title-d settle-order-money"><%=item.checkMoney.toFixed(2)%></td>
+                <td class="settle-title-e settle-title-revise">
+                    <span>
+                    <%if(item.fundCardNo){%>
+                    <%if(item.fundCardNo.indexOf(",")!=-1){%>
+                    <%_.each(item.fundCardNo.split(","),function(l){%>
+                        <p><%=l%></p>
+                    <%})%>    
+                    <%}else{%>
+                    <%_.each(item.fundCardNo.split(";"),function(l){%>
+                        <p><%=l%></p>
+                    <%})%>
+                    <%}%>
+                    <%}%>
+                    </span>
+                    <a href="javascript:;" class="settle-revise">修改</a>
+                    <input type='hidden' class="settle-order-id" value="<%=item.orderId%>">
+                </td>
+            </tr>
+            <%})%>    
+        </table>
+        <%})%>
+        <%}else{%>
+        <div class="settle-no-padding">暂无数据.</div>
+        <%}%>
+    </div>
+    <div class="settle-footer">
+        <!--<div id="pagination"></div>-->
+        <div class="list-page">
+            <div class="page-td">
+                <span id="pagination"></span>
+                <span class="total-page-show">
+                    共<span class="total-page-num">
+                        <% if(list.length<1){var totalPages=0;} %>                                    
+                        <%= totalPages%></span>页
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<%if(flag==true){_.each(orderLists,function(item){%>
+    <% var i=item.order%>
+<tr>
+    <td class="apply-id"><%=i.forderno%></td>
+    
+    <td class="group"><%=i.fbuydepartment%></td>
+    <td class="human"><%=i.fbuyername%></td>
+    <td class="supplier"><%=i.fsuppname%></td>
+    <td class="date"><%=i.forderdate%></td>
+    <td class="money"><%=i.totalPrice.toFixed(2)%></td>
+    <%if(i.status==8){%>                        
+    <td class="status-td">新订单</td>
+    <%}%>
+    <%if(i.status==4){%>                        
+    <td class="status-td">待发货</td>
+    <%}%>
+    <%if(i.status==5){%>                        
+    <td class="status-td">待收货</td>
+    <%}%>
+    <%if(i.status==6||i.status==15){%>                        
+    <td class="status-td">待结算</td>
+    <%}%>
+    <%if(i.status==10||i.status==12||i.status==13){%>                        
+    <td class="status-td">结算中</td>
+    <%}%>
+    <%if(i.status==11||i.status==7){%>                        
+    <td class="status-td">已完成</td>
+    <%}%>
+    <%if(i.status==9){%>                        
+    <td class="status-td">申请取消</td>
+    <%}%>
+    <%if(i.status==3){%>                        
+    <td class="status-td">已关闭</td>
+    <%}%>
+    <td class="control">
+        <a href="#orderdetails/<%=i.id%>">查看</a>
+    </td>
+</tr>
+<%})}else{%>
+    <tr >
+        <td colspan=7 class="order-no-result">暂无结果。</td>
+    </tr>
+<%}%>
